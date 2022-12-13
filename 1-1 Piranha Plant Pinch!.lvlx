@@ -2,19 +2,19 @@ HEAD
 TL:"1-1 Piranha Plant Pinch";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-193504;T:-200896;B:-200000;MZ:24;MF:"Pastel Wind - SMW Custom Music.mp3";BG:2;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 0\n    }\n}\n";
-SC:1;L:-180000;R:-179200;T:-180600;B:-180000;MZ:24;MF:"Pastel Wind - SMW Custom Music.mp3";BG:13;
+SC:0;L:-200000;R:-193504;T:-200896;B:-200000;MZ:24;MF:"1-1 Piranha Plant Pinch!/Pastel Wind.spc";BG:2;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 0\n    }\n}\n";
+SC:1;L:-180000;R:-179200;T:-180600;B:-180000;MZ:24;MF:"1-1 Piranha Plant Pinch!/Pastel Wind.spc";BG:13;
 SC:2;L:-160000;R:-155104;T:-160600;B:-160000;MZ:24;MF:"1-1 Piranha Plant Pinch!/16 - High Caves (NTSC Version).mp3";BG:30;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#8d8d8dff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
-SC:3;L:-140000;R:-139200;T:-141280;B:-140032;MZ:24;MF:"treetop tumble.ogg";BG:0;
-SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"treetop tumble.ogg";BG:2;
-SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:24;MF:"cave dweller concert.ogg";BG:30;
-SC:6;L:-80000;R:-75936;T:-80832;B:-80000;MZ:24;MF:"Pastel Wind - SMW Custom Music.mp3";BG:2;
-SC:7;L:-60000;R:-59200;T:-60600;B:-60000;MZ:24;MF:"cave dweller concert.ogg";BG:30;
-SC:8;L:-40000;R:-39200;T:-40600;B:-40000;MZ:24;MF:"Pastel Wind - SMW Custom Music.mp3";BG:13;
-SC:9;L:-20000;R:-18592;T:-20600;B:-20000;MZ:24;MF:"cave dweller concert.ogg";BG:30;
-SC:10;L:64;R:6176;T:-704;B:0;MZ:24;MF:"Pastel Wind - SMW Custom Music.mp3";BG:2;
+SC:3;L:-140000;R:-139200;T:-141280;B:-140032;MZ:24;MF:"";BG:0;
+SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"";BG:2;
+SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:24;MF:"";BG:30;
+SC:6;L:-80000;R:-75936;T:-80832;B:-80000;MZ:24;MF:"1-1 Piranha Plant Pinch!/Pastel Wind.spc";BG:2;
+SC:7;L:-60000;R:-59200;T:-60600;B:-60000;MZ:24;MF:"";BG:30;
+SC:8;L:-40000;R:-39200;T:-40600;B:-40000;MZ:24;MF:"1-1 Piranha Plant Pinch!/Pastel Wind.spc";BG:13;
+SC:9;L:-20000;R:-18592;T:-20600;B:-20000;MZ:24;MF:"";BG:30;
+SC:10;L:64;R:6176;T:-704;B:0;MZ:24;MF:"1-1 Piranha Plant Pinch!/Pastel Wind.spc";BG:2;
 SC:11;L:20000;R:20800;T:18368;B:18976;MZ:24;MF:"1-1 Piranha Plant Pinch!/16 - High Caves (NTSC Version).mp3";BG:30;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#8d8d8dff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
-SC:12;L:40000;R:40800;T:39400;B:40000;MZ:0;MF:"boss kirby 64.ogg";BG:12;
+SC:12;L:40000;R:40800;T:39400;B:40000;MZ:0;MF:"";BG:12;
 SC:13;L:60000;R:60800;T:59400;B:60000;MZ:0;MF:"";BG:0;
 SC:14;L:80000;R:80800;T:79400;B:80000;MZ:0;MF:"";BG:0;
 SECTION_END
