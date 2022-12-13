@@ -1,0 +1,4 @@
+lightradius=50
+lightbrightness=1.5
+lightcolor=white
+lightflicker=true

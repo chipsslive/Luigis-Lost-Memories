@@ -1,0 +1,3 @@
+lightbrightness=1
+lightradius=42
+lightcolor=white

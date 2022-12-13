@@ -1,0 +1,3 @@
+health=999
+npcblock=0
+npcblocktop=0

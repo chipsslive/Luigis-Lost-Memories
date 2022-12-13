@@ -1,0 +1,11 @@
+frames=4
+gfxheight=64
+gfxwidth=64
+height=64
+width=64
+jumphurt=1
+nohurt=1
+speed=0
+nogravity=1
+framespeed=6
+priority=-35

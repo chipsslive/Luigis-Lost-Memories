@@ -1,0 +1,7 @@
+width=40
+height=44
+gfxwidth=40
+gfxheight=46
+cliffturn=1
+frames=4
+framestyle=2

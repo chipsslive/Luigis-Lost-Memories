@@ -1,0 +1,42 @@
+[bg]
+img="bg.png"
+priority=-100
+alignY=BOTTOM
+fitY=true
+repeatX=true
+repeatY=false
+parallaxX=0.1
+parallaxY=0.2
+
+[topClouds]
+img="Top_Clouds.png"
+priority=-99
+alignY=TOP
+repeatX=true
+repeatY=false
+parallaxX=0.1
+parallaxY=0.2
+speedX=-0.05
+y = -30
+
+[midClouds]
+img="Middle_Clouds.png"
+priority=-98
+alignY=TOP
+repeatX=true
+repeatY=false
+parallaxX=0.1
+parallaxY=0.2
+speedX=-0.1
+y = 202
+
+[bottomClouds]
+img="Bottom_Clouds.png"
+priority=-97
+alignY=TOP
+repeatX=true
+repeatY=false
+parallaxX=0.1
+parallaxY=0.2
+speedX=-0.15
+y = 350

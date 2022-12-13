@@ -1,0 +1,11 @@
+{
+	"mainPage": "index.html",
+	"current-version": [1, 0, 0],
+	"update-check-website": "http://horikawaotane.pythonanywhere.com/includes/json/update.json",
+	"characterNames": ["Unused1", "Luigi", "Unused2", "Unused3", "Unused4"],
+	"allowedCharacters": [2],
+	"allowTwoPlayer": false,
+	"allowPlayerSelection": false,
+	"stars": 6,
+	"credits": "You won't see this\nBecause I'm using mainPage\n This can override what's normally read in the .wld file for the episode credits\nbut is only used\n in the launcher\nnot in engine"
+}

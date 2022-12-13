@@ -1,0 +1,3 @@
+lightradius=35
+lightbrightness=1
+lightcolor=orange

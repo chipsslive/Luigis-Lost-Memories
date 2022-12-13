@@ -1,0 +1,8 @@
+gfxheight=46
+foreground=1
+width=70
+height=46
+npcblock=1
+npcblocktop=1
+frames=4
+framespeed=10

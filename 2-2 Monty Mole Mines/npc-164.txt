@@ -1,0 +1,10 @@
+playerblocktop=1
+npcblock=0
+npcblocktop=0
+nofireball=1
+noiceball=1
+nohammer=1
+noshell=1
+lightradius=70
+lightbrightness=1.3
+lightcolor=orange

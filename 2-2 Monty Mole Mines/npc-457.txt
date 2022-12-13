@@ -1,0 +1,3 @@
+playerblock=1
+playerblocktop=1
+jumphurt=1

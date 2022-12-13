@@ -1,0 +1,6 @@
+gfxoffsety=2
+gfxwidth=94
+gfxheight=50
+width=64
+height=48
+gfx-offset-y=2

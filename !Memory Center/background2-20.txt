@@ -1,0 +1,66 @@
+fill-color=0x000000
+
+[Layer 1]
+depth=INFINITE
+img="sky.png"
+
+;; Uncomment other fields as necessary
+
+; repeatX=false
+; repeatY=false
+
+fitX=false
+fitY=false
+
+; x=0
+; y=0
+
+; speedX=0
+; speedY=0
+
+; frames=1
+; framespeed=8
+; startingFrame=1
+
+; priority=-100
+; color=white
+; opacity=1
+
+; alignX=LEFT
+; alignY=TOP
+
+; marginLeft=0
+; marginRight=0
+; marginTop=0
+; marginBottom=0
+
+; padX=0
+; padY=0
+
+; parallaxX=0
+; parallaxY=0
+
+; maxParallaxX=0
+; maxParallaxY=0
+
+; hidden=false
+; debug=false
+
+[Layer 2]
+depth=300
+img="back.png"
+
+fitX=true
+fitY=true
+
+[Layer 3]
+depth=100
+img="front.png"
+
+fitX=false
+fitY=true
+
+parallaxX=0.3
+parallaxY=0
+
+repeatX=true
