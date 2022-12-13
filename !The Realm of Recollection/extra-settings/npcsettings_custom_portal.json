@@ -1,0 +1,23 @@
+{
+  "style": "groupbox",
+  "title": "Portal Settings",
+  "layout": [
+    {
+      "control": "checkbox",
+      "name": "disappear",
+      "title": "Disappear",
+      "tooltip": "Should the portal disappear on use?",
+      "value-default": false
+    },
+		{
+			"control": "spinbox",
+			"name": "warpID",
+			"title": "Warp ID",
+			"tooltip": "ID of instant warp to use.",
+			"type": "int",
+			"value-default": 0,
+			"value-min": 1,
+			"value-max": 200
+		}
+  ]
+}
