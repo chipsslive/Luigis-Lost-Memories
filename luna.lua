@@ -28,8 +28,8 @@ function onStart()
 	hudoverride.visible.itembox = false
 	hudoverride.visible.starcoins = true
 
-	if Level.filename() ~= "!Memory Center.lvlx" then
-        pauseplus.createOption("main",{text = "Return to Memory Center",action = pauseplus.exitLevel}, 2)
+	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
+        pauseplus.createOption("main",{text = "Exit Memory",action = pauseplus.exitLevel}, 2)
     end
 end
 
@@ -38,12 +38,12 @@ function onTick()
     SaveData.coins = SaveData.coins + mem(0x00B2C5A8,FIELD_WORD)
 	mem(0x00B2C5A8,FIELD_WORD,0)
 	
-	if SaveData.coins >= 99999 then
+	if SaveData.coins > 99999 then
 		SaveData.coins = 99999
 	end
 end
 
-function onReset(fromRespawn)
+function respawnRooms.onPostReset(fromRespawn)
 	if SaveData.coins >= 20 then
 		SaveData.coins = SaveData.coins - 10
 	else
