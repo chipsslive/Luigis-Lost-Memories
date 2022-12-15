@@ -30,6 +30,9 @@ local respawnRooms = {}
 local customCamera
 pcall(function() customCamera = require("customCamera") end)
 
+local spawnzones
+pcall(function() spawnzones = require("spawnzones") end)
+
 
 -- A bunch of memory addresses
 local SIZEABLE_LIST_ADDR = mem(0xB2BED8,FIELD_DWORD)
@@ -63,6 +66,17 @@ local MAX_EVENTS = 255
 local STAR_LIST_ADDR = mem(0xB25714,FIELD_DWORD)
 local STAR_COUNT_ADDR = 0xB251E0
 
+-- Coins Death Effect Stuff
+
+local deathCoins = {}
+
+--local deathEffectImage = Graphics.loadImageResolved("deathEffect.png")
+
+local coinImage = Graphics.loadImageResolved("npc-88.png")
+
+local coinFrames = 4
+
+local deathCoinsCost = 15
 
 -- Reset handling
 do
@@ -461,6 +475,11 @@ do
         v:mem(0x10,FIELD_STRING,blockData.eventDestroy) -- destroy event name
         v:mem(0x14,FIELD_STRING,blockData.eventEmptyLayer) -- no more objects in layer event name
 
+        -- Special case for spawnzones
+        if spawnzones ~= nil and v.id == spawnzones.block then
+            v.isHidden = true
+        end
+
         -- Reset a ton of boring properties
         -- Based on ffi_block.lua
         v:mem(0x02,FIELD_WORD,0) -- battle mode respawn timer
@@ -613,13 +632,13 @@ do
         handleExtraSettings(v.data._settings,settingsData)
 
         -- Spawning
-        if Defines.levelFreeze then
-            v.despawnTimer = 2
-        else
-            v.despawnTimer = 1
-        end
-
         v:mem(0x14C,FIELD_WORD,1)
+        v.despawnTimer = 2
+
+        if config.iswaternpc and v.ai1 == 2 then -- for jumping cheep cheeps, special spawn logic
+            v:mem(0x124,FIELD_BOOL,false)
+            v.despawnTimer = 0
+        end
 
         -- Special code!
         if data ~= nil and data.onSpawn ~= nil then
@@ -924,7 +943,7 @@ do
 
     local function resetPlayer()
         player.speedX = 0
-        player.speedY = 0
+        player.speedY = 2 -- ok
 
         player.deathTimer = 0
 
@@ -951,8 +970,9 @@ do
 
         player:mem(0x2C,FIELD_DFLOAT,0) -- Climbing NPC
         player:mem(0x40,FIELD_WORD,0)   -- Climbing state
+
         player:mem(0x154,FIELD_WORD,0)  -- Held NPC
-        player:mem(0x176,FIELD_WORD,0)  -- Stood on NPC
+        player:mem(0xB8,FIELD_WORD,0)   -- Yoshi's mouth NPC
 
         player:mem(0x11E,FIELD_BOOL,false) -- Can jump
         player:mem(0x120,FIELD_BOOL,false) -- Can spin jump
@@ -1294,6 +1314,8 @@ do
     }
 
     -- Boo circles
+    local boocircle = require("npcs/ai/boocircles")
+
     respawnRooms.npcIDData[294] = {
         onRemove = function(v)
             -- If onNPCKill runs and the boo table is nil, there's an error, so prevent that
@@ -1302,6 +1324,96 @@ do
             if data.boos == nil then
                 data.boos = {}
             end
+        end,
+        onSpawn = function(v)
+            -- Make sure they're all spawned in
+            boocircle.onTickNPC(v)
+        end,
+    }
+
+    -- Blargg
+    respawnRooms.npcIDData[199] = {
+        onSpawn = function(v)
+            -- Make sure it's in the right position
+            local newY = v.spawnY + v.height + 36
+            local distance = newY - v.y
+
+            v.y = newY
+            v:mem(0x14C,FIELD_WORD,0)
+
+            -- Move the attached layer
+            local attachedLayerObj = Layer.get(v.attachedLayerName)
+
+            if attachedLayerObj ~= nil then
+                attachedLayerObj.speedX = 0
+                attachedLayerObj.speedY = distance
+            end
+        end,
+    }
+
+    -- Bullet bills/banzai bills/eeries
+    respawnRooms.npcIDData[17] = {
+        onSpawn = function(v)
+            -- Forcefully despawn unless 
+            v:mem(0x124,FIELD_BOOL,false)
+            v.despawnTimer = 0
+        end,
+    }
+    
+    respawnRooms.npcIDData[18] = respawnRooms.npcIDData[17]
+    respawnRooms.npcIDData[42] = respawnRooms.npcIDData[17]
+
+    -- Goal tape
+    local function setGoalTapePosition(v)
+        -- Recreation of:
+        -- https://github.com/smbx/smbx-legacy-source/blob/master/modNPC.bas#L470
+        local highestBlock
+
+        for _,b in Block.iterateIntersecting(v.x,v.y,v.x + v.width,v.y + 8000) do
+            if (highestBlock == nil or b.y < highestBlock.y) and b.id ~= respawnRooms.roomBlockID then
+                highestBlock = b
+            end
+        end
+
+        if highestBlock ~= nil then
+            v.y = highestBlock.y - v.height
+            v.ai2 = highestBlock.y + 4
+            
+            v.ai1 = 1
+        end
+
+        v:mem(0x14C,FIELD_WORD,0)
+    end
+
+    respawnRooms.npcIDData[197] = {
+        onSetup = function(v)
+            v.y = v.spawnY
+            setGoalTapePosition(v)
+        end,
+        onSpawn = function(v)
+            setGoalTapePosition(v)
+        end,
+    }
+
+    -- Ted spawner
+    respawnRooms.npcIDData[306] = {
+        onSpawn = function(v)
+            -- Initialise data table
+            -- Fixes a basegame bug where they don't initialise properly if spawned while paused.
+            local data = v.data._basegame
+            local cfg = NPC.config[v.id]
+
+            data.lastHeld = 0
+            data.gripTimer = cfg.delay
+            data.gripState = 0
+            data.animationFrame = 0
+
+            local yMod = -cfg.traveldistance
+
+            data.startY = v.spawnY + yMod
+            v.y = v.y + yMod
+            
+            data.direction = v.direction
         end,
     }
 end
@@ -1882,6 +1994,28 @@ do
         if eventObj.cancelled or not respawnRooms.respawnSettings.enabled then
             return
         end
+
+        -- Spawn coin stuff
+        local obj = {}
+
+        for i = 1, math.min(SaveData.coins,deathCoinsCost) do
+            local coin = {}
+            
+            coin.x = player.x + player.width*0.5
+            coin.y = player.y + player.height*0.5
+            
+            coin.speedX = RNG.random(0.5,2) * RNG.irandomEntry{-1,1}
+            coin.speedY = RNG.random(-10,-5)
+            
+            coin.gravity = RNG.random(0.12,0.2)
+            
+            coin.timer = 0
+            coin.priority = -10
+            
+            table.insert(deathCoins,coin)
+        end
+
+        SaveData.coins = math.max(0,SaveData.coins - deathCoinsCost)
     
         -- Spawn death effect
         local effectID = playerManager.getCharacters()[player.character].deathEffect
@@ -1918,7 +2052,26 @@ do
     local stateFuncs = {}
 
     stateFuncs[respawnRooms.RESPAWN_STATE.INACTIVE] = function()
+        -- If the player's not dead, don't care
+        if player.deathTimer <= 0 then
+            respawnRooms.respawnTimer = 0
+            return
+        end
 
+        -- There are certain cases where the player can die without onPlayerKill
+        -- running (for some reason), so this accounts for it.
+        respawnRooms.respawnTimer = respawnRooms.respawnTimer + 1
+
+        if Level.endState() == 0 or respawnRooms.respawnTimer >= 200 then
+            -- Start death
+            respawnRooms.respawnState = respawnRooms.RESPAWN_STATE.DEATH_ANIM
+            respawnRooms.respawnTimer = 0
+            respawnRooms.respawnFade = 0
+
+            respawnRooms.respawnPaused = false
+        end
+
+        mem(LEVEL_END_TIMER,FIELD_WORD,0)
     end
 
     stateFuncs[respawnRooms.RESPAWN_STATE.DEATH_ANIM] = function()
@@ -1997,15 +2150,37 @@ do
         end
     end
 
-
     function respawnRooms.drawRespawnFade()
+        -- Coin Stuff
+    
+        for _,coin in ipairs(deathCoins) do
+            local width = coinImage.width
+            local height = coinImage.height / coinFrames
+    
+            local sourceY = (math.floor(coin.timer / 8) % coinFrames) * height
+    
+    
+            coin.timer = coin.timer + 1
+    
+            if coin.timer > 0 then
+                coin.speedY = coin.speedY + coin.gravity
+    
+                coin.x = coin.x + coin.speedX
+                coin.y = coin.y + coin.speedY
+            end
+    
+            if coin.timer < 35 then
+                Graphics.drawImageToSceneWP(coinImage, coin.x - width*0.5, coin.y - height*0.5, 0,sourceY, width,height,-4,priority)
+            end
+        end  
+
         if respawnRooms.respawnFade > 0 then
             local closing = (respawnRooms.respawnState == respawnRooms.RESPAWN_STATE.FADE_BACK)
             local t = respawnRooms.respawnFade
 
             respawnRooms.fadeDrawFuncs[respawnRooms.respawnSettings.transitionType](t,closing)
         end
-    end
+    end 
 end
 
 
@@ -2345,7 +2520,7 @@ respawnRooms.roomSettings = {
     },
 
     -- If true, the level will be reset at the end of transition and not the start. Doesn't affect non-panning transitions.
-    onlyResetAtEnd = true,
+    onlyResetAtEnd = false,
 
     -- The layer name that quicksand rooms are placed on.
     quicksandLayerName = "Rooms",
@@ -2375,7 +2550,7 @@ respawnRooms.respawnSettings = {
     enabled = true,
 
     -- If true, respawn BGO's will never be used, and the actual start point/checkpoints will be used instead.
-    neverUseRespawnBGOs = true,
+    neverUseRespawnBGOs = false,
     -- The directions of each respawn BGO.
     respawnBGODirections = {
         [951] = DIR_RIGHT,

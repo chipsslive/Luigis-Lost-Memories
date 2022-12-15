@@ -48,7 +48,6 @@ function onTick()
 	coinEffects = Effect.get(79)
 
 	for _,v in pairs(coinEffects) do
-		--if v.parent == 
         if v.timer == 60 then
             if (v.animationFrame == 2) then
                 SaveData.coins = SaveData.coins + 1
@@ -68,11 +67,9 @@ function onTick()
 end
 
 function respawnRooms.onPostReset(fromRespawn)
-	if SaveData.coins >= 10 then
-		SaveData.coins = SaveData.coins - 10
-	else
-		SaveData.coins = 0
-	end
+	if fromRespawn then
+        respawnRooms.deathCoins = {}
+    end
 end
 
 local function customCounter()
