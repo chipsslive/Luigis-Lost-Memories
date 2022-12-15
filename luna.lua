@@ -16,11 +16,13 @@ local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
+local coinEffects
 GameData.cutscene = false
 
 local coin = Graphics.loadImage(Misc.resolveFile("coin1.png"))
 
 function onStart()
+	SaveData.coins = 0
     player.character = CHARACTER_LUIGI
     hudoverride.visible.lives = false
     hudoverride.visible.score = false
@@ -41,10 +43,32 @@ function onTick()
 	if SaveData.coins > 99999 then
 		SaveData.coins = 99999
 	end
+
+	-- Instead of awarding score, this code adds to the coin count
+	coinEffects = Effect.get(79)
+
+	for _,v in pairs(coinEffects) do
+		--if v.parent == 
+        if v.timer == 60 then
+            if (v.animationFrame == 2) then
+                SaveData.coins = SaveData.coins + 1
+			elseif (v.animationFrame == 3) then
+				SaveData.coins = SaveData.coins + 2
+			elseif (v.animationFrame == 4) then
+				SaveData.coins = SaveData.coins + 3
+			elseif (v.animationFrame == 5) then
+				SaveData.coins = SaveData.coins + 4
+			elseif (v.animationFrame >= 6) and (v.animationFrame <= 8) then
+				SaveData.coins = SaveData.coins + 5
+			elseif (v.animationFrame > 8) then
+				SaveData.coins = SaveData.coins + 10
+			end
+		end
+	end
 end
 
 function respawnRooms.onPostReset(fromRespawn)
-	if SaveData.coins >= 20 then
+	if SaveData.coins >= 10 then
 		SaveData.coins = SaveData.coins - 10
 	else
 		SaveData.coins = 0
@@ -90,8 +114,8 @@ function onPause(eventObj)
 	end
 end
 
-function onDraw()
-	--[[if isPauseActive then
+--[[function onDraw()
+	if isPauseActive then
 		--box
 		Graphics.drawBox{x = 210, y = 200, width = 380, height = 200, color = Color.black}
 		--texts (placeholder positions)
@@ -180,5 +204,5 @@ function onDraw()
 			priority = 5,
 			opacity = (saveTimer / 128)
 		}
-	end]]
-end
+	end
+end]]
