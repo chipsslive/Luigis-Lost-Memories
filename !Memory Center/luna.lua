@@ -1,4 +1,6 @@
 local textplus = require("textplus")
+local littleDialogue = require("littleDialogue")
+local slm = require("simpleLayerMovement")
 
 -- Used for waking up sequence
 local start = false
@@ -12,17 +14,36 @@ local powerButton
 local cameraBounds
 local button1
 local doorLock
+local water
+local capQuestion
+local luigi
 
 -- Timers for MADELYN sequence
 local mt1 = 0
 local mt2 = 0
+local mt3 = 0
 
 local startmt1 = false
 local startmt2 = false
+local startmt3 = false
+
+-- Locks the player inside the capsule
+
+local lockPlayer = false
 
 -- Message Box Variables
 
-local m
+local m = littleDialogue.create{
+    -- This is created just so there isn't a nil value
+    text = "",
+    uncontrollable = true,
+    pauses = false,
+    forcedPosX = 325,
+    forcedPosY = 290,
+    style = "smw",
+    silentOpen = true,
+    settings = {priority = -40}
+}
 
 function onStart()
     player.powerup = 2
@@ -32,6 +53,9 @@ function onStart()
     button1 = Layer.get("Button1")
     doorLock = Layer.get("doorLock")
     doorUnlocked = Layer.get("doorUnlocked")
+    water = Layer.get("water")
+    capQuestion = Layer.get("capsuleQuestion")
+    luigi = Layer.get("luigi")
 end
 
 function onEvent(eventName)
@@ -39,6 +63,8 @@ function onEvent(eventName)
         start = true
     end
 end
+
+local myLayerTimer = 0
 
 function onTick()
     timer = timer + 1
@@ -96,6 +122,34 @@ function onTick()
             SFX.play("Sound1.ogg")
         end
     end
+
+    if lockPlayer then
+        player.x = -159580
+        player.y = -160220
+
+        player.speedX = 0
+        player.speedY = 0
+
+        triggerEvent("Lock in place")
+        player:mem(0x11E, FIELD_WORD, 0)
+        player:setFrame(-50 * player.direction)
+        luigi:show(true)
+    end
+
+    if startmt3 then
+        mt3 = mt3 + 1
+        if mt3 < 400 then
+            myLayerTimer = myLayerTimer + 1
+
+            water.speedY = math.cos(myLayerTimer/200)*-0.2
+        else
+            if water.speedY > 0 then
+                water.speedY = water.speedY + 0.01
+            else
+                water.speedY = 0
+            end
+        end
+    end
 end
 
 function onDraw()
@@ -145,8 +199,6 @@ end
 
 -- All Question Registering Below
 
-local littleDialogue = require("littleDialogue")
-
 -- Powering on MADELYN
 littleDialogue.registerAnswer("powerOn",{text = "Yes",chosenFunction = function() powerButton:hide(true) cameraBounds:show(true) madelyn1() startmt1 = true end})
 littleDialogue.registerAnswer("powerOn",{text = "No"})
@@ -154,6 +206,10 @@ littleDialogue.registerAnswer("powerOn",{text = "No"})
 -- Advance 1
 littleDialogue.registerAnswer("adv1",{text = "Yes",chosenFunction = function() advanceMadelyn(m) madelyn2() button1:hide(true) end})
 littleDialogue.registerAnswer("adv1",{text = "No"})
+
+-- Entering the Capsule
+littleDialogue.registerAnswer("enterCapsule",{text = "Yes",chosenFunction = function() capsule() end})
+littleDialogue.registerAnswer("enterCapsule",{text = "No"})
 
 -- All MADELYN Rendering Below
 
@@ -251,6 +307,12 @@ end
 
 function onLoadSection2()
     advanceMadelyn(m)
+end
+
+function capsule()
+    capQuestion:hide(true)
+    lockPlayer = true
+    startmt3 = true
 end
 
 function advanceMadelyn(m)
