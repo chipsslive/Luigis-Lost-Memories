@@ -459,7 +459,7 @@ warpTransition.transitionSpeeds = {
     [warpTransition.TRANSITION_MOSAIC   ] = 24, -- How long it takes to fade in/out.
     [warpTransition.TRANSITION_CROSSFADE] = 24, -- How long it takes to fade in/out.
     [warpTransition.TRANSITION_MELT     ] = 200, -- How long it takes one "slice" to go down.
-    [warpTransition.TRANSITION_SWIRL    ] = 32, -- How many frames it takes to complete the transition.
+    [warpTransition.TRANSITION_SWIRL    ] = 22, -- How many frames it takes to complete the transition.
 }
 
 -- Whether or not transitions can be activated by 'insant' and 'portal' warps.

@@ -11,6 +11,7 @@ local levelBegins = false
 local powerButton
 local cameraBounds
 local button1
+local doorLock
 
 -- Timers for MADELYN sequence
 local mt1 = 0
@@ -29,6 +30,8 @@ function onStart()
     powerButton = Layer.get("powerButton")
     cameraBounds = Layer.get("camerabounds")
     button1 = Layer.get("Button1")
+    doorLock = Layer.get("doorLock")
+    doorUnlocked = Layer.get("doorUnlocked")
 end
 
 function onEvent(eventName)
@@ -60,14 +63,37 @@ function onTick()
         mt1 = mt1 + 1
         if mt1 > 420 then
             button1:show(true) 
+            startmt1 = false
+            mt1 = 0
         end
     end
 
     if startmt2 then
         mt2 = mt2 + 1
-        if mt2 == 480 then
+        if mt2 == 490 then
             advanceMadelyn(m)
             madelyn3()
+        end
+        if mt2 == 900 then
+            advanceMadelyn(m)
+            madelyn4()
+        end
+        if mt2 == 1220 then
+            advanceMadelyn(m)
+            madelyn5()
+        end
+        if mt2 == 1520 then
+            advanceMadelyn(m)
+            madelyn6()
+        end
+        if mt2 == 2000 then
+            advanceMadelyn(m)
+            madelyn7()
+        end
+        if mt2 == 2350 then
+            doorLock:hide(true)
+            doorUnlocked:show(true)
+            SFX.play("Sound1.ogg")
         end
     end
 end
@@ -122,7 +148,7 @@ end
 local littleDialogue = require("littleDialogue")
 
 -- Powering on MADELYN
-littleDialogue.registerAnswer("powerOn",{text = "Yes",chosenFunction = function() powerButton:hide(true) cameraBounds:show(true) madelyn5() startmt1 = true end})
+littleDialogue.registerAnswer("powerOn",{text = "Yes",chosenFunction = function() powerButton:hide(true) cameraBounds:show(true) madelyn1() startmt1 = true end})
 littleDialogue.registerAnswer("powerOn",{text = "No"})
 
 -- Advance 1
@@ -163,8 +189,8 @@ function madelyn3()
         text = "<color green>Hello, Luigi. I<br>am MADELYN, but<br>my alias is an<br>acronym. Allow<br>me to display<br>it.</color>",
         uncontrollable = true,
         pauses = false,
-        forcedPosX = 360,
-        forcedPosY = 310,
+        forcedPosX = 354,
+        forcedPosY = 283,
         style = "smw",
         silentOpen = true,
         settings = {priority = -40}
@@ -177,7 +203,7 @@ function madelyn4()
         uncontrollable = true,
         pauses = false,
         forcedPosX = 325,
-        forcedPosY = 285,
+        forcedPosY = 290,
         style = "smw",
         silentOpen = true,
         settings = {priority = -40}
@@ -195,6 +221,36 @@ function madelyn5()
         silentOpen = true,
         settings = {priority = -40}
     }
+end
+
+function madelyn6()
+    m = littleDialogue.create{
+        text = "<color green>My initial brain<br>scans show that<br>your Yesterday<br>Networks have<br>suffered serious<br>damage.<br><br>Luckily, I am<br>able to assist<br>you with this<br>issue.</color>",
+        uncontrollable = true,
+        pauses = false,
+        forcedPosX = 360,
+        forcedPosY = 325,
+        style = "smw",
+        silentOpen = true,
+        settings = {priority = -40}
+    }
+end
+
+function madelyn7()
+    m = littleDialogue.create{
+        text = "<color green>Please, proceed<br>through the door<br>on your right.<br><br>The capsule that<br>is inside may<br>prove useful to<br>you.</color>",
+        uncontrollable = true,
+        pauses = false,
+        forcedPosX = 360,
+        forcedPosY = 300,
+        style = "smw",
+        silentOpen = true,
+        settings = {priority = -40},
+    }
+end
+
+function onLoadSection2()
+    advanceMadelyn(m)
 end
 
 function advanceMadelyn(m)

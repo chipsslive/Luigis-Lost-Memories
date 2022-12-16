@@ -7,7 +7,7 @@ SC:1;L:-180000;R:-178048;T:-180600;B:-180000;MZ:24;MF:"!Memory Center/05 - Derel
 SC:2;L:-160000;R:-159200;T:-160600;B:-160000;MZ:24;MF:"!Memory Center/05 - Derelict Space Station.mp3";BG:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#888888ff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-178300;Y:-180150;D:1;
+ID:1;X:-159756;Y:-160182;D:1;
 STARTPOINT_END
 BLOCK
 ID:345;X:-200000;Y:-200064;W:32;H:32;
@@ -1384,7 +1384,6 @@ ID:211;X:-159264;Y:-160416;W:32;H:32;
 ID:211;X:-159264;Y:-160448;W:32;H:32;
 ID:217;X:-159264;Y:-160384;W:32;H:32;
 ID:210;X:-159232;Y:-160384;W:32;H:32;
-ID:218;X:-159264;Y:-160096;W:32;H:32;
 ID:207;X:-159264;Y:-160192;W:32;H:32;
 ID:211;X:-159264;Y:-160160;W:32;H:32;
 ID:210;X:-159232;Y:-160192;W:32;H:32;
@@ -1465,6 +1464,8 @@ ID:186;X:-159776;Y:-160448;W:32;H:32;
 ID:186;X:-160000;Y:-160128;W:32;H:32;
 ID:186;X:-159616;Y:-160032;W:32;H:32;
 ID:167;X:-159584;Y:-160608;W:32;H:32;
+ID:191;X:-159264;Y:-160096;W:32;H:32;
+ID:218;X:-159264;Y:-160096;W:32;H:32;
 BLOCK_END
 BGO
 ID:163;X:-199935;Y:-200094;
@@ -1516,7 +1517,7 @@ ID:3;X:-178816;Y:-180416;
 ID:16;X:-178640;Y:-180404;
 ID:2;X:-178816;Y:-180384;
 ID:239;X:-178880;Y:-180160;
-ID:21;X:-178238;Y:-180174;
+ID:21;X:-178238;Y:-180174;LR:"doorUnlocked";
 ID:3;X:-178208;Y:-180256;
 ID:2;X:-178208;Y:-180224;
 ID:29;X:-179616;Y:-180384;
@@ -1524,6 +1525,7 @@ ID:21;X:-159902;Y:-160206;
 ID:24;X:-159586;Y:-160234;
 ID:3;X:-159584;Y:-160352;
 ID:2;X:-159584;Y:-160320;
+ID:27;X:-178238;Y:-180174;LR:"doorLock";
 BGO_END
 NPC
 ID:673;X:-199351;Y:-200320;D:-1;
@@ -1540,7 +1542,7 @@ ID:673;X:-178550;Y:-180486;D:-1;
 ID:673;X:-178196;Y:-180454;D:-1;
 ID:673;X:-178389;Y:-180072;D:-1;
 ID:674;X:-178208;Y:-180237;D:-1;XTRA:"{\n    \"angle\"\: 0\,\n    \"flicker\"\: true\,\n    \"radius\"\: 128\,\n    \"spotangle\"\: 45\,\n    \"spotpower\"\: 2\n}\n";
-ID:465;X:-178208;Y:-180160;D:-1;MG:"The door is tightly sealed shut.";FD:1;
+ID:465;X:-178208;Y:-180160;D:-1;MG:"The door is tightly sealed shut.";FD:1;LR:"doorLock";
 ID:465;X:-178368;Y:-180128;D:-1;MG:"Press the power button?<question powerOn>";FD:1;LR:"powerButton";
 ID:465;X:-178456;Y:-180128;D:-1;MG:"Press BUTTON 1?<question adv1>";FD:1;LR:"Button1";
 ID:674;X:-159584;Y:-160333;D:-1;XTRA:"{\n    \"angle\"\: 0\,\n    \"flicker\"\: true\,\n    \"radius\"\: 128\,\n    \"spotangle\"\: 45\,\n    \"spotpower\"\: 2\n}\n";
@@ -1551,6 +1553,7 @@ ID:673;X:-159671;Y:-160038;D:-1;
 NPC_END
 DOORS
 IX:-199296;IY:-200160;OX:-179808;OY:-180128;DT:2;ID:1;OD:1;TW:1;
+IX:-178208;IY:-180128;OX:-159872;OY:-160160;DT:2;ID:1;OD:1;LR:"doorUnlocked";
 DOORS_END
 LAYERS
 LR:"Default";
@@ -1559,6 +1562,8 @@ LR:"Spawned NPCs";
 LR:"powerButton";
 LR:"camerabounds";HD:1;
 LR:"Button1";HD:1;
+LR:"doorLock";
+LR:"doorUnlocked";HD:1;
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;
