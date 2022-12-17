@@ -317,10 +317,10 @@ do
         pauseplus.createOption("main",{text = "Continue",closeMenu = true})
 
         --[[if canSave then]]
-            pauseplus.createOption("main",{text = "Save & Continue",action = pauseplus.save,sfx = saveSFX,closeMenu = true})
+            --pauseplus.createOption("main",{text = "Save & Continue",action = pauseplus.save,sfx = saveSFX,closeMenu = true})
             --pauseplus.createOption("main",{text = "Save & Quit Game",actions = {pauseplus.save,pauseplus.quit}})
         --else
-            pauseplus.createOption("main",{text = "Quit Game",action = pauseplus.quit})
+            --pauseplus.createOption("main",{text = "Quit Game",action = pauseplus.quit})
         --end
     end
 end
@@ -974,9 +974,9 @@ pauseplus.checkboxImage = Graphics.loadImageResolved("pauseplus_checkbox.png")
 
 
 -- How much the music volume is multiplied by while the menu is open.
-pauseplus.musicVolumeDecrease = 1
+pauseplus.musicVolumeDecrease = 0.5
 -- How much the background is darkened while the menu is open.
-pauseplus.backgroundDarkness = 0
+pauseplus.backgroundDarkness = 0.5
 
 
 -- The priority that the menu is drawn at.
@@ -989,7 +989,7 @@ pauseplus.actionSFX = 27
 pauseplus.checkboxSFX = SFX.open(Misc.resolveFile("pauseplus_checkbox.wav"))
 
 -- How much space there is on any side of the "box". To mimic the default box, use 59 and 37
-pauseplus.horizontalSpace = 30
+pauseplus.horizontalSpace = 20
 pauseplus.verticalSpace   = 15
 
 -- How much vertical space there is between each option.
@@ -999,7 +999,7 @@ pauseplus.optionGap = 8
 pauseplus.scale = 2
 
 -- If the menu uses resizing transitions.
-pauseplus.doResizing = false
+pauseplus.doResizing = true
 
 -- How far the menu is offset from the centre of the screen.
 pauseplus.offset = vector(0,0)

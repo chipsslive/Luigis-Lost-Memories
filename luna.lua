@@ -1,4 +1,8 @@
---local rooms = require("rooms")
+--[[ The Scripts of Old
+local rooms = require("rooms")
+]]
+
+-- The Scripts of New
 local respawnRooms = require("respawnRooms")
 local nsmbwalls = require("nsmbwalls")
 local warpTransition = require('warpTransition')
@@ -9,8 +13,7 @@ local antizip = require("antizip")
 local customSwimming = require("customSwimming")
 local littleDialogue = require("littleDialogue")
 local pauseplus = require("pauseplus")
-
-pauseplus.createDefaultMenu()
+local textplus = require("textplus")
 
 local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
@@ -21,6 +24,8 @@ GameData.cutscene = false
 
 local coin = Graphics.loadImage(Misc.resolveFile("coin1.png"))
 
+local bigFont = textplus.loadFont("bigFont.ini")
+
 function onStart()
 	SaveData.coins = 0
     player.character = CHARACTER_LUIGI
@@ -30,9 +35,33 @@ function onStart()
 	hudoverride.visible.itembox = false
 	hudoverride.visible.starcoins = true
 
+
+	-- Pause Menu Stuff (A lot of the design taken from ATWE. Credit to MrDoubleA)
+
+	-- Main Pause Menu
+	pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = bigFont})
+	pauseplus.createOption("main",{text = "Continue",closeMenu = true})
+
+	-- Can't exit a memory when you're not in a memory!
 	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
         pauseplus.createOption("main",{text = "Exit Memory",action = pauseplus.exitLevel}, 2)
     end
+
+	pauseplus.createOption("main",{text = "Settings",goToSubmenu = "settings"})
+	pauseplus.createOption("main",{text = "Quit Game",action = pauseplus.quit})
+
+	-- Settings Menu
+	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = bigFont})
+
+	pauseplus.createOption("settings",{text = "Mute Music",selectionType = pauseplus.SELECTION_CHECKBOX})
+end
+
+function onDraw()
+	if pauseplus.getSelectionValue("settings","Mute Music") then
+		Audio.MusicVolume(0)
+	else
+		Audio.MusicVolume(64)
+	end
 end
 
 function onTick()
