@@ -14,9 +14,12 @@ local powerButton
 local cameraBounds
 local button1
 local doorLock
+
+-- Layers for capsule sequence
 local water
 local capQuestion
 local luigi
+local sleepLuigi
 
 -- Timers for MADELYN sequence
 local mt1 = 0
@@ -30,6 +33,12 @@ local startmt3 = false
 -- Locks the player inside the capsule
 
 local lockPlayer = false
+
+-- Variables for end of level fadeout
+
+local fadeout = false
+local opacity = 0
+local musicFadeoutTimer = 64
 
 -- Message Box Variables
 
@@ -56,6 +65,7 @@ function onStart()
     water = Layer.get("water")
     capQuestion = Layer.get("capsuleQuestion")
     luigi = Layer.get("luigi")
+    sleepLuigi = Layer.get("sleepLuigi")
 end
 
 function onEvent(eventName)
@@ -136,18 +146,30 @@ function onTick()
         luigi:show(true)
     end
 
+    -- Starts immediately after capsule is entered
+
     if startmt3 then
         mt3 = mt3 + 1
-        if mt3 < 400 then
+        if mt3 < 480 then
             myLayerTimer = myLayerTimer + 1
 
-            water.speedY = math.cos(myLayerTimer/200)*-0.2
+            water.speedY = math.cos(myLayerTimer/390)*-0.2
         else
-            if water.speedY > 0 then
-                water.speedY = water.speedY + 0.01
-            else
-                water.speedY = 0
+            water.speedY = 0
+        end
+        if mt3 == 500 then
+            luigi:hide(true)
+            sleepLuigi:show(true)
+        end
+        if mt3 > 520 then
+            fadeout = true
+            if musicFadeoutTimer > 0 then
+                musicFadeoutTimer = musicFadeoutTimer - 0.5
             end
+            Audio.MusicVolume(musicFadeoutTimer)
+        end
+        if mt3 > 720 then
+            Level.load("!The Realm of Recollection.lvlx")
         end
     end
 end
@@ -194,6 +216,13 @@ function onDraw()
             priority = -26,
             sceneCoords = true
         }
+    end
+
+    if fadeout then
+        Graphics.drawScreen{color = Color.black.. opacity,priority = 6}
+        if opacity < 1 then
+            opacity = opacity + 0.005
+        end
     end
 end
 
