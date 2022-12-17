@@ -51,6 +51,7 @@ local m = littleDialogue.create{
     forcedPosY = 290,
     style = "smw",
     silentOpen = true,
+    silent = true,
     settings = {priority = -40}
 }
 
