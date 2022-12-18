@@ -37,6 +37,7 @@ pauseplus.opener = nil -- The player that opened the menu
 pauseplus.currentMusicVolume = nil
 pauseplus.originalMusicVolume = nil
 pauseplus.lowerMusicVolume = nil
+pauseplus.defaultMusicVolume = 64
 
 
 -- Used for the resizing transitions
@@ -974,7 +975,7 @@ pauseplus.checkboxImage = Graphics.loadImageResolved("pauseplus_checkbox.png")
 
 
 -- How much the music volume is multiplied by while the menu is open.
-pauseplus.musicVolumeDecrease = 0.5
+pauseplus.musicVolumeDecrease = 0.4
 -- How much the background is darkened while the menu is open.
 pauseplus.backgroundDarkness = 0.5
 

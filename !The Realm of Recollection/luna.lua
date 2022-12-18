@@ -13,6 +13,7 @@ local x = 100
 local y = -10
 
 function onStart()
+    player.powerup = 2
     sprite = Sprite.box{
         texture = head,
         x = x,

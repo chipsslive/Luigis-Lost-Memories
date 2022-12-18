@@ -19,22 +19,26 @@ local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
-local coinEffects
 GameData.cutscene = false
 
+-- Used for coin loss on death
+local coinEffects
+
+-- The coin for the HUD element
 local coin = Graphics.loadImage(Misc.resolveFile("coin1.png"))
 
+-- Used for headers in pause menu
 local bigFont = textplus.loadFont("bigFont.ini")
 
 function onStart()
-	SaveData.coins = 0
     player.character = CHARACTER_LUIGI
+
+	-- Disable unwanted HUD elements
     hudoverride.visible.lives = false
     hudoverride.visible.score = false
 	hudoverride.visible.coins = false
 	hudoverride.visible.itembox = false
 	hudoverride.visible.starcoins = true
-
 
 	-- Pause Menu Stuff (A lot of the design taken from ATWE. Credit to MrDoubleA)
 
@@ -42,33 +46,111 @@ function onStart()
 	pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = bigFont})
 	pauseplus.createOption("main",{text = "Continue",closeMenu = true})
 
+	
+
 	-- Can't exit a memory when you're not in a memory!
 	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
-        pauseplus.createOption("main",{text = "Exit Memory",action = pauseplus.exitLevel}, 2)
-    end
+        pauseplus.createOption("main",{text = "Exit Memory",goToSubmenu = "exitConfirmation"}, 2)
+
+		-- Set Powerup Menu
+		pauseplus.createSubmenu("setPowerup",{headerText = "SET POWERUP",headerTextFont = bigFont})
+		pauseplus.createOption("setPowerup",{text = "<image pause_mushroom.png> Mushroom",closeMenu = true,sfx = 35,action = function() setPowerup(2) end})
+		pauseplus.createOption("setPowerup",{text = "<image pause_fireFlower.png> Fire Flower",closeMenu = true,sfx = 35,action = function() setPowerup(3) end})
+		pauseplus.createOption("setPowerup",{text = "<image pause_iceFlower.png> Ice Flower",closeMenu = true,sfx = 35,action = function() setPowerup(7) end})
+		pauseplus.createOption("setPowerup",{text = "<image pause_reset.png> None",closeMenu = true,sfx = 35,action = function() setPowerup(1) end})
+    else
+		pauseplus.createSubmenu("setPowerup",{headerText = "<align center>Not available outside<br>of memories.</align>"})
+	end
+	
+	-- Can only save within The Realm of Recollection
+	if Level.filename() == "!The Realm of Recollection.lvlx" then
+		pauseplus.createOption("main",{text = "Save Game",action = pauseplus.save,sfx = 58,closeMenu = true})
+	end
 
 	pauseplus.createOption("main",{text = "Settings",goToSubmenu = "settings"})
-	pauseplus.createOption("main",{text = "Quit Game",action = pauseplus.quit})
+	pauseplus.createOption("main",{text = "Quit Game",goToSubmenu = "quitConfirmation"})
 
 	-- Settings Menu
 	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = bigFont})
-
 	pauseplus.createOption("settings",{text = "Mute Music",selectionType = pauseplus.SELECTION_CHECKBOX})
+	pauseplus.createOption("settings",{text = "<color green>Accessibility</color>",goToSubmenu = "accessibility"})
+
+	-- Exit Confirmation Menu
+	pauseplus.createSubmenu("exitConfirmation",{headerText = "<align center>Exit the memory?<br>All progress up until<br>this point will be lost.</align>"})
+	pauseplus.createOption("exitConfirmation",{text = "Yes",action = pauseplus.exitLevel})
+	pauseplus.createOption("exitConfirmation",{text = "No",goToSubmenu = "main"})
+
+	-- Quit Confirmation Menu
+	pauseplus.createSubmenu("quitConfirmation",{headerText = "<align center>Quit the game?<br>All unsaved progress<br>will be lost.</align>"})
+	pauseplus.createOption("quitConfirmation",{text = "Yes",action = pauseplus.quit})
+	pauseplus.createOption("quitConfirmation",{text = "No",goToSubmenu = "main"})
+
+	-- Accessbility Menu
+	pauseplus.createSubmenu("accessibility",{headerText = "ACCESSIBILITY",headerTextFont = bigFont})
+	pauseplus.createOption("accessibility",{text = "Invincibility",selectionType = pauseplus.SELECTION_CHECKBOX})
+	pauseplus.createOption("accessibility",{text = "Infinite Jumps",selectionType = pauseplus.SELECTION_CHECKBOX})
+	if Level.filename() == "!The Realm of Recollection.lvlx" or Level.filename() == "!Memory Center.lvlx" then
+		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup",sfx="error.mp3"})
+	else
+		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup"})
+	end
+end
+
+-- Setting powerup from pause menu
+function setPowerup(m)
+	if m == 1 then
+		player.powerup = 1
+		setHeight()
+	end
+	if m == 2 or m == 3 or m == 7 then
+		if m == 2 then
+			player.powerup = 2
+		elseif m == 3 then
+			player.powerup = 3
+		elseif m == 7 then
+			player.powerup = 7
+		end
+		setHeight()
+	end
+end	
+
+-- Prevent janky teleports when changing powerups via the pause menu
+function setHeight()
+	local settings = PlayerSettings.get(player.character,player.powerup)
+	local newHeight = settings.hitboxHeight
+
+	player.y = player.y + player.height - newHeight
+	player.height = newHeight
+
+	if player:mem(0x12E,FIELD_BOOL) then -- ducking
+		player:mem(0x12E,FIELD_BOOL,false)
+		player.frame = 1
+	end
 end
 
 function onDraw()
 	if pauseplus.getSelectionValue("settings","Mute Music") then
-		Audio.MusicVolume(0)
-	else
-		Audio.MusicVolume(64)
-	end
+        if not musicSeized then
+            Audio.SeizeStream(-1)
+            musicSeized = true
+        end
+        
+        Audio.MusicStop()
+    elseif musicSeized then
+        Audio.ReleaseStream(-1)
+        musicSeized = false
+    end
 end
 
 function onTick()
+	-- Disable reserve powerup
 	player.reservePowerup = 0
+
+	-- Update coin counter
     SaveData.coins = SaveData.coins + mem(0x00B2C5A8,FIELD_WORD)
 	mem(0x00B2C5A8,FIELD_WORD,0)
 	
+	-- Keep coins from exceeding max limit
 	if SaveData.coins > 99999 then
 		SaveData.coins = 99999
 	end
@@ -93,6 +175,18 @@ function onTick()
 			end
 		end
 	end
+
+	-- Invincibility Accessibility Option (Taken from ATWE Code)
+	local donthurtmeActive = Cheats.get("donthurtme").active
+    local invincibility = pauseplus.getSelectionValue("accessibility","Invincibility")
+
+    Defines.cheat_donthurtme = donthurtmeActive or invincibility
+
+	-- Infinite Jumps Accessibility Option
+	local ahippinandahoppinActive = Cheats.get("ahippinandahoppin").active
+    local infiniteJumps = pauseplus.getSelectionValue("accessibility","Infinite Jumps")
+
+    Defines.cheat_ahippinandahoppin = ahippinandahoppinActive or infiniteJumps
 end
 
 function respawnRooms.onPostReset(fromRespawn)
@@ -101,6 +195,7 @@ function respawnRooms.onPostReset(fromRespawn)
     end
 end
 
+-- Custom Coin Counter HUD Element
 local function customCounter()
 	if not GameData.cutscene then
 		Graphics.draw{
@@ -122,7 +217,9 @@ end
 
 Graphics.addHUDElement(customCounter)
 
-local isPauseActive = false
+--Leftovers from the demo release
+
+--[[local isPauseActive = false
 local pauseSelection = 0
 local saveImg = Graphics.loadImageResolved("gameSavedImg.png")
 
@@ -140,7 +237,7 @@ function onPause(eventObj)
 	end
 end
 
---[[function onDraw()
+function onDraw()
 	if isPauseActive then
 		--box
 		Graphics.drawBox{x = 210, y = 200, width = 380, height = 200, color = Color.black}

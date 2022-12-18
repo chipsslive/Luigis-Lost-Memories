@@ -58,6 +58,7 @@ local m = littleDialogue.create{
 function onStart()
     player.powerup = 2
 
+    -- Adding layers to variable
     powerButton = Layer.get("powerButton")
     cameraBounds = Layer.get("camerabounds")
     button1 = Layer.get("Button1")
@@ -69,6 +70,7 @@ function onStart()
     sleepLuigi = Layer.get("sleepLuigi")
 end
 
+-- Disable autostart on event "Start Everything" to disable intro JUMP sequence
 function onEvent(eventName)
     if eventName == "Start Timer" then
         start = true
@@ -78,6 +80,7 @@ end
 local myLayerTimer = 0
 
 function onTick()
+    -- Used for JUMP text at start of level
     timer = timer + 1
 
     if timer > 130 and start then
@@ -96,6 +99,7 @@ function onTick()
         end
     end
 
+    -- Starts immediately after power button is pressed
     if startmt1 then
         mt1 = mt1 + 1
         if mt1 > 420 then
@@ -104,6 +108,8 @@ function onTick()
             mt1 = 0
         end
     end
+
+    -- Sequence of messages after pressing BUTTON 1
 
     if startmt2 then
         mt2 = mt2 + 1
@@ -133,6 +139,8 @@ function onTick()
             SFX.play("Sound1.ogg")
         end
     end
+
+    -- Locks player after capsule is entered (it's a bit overkill I know lol)
 
     if lockPlayer then
         player.x = -159580
@@ -176,6 +184,7 @@ function onTick()
 end
 
 function onDraw()
+    -- Used to get rid of JUMP text at start of level
     if timer > 160 then
         if player.rawKeys.jump == KEYS_PRESSED then
             triggerEvent("Jump")
@@ -184,6 +193,7 @@ function onDraw()
         end
     end
 
+    -- Drawing of JUMP text
     if drawFirstText then
         textplus.print{
             x = -200725,
@@ -219,6 +229,7 @@ function onDraw()
         }
     end
 
+    -- Fadeout at very end of level
     if fadeout then
         Graphics.drawScreen{color = Color.black.. opacity,priority = 6}
         if opacity < 1 then
@@ -335,16 +346,19 @@ function madelyn7()
     }
 end
 
+-- Gets rid of final text box on MADELYN screen as you enter the capsule room
 function onLoadSection2()
     advanceMadelyn(m)
 end
 
+-- Triggered immediately after entering capsule
 function capsule()
     capQuestion:hide(true)
     lockPlayer = true
     startmt3 = true
 end
 
+-- A function that is entirely unnecessary but I found easier to work with
 function advanceMadelyn(m)
     m:progress()
 end
