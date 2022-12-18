@@ -1,6 +1,19 @@
 local textplus = require("textplus")
 local pauseplus = require("pauseplus")
 local autoscroll = require("autoscroll")
+local slm = require("simpleLayerMovement")
+local lineguide = require("lineguide")
+
+lineguide.registerNPCs(10)
+lineguide.properties[10] = {
+        lineSpeed = 1,
+    }
+
+slm.addLayer{name = "coin 1",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.2}
+slm.addLayer{name = "coin 2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.4}
+slm.addLayer{name = "coin 3",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.6}
+slm.addLayer{name = "coin 4",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.8}
+slm.addLayer{name = "coin 5",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
 
 local creditsFinished = false
 local textLayouts = {}
@@ -36,7 +49,7 @@ local text = {
     0,"PsychLantern (Digo)",
     0,"galaxy",
     0,"FurballArts",
-    0,"leitackoc",
+    0,"leitakcoc",
     0,"DDP",
     0,"Chipss",
     0,"Witchking666",
@@ -100,7 +113,7 @@ local final = "THANKS FOR PLAYING!"
 local layout2
 
 function onStart()
-    autoscroll.scrollRight(0.2)
+    autoscroll.scrollRight(0.5)
     GameData.cutscene = true
 
     for i = 1,#text,2 do
@@ -141,7 +154,7 @@ local noStop = true
 function onTick()
     exitState = Level.winState() > 0
 
-    scrollY = scrollY - 0.47
+    scrollY = scrollY - 0.51
 
     if creditsFinished then
         if alpha < 1 and noStop then
