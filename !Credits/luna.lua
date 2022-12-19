@@ -3,6 +3,7 @@ local pauseplus = require("pauseplus")
 local autoscroll = require("autoscroll")
 local slm = require("simpleLayerMovement")
 local lineguide = require("lineguide")
+local spawnzones = require("spawnzones")
 
 lineguide.registerNPCs(10)
 lineguide.properties[10] = {
@@ -19,6 +20,7 @@ local creditsFinished = false
 local textLayouts = {}
 local scrollY = 600
 local alpha = 0
+local timer = 0
 
 pauseplus.canPause = false
 
@@ -109,11 +111,38 @@ local text = {
     0,"Chipss"
 }
 
-local final = "THANKS FOR PLAYING!"
+local final = "GAME LOGO HERE"
 local layout2
+
+local bloombaRed = Graphics.loadImageResolved("bloombaRed.png");
+local bloombaOrange = Graphics.loadImageResolved("bloombaOrange.png");
+local bloombaBlue = Graphics.loadImageResolved("bloombaBlue.png");
+local bloombaPurple = Graphics.loadImageResolved("bloombaPurple.png");
+
+local currentRotation = 0
+local spriteOrange
+local spriteRed
+local spriteBlue
+local spritePurple
+local v = vector.right2
+v.x = 0.5
+v.y = 0.5
+
+local bloombaX = -199800
+local bloombaY = -200400
+
+local bloombaXRed = -198304
+local bloombaYRed = -200560
+
+local bloombaXBlue = 0
+local bloombaYBlue = 0
+
+local bloombaXPurple = -197280
+local bloombaYPurple = -199728
 
 function onStart()
     autoscroll.scrollRight(0.5)
+    player.powerup = 2
     GameData.cutscene = true
 
     for i = 1,#text,2 do
@@ -131,6 +160,61 @@ function onStart()
     end
 
     layout2 = textplus.layout(final,nil,{font = fonts[1],color = white,xscale = 4,yscale = 4})
+
+    spriteOrange = Sprite.box{
+        texture = bloombaOrange,
+        x = bloombaX,
+        y = bloombaY,
+        pivot = v,
+    }
+    spriteRed = Sprite.box{
+        texture = bloombaRed,
+        x = bloombaX,
+        y = bloombaY,
+        pivot = v,
+    }
+    spriteBlue = Sprite.box{
+        texture = bloombaBlue,
+        x = bloombaX,
+        y = bloombaY,
+        pivot = v,
+    }
+    spritePurple = Sprite.box{
+        texture = bloombaPurple,
+        x = bloombaX,
+        y = bloombaY,
+        pivot = v,
+    }
+end
+
+function onTick()
+    timer = timer + 1
+    scrollY = scrollY - 0.51
+
+    if timer == 4960 then
+        creditsFinished = true
+        SFX.play("reveal.mp3")
+        Audio.MusicVolume(0)
+    end
+
+    if creditsFinished then
+        if alpha < 1 then
+            alpha = alpha + 0.02
+        end
+    end
+
+    if player:mem(0x148, FIELD_WORD) > 0 and player:mem(0x14C, FIELD_WORD) > 0 then
+        player.y = player.y - 2
+    end
+
+    bloombaX = bloombaX + 0.2
+    bloombaY = bloombaY - 0.2
+
+    bloombaXRed = bloombaXRed - 0.2
+    bloombaYRed = bloombaYRed + 0.25
+
+    bloombaXPurple = bloombaXPurple - 0.2
+    bloombaYPurple = bloombaYPurple - 0.25
 end
 
 function onDraw()
@@ -145,20 +229,21 @@ function onDraw()
     end
 
     if creditsFinished then
-        textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 120,y=250}
+        textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 160,y=250}
     end
-end
 
-local noStop = true
+    spriteOrange:draw{priority = -99, sceneCoords = true}
+    spriteOrange:rotate(0.7)
+    spriteOrange.x = bloombaX
+    spriteOrange.y = bloombaY
 
-function onTick()
-    exitState = Level.winState() > 0
+    spriteRed:draw{priority = -99, sceneCoords = true}
+    spriteRed:rotate(0.7)
+    spriteRed.x = bloombaXRed
+    spriteRed.y = bloombaYRed
 
-    scrollY = scrollY - 0.51
-
-    if creditsFinished then
-        if alpha < 1 and noStop then
-            alpha = alpha + 0.01
-        end
-    end
+    spritePurple:draw{priority = -99, sceneCoords = true}
+    spritePurple:rotate(0.7)
+    spritePurple.x = bloombaXPurple
+    spritePurple.y = bloombaYPurple
 end

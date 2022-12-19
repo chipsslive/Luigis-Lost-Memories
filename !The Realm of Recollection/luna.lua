@@ -3,8 +3,8 @@ local head = Graphics.loadImageResolved("LuigiHead.png");
 local currentRotation = 0
 local sprite
 local v = vector.right2
-v.x=0.5
-v.y=0.5
+v.x = 0.5
+v.y = 0.5
 
 local initialX = 100
 local initialY = 620
