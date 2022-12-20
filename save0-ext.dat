@@ -5,8 +5,8 @@
    ["__launcher"]={3},
    ["_basegame"]={4},
    ["__costumes"]={5},
-   ["coins"]=241,
-   ["starcoins"]=0
+   ["starcoins"]=0,
+   ["coins"]=3077
 },
 --[2]--
 {
@@ -20,9 +20,9 @@
 {
    ["bigSwitch"]={7},
    ["_characterdata"]={8},
-   ["starcoin"]={9},
-   ["hud"]={10},
-   ["starcoinCounter"]=0
+   ["starcoinCounter"]=0,
+   ["hud"]={9},
+   ["starcoin"]={10}
 },
 --[5]--
 {
@@ -53,19 +53,19 @@
 },
 --[9]--
 {
+   ["score"]=89050
+},
+--[10]--
+{
    ["!Credits.lvlx"]={24},
    ["!D-1 Pine Propultion.lvlx"]={25},
    ["!The Realm of Recollection.lvlx"]={26},
    ["!Memory Center.lvlx"]={27}
 },
---[10]--
-{
-   ["score"]=58380
-},
 --[11]--
 {
-   ["invincibility"]=true,
-   ["infinite jumps"]=true
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
 },
 --[12]--
 {

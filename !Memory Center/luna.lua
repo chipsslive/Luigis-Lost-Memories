@@ -1,6 +1,7 @@
 local textplus = require("textplus")
 local littleDialogue = require("littleDialogue")
 local slm = require("simpleLayerMovement")
+local handycam = require("handycam")
 
 -- Used for waking up sequence
 local start = false
@@ -40,6 +41,30 @@ local fadeout = false
 local opacity = 0
 local musicFadeoutTimer = 64
 
+-- Used to track splash SFX intervals
+local splashTimer = 0
+
+-- Camera for zoom in during capsule sequence
+local c = handycam[1]
+
+-- Need to draw darkness at custom priority
+
+local darkness = require("darkness")
+
+local darknessField = darkness.Create{
+    falloff = darkness.falloff.DEFAULT,
+    shadows = darkness.shadow.NONE,
+    maxLights = 60,
+    priorityType = darkness.priority.DISTANCE,
+    bounds = nil,
+    boundBlendLength = 64,
+    section = -1,
+    ambient = Color.fromHex(0x888888ff),
+    priority = -5,
+    distanceField = false,
+    enabled = true
+}
+
 -- Message Box Variables
 
 local m = littleDialogue.create{
@@ -57,6 +82,7 @@ local m = littleDialogue.create{
 
 function onStart()
     player.powerup = 2
+    GameData.cutscene = true
 
     -- Adding layers to variable
     powerButton = Layer.get("powerButton")
@@ -78,6 +104,16 @@ function onEvent(eventName)
 end
 
 local myLayerTimer = 0
+
+-- Used to track splash SFX intervals
+local splashTimer = 0
+
+-- A function used for easing the camera during the capsule zoom in
+
+function easeInOutQuad(x)
+    local val = (-(math.cos(math.pi * x) - 1) / 2)
+    return val
+end
 
 function onTick()
     -- Used for JUMP text at start of level
@@ -159,6 +195,19 @@ function onTick()
 
     if startmt3 then
         mt3 = mt3 + 1
+        splashTimer = splashTimer + 1
+        if splashTimer == 20 and mt3 < 480 then
+            SFX.play("splash.ogg")
+            splashTimer = 0
+        end
+        if mt3 == 5 then
+            c:transition{
+                time = 8,
+                ease = easeInOutQuad,
+                zoom = 4,
+                yOffset = -32
+            }
+        end
         if mt3 < 480 then
             myLayerTimer = myLayerTimer + 1
 

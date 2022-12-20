@@ -59,6 +59,7 @@ function onTick()
             launch = false
             triggered = false
             timer = 0
+            SFX.play(37)
             triggerEvent("Unlock Controls")
             chuck:show(true)
         end
