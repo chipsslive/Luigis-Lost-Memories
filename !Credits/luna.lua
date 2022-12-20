@@ -5,16 +5,18 @@ local slm = require("simpleLayerMovement")
 local lineguide = require("lineguide")
 local spawnzones = require("spawnzones")
 
+-- There are two variants of coins used in the level, so only register 1 to lineguides
+
 lineguide.registerNPCs(10)
-lineguide.properties[10] = {
-        lineSpeed = 1,
-    }
+lineguide.properties[10] = {lineSpeed = 1,}
+
+-- 'Jump rope' coin movement effect    
 
 slm.addLayer{name = "coin 1",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.2}
 slm.addLayer{name = "coin 2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.4}
 slm.addLayer{name = "coin 3",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.6}
-slm.addLayer{name = "coin 4",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 0.8}
-slm.addLayer{name = "coin 5",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
+
+-- A bunch of initilization for text stuff
 
 local creditsFinished = false
 local textLayouts = {}
@@ -102,6 +104,7 @@ local text = {
     0,"SetaYoshi",
     0,"Sambo",
     0,"JustOneMGuy",
+    0,"Marioman2007",
     0,"",
     1,"BETA TESTING",
     0,"",
@@ -114,12 +117,13 @@ local text = {
 local final = "GAME LOGO HERE"
 local layout2
 
+-- Initialize stuff needed for floating Bloombas
+
 local bloombaRed = Graphics.loadImageResolved("bloombaRed.png");
 local bloombaOrange = Graphics.loadImageResolved("bloombaOrange.png");
 local bloombaBlue = Graphics.loadImageResolved("bloombaBlue.png");
 local bloombaPurple = Graphics.loadImageResolved("bloombaPurple.png");
 
-local currentRotation = 0
 local spriteOrange
 local spriteRed
 local spriteBlue
@@ -127,6 +131,8 @@ local spritePurple
 local v = vector.right2
 v.x = 0.5
 v.y = 0.5
+
+-- Initial floating Bloomba positions
 
 local bloombaX = -199800
 local bloombaY = -200400
@@ -145,6 +151,9 @@ function onStart()
     player.powerup = 2
     GameData.cutscene = true
 
+
+    -- Give all text table entries a layout and font
+
     for i = 1,#text,2 do
         local fontID = text[i]
         local font = fonts[fontID]
@@ -159,7 +168,11 @@ function onStart()
         table.insert(textLayouts,layout)
     end
 
+    -- Layout for ending text
+
     layout2 = textplus.layout(final,nil,{font = fonts[1],color = white,xscale = 4,yscale = 4})
+
+    -- Initialize floating Bloomba sprites
 
     spriteOrange = Sprite.box{
         texture = bloombaOrange,
@@ -190,6 +203,8 @@ end
 function onTick()
     timer = timer + 1
     scrollY = scrollY - 0.51
+    
+    -- Triggers roughly 4 beats after the last note of the song
 
     if timer == 4960 then
         creditsFinished = true
@@ -203,9 +218,13 @@ function onTick()
         end
     end
 
+    -- Keeps janky autoscroll clipping from happening and prevents softlock/player death
+
     if player:mem(0x148, FIELD_WORD) > 0 and player:mem(0x14C, FIELD_WORD) > 0 then
         player.y = player.y - 2
     end
+
+    -- Bloomba movement properties
 
     bloombaX = bloombaX + 0.2
     bloombaY = bloombaY - 0.2
@@ -218,6 +237,8 @@ function onTick()
 end
 
 function onDraw()
+    -- Setup and draw credits text
+
     local layout = textLayouts[0]
 
     local y = scrollY
@@ -228,9 +249,13 @@ function onDraw()
         y = y + layout.height + 4
     end
 
+    -- Render Game Logo (Text is placeholder for now)
+
     if creditsFinished then
         textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 160,y=250}
     end
+
+    -- Draw and rotate floating Bloomba sprites
 
     spriteOrange:draw{priority = -99, sceneCoords = true}
     spriteOrange:rotate(0.7)
