@@ -21,7 +21,7 @@ SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 GameData.cutscene = false
-SaveData.introFinished = false
+SaveData.introFinished = true
 
 -- Used for coin loss on death
 local coinEffects

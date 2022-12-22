@@ -1024,6 +1024,13 @@ ID:596;X:-179264;Y:-180416;W:32;H:32;
 ID:595;X:-179456;Y:-180384;W:32;H:32;
 ID:596;X:-179456;Y:-180416;W:32;H:32;
 ID:127;X:-179456;Y:-180448;W:32;H:32;
+ID:658;X:-199712;Y:-200416;W:32;H:32;
+ID:658;X:-200000;Y:-200416;W:32;H:32;
+ID:658;X:-200192;Y:-200384;W:32;H:32;
+ID:658;X:-200512;Y:-200384;W:32;H:32;
+ID:658;X:-200256;Y:-200192;W:32;H:32;
+ID:658;X:-199520;Y:-200384;W:32;H:32;
+ID:658;X:-199200;Y:-200384;W:32;H:32;
 BLOCK_END
 BGO
 ID:63;X:-199968;Y:-200064;
@@ -1758,6 +1765,10 @@ ID:761;X:-199728;Y:-200225;D:-1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\
 ID:758;X:-200080;Y:-200194;D:1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"redBloomba\"\n    }\n}\n";
 ID:758;X:-200136;Y:-200192;D:-1;MG:"<speakerName \"Maroonba\">Master Luigi! We have been waiting for you! Welcome to your consciousness. Try not to freak out.<page>Based on our communication with your brain\, some external event has caused you severe memory loss.<page>In fact\, we went completely dark here in The Realm of Recollection for nearly six hours!<page>What's The Realm of Recollection\, you ask? Why\, merely a sub-domain of your consciousness dedicated to memories and remembering in general!<page>Luckily\, your favorite materialized mind creatures can help you with the recovery of your memories! Though\, I feel you already knew that for some reason...<page>So\, whaddya say? Interested in actually remembering the last few months of your life? Or\, perhaps you're interested in being stuck inside your head for eternity?<page>Please\, I must know your answer!<question introQuestion>";FD:1;LR:"maroonba";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"introBloomba\"\n    }\n}\n";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
+ID:758;X:-200144;Y:-200192;D:1;FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"defaultRedBloomba\"\n    }\n}\n";
+ID:760;X:-200368;Y:-200384;D:-1;FD:1;LR:"defaultBloombas";
+ID:761;X:-199824;Y:-200416;D:-1;FD:1;LR:"defaultBloombas";
+ID:759;X:-199328;Y:-200384;D:-1;FD:1;LR:"defaultBloombas";
 NPC_END
 DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;TW:1;
@@ -1774,7 +1785,8 @@ LR:"awakeLuigi";HD:1;
 LR:"sleepLuigi";HD:1;
 LR:"portal";
 LR:"otherBloombas";HD:1;
-LR:"maroonba";
+LR:"maroonba";HD:1;
+LR:"defaultBloombas";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

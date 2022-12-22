@@ -4,9 +4,10 @@
    ["pauseplus"]={2},
    ["__launcher"]={3},
    ["_basegame"]={4},
+   ["introFinished"]=true,
    ["__costumes"]={5},
-   ["starcoins"]=0,
-   ["coins"]=3077
+   ["coins"]=3077,
+   ["starcoins"]=0
 },
 --[2]--
 {
@@ -20,9 +21,9 @@
 {
    ["bigSwitch"]={7},
    ["_characterdata"]={8},
-   ["starcoinCounter"]=0,
-   ["hud"]={9},
-   ["starcoin"]={10}
+   ["starcoin"]={9},
+   ["hud"]={10},
+   ["starcoinCounter"]=0
 },
 --[5]--
 {
@@ -53,14 +54,14 @@
 },
 --[9]--
 {
-   ["score"]=89050
-},
---[10]--
-{
    ["!Credits.lvlx"]={24},
    ["!D-1 Pine Propultion.lvlx"]={25},
    ["!The Realm of Recollection.lvlx"]={26},
    ["!Memory Center.lvlx"]={27}
+},
+--[10]--
+{
+   ["score"]=89050
 },
 --[11]--
 {
