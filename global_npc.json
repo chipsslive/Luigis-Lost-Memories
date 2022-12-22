@@ -1,0 +1,52 @@
+{
+	"style" : "groupbox",
+	"title" : "Global Settings",
+	"layout": [
+		{
+			"control": "comboBox",
+			"name": "spawningBehaviour",
+			"title": "Spawning Behaviour",
+			"tooltip": "Decides how the NPC's spawning behaves.",
+			"elements": ["Default","Don't Despawn","Spawned if in Section"],
+			"value-default": 0
+		},
+		{
+			"control": "comboBox",
+			"name": "invincibleTo",
+			"title": "Invincible To",
+			"tooltip": "Decides what the NPC is invincible to.",
+			"elements": ["Nothing","Everything","Player","NPC's"],
+			"value-default": 0
+		},
+		{
+			"control": "checkbox",
+			"name": "noblockcollision",
+			"title": "No Block Collision",
+			"tooltip": "If true, the NPC will go through blocks.",
+			"text-visible": false,
+			"value-default": false
+		},
+		{
+			"control": "lineEdit",
+			"name": "tag",
+			"title": "Tag",
+			"tooltip": "\"Tag\" for use by lua code.",
+			"value-default": ""
+		},
+		{
+			"control" : "group",
+			"title" : "Generator",
+			"name" : "..",
+			"children": [
+				{
+					"control": "checkbox",
+					"name": "exclusiveSpawn",
+					"title": "Exclusive Spawn",
+					"tooltip": "If true, the generator will not spawn another NPC until the one it generated dies or despawns.",
+					"text-visible": false,
+					"value-default": false
+				}
+			]
+		}
+	]
+}

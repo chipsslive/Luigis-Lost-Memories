@@ -200,14 +200,14 @@ function onTick()
             SFX.play("splash.ogg")
             splashTimer = 0
         end
-        if mt3 == 5 then
+        --[[if mt3 == 5 then
             c:transition{
                 time = 8,
                 ease = easeInOutQuad,
                 zoom = 4,
                 yOffset = -32
             }
-        end
+        end]]
         if mt3 < 480 then
             myLayerTimer = myLayerTimer + 1
 
@@ -228,6 +228,14 @@ function onTick()
         end
         if mt3 > 720 then
             Level.load("!The Realm of Recollection.lvlx")
+        end
+    end
+
+    -- Fadeout at very end of level
+    if fadeout then
+        Graphics.drawScreen{color = Color.black.. opacity,priority = 6}
+        if opacity < 1 then
+            opacity = opacity + 0.005
         end
     end
 end
@@ -276,14 +284,6 @@ function onDraw()
             priority = -26,
             sceneCoords = true
         }
-    end
-
-    -- Fadeout at very end of level
-    if fadeout then
-        Graphics.drawScreen{color = Color.black.. opacity,priority = 6}
-        if opacity < 1 then
-            opacity = opacity + 0.005
-        end
     end
 end
 

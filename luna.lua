@@ -14,21 +14,38 @@ local customSwimming = require("customSwimming")
 local littleDialogue = require("littleDialogue")
 local pauseplus = require("pauseplus")
 local textplus = require("textplus")
+local extraNPCProperties = require("extraNPCProperties")
 
 local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 GameData.cutscene = false
+SaveData.introFinished = false
 
 -- Used for coin loss on death
 local coinEffects
 
--- The coin for the HUD element
+-- The coin image used for the HUD element
 local coin = Graphics.loadImage(Misc.resolveFile("coin1.png"))
 
 -- Used for headers in pause menu
 local bigFont = textplus.loadFont("bigFont.ini")
+
+-- littleDialogue Styles
+littleDialogue.registerStyle("madelyn",{
+    borderSize = 30,
+    typewriterEnabled = true,
+    typewriterDelayNormal = 2,
+    typewriterDelayLong = 16,
+	textColor = Color.green,
+})
+
+littleDialogue.registerStyle("conceptuary",{
+    borderSize = 16,
+    typewriterEnabled = false,
+	textColor = Color(80/255,80/255,112/255),
+})
 
 function onStart()
     player.character = CHARACTER_LUIGI
