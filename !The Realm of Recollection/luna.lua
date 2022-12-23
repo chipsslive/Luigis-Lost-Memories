@@ -18,6 +18,28 @@ local initialY = 620
 local x = 100
 local y = -10
 
+-- Unlocking the Audiblette and Conceptuary variables/questions
+
+local audibletteWarp
+local audibletteLock
+local audibletteNPC
+local unlockedAudiblette
+local conceptuaryWarp
+local conceptuaryLock
+local conceptuaryNPC
+local unlockedConceptuary
+
+if SaveData.coins >= 500 then
+    littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedConceptuary = true end})
+    littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedAudiblette = true end})
+else
+    littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
+    littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
+end
+
+littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
+littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
+
 -- Chuck's Return Service related variables + questions
 
 local launch = false
@@ -83,6 +105,12 @@ function onStart()
     otherBloombas = Layer.get("otherBloombas")
     maroonba = Layer.get("maroonba")
     defaultBloombas = Layer.get("defaultBloombas")
+    conceptuaryWarp = Layer.get("conceptuaryWarp")
+    audibletteWarp = Layer.get("audibletteWarp")
+    audibletteLock = Layer.get("audibletteLock")
+    conceptuaryLock = Layer.get("conceptuaryLock")
+    audibletteNPC = Layer.get("audibletteNPC")
+    conceptuaryNPC = Layer.get("conceptuaryNPC")
 
     -- Intro initializations
 
@@ -93,6 +121,18 @@ function onStart()
         defaultBloombas:hide(true)
         pauseplus.canPause = false
     end
+
+    -- Check if Conceptuary/Audiblette are unlocked
+
+    if SaveData.conceptuaryUnlocked then
+        conceptuaryWarp:show(true)
+        conceptuaryLock:hide(true)
+        conceptuaryNPC:hide(true)
+    elseif SaveData.audibletteUnlocked then
+        audibletteWarp:show(true)
+        audibletteLock:hide(true)
+        audibletteNPC:hide(true)
+    end
 end
 
 if SaveData.introFinished == false then
@@ -101,6 +141,25 @@ if SaveData.introFinished == false then
 end
 
 function onTick()
+    -- Check if Conceptuary/Audiblette have just been unlocked
+    if unlockedConceptuary then
+        conceptuaryWarp:show(true)
+        conceptuaryLock:hide(false)
+        conceptuaryNPC:hide(true)
+        SFX.play("destroyLock.wav")
+        SaveData.conceptuaryUnlocked = true
+        GameData.ach_Conceptuary:collect()
+        unlockedConceptuary = false
+    elseif unlockedAudiblette then
+        audibletteWarp:show(true)
+        audibletteLock:hide(false)
+        audibletteNPC:hide(true)
+        SFX.play("destroyLock.wav")
+        SaveData.audibletteUnlocked = true
+        GameData.ach_Audiblette:collect()
+        unlockedAudiblette = false
+    end
+
     -- Move Luigi head
 
     x = x + 0.2
@@ -146,6 +205,7 @@ function onTick()
     -- Everything below this line in onTick() is relating to intro sequence
 
     if SaveData.introFinished == false then
+        GameData.cutscene = true
         if stopIntroTimer == false then
             introTimer = introTimer + 1
         end
@@ -176,6 +236,10 @@ function onTick()
 
         if playerStart == false then
             player:setFrame(-50 * player.direction)
+        end
+    else
+        if GameData.cutscene then
+            GameData.cutscene = false
         end
     end
 

@@ -20,10 +20,35 @@ local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
-GameData.cutscene = false
 SaveData.introFinished = true
+SaveData.conceptuaryUnlocked = false
+SaveData.audibletteUnlocked = false
 
--- Used for coin loss on death
+-- All this does is hide the coin count from the HUD
+GameData.cutscene = false
+
+-- Achievements Stuff
+
+GameData.ach_Audiblette = Achievements(1)
+GameData.ach_Conceptuary = Achievements(2)
+
+-- Add and subtract coins global functions
+
+function addCoins(n)
+	SaveData.coins = SaveData.coins + n
+	SFX.play("bigcoin-50.ogg")
+end
+
+function subtractCoins(n)
+    if n <= SaveData.coins then
+        SaveData.coins = SaveData.coins - n
+	else 
+		SaveData.coins = 0
+	end
+	SFX.play("loseCoins.wav")
+end
+
+-- Used for coin effect replacing score effect
 local coinEffects
 
 -- The coin image used for the HUD element
@@ -48,6 +73,7 @@ littleDialogue.registerStyle("conceptuary",{
 })
 
 function onStart()
+	SaveData.coins = 3000
     player.character = CHARACTER_LUIGI
 
 	-- Disable unwanted HUD elements

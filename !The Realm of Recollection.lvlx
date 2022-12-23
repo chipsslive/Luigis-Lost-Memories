@@ -1027,10 +1027,10 @@ ID:127;X:-179456;Y:-180448;W:32;H:32;
 ID:658;X:-199712;Y:-200416;W:32;H:32;
 ID:658;X:-200000;Y:-200416;W:32;H:32;
 ID:658;X:-200192;Y:-200384;W:32;H:32;
-ID:658;X:-200512;Y:-200384;W:32;H:32;
+ID:658;X:-200480;Y:-200384;W:32;H:32;
 ID:658;X:-200256;Y:-200192;W:32;H:32;
 ID:658;X:-199520;Y:-200384;W:32;H:32;
-ID:658;X:-199200;Y:-200384;W:32;H:32;
+ID:658;X:-199232;Y:-200384;W:32;H:32;
 BLOCK_END
 BGO
 ID:63;X:-199968;Y:-200064;
@@ -1746,6 +1746,8 @@ ID:150;X:-179680;Y:-180544;
 ID:150;X:-179296;Y:-180544;
 ID:128;X:-199856;Y:-200248;LR:"sleepLuigi";
 ID:169;X:-199856;Y:-200248;LR:"awakeLuigi";
+ID:111;X:-199378;Y:-200214;LR:"conceptuaryLock";
+ID:111;X:-200338;Y:-200214;LR:"audibletteLock";
 BGO_END
 NPC
 ID:751;X:-158176;Y:-160208;D:-1;MG:"<speakerName Chuck>Eyo! Welcome to Chuck's Return Service! Want me to return ya' to the entrance?<question chuckQuestion>";FD:1;NM:1;LR:"chuck";
@@ -1764,15 +1766,17 @@ ID:759;X:-199485;Y:-200384;D:-1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\
 ID:761;X:-199728;Y:-200225;D:-1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"orangeBloomba\"\n    }\n}\n";
 ID:758;X:-200080;Y:-200194;D:1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"redBloomba\"\n    }\n}\n";
 ID:758;X:-200136;Y:-200192;D:-1;MG:"<speakerName \"Maroonba\">Master Luigi! We have been waiting for you! Welcome to your consciousness. Try not to freak out.<page>Based on our communication with your brain\, some external event has caused you severe memory loss.<page>In fact\, we went completely dark here in The Realm of Recollection for nearly six hours!<page>What's The Realm of Recollection\, you ask? Why\, merely a sub-domain of your consciousness dedicated to memories and remembering in general!<page>Luckily\, your favorite materialized mind creatures can help you with the recovery of your memories! Though\, I feel you already knew that for some reason...<page>So\, whaddya say? Interested in actually remembering the last few months of your life? Or\, perhaps you're interested in being stuck inside your head for eternity?<page>Please\, I must know your answer!<question introQuestion>";FD:1;LR:"maroonba";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"introBloomba\"\n    }\n}\n";
+ID:758;X:-200144;Y:-200192;D:1;MG:"<speakerName Maroonba>Master Luigi! Hope you're making good progress on that memory recovery. Not because the stakes are high or anything\, I just care about you.<page>In fact\, if you died\, I would cease to exist! Isn't that something?";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"defaultRedBloomba\"\n    }\n}\n";
+ID:760;X:-200368;Y:-200384;D:-1;MG:"<speakerName Ceruloomba>*Ceruloomba side eyes you dismissively*<page>Come back when you've recovered every last one of those memories of yours.<page>I don't even wanna see your face until then.<page>*spits on you*";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
+ID:761;X:-199824;Y:-200416;D:-1;MG:"<speakerName Tangeroomba>Itsa Masta Luigi! Tell me\, what would ya' like to know?";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
+ID:759;X:-199328;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can kick me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
-ID:758;X:-200144;Y:-200192;D:1;FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"defaultRedBloomba\"\n    }\n}\n";
-ID:760;X:-200368;Y:-200384;D:-1;FD:1;LR:"defaultBloombas";
-ID:761;X:-199824;Y:-200416;D:-1;FD:1;LR:"defaultBloombas";
-ID:759;X:-199328;Y:-200384;D:-1;FD:1;LR:"defaultBloombas";
+ID:465;X:-199376;Y:-200224;D:-1;MG:"Oi! Greenie! If you wanna access The Conceptuary\, I'm gonna need to see 500 Coins come out of those denim pockets!<page>Make a decision\, quickly!<question unlockConceptuaryQuestion>";FD:1;LR:"conceptuaryNPC";
+ID:465;X:-200336;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Audiblette\, I will need to see 500 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockAudibletteQuestion>";FD:1;LR:"audibletteNPC";
 NPC_END
 DOORS
-IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;TW:1;
-IX:-199376;IY:-200192;OX:-159824;OY:-160160;DT:2;ID:1;OD:1;TW:1;
+IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
+IX:-199376;IY:-200192;OX:-159824;OY:-160160;DT:2;ID:1;OD:1;LR:"conceptuaryWarp";TW:1;
 DOORS_END
 LAYERS
 LR:"Default";
@@ -1787,6 +1791,12 @@ LR:"portal";
 LR:"otherBloombas";HD:1;
 LR:"maroonba";HD:1;
 LR:"defaultBloombas";
+LR:"audibletteWarp";HD:1;
+LR:"conceptuaryWarp";HD:1;
+LR:"audibletteLock";
+LR:"conceptuaryLock";
+LR:"audibletteNPC";
+LR:"conceptuaryNPC";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;
