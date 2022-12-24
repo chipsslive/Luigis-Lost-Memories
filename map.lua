@@ -2,12 +2,11 @@
 local smoothWorld = API.load("smoothWorld")
 local wandr = require("wandr")
 local travl = require("travl")
-local camLock = API.load("camLock")
 local worldmapluigi = require("worldmapluigi")
 local mapdraw = require("mapdraw")
 local pauseplus = require("pauseplus")
 
-pauseplus.createDefaultMenu()
+local holdJump = false
 
 travl.showArrows = false
 
@@ -16,9 +15,25 @@ wandr.speed = 3
 local hudoverride = require("hudoverride")
 
 function onStart()
+    mem(0xB25728, FIELD_BOOL, false)
+    player.character = CHARACTER_LUIGI
+    player.powerup = 2
+    world.playerX = -1600
+    world.playerY = 1216
     hudoverride.visible.lives = false
     hudoverride.visible.coins = false
     Cheats.trigger("imtiredofallthiswalking")
+
+    pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = bigFont})
+    pauseplus.createOption("main",{text = "Continue",closeMenu = true})
+    pauseplus.createOption("main",{text = "Exit Map",closeMenu = true,action = 
+    function() 
+        mem(0xB25728, FIELD_BOOL, true)
+        player.character = CHARACTER_MARIO
+        world.playerX = -3520
+        world.playerY = -448
+        holdJump = true
+    end})
 end
 
 -- Coin Counter HUD Element --
@@ -88,5 +103,9 @@ function onTick()
     else
         travl.showArrows = false
         wandr.speed = 3
+    end
+
+    if holdJump then
+        player.keys.jump = KEYS_PRESSED
     end
 end
