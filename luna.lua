@@ -23,14 +23,21 @@ SaveData.coins = SaveData.coins or 0
 SaveData.introFinished = true
 SaveData.conceptuaryUnlocked = false
 SaveData.audibletteUnlocked = false
+local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 -- All this does is hide the coin count from the HUD
+
 GameData.cutscene = false
 
 -- Achievements Stuff
 
 GameData.ach_Audiblette = Achievements(1)
 GameData.ach_Conceptuary = Achievements(2)
+
+-- Question asked when at end of Fragmented Memory
+
+littleDialogue.registerAnswer("exitFragmentedMemory",{text = "Yes",chosenFunction = function() Level.exit(1) end})
+littleDialogue.registerAnswer("exitFragmentedMemory",{text = "No"})
 
 -- Add and subtract coins global functions
 
@@ -70,6 +77,12 @@ littleDialogue.registerStyle("conceptuary",{
     borderSize = 16,
     typewriterEnabled = false,
 	textColor = Color(80/255,80/255,112/255),
+})
+
+littleDialogue.registerStyle("fragmentedSign",{
+    borderSize = 16,
+    typewriterEnabled = false,
+	textColor = Color(1,0,128/255),
 })
 
 function onStart()
@@ -182,6 +195,20 @@ function onDraw()
     elseif musicSeized then
         Audio.ReleaseStream(-1)
         musicSeized = false
+    end
+
+	-- Replaces standard talk-to-NPC graphic
+
+	for k,v in NPC.iterateIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) do
+        local gfxHeight = NPC.config[v.id].gfxheight - v.height
+        if gfxHeight < 0 then gfxHeight = 0 end
+            
+        local trueX = (v.x + 0.5 * v.width) - (0.5 * myIMG.width)
+        local trueY = (v.y - 8 - gfxHeight) - myIMG.height
+
+		if v.msg and v.msg ~= "" and not v.isHidden then
+        	Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -40)
+		end
     end
 end
 

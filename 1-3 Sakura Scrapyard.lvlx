@@ -1063,7 +1063,7 @@ ID:182;X:-197504;Y:-200128;
 ID:182;X:-197536;Y:-200032;
 ID:153;X:-196162;Y:-200292;
 ID:154;X:-196211;Y:-200264;
-ID:155;X:-196289;Y:-200290;
+ID:155;X:-196273;Y:-200290;
 BGO_END
 NPC
 ID:10;X:-199390;Y:-200491;D:-1;
@@ -1100,6 +1100,7 @@ ID:10;X:-197406;Y:-200608;D:-1;
 ID:10;X:-197374;Y:-200608;D:-1;
 ID:10;X:-197342;Y:-200608;D:-1;
 ID:755;X:-199115;Y:-200192;D:-1;
+ID:465;X:-196271;Y:-200239;D:-1;MG:"<boxStyle fragmentedSign>Memory transmission abruptly stops here. Further transmission could lead to undesired outcomes. Exit the memory now?<question exitFragmentedMemory>";FD:1;
 NPC_END
 LAYERS
 LR:"Default";

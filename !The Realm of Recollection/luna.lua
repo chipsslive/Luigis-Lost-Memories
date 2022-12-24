@@ -29,16 +29,20 @@ local conceptuaryLock
 local conceptuaryNPC
 local unlockedConceptuary
 
-if SaveData.coins >= 500 then
-    littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedConceptuary = true end})
-    littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedAudiblette = true end})
-else
-    littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
-    littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
-end
+function checkCoins()
+    littleDialogue.deregisterQuestion("unlockConceptuaryQuestion")
+    littleDialogue.deregisterQuestion("unlockAudibletteQuestion")
+    if SaveData.coins >= 500 then
+        littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedConceptuary = true checkCoins() end})
+        littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedAudiblette = true checkCoins() end})
+    else
+        littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
+        littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
+    end
 
-littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
-littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
+    littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
+    littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "I have to pay my mortage!",addText = "That's what they all say!"})
+end
 
 -- Chuck's Return Service related variables + questions
 
@@ -87,6 +91,9 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 function onStart()
     -- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, false)
+
+    -- See if player can afford to unlock Conceptuary/Audiblette
+    checkCoins()
 
     player.powerup = 2
     sprite = Sprite.box{

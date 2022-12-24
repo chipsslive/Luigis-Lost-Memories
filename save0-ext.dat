@@ -1,0 +1,254 @@
+{
+--[1]--
+{
+   ["pauseplus"]={2},
+   ["conceptuaryUnlocked"]=false,
+   ["coins"]=800,
+   ["audibletteUnlocked"]=false,
+   ["__costumes"]={3},
+   ["_basegame"]={4},
+   ["introFinished"]=true,
+   ["__launcher"]={5},
+   ["starcoins"]=1
+},
+--[2]--
+{
+   ["selectionData"]={6}
+},
+--[3]--
+{
+
+},
+--[4]--
+{
+   ["bigSwitch"]={7},
+   ["_characterdata"]={8},
+   ["starcoin"]={9},
+   ["hud"]={10},
+   ["starcoinCounter"]=1
+},
+--[5]--
+{
+
+},
+--[6]--
+{
+   ["accessibility"]={11},
+   ["settings"]={12}
+},
+--[7]--
+{
+
+},
+--[8]--
+{
+   ["8"]={13},
+   ["10"]={14},
+   ["9"]={15},
+   ["6"]={16},
+   ["16"]={17},
+   ["11"]={18},
+   ["12"]={19},
+   ["7"]={20},
+   ["15"]={21},
+   ["13"]={22},
+   ["14"]={23}
+},
+--[9]--
+{
+   ["!Credits.lvlx"]={24},
+   ["!D-1 Pine Propultion.lvlx"]={25},
+   ["3-2 Super Sticky Swamp.lvlx"]={26},
+   ["4-T Polar Palace.lvlx"]={27},
+   ["!Memory Center.lvlx"]={28},
+   ["1-3 Sakura Scrapyard.lvlx"]={29},
+   ["!A-1 Buccaneer Bay.lvlx"]={30},
+   ["!The Realm of Recollection.lvlx"]={31}
+},
+--[10]--
+{
+   ["score"]=134100
+},
+--[11]--
+{
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
+},
+--[12]--
+{
+   ["mute music"]=false
+},
+--[13]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[14]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[15]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[16]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[17]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[18]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[19]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[20]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[21]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[22]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[23]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[24]--
+{
+   ["maxID"]=0,
+   ["alive"]={32}
+},
+--[25]--
+{
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={33}
+},
+--[26]--
+{
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={34}
+},
+--[27]--
+{
+   0,
+   ["maxID"]=1,
+   ["alive"]={35}
+},
+--[28]--
+{
+   ["maxID"]=0,
+   ["alive"]={36}
+},
+--[29]--
+{
+   1,
+   ["maxID"]=1,
+   ["alive"]={37}
+},
+--[30]--
+{
+   0,
+   ["maxID"]=1,
+   ["alive"]={38}
+},
+--[31]--
+{
+   ["maxID"]=0,
+   ["alive"]={39}
+},
+--[32]--
+{
+
+},
+--[33]--
+{
+   true,
+   true,
+   true
+},
+--[34]--
+{
+   true,
+   true,
+   true
+},
+--[35]--
+{
+   true
+},
+--[36]--
+{
+
+},
+--[37]--
+{
+   true
+},
+--[38]--
+{
+   true
+},
+--[39]--
+{
+
+}
+}
