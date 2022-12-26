@@ -1771,8 +1771,8 @@ ID:760;X:-200368;Y:-200384;D:-1;MG:"<speakerName Ceruloomba>*Ceruloomba side eye
 ID:761;X:-199824;Y:-200416;D:-1;MG:"<speakerName Tangeroomba>Itsa Masta Luigi! Tell me\, what would ya' like to know?";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:759;X:-199328;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can kick me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
-ID:465;X:-199376;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Conceptuary\, I will need to see 500 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockConceptuaryQuestion>";FD:1;LR:"conceptuaryNPC";
-ID:465;X:-200336;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Audiblette\, I will need to see 500 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockAudibletteQuestion>";FD:1;LR:"audibletteNPC";
+ID:465;X:-199376;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Conceptuary\, I will need to see 500 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockConceptuaryQuestion>";FD:1;LR:"conceptuaryNPC";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
+ID:465;X:-200336;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Audiblette\, I will need to see 500 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockAudibletteQuestion>";FD:1;LR:"audibletteNPC";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 NPC_END
 DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
