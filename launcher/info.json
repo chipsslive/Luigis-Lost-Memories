@@ -6,17 +6,20 @@
 	"update-check-website": "http://mywebsite.com/update.json",
 	
 	
-	"characterNames": ["Demo", "Iris", "Unused1", "Unused2", "Sheath"],
-	"allowedCharacters": [1, 2, 5],
+	"characterNames": ["Luigi", "Luigi", "Luigi", "Luigi", "Luigi"],
+	"allowedCharacters": [2],
 	
 	
 	"allowTwoPlayer": false,
+	"allowPlayerSelection": false,
 	
 	
-	"stars": 55,
+	"stars": 0,
+	"maxProgress": 100,
 	"collectable": "Thing",
 	"collectables": "Things",
 	"starIcon": "collectable.png",
+	"episodeIcon": "icon.png",
 	"progressDisplay": "percent",
 	
 	
