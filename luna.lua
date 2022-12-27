@@ -15,6 +15,12 @@ local littleDialogue = require("littleDialogue")
 local pauseplus = require("pauseplus")
 local textplus = require("textplus")
 local extraNPCProperties = require("extraNPCProperties")
+local pastPortal = require("pastPortal")
+local stats = require("statsMisc")
+
+for k, v in ipairs(stats.levelList) do
+    pastPortal.registerLevel(v)
+end
 
 local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
@@ -33,6 +39,9 @@ GameData.cutscene = false
 
 GameData.ach_Audiblette = Achievements(1)
 GameData.ach_Conceptuary = Achievements(2)
+GameData.ach_Chuck = Achievements(3)
+GameData.ach_AllMemories = Achievements(4)
+GameData.ach_AllPurpleStars = Achievements(5)
 
 -- Question asked when at end of Fragmented Memory
 
@@ -85,7 +94,18 @@ littleDialogue.registerStyle("fragmentedSign",{
 	textColor = Color(1,0,128/255),
 })
 
+-- World map doesn't work correctly without this idek
+function exitLevel()
+	Level.exit()
+end
+
 function onStart()
+	-- Check for current Purple Star count for achievement
+	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
+
+	-- This is needed to allow the world map to be accessed from the hub
+    mem(0xB25728, FIELD_BOOL, true)
+
 	SaveData.coins = 3000
     player.character = CHARACTER_LUIGI
 
@@ -101,12 +121,11 @@ function onStart()
 	-- Main Pause Menu
 	pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = bigFont})
 	pauseplus.createOption("main",{text = "Continue",closeMenu = true})
-
 	
-
-	-- Can't exit a memory when you're not in a memory!
+	-- Can't exit or restart a memory when you're not in a memory!
 	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
-        pauseplus.createOption("main",{text = "Exit Memory",goToSubmenu = "exitConfirmation"}, 2)
+		pauseplus.createOption("main",{text = "Restart Memory",goToSubmenu = "restartConfirmation"}, 2)
+        pauseplus.createOption("main",{text = "Exit Memory",goToSubmenu = "exitConfirmation"}, 3)
 
 		-- Set Powerup Menu
 		pauseplus.createSubmenu("setPowerup",{headerText = "SET POWERUP",headerTextFont = bigFont})
@@ -129,12 +148,18 @@ function onStart()
 	-- Settings Menu
 	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = bigFont})
 	pauseplus.createOption("settings",{text = "Mute Music",selectionType = pauseplus.SELECTION_CHECKBOX})
+	pauseplus.createOption("settings",{text = "Show Speedrun Timer",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("settings",{text = "<color green>Accessibility</color>",goToSubmenu = "accessibility"})
 
 	-- Exit Confirmation Menu
 	pauseplus.createSubmenu("exitConfirmation",{headerText = "<align center>Exit the memory?<br>All progress up until<br>this point will be lost.</align>"})
-	pauseplus.createOption("exitConfirmation",{text = "Yes",action = pauseplus.exitLevel})
+	pauseplus.createOption("exitConfirmation",{text = "Yes",closeMenu = true,action = function() mem(0xB25728, FIELD_BOOL, true) exitLevel() end})
 	pauseplus.createOption("exitConfirmation",{text = "No",goToSubmenu = "main"})
+
+	-- Restart Confirmation Menu
+	pauseplus.createSubmenu("restartConfirmation",{headerText = "<align center>Restart the memory?<br>All progress up until<br>this point will be lost.</align>"})
+	pauseplus.createOption("restartConfirmation",{text = "Yes",closeMenu = true,action = function() Level.load(Level.filename()) end})
+	pauseplus.createOption("restartConfirmation",{text = "No",goToSubmenu = "main"})
 
 	-- Quit Confirmation Menu
 	pauseplus.createSubmenu("quitConfirmation",{headerText = "<align center>Quit the game?<br>All unsaved progress<br>will be lost.</align>"})
@@ -196,6 +221,10 @@ function onDraw()
         Audio.ReleaseStream(-1)
         musicSeized = false
     end
+
+	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
+		stats.displayTimer = pauseplus.getSelectionValue("settings","Show Speedrun Timer")
+	end
 
 	-- Replaces standard talk-to-NPC graphic
 

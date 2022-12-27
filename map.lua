@@ -15,7 +15,6 @@ wandr.speed = 3
 local hudoverride = require("hudoverride")
 
 function onStart()
-    mem(0xB25728, FIELD_BOOL, false)
     player.character = CHARACTER_LUIGI
     player.powerup = 2
     world.playerX = -1600
@@ -28,7 +27,6 @@ function onStart()
     pauseplus.createOption("main",{text = "Continue",closeMenu = true})
     pauseplus.createOption("main",{text = "Exit Map",closeMenu = true,action = 
     function() 
-        mem(0xB25728, FIELD_BOOL, true)
         player.character = CHARACTER_MARIO
         world.playerX = -3520
         world.playerY = -448
@@ -107,5 +105,6 @@ function onTick()
 
     if holdJump then
         player.keys.jump = KEYS_PRESSED
+        mem(0xB25728, FIELD_BOOL, true)
     end
 end

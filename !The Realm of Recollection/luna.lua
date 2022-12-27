@@ -2,6 +2,7 @@ local littleDialogue = require("littleDialogue")
 local warpTransition = require("warpTransition")
 local extraNPCProperties = require("extraNPCProperties")
 local pauseplus = require("pauseplus")
+local portalOpen = require("portalOpen")
 
 -- Floating Luigi head stuff
 
@@ -90,8 +91,8 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 
 function onStart()
     -- This is needed to allow the world map to be accessed from the hub
-    mem(0xB25728, FIELD_BOOL, false)
-
+    mem(0xB25728, FIELD_BOOL, true)
+    
     -- See if player can afford to unlock Conceptuary/Audiblette
     checkCoins()
 
