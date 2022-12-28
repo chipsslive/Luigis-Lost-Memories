@@ -134,7 +134,7 @@ function onStart()
 		pauseplus.createOption("setPowerup",{text = "<image pause_iceFlower.png> Ice Flower",closeMenu = true,sfx = 35,action = function() setPowerup(7) end})
 		pauseplus.createOption("setPowerup",{text = "<image pause_reset.png> None",closeMenu = true,sfx = 35,action = function() setPowerup(1) end})
     else
-		pauseplus.createSubmenu("setPowerup",{headerText = "<align center>Not available outside<br>of memories.</align>"})
+		pauseplus.createSubmenu("setPowerup",{headerText = "<align center>Not available<br>outside of memories.</align>"})
 	end
 	
 	-- Can only save within The Realm of Recollection

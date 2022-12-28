@@ -184,8 +184,8 @@ function onTick()
 
     if launch then
         timer = timer + 1
-        player.speedX = -200000 -- this is absolute overkill but its funny
-        player.speedY = -2
+        player.speedX = -300000 -- this is absolute overkill but its funny
+        player.speedY = -1.9
         if not triggered then
             -- Chuck is hidden to play the effect (effect-805.png)
             chuck:hide(true)
@@ -198,7 +198,7 @@ function onTick()
         if timer == 7 then
             SFX.play(9)
         end
-        if timer > 100 then
+        if timer > 130 then
             launch = false
             triggered = false
             originalSigns:show(true)

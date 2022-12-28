@@ -6611,6 +6611,15 @@ ID:250;X:-199424;Y:-200128;W:32;H:32;
 ID:250;X:-199456;Y:-200128;W:32;H:32;
 ID:251;X:-199456;Y:-200096;W:32;H:32;
 ID:251;X:-199424;Y:-200096;W:32;H:32;
+ID:27;X:-119936;Y:-120608;W:1024;H:608;LR:"spawnzones";
+ID:27;X:-119040;Y:-120608;W:928;H:608;LR:"spawnzones";
+ID:27;X:-118272;Y:-120608;W:1056;H:608;LR:"spawnzones";
+ID:27;X:-116576;Y:-120608;W:1120;H:608;LR:"spawnzones";
+ID:27;X:-113696;Y:-120608;W:704;H:640;LR:"spawnzones";
+ID:27;X:-140000;Y:-140608;W:1664;H:608;LR:"spawnzones";
+ID:27;X:-180000;Y:-180864;W:704;H:864;LR:"spawnzones";
+ID:27;X:-177856;Y:-180480;W:896;H:480;LR:"spawnzones";
+ID:27;X:-176352;Y:-180704;W:672;H:736;LR:"spawnzones";
 BLOCK_END
 BGO
 ID:101;X:-199744;Y:-200384;
@@ -11037,7 +11046,7 @@ LR:"Default";
 LR:"Destroyed Blocks";HD:1;
 LR:"Spawned NPCs";
 LR:"nsmbwalls";HD:1;
-LR:"spawnzones";HD:1;
+LR:"spawnzones";
 LR:"End Trigger";
 LAYERS_END
 EVENTS_CLASSIC

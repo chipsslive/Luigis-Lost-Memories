@@ -20,6 +20,7 @@ local textplus = require("textplus")
 
 local pauseplus = {}
 
+local MKDS = textplus.loadFont("MKDS.ini")
 
 pauseplus.SELECTION_CHECKBOX = 0
 pauseplus.SELECTION_NUMBERS  = 1
@@ -600,7 +601,7 @@ do
 
         -- Render options and the header
         local gapHeight = (pauseplus.optionGap*pauseplus.scale)
-        local headerOffset = gapHeight
+        submenuObj.headerOffset = 2
 
         local noOptions = (#submenuObj.options == 0)
 
@@ -615,7 +616,7 @@ do
             local drawY = y
             
             if not noOptions or submenuObj.headerText ~= nil then
-                drawY = drawY - headerOffset
+                drawY = drawY - submenuObj.headerOffset
             end
 
             Graphics.drawImageWP(image,drawX,drawY,pauseplus.priority)
@@ -627,14 +628,19 @@ do
         if submenuObj.headerText ~= nil then
             local drawX = menuPosition.x+(pauseplus.boxTotalSize.x*0.5)-(headerTextLayout.width*0.5)
             local drawY = y
+            local offset = 0
 
             if not noOptions then
-                drawY = drawY - headerOffset
+                drawY = drawY - submenuObj.headerOffset
+            end
+
+            if submenuObj.headerTextFont == MKDS then
+                offset = 12
             end
 
             textplus.render{
                 layout = headerTextLayout,priority = pauseplus.priority,
-                x = drawX,y = drawY + 12,
+                x = drawX,y = drawY + offset,
             }
 
             y = y + headerTextLayout.height + gapHeight

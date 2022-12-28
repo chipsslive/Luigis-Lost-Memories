@@ -1,5 +1,6 @@
 local autoscroll = require("autoscroll")
 local respawnRooms = require("respawnRooms")
+local helmets = require("helmets")
 
 function onEvent(eventName)
     if eventName == "go" then
@@ -99,4 +100,8 @@ function respawnRooms.onPostReset(fromRespawn)
     refreshGenerators()
     autoscroll.unlockSection(1)
     autoscroll.scrollDown(0,nil,1)
+end
+
+function respawnRooms.onPreReset(fromRespawn)
+    helmets.setCurrentType(p,nil)
 end

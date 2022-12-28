@@ -2,7 +2,7 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["starcoins"]=0,
+   ["starcoins"]=1,
    ["levelStats"]={3},
    ["audibletteUnlocked"]=false,
    ["__costumes"]={4},
@@ -10,9 +10,9 @@
    ["spentStars"]=-20,
    ["_basegame"]={6},
    ["__launcher"]={7},
-   ["coins"]=3000,
+   ["coins"]=2500,
    ["introFinished"]=true,
-   ["conceptuaryUnlocked"]=false
+   ["conceptuaryUnlocked"]=true
 },
 --[2]--
 {
@@ -43,7 +43,7 @@
 {
    ["bigSwitch"]={16},
    ["_characterdata"]={17},
-   ["starcoinCounter"]=0,
+   ["starcoinCounter"]=1,
    ["hud"]={18},
    ["starcoin"]={19}
 },
@@ -83,7 +83,7 @@
 --[13]--
 {
    ["beaten"]=false,
-   ["timer"]=101,
+   ["timer"]=2459,
    ["bestTime"]=-1
 },
 --[14]--
@@ -94,9 +94,9 @@
 },
 --[15]--
 {
-   ["beaten"]=false,
-   ["timer"]=612,
-   ["bestTime"]=-1
+   ["beaten"]=true,
+   ["timer"]=292,
+   ["bestTime"]=11221
 },
 --[16]--
 {
@@ -118,7 +118,7 @@
 },
 --[18]--
 {
-   ["score"]=22820
+   ["score"]=39000
 },
 --[19]--
 {
@@ -269,7 +269,7 @@
 },
 --[39]--
 {
-   0,
+   1,
    0,
    0,
    ["maxID"]=3,
