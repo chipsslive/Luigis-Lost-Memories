@@ -16,7 +16,7 @@ stats.CON_START_LVL = 1
 stats.CON_START_MAP = 2
 stats.CON_UNLOCK    = 3
 
-SaveData.spentStars   = SaveData.spentStars or -20
+SaveData.spentStars   = SaveData.spentStars or 0
 SaveData.unlockedTabs = SaveData.unlockedTabs or {[stats.LVL_LOST] = true, [stats.LVL_FRAG] = false, [stats.LVL_ALT] = false, [stats.LVL_MAP] = false}
 SaveData.levelStats   = SaveData.levelStats or {}
 SaveData.levelStats[Level.filename()] = SaveData.levelStats[Level.filename()] or {beaten = false, timer = 0, bestTime = -1}
@@ -39,7 +39,7 @@ stats.movement.details = {type = 0, position =  660, origin =  660, goal = 540, 
 
 stats.notEnough = "You need more Purple Stars to access this sector of memory recovery."
 stats.pressJump = "Press JUMP to activate this sector of memory recovery!"
-stats.locked    = "Unlock to see more details."
+stats.locked    = "Unlock to see the details."
 
 stats.confText    = {
     [stats.CON_START_LVL] = "Begin recovery of this memory?",

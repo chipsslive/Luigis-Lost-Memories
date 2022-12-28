@@ -8,6 +8,7 @@ local timer = 0
 local startTimer = false
 local drawText = false
 local hidePlayer = false
+local inSection3 = false
 
 warpTransition.activateOnInstantWarps = true
 
@@ -21,6 +22,17 @@ function onTick()
         end
     end
 
+    if inSection3 and not startTimer then
+        if not musicSeized then
+            Audio.SeizeStream(-1)
+            musicSeized = true
+        end
+        
+        Audio.MusicStop()
+    else
+        Audio.MusicPlay()
+    end
+
     if startTimer then
         timer = timer + 1
     end
@@ -30,14 +42,18 @@ function onTick()
     end
 
     if timer == 1600 then
-        Level.load("!Memory Center.lvlx")
+        Level.load("!The Realm of Recollection.lvlx")
     end
+end
+
+function onLoadSection3()
+    inSection3 = true
 end
 
 function onEvent(eventName)
     if eventName == "Start Sound" then
         warpTransition.crossSectionTransition = warpTransition.TRANSITION_MELT
-        SFX.play("forgot.mp3")
+        Audio.MusicPlay()
         pauseplus.canPause = false
     end
 end

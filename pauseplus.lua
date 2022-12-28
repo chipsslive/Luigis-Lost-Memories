@@ -70,7 +70,7 @@ local selectionNames = {}
 -- Convenience functions
 local function playSFX(sfx)
     if sfx ~= nil then
-        SFX.play(sfx)
+        SFX.play(sfx,0.4)
     end
 end
 local function loadImage(image)
@@ -138,7 +138,7 @@ do
 
     function pauseplus.close(isSilent)
         if pauseplus.currentSubmenu ~= nil and not isSilent then
-            playSFX(pauseplus.openSFX)
+            playSFX(pauseplus.closeSFX)
         end
 
         if not isOverworld then
@@ -634,7 +634,7 @@ do
 
             textplus.render{
                 layout = headerTextLayout,priority = pauseplus.priority,
-                x = drawX,y = drawY,
+                x = drawX,y = drawY + 12,
             }
 
             y = y + headerTextLayout.height + gapHeight
@@ -770,7 +770,7 @@ do
 
                 pauseplus.open(entry[1],entry[2])
 
-                SFX.play(pauseplus.moveSFX)
+                playSFX(pauseplus.actionSFX)
 
                 pauseplus.history[count] = nil -- remove top entry
             end
@@ -964,7 +964,7 @@ end
 
 
 -- The textplus font used for displaying text in the menu.
-pauseplus.font = textplus.loadFont("textplus/font/11.ini")
+pauseplus.font = textplus.loadFont("pauseFont.ini")
 
 -- The graphic used for the box. It's split into 9 pieces.
 pauseplus.boxImage = Graphics.loadImageResolved("pauseplus_box.png")
@@ -984,9 +984,10 @@ pauseplus.backgroundDarkness = 0.5
 pauseplus.priority = 6
 
 -- The sound effects used when opening the menu, moving around it, changing submenus, or toggling a checkbox.
-pauseplus.openSFX = 30
-pauseplus.moveSFX = 26
-pauseplus.actionSFX = 27
+pauseplus.openSFX = "SFX/openPause.wav"
+pauseplus.closeSFX = "SFX/closePause.wav"
+pauseplus.moveSFX = "SFX/cursor.ogg"
+pauseplus.actionSFX = "SFX/switchTab.ogg"
 pauseplus.checkboxSFX = SFX.open(Misc.resolveFile("pauseplus_checkbox.wav"))
 
 -- How much space there is on any side of the "box". To mimic the default box, use 59 and 37

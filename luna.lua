@@ -71,7 +71,7 @@ local coinEffects
 local coin = Graphics.loadImage(Misc.resolveFile("coin1.png"))
 
 -- Used for headers in pause menu
-local bigFont = textplus.loadFont("bigFont.ini")
+local MKDS = textplus.loadFont("MKDS.ini")
 
 -- littleDialogue Styles
 littleDialogue.registerStyle("madelyn",{
@@ -119,7 +119,7 @@ function onStart()
 	-- Pause Menu Stuff (A lot of the design taken from ATWE. Credit to MrDoubleA)
 
 	-- Main Pause Menu
-	pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = bigFont})
+	pauseplus.createSubmenu("main",{headerText = "PAUSED",headerTextFont = MKDS})
 	pauseplus.createOption("main",{text = "Continue",closeMenu = true})
 	
 	-- Can't exit or restart a memory when you're not in a memory!
@@ -128,7 +128,7 @@ function onStart()
         pauseplus.createOption("main",{text = "Exit Memory",goToSubmenu = "exitConfirmation"}, 3)
 
 		-- Set Powerup Menu
-		pauseplus.createSubmenu("setPowerup",{headerText = "SET POWERUP",headerTextFont = bigFont})
+		pauseplus.createSubmenu("setPowerup",{headerText = "SET POWERUP",headerTextFont = MKDS})
 		pauseplus.createOption("setPowerup",{text = "<image pause_mushroom.png> Mushroom",closeMenu = true,sfx = 35,action = function() setPowerup(2) end})
 		pauseplus.createOption("setPowerup",{text = "<image pause_fireFlower.png> Fire Flower",closeMenu = true,sfx = 35,action = function() setPowerup(3) end})
 		pauseplus.createOption("setPowerup",{text = "<image pause_iceFlower.png> Ice Flower",closeMenu = true,sfx = 35,action = function() setPowerup(7) end})
@@ -146,7 +146,7 @@ function onStart()
 	pauseplus.createOption("main",{text = "Quit Game",goToSubmenu = "quitConfirmation"})
 
 	-- Settings Menu
-	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = bigFont})
+	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = MKDS})
 	pauseplus.createOption("settings",{text = "Mute Music",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("settings",{text = "Show Speedrun Timer",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("settings",{text = "<color green>Accessibility</color>",goToSubmenu = "accessibility"})
@@ -167,7 +167,7 @@ function onStart()
 	pauseplus.createOption("quitConfirmation",{text = "No",goToSubmenu = "main"})
 
 	-- Accessbility Menu
-	pauseplus.createSubmenu("accessibility",{headerText = "ACCESSIBILITY",headerTextFont = bigFont})
+	pauseplus.createSubmenu("accessibility",{headerText = "ACCESSIBILITY",headerTextFont = MKDS})
 	pauseplus.createOption("accessibility",{text = "Invincibility",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("accessibility",{text = "Infinite Jumps",selectionType = pauseplus.SELECTION_CHECKBOX})
 	if Level.filename() == "!The Realm of Recollection.lvlx" or Level.filename() == "!Memory Center.lvlx" then
@@ -295,14 +295,17 @@ function respawnRooms.onPostReset(fromRespawn)
 end
 
 -- Custom Coin Counter HUD Element
+
+local portalFont = textplus.loadFont("portalFont.ini")
+
 local function customCounter()
 	if not GameData.cutscene then
-		Graphics.draw{
-			type = RTYPE_TEXT,
+		textplus.print{
 			text = "x".. tostring(SaveData.coins),
 			priority = 5,
-			x= 680,
-			y= 30,
+			x = 680,
+			y = 30,
+			font = portalFont
 		}
 		Graphics.draw{
 			type = RTYPE_IMAGE,

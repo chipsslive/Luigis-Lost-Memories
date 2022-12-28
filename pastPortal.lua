@@ -5,6 +5,7 @@
 
 local stats = require("statsMisc")
 local textplus = require("textplus")
+local pauseplus = require("pauseplus")
 
 local pastPortal = {}
 
@@ -34,6 +35,7 @@ local flashOpacity = 0
 local waitTimer    = stats.waitTime
 local waitFunc     = function() end
 local waitOpacity  = 0
+local executed     = false
 
 local priorities = {}
 priorities.bg        = stats.leastPriority
@@ -75,6 +77,8 @@ function pastPortal.open()
     for k, v in pairs(mov) do
         mov[k].type = 1
     end
+
+    pauseplus.canPause = false
 end
 
 function pastPortal.close()
@@ -84,6 +88,8 @@ function pastPortal.close()
     for k, v in pairs(mov) do
         mov[k].type = -1
     end
+
+    pauseplus.canPause = true
 end
 
 function pastPortal.registerLevel(args)
@@ -536,7 +542,7 @@ function pastPortal.onInputUpdate()
         end
     end
 
-    if canUpdateInput() and confActive > 0 then
+    if canUpdateInput() and confActive > 0 and not executed then
         if player.rawKeys.left == KEYS_PRESSED and confirmSel == 2 then
             confirmSel = 1
             SFXPlay("cursor")
@@ -554,6 +560,7 @@ function pastPortal.onInputUpdate()
                         Misc.unpause()
                         Level.load(levelList[currentTab][selection].filename)
                     end
+                    executed = true
                 elseif confActive == stats.CON_START_MAP then
                     waitOpacity = 0.075
                     SFXPlay("confirm")
@@ -562,12 +569,14 @@ function pastPortal.onInputUpdate()
                         mem(0xB25728, FIELD_BOOL, false)
                         Level.exit()
                     end
+                    executed = true
                 elseif confActive == stats.CON_UNLOCK then
                     SaveData.spentStars = SaveData.spentStars + stats.tabDetails[currentTab].starsNeeded
                     SaveData.unlockedTabs[currentTab] = true
                     flashOpacity = 1.375
                     confActive = 0
                     SFXPlay("unlock")
+                    executed = true
                 end
             elseif confirmSel == 2 then
                 confActive = 0
@@ -587,6 +596,10 @@ function pastPortal.onInputUpdate()
         currentTab = 4
     elseif currentTab > 4 then
         currentTab = 1
+    end
+
+    if confActive == 0 then
+        executed = false
     end
 end
 

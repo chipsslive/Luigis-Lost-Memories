@@ -9,12 +9,11 @@ local textplus = require("textplus")
 
 local portalOpen = {}
 portalOpen.portalID = 875
-portalOpen.customForcedState = 1000
 portalOpen.frames = {
-    [true]  = {atPortal = 15, lerping = 3},
-    [false] = {atPortal = 15, lerping = 5}
+    [true]  = {atPortal = 49, lerping = 3},
+    [false] = {atPortal = 49, lerping = 5}
 }
-portalOpen.text1 = "Press UP to enter the portal"
+portalOpen.enterText = "Press UP to enter the portal"
 
 local targetPos = vector(0, 0)
 local oldPos = vector(0, 0)
@@ -24,7 +23,6 @@ local atPortal = false
 local lerpSpeed = 0
 local lerpTimer = 0
 local opacity = 0
-local isReturing = false
 
 local function filter(o)
     if o.isValid and (not o.isHidden) then return true end
@@ -35,7 +33,7 @@ registerEvent(portalOpen, "onDraw")
 
 function portalOpen.onTick()
     for k, v in NPC.iterate(portalOpen.portalID) do
-        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal and not isReturing then
+        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal then
             isLerping = true
             targetPos.x = v.x+v.width/2
             targetPos.y = v.y+v.height/2
@@ -43,21 +41,17 @@ function portalOpen.onTick()
     end
 
     if #Colliders.getColliding{a = player, b = portalOpen.portalID, btype = Colliders.NPC, filter = filter} > 0 and not isLerping and not atPortal then
-        if not isReturing then
-            opacity = math.min(opacity+0.075,1)
-        end
+        opacity = math.min(opacity+0.075,1)
     else
         opacity = math.max(opacity-0.075,0)
-        isReturing = false
     end
 
     local textAlpha = Color(opacity,opacity,opacity,opacity)
-    textplus.print{text = portalOpen.text1, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
+    textplus.print{text = portalOpen.enterText, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
     textplus.print{text = "UP", x = 256, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
 
     if isLerping then
         if player.keys.down == KEYS_PRESSED or player.keys.run == KEYS_PRESSED then
-            isReturing = true
             isLerping = false
         end
 
@@ -81,7 +75,6 @@ function portalOpen.onTick()
         if player.keys.jump == KEYS_PRESSED then
             pastPortal.open()
         elseif player.keys.down == KEYS_PRESSED or player.keys.run == KEYS_PRESSED then
-            isReturing = true
             atPortal = false
         end
     end
