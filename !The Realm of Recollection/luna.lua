@@ -57,8 +57,9 @@ littleDialogue.registerAnswer("chuckQuestion",{text = "Not Yet!"})
 
 -- Tangeroomba Dialogue
 
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "test<page>What else can I tell ya' about?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?",addText = "test<page>What else can I tell ya' about??<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?",addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?",addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
 
 -- All intro-related variables + questions
@@ -204,7 +205,7 @@ function onTick()
         if timer == 7 then
             SFX.play(9)
         end
-        if timer > 130 then
+        if timer > 120 then
             launch = false
             triggered = false
             originalSigns:show(true)

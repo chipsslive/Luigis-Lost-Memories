@@ -27,12 +27,12 @@ local timer = 0
 pauseplus.canPause = false
 
 local fonts = {
-    [0] = textplus.loadFont("textplus/font/11.ini"),
-    [1] = textplus.loadFont("bigFont.ini"),
+    [0] = textplus.loadFont("pauseFont.ini"),
+    [1] = textplus.loadFont("MKDS.ini"),
 }
 
 local text = {
-    1,"LUIGIS LOST MEMORIES",
+    1,"LUIGI'S LOST MEMORIES",
     0,"",
     0,"",
     0,"",
@@ -40,7 +40,7 @@ local text = {
     0,"",
     0,"Chipss",
     0,"",
-    1,"LEVEL DESIGNERS",
+    1,"LEVEL DESIGN",
     0,"",
     0,"Chipss",
     0,"Achy",
@@ -68,7 +68,7 @@ local text = {
     0,"FireSeraphim",
     0,"Wonolf",
     0,"Void",
-    0,"SilverDeoxys563",
+    0,"Gate/Gatete",
     0,"Marina",
     0,"Elbow",
     0,"PROX",
@@ -79,6 +79,7 @@ local text = {
     0,"Red&Green",
     0,"@Rewitkin",
     0,"galaxy",
+    0,"Noodle",
     0,"Punji",
     0,"leitakcoc",
     0,"JerryCoxalot",
@@ -106,11 +107,11 @@ local text = {
     0,"JustOneMGuy",
     0,"Marioman2007",
     0,"",
-    1,"BETA TESTING",
+    1,"TESTING",
     0,"",
     0,"Launchstar",
     0,"galaxy",
-    0,"Ruben",
+    0,"Leitakcoc",
     0,"Chipss"
 }
 
@@ -202,7 +203,7 @@ end
 
 function onTick()
     timer = timer + 1
-    scrollY = scrollY - 0.51
+    scrollY = scrollY - 0.52
     
     -- Triggers roughly 4 beats after the last note of the song
 
@@ -252,7 +253,7 @@ function onDraw()
     -- Render Game Logo (Text is placeholder for now)
 
     if creditsFinished then
-        textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 160,y=250}
+        textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 110,y=250}
     end
 
     -- Draw and rotate floating Bloomba sprites

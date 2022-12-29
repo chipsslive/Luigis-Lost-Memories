@@ -31,6 +31,8 @@ SaveData.conceptuaryUnlocked = false
 SaveData.audibletteUnlocked = false
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
+local coinlimit = 99999
+
 -- All this does is hide the coin count from the HUD
 
 GameData.cutscene = false
@@ -51,17 +53,13 @@ littleDialogue.registerAnswer("exitFragmentedMemory",{text = "No"})
 -- Add and subtract coins global functions
 
 function addCoins(n)
-	SaveData.coins = SaveData.coins + n
+	SaveData.coins = math.clamp(SaveData.coins + n, 0, coinlimit)
 	SFX.play("bigcoin-50.ogg")
 end
 
 function subtractCoins(n)
-    if n <= SaveData.coins then
-        SaveData.coins = SaveData.coins - n
-	else 
-		SaveData.coins = 0
-	end
-	SFX.play("loseCoins.wav")
+    SaveData.coins = math.max(SaveData.coins - n, 0)
+    SFX.play("loseCoins.wav")
 end
 
 -- Used for coin effect replacing score effect
@@ -106,7 +104,7 @@ function onStart()
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
 
-	SaveData.coins = 3000
+	--SaveData.coins = 3000
     player.character = CHARACTER_LUIGI
 
 	-- Disable unwanted HUD elements
@@ -179,21 +177,9 @@ end
 
 -- Setting powerup from pause menu
 function setPowerup(m)
-	if m == 1 then
-		player.powerup = 1
-		setHeight()
-	end
-	if m == 2 or m == 3 or m == 7 then
-		if m == 2 then
-			player.powerup = 2
-		elseif m == 3 then
-			player.powerup = 3
-		elseif m == 7 then
-			player.powerup = 7
-		end
-		setHeight()
-	end
-end	
+    player.powerup = m
+    setHeight()
+end 
 
 -- Prevent janky teleports when changing powerups via the pause menu
 function setHeight()
@@ -241,6 +227,14 @@ function onDraw()
     end
 end
 
+function onTickEnd()
+	local hijackedValue = mem(0x00B2C5A8, FIELD_WORD)
+	if hijackedValue > 0 then
+		mem(0x00B2C5A8, FIELD_WORD, 0)
+		SaveData.coins = math.clamp(SaveData.coins + hijackedValue, 0, coinlimit)
+	end
+end
+
 function onTick()
 	-- Disable reserve powerup
 	player.reservePowerup = 0
@@ -250,30 +244,22 @@ function onTick()
 	mem(0x00B2C5A8,FIELD_WORD,0)
 	
 	-- Keep coins from exceeding max limit
-	if SaveData.coins > 99999 then
-		SaveData.coins = 99999
-	end
+	SaveData.coins = math.min(SaveData.coins, coinlimit)
 
 	-- Instead of awarding score, this code adds to the coin count
 	coinEffects = Effect.get(79)
 
 	for _,v in pairs(coinEffects) do
         if v.timer == 60 then
-            if (v.animationFrame == 2) then
-                SaveData.coins = SaveData.coins + 1
-			elseif (v.animationFrame == 3) then
-				SaveData.coins = SaveData.coins + 2
-			elseif (v.animationFrame == 4) then
-				SaveData.coins = SaveData.coins + 3
-			elseif (v.animationFrame == 5) then
-				SaveData.coins = SaveData.coins + 4
-			elseif (v.animationFrame >= 6) and (v.animationFrame <= 8) then
-				SaveData.coins = SaveData.coins + 5
-			elseif (v.animationFrame > 8) then
-				SaveData.coins = SaveData.coins + 10
-			end
-		end
-	end
+            if (v.animationFrame > 1) and (v.animationFrame < 6) then
+                SaveData.coins = SaveData.coins + (v.animationFrame-1)
+            elseif (v.animationFrame >= 6) and (v.animationFrame <= 8) then
+                SaveData.coins = SaveData.coins + 5
+            elseif (v.animationFrame > 8) then
+                SaveData.coins = SaveData.coins + 10
+            end
+        end
+    end
 
 	-- Invincibility Accessibility Option (Taken from ATWE Code)
 	local donthurtmeActive = Cheats.get("donthurtme").active
@@ -301,19 +287,13 @@ local portalFont = textplus.loadFont("portalFont.ini")
 local function customCounter()
 	if not GameData.cutscene then
 		textplus.print{
-			text = "x".. tostring(SaveData.coins),
+			text = string.format("%.4d", SaveData.coins),
 			priority = 5,
-			x = 680,
+			x = 700,
 			y = 30,
 			font = portalFont
 		}
-		Graphics.draw{
-			type = RTYPE_IMAGE,
-			image = coin,
-			x = 660,
-			y = 30,
-			priority = 5,
-		}
+		Graphics.drawImageWP(coin, 660, 30, 5)
 	end
 end
 
