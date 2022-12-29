@@ -55,6 +55,12 @@ local chuck
 littleDialogue.registerAnswer("chuckQuestion",{text = "Yeah!",chosenFunction = function() launch = true end})
 littleDialogue.registerAnswer("chuckQuestion",{text = "Not Yet!"})
 
+-- Tangeroomba Dialogue
+
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "test<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?",addText = "test<page>What else can I tell ya' about??<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
+
 -- All intro-related variables + questions
 
 local introTimer = 0
