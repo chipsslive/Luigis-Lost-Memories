@@ -9,8 +9,14 @@ local drawText = false
 local hidePlayer = false
 local timer = 0
 local inSection5 = false
+local exit
 
 warpTransition.activateOnInstantWarps = true
+
+function onStart()
+    exit = Layer.get("exit")
+    GameData.awardCoins = false
+end
 
 function onTick()
     if inSection5 and not startTimer then
@@ -33,7 +39,7 @@ function onTick()
     end
 
     if timer == 1600 then
-        Level.load("!The Realm of Recollection.lvlx")
+        exit:show(true)
     end
 end
 
@@ -132,7 +138,7 @@ function onDraw()
             sceneCoords = true
         }
         -- Final Text
-        textplus.print{
+        --[[textplus.print{
             x = -59808,
             y = -60320,
             text = "Returning to the Memory Center...",
@@ -141,11 +147,12 @@ function onDraw()
             color = Color.white,
             priority = 2,
             sceneCoords = true
-        }
+        }]]
     end
 end
 
 function onExitLevel()
     GameData.cutscene = false
+    GameData.awardCoins = true
     hudoverride.visible.starcoins = true
 end

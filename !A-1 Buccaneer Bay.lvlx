@@ -694,6 +694,7 @@ ID:20;X:-197924;Y:-200172;D:-1;
 ID:230;X:-198502;Y:-200112;D:-1;
 ID:310;X:-199040;Y:-200544;D:-1;S1:1;LR:"Floating Ship";
 ID:465;X:-197760;Y:-200174;D:-1;MG:"<boxStyle fragmentedSign>Memory transmission abruptly stops here. Further transmission could lead to undesired outcomes. Exit the memory now?<question exitFragmentedMemory>";FD:1;
+ID:1000;X:-197760;Y:-200176;D:-1;LR:"exit";
 NPC_END
 PHYSICS
 ET:0;X:-200000;Y:-200080;W:2689;H:81;LR:"Floating Ship";
@@ -704,6 +705,7 @@ LR:"Destroyed Blocks";HD:1;
 LR:"Spawned NPCs";
 LR:"water";
 LR:"Floating Ship";
+LR:"exit";HD:1;
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

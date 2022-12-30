@@ -9,8 +9,14 @@ local startTimer = false
 local drawText = false
 local hidePlayer = false
 local inSection3 = false
+local exit
 
 warpTransition.activateOnInstantWarps = true
+
+function onStart()
+    exit = Layer.get("exit")
+    GameData.awardCoins = false
+end
 
 function onTick()
     for _,v in ipairs(NPC.get(425, Section.getActive())) do
@@ -42,7 +48,7 @@ function onTick()
     end
 
     if timer == 1600 then
-        Level.load("!The Realm of Recollection.lvlx")
+        exit:show(true)
     end
 end
 
@@ -141,7 +147,7 @@ function onDraw()
             sceneCoords = true
         }
         -- Final Text
-        textplus.print{
+        --[[textplus.print{
             x = -99808,
             y = -100320,
             text = "Returning to the Realm of<br>Recollection...",
@@ -150,12 +156,13 @@ function onDraw()
             color = Color.white,
             priority = 2,
             sceneCoords = true
-        }
+        }]]
     end
 end
 
 function onExitLevel()
     GameData.cutscene = false
+    GameData.awardCoins = true
     hudoverride.visible.starcoins = true
 end
 

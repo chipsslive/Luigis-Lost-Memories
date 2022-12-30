@@ -796,11 +796,13 @@ ID:10;X:-199006;Y:-200352;D:-1;
 ID:10;X:-198974;Y:-200352;D:-1;
 ID:310;X:-198221;Y:-200295;D:-1;S1:1;
 ID:465;X:-197774;Y:-200176;D:-1;MG:"<boxStyle fragmentedSign>Memory transmission abruptly stops here. Further transmission could lead to undesired outcomes. Exit the memory now?<question exitFragmentedMemory>";FD:1;
+ID:1000;X:-197776;Y:-200176;D:-1;LR:"exit";
 NPC_END
 LAYERS
 LR:"Default";
 LR:"Destroyed Blocks";HD:1;
 LR:"Spawned NPCs";
+LR:"exit";HD:1;
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

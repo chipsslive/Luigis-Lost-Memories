@@ -2154,6 +2154,7 @@ ID:58;X:-198240;Y:-201344;D:-1;
 ID:58;X:-197792;Y:-201344;D:-1;
 ID:310;X:-198112;Y:-200368;D:-1;S1:1;
 ID:67;X:-198016;Y:-200672;D:1;
+ID:1000;X:-196363;Y:-200335;D:-1;LR:"exit";
 NPC_END
 PHYSICS
 ET:1;X:-200000;Y:-200736;W:1824;H:608;LR:"Rooms";
@@ -2169,6 +2170,7 @@ LR:"Rooms";
 LR:"large barrel";
 LR:"small barrel";
 LR:"spawnzones";HD:1;
+LR:"exit";HD:1;
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

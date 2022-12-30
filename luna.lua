@@ -43,6 +43,10 @@ local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 local coinlimit = 99999
 
+-- Used to disable coin award on level exit
+
+GameData.awardCoins = true
+
 -- All this does is hide the coin count from the HUD
 
 GameData.cutscene = false
@@ -64,8 +68,15 @@ GameData.ach_Chuck = Achievements(12)
 
 -- Question asked when at end of Fragmented Memory
 
-littleDialogue.registerAnswer("exitFragmentedMemory",{text = "Yes",chosenFunction = function() Level.exit(1) end})
+littleDialogue.registerAnswer("exitFragmentedMemory",{text = "Yes",chosenFunction = function() showExit() end})
 littleDialogue.registerAnswer("exitFragmentedMemory",{text = "No"})
+
+function showExit()
+	local exit = Layer.get("exit")
+	if exit ~= nil then
+		exit:show(true)
+	end
+end
 
 -- Add and subtract coins global functions
 
@@ -122,7 +133,7 @@ function onStart()
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
 
-	SaveData.coins = 3000
+	--SaveData.coins = 3000
     player.character = CHARACTER_LUIGI
 
 	-- Disable unwanted HUD elements

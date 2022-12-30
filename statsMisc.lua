@@ -88,6 +88,14 @@ stats.levelList = {
     {filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch", type = stats.LVL_ALT ,  description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
 }
 
+function stats.getByFilename(name)
+    for k, v in ipairs(stats.levelList) do
+        if v.filename == name then
+            return v
+        end
+    end
+end
+
 stats.images = {
     title        = Graphics.loadImageResolved("pastPortal/title.png"),
     dark         = Graphics.loadImageResolved("pastPortal/dark.png"),

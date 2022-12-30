@@ -17,3 +17,11 @@ slm.addLayer{name = "large barrel",speed = 96,verticalMovement = slm.MOVEMENT_CO
         end
     end
 end]]
+
+function onStart()
+    GameData.awardCoins = false
+end
+
+function onExitLevel()
+    GameData.awardCoins = true
+end
