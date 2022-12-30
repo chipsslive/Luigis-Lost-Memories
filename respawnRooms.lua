@@ -2550,7 +2550,7 @@ respawnRooms.respawnSettings = {
     enabled = true,
 
     -- If true, respawn BGO's will never be used, and the actual start point/checkpoints will be used instead.
-    neverUseRespawnBGOs = false,
+    neverUseRespawnBGOs = true,
     -- The directions of each respawn BGO.
     respawnBGODirections = {
         [951] = DIR_RIGHT,

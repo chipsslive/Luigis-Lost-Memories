@@ -16,9 +16,6 @@ v.y = 0.5
 local initialX = 100
 local initialY = 620
 
-local x = 100
-local y = -10
-
 -- Unlocking the Audiblette and Conceptuary variables/questions
 
 local audibletteWarp
@@ -106,8 +103,8 @@ function onStart()
     player.powerup = 2
     sprite = Sprite.box{
         texture = head,
-        x = x,
-        y = y,
+        x = initialX,
+        y = initialY,
         pivot = v,
     }
 
@@ -175,24 +172,12 @@ function onTick()
         unlockedAudiblette = false
     end
 
-    -- Move Luigi head
-
-    x = x + 0.2
-    y = y - 0.2
-
-    -- Return Luigi head to bottom of screen when it passes the top (pseudo looping effect)
-
-    if y < -20 then
-        y = initialY
-        x = initialX
-    end
-
     -- Chuck's Return Service Handling
 
     if launch then
         timer = timer + 1
         player.speedX = -300000 -- this is absolute overkill but its funny
-        player.speedY = -1.9
+        player.speedY = -1.8
         if not triggered then
             -- Chuck is hidden to play the effect (effect-805.png)
             chuck:hide(true)
@@ -200,6 +185,9 @@ function onTick()
             originalSigns:hide(true)
             otherSigns:show(true)
             triggerEvent("Lock Controls")
+            if player.y < -160242 then
+                player.y = player.y + 32
+            end
             triggered = true
         end
         if timer == 7 then
@@ -452,9 +440,24 @@ end
 
 function onDraw()
     -- Draw Luigi head sprite and start rotating
+    local parallax = 0.3
+    local c = camera
+    
+    local x = 100
+    local y = 500
+
+    local offsetX = c.width*0.5
+    local offsetY = c.height*0.5
 
 	sprite:draw{priority = -99.1}
     sprite:rotate(0.7)
-    sprite.x = x
-    sprite.y = y
+    sprite.x = (x - offsetX)*parallax + offsetX
+    sprite.y = (y - offsetY)*parallax + offsetY
+
+    -- Return Luigi head to bottom of screen when it passes the top (pseudo looping effect)
+
+    if sprite.y < -20 then
+        sprite.y = initialY
+        sprite.x = initialX
+    end
 end

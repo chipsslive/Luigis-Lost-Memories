@@ -245,7 +245,7 @@ function onDraw()
     local y = scrollY
 
     for _,layout in ipairs(textLayouts) do
-        textplus.render{layout = layout,priority = 6,x = 250,y=y}
+        textplus.render{layout = layout,priority = 6,x = 400 - layout.width*0.5,y=y}
 
         y = y + layout.height + 4
     end

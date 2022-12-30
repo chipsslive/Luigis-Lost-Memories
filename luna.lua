@@ -17,6 +17,7 @@ local textplus = require("textplus")
 local extraNPCProperties = require("extraNPCProperties")
 local pastPortal = require("pastPortal")
 local stats = require("statsMisc")
+local koopas = require("koopas")
 
 for k, v in ipairs(stats.levelList) do
     pastPortal.registerLevel(v)
@@ -104,7 +105,7 @@ function onStart()
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
 
-	--SaveData.coins = 3000
+	SaveData.coins = 3000
     player.character = CHARACTER_LUIGI
 
 	-- Disable unwanted HUD elements
@@ -208,9 +209,7 @@ function onDraw()
         musicSeized = false
     end
 
-	if Level.filename() ~= "!Memory Center.lvlx" and Level.filename() ~= "!The Realm of Recollection.lvlx" then
-		stats.displayTimer = pauseplus.getSelectionValue("settings","Show Speedrun Timer")
-	end
+	stats.displayTimer = pauseplus.getSelectionValue("settings","Show Speedrun Timer")
 
 	-- Replaces standard talk-to-NPC graphic
 

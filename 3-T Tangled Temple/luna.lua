@@ -144,7 +144,7 @@ function onDraw()
         textplus.print{
             x = -99808,
             y = -100320,
-            text = "Returning to the Memory Center...",
+            text = "Returning to the Realm of<br>Recollection...",
             xscale = 3,
             yscale = 3,
             color = Color.white,
