@@ -5,6 +5,8 @@ SECTION
 SC:0;L:-200000;R:-186944;T:-200600;B:-200000;MZ:24;MF:"!A-2 Disastrous Deeps/Glowing moss.mp3";BG:55;UW:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#8484a6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 4\n    }\n}\n";
 SC:1;L:-180000;R:-173856;T:-180600;B:-180000;MZ:24;MF:"!A-2 Disastrous Deeps/Glowing moss.mp3";BG:55;UW:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#8484a6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-158336;T:-160600;B:-160000;MZ:24;MF:"!A-1 Buccaneer Bay/Seashell Collecting.mp3";BG:53;
+SC:3;L:-140000;R:-139200;T:-140600;B:-140000;MZ:0;MF:"";BG:0;
+SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
 ID:1;X:-199868;Y:-200534;D:1;
@@ -10203,7 +10205,7 @@ ID:10;X:-174334;Y:-180384;D:-1;
 ID:10;X:-174878;Y:-180448;D:-1;
 ID:10;X:-174846;Y:-180480;D:-1;
 ID:10;X:-174814;Y:-180512;D:-1;
-ID:11;X:-159072;Y:-160288;D:-1;
+ID:1000;X:-159072;Y:-160288;D:-1;
 ID:10;X:-158782;Y:-160352;D:-1;
 ID:10;X:-158750;Y:-160352;D:-1;
 ID:10;X:-158718;Y:-160352;D:-1;

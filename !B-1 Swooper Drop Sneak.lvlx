@@ -6,6 +6,7 @@ SC:0;L:-200000;R:-188256;T:-200600;B:-200000;MZ:24;MF:"!B-1 Swooper Drop Sneak/H
 SC:1;L:-180000;R:-170816;T:-180608;B:-180000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:2;L:-160000;R:-158560;T:-160600;B:-160000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:3;L:-140000;R:-139200;T:-140600;B:-140000;MZ:0;MF:"";BG:0;
+SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
 ID:1;X:-199964;Y:-200182;D:1;
@@ -12009,7 +12010,7 @@ ID:10;X:-174590;Y:-180175;D:-1;
 ID:10;X:-174462;Y:-180207;D:-1;
 ID:10;X:-174654;Y:-180175;D:-1;
 ID:10;X:-174494;Y:-180207;D:-1;
-ID:11;X:-159040;Y:-160288;D:-1;
+ID:1000;X:-159040;Y:-160288;D:-1;
 ID:3;X:-159136;Y:-160160;D:-1;
 ID:2;X:-159200;Y:-160162;D:-1;
 ID:271;X:-195168;Y:-200224;D:-1;

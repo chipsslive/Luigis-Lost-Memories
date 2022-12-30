@@ -30,7 +30,7 @@ SaveData.coins = SaveData.coins or 0
 
 -- Progression flags
 
-SaveData.introFinished = true
+SaveData.introFinished = false
 SaveData.conceptuaryUnlocked = false
 SaveData.audibletteUnlocked = false
 SaveData.creditsSeen = false
