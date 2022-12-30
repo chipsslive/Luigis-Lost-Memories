@@ -56,7 +56,7 @@ local text = {
     0,"leitakcoc",
     0,"DDP",
     0,"Chipss",
-    0,"Witchking666",
+    0,"BlueKecleon15",
     0,"Enjl",
     0,"Mariofan230",
     0,"Mr. Pixelator",
@@ -71,7 +71,6 @@ local text = {
     0,"Gate/Gatete",
     0,"Marina",
     0,"Elbow",
-    0,"PROX",
     0,"AxelVoss",
     0,"",
     1,"MUSIC",
@@ -106,6 +105,8 @@ local text = {
     0,"Sambo",
     0,"JustOneMGuy",
     0,"Marioman2007",
+    0,"Hoeloe",
+    0,"EeveeEuphoria",
     0,"",
     1,"TESTING",
     0,"",
@@ -203,7 +204,7 @@ end
 
 function onTick()
     timer = timer + 1
-    scrollY = scrollY - 0.52
+    scrollY = scrollY - 0.54
     
     -- Triggers roughly 4 beats after the last note of the song
 

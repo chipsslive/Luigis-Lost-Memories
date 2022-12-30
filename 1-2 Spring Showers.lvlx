@@ -2,7 +2,7 @@ HEAD
 TL:"1-2 Spring Showers";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-189504;T:-201280;B:-200000;MZ:24;MF:"1-2 Spring Showers/Donkey Kong Country 3 - Enchanted Riverbank.mp3";BG:8;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c2c2c2ff\"\,\n        \"enableDarkness\"\: true\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 1\n    }\n}\n";
+SC:0;L:-200000;R:-189504;T:-201280;B:-200000;MZ:24;MF:"1-2 Spring Showers/Donkey Kong Country 3 - Enchanted Riverbank.mp3";BG:8;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c2c2c2ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 1\n    }\n}\n";
 SECTION_END
 STARTPOINT
 ID:1;X:-199964;Y:-200150;D:1;
@@ -3521,6 +3521,19 @@ ID:264;X:-195467;Y:-200697;W:32;H:32;
 ID:184;X:-195499;Y:-200761;W:64;H:64;
 ID:81;X:-196960;Y:-200032;W:32;H:32;
 ID:81;X:-196928;Y:-200032;W:32;H:32;
+ID:658;X:-197728;Y:-200128;W:32;H:32;
+ID:658;X:-197536;Y:-200128;W:32;H:32;
+ID:658;X:-194176;Y:-200224;W:32;H:32;
+ID:658;X:-193920;Y:-200224;W:32;H:32;
+ID:658;X:-193632;Y:-200512;W:32;H:32;LR:"Moving";
+ID:658;X:-193408;Y:-200512;W:32;H:32;LR:"Moving";
+ID:658;X:-192800;Y:-200896;W:32;H:32;
+ID:658;X:-192608;Y:-200896;W:32;H:32;
+ID:658;X:-191168;Y:-200320;W:32;H:32;
+ID:658;X:-190976;Y:-200320;W:32;H:32;
+ID:658;X:-190944;Y:-200256;W:32;H:32;
+ID:658;X:-196736;Y:-200544;W:32;H:32;
+ID:658;X:-196128;Y:-200384;W:32;H:32;
 BLOCK_END
 BGO
 ID:132;X:-199648;Y:-200160;

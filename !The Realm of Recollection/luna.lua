@@ -438,7 +438,20 @@ function onEvent(eventName)
     end
 end
 
+-- pls don't mind this jank
+local teleported = false
+
 function onDraw()
+    if teleported == false then
+        player.x = -199856
+        player.y = -200240
+        teleported = true
+    end 
+
+    if player.powerup ~= 2 then
+        player.powerup = 2
+    end
+
     -- Draw Luigi head sprite and start rotating
     local parallax = 0.3
     local c = camera
