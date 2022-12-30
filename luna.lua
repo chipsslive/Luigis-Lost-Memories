@@ -27,10 +27,19 @@ local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
+
+-- Progression flags
+
 SaveData.introFinished = true
 SaveData.conceptuaryUnlocked = false
 SaveData.audibletteUnlocked = false
+SaveData.creditsSeen = false
+
+-- New talk-to-NPC image
+
 local myIMG = Graphics.loadImageResolved("talkImage.png")
+
+-- Max coins
 
 local coinlimit = 99999
 
@@ -42,9 +51,16 @@ GameData.cutscene = false
 
 GameData.ach_Audiblette = Achievements(1)
 GameData.ach_Conceptuary = Achievements(2)
-GameData.ach_Chuck = Achievements(3)
-GameData.ach_AllMemories = Achievements(4)
-GameData.ach_AllPurpleStars = Achievements(5)
+GameData.ach_AllMemories = Achievements(3)
+GameData.ach_AllPurpleStars = Achievements(4)
+GameData.ach_AllKeyholes = Achievements(5)
+GameData.ach_Challenge1 = Achievements(6)
+GameData.ach_Challenge2 = Achievements(7)
+GameData.ach_Challenge3 = Achievements(8)
+GameData.ach_Challenge4 = Achievements(9)
+GameData.ach_Challenge5 = Achievements(10)
+GameData.ach_HundredPercent = Achievements(11)
+GameData.ach_Chuck = Achievements(12)
 
 -- Question asked when at end of Fragmented Memory
 
@@ -99,8 +115,9 @@ function exitLevel()
 end
 
 function onStart()
-	-- Check for current Purple Star count for achievement
+	-- Check for current Purple Star count for achievements
 	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
+    GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)
 
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)

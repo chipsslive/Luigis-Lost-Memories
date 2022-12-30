@@ -121,7 +121,7 @@ function slowBall.onDraw()
         }
         
         storedFrame = player.frame
-        player.frame = 51
+        player.frame = -50 * player.direction
     end
 end
 

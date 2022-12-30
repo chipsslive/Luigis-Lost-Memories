@@ -161,6 +161,7 @@ function onTick()
         SFX.play("destroyLock.wav")
         SaveData.conceptuaryUnlocked = true
         GameData.ach_Conceptuary:collect()
+        GameData.ach_HundredPercent:setCondition(6,true)
         unlockedConceptuary = false
     elseif unlockedAudiblette then
         audibletteWarp:show(true)
@@ -169,6 +170,7 @@ function onTick()
         SFX.play("destroyLock.wav")
         SaveData.audibletteUnlocked = true
         GameData.ach_Audiblette:collect()
+        GameData.ach_HundredPercent:setCondition(5,true)
         unlockedAudiblette = false
     end
 

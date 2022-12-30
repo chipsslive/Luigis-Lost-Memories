@@ -4,6 +4,7 @@ local autoscroll = require("autoscroll")
 local slm = require("simpleLayerMovement")
 local lineguide = require("lineguide")
 local spawnzones = require("spawnzones")
+local dropShadows = require("dropShadows")
 
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
@@ -23,6 +24,11 @@ local textLayouts = {}
 local scrollY = 600
 local alpha = 0
 local timer = 0
+local opacity = 0
+
+-- Game logo
+
+local logo = Graphics.loadImageResolved("logo.png")
 
 pauseplus.canPause = false
 
@@ -116,7 +122,7 @@ local text = {
     0,"Chipss"
 }
 
-local final = "GAME LOGO HERE"
+local final = "Thank you for playing!"
 local layout2
 
 -- Initialize stuff needed for floating Bloombas
@@ -139,7 +145,7 @@ v.y = 0.5
 local bloombaX = -199800
 local bloombaY = -200400
 
-local bloombaXRed = -198304
+local bloombaXRed = -198200
 local bloombaYRed = -200560
 
 local bloombaXBlue = 0
@@ -172,7 +178,7 @@ function onStart()
 
     -- Layout for ending text
 
-    layout2 = textplus.layout(final,nil,{font = fonts[1],color = white,xscale = 4,yscale = 4})
+    layout2 = textplus.layout(final,nil,{font = fonts[0],color = white,xscale = 2,yscale = 2})
 
     -- Initialize floating Bloomba sprites
 
@@ -254,7 +260,19 @@ function onDraw()
     -- Render Game Logo (Text is placeholder for now)
 
     if creditsFinished then
-        textplus.render{layout = layout2, color = Color.white * alpha, priority = -1,x = 110,y=250}
+        Graphics.drawImageWP(logo, 110, 140, alpha, 6)
+        textplus.render{layout = layout2, color = Color.white * alpha, priority = 6,x = 200,y=440}
+
+        if timer >= 5500 then
+            -- Fadeout at very end of level
+            Graphics.drawScreen{color = Color.black.. opacity,priority = 7}
+            if opacity < 1 then
+                opacity = opacity + 0.005
+            else
+                SaveData.creditsSeen = true
+                Level.load("!The Realm of Recollection.lvlx")
+            end
+        end
     end
 
     -- Draw and rotate floating Bloomba sprites

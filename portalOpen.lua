@@ -13,7 +13,7 @@ portalOpen.frames = {
     [true]  = {atPortal = 49, lerping = 3},
     [false] = {atPortal = 49, lerping = 5}
 }
-portalOpen.enterText = "Press UP to enter the portal"
+portalOpen.enterText = "Press UP to enter the portal!"
 
 local targetPos = vector(0, 0)
 local oldPos = vector(0, 0)
@@ -48,7 +48,7 @@ function portalOpen.onTick()
 
     local textAlpha = Color(opacity,opacity,opacity,opacity)
     textplus.print{text = portalOpen.enterText, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
-    textplus.print{text = "UP", x = 256, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
+    textplus.print{text = "UP", x = 246, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
 
     if isLerping then
         if player.keys.down == KEYS_PRESSED or player.keys.run == KEYS_PRESSED then

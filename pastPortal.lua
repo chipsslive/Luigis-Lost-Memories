@@ -334,11 +334,11 @@ function pastPortal.onDraw()
             local sX2 = sX + 128
 
             if starCoins and #starCoins > 0 then
-                for index, value in ipairs(starCoins) do
+                for index, v in ipairs(starCoins) do
                     local length = 46 * (#starCoins - 1) + img.bigStarCol.width
                     local xcen = math.ceil((math.abs(sX - sX2) - length)/2)
                     local simg
-                    if value == 0 then simg = img.bigStarUncol else simg = img.bigStarCol end
+                    if v == 1 or v == 2 then simg = img.bigStarCol else simg = img.bigStarUncol end
         
                     Graphics.drawImageWP(simg, sX + xcen + 46 * (index - 1), 472, menuOpacity, priorities.stuffHigh)
                 end
@@ -384,11 +384,11 @@ function pastPortal.onDraw()
             local starCoins = SaveData._basegame.starcoin[v.filename]
 
             if starCoins and #starCoins > 0 then
-                for index, value in ipairs(starCoins) do
+                for index, v in ipairs(starCoins) do
                     local length = 24 * (#starCoins - 1) + img.starCol.width
                     local xcen = math.ceil((math.abs(442 - 512) - length)/2)
                     local simg
-                    if value == 0 then simg = img.starUncol else simg = img.starCol end
+                    if v == 1 or v == 2 then simg = img.starCol else simg = img.starUncol end
         
                     Graphics.drawImageWP(simg, 442 + xcen + 24 * (index - 1), ((k-1) * 32) + mov.list.position + stats.listOffsetY - 2, menuOpacity, priorities.stuffHigh)
                 end
@@ -531,6 +531,7 @@ function pastPortal.onInputUpdate()
                     if stats.tabDetails[currentTab].starsNeeded <= totalStars then
                         confActive = stats.CON_UNLOCK
                         confText = stats.spendStars(stats.tabDetails[currentTab].starsNeeded)
+                        SFXPlay("select")
                     else
                         SFXPlay("deny")
                     end

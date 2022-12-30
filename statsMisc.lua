@@ -56,9 +56,9 @@ stats.waitTime = 32
 
 stats.tabDetails   = {
     [stats.LVL_LOST] = {starsNeeded =  0, text = ""},
-    [stats.LVL_FRAG] = {starsNeeded =  5, text = "We tried our absolute hardest, but only partial fragments of these memories could be made available for recovery."},
-    [stats.LVL_ALT]  = {starsNeeded =  5, text = "We intercepted these memories as they were floating around other areas of your consciousness. They don't seem related..."},
-    [stats.LVL_MAP]  = {starsNeeded = 10, text = "Hmm, this memory is very different from the others. It's going to require quite a bit more star power to access than usual."},
+    [stats.LVL_FRAG] = {starsNeeded =  10, text = "We tried our absolute hardest, but only partial fragments of these memories could be made available for recovery."},
+    [stats.LVL_ALT]  = {starsNeeded =  15, text = "We intercepted these memories as they were floating around other areas of your consciousness. They don't seem related..."},
+    [stats.LVL_MAP]  = {starsNeeded =  20, text = "Hmm, this memory is very different from the others. It's going to require quite a bit more star power to access than usual."},
 }
 
 stats.mapImg  = Graphics.loadImageResolved("pastPortal/map.png")
@@ -82,7 +82,7 @@ stats.levelList = {
     {filename = "!A-1 Buccaneer Bay.lvlx"           , name = "Buccaneer Bay",        type = stats.LVL_FRAG,  description = "The Shyrates have laid claim to the southern coast of the island! They're not as threatening as we originally thought... "},
     {filename = "1-3 Sakura Scrapyard.lvlx"         , name = "Sakura Scrapyard",     type = stats.LVL_FRAG,  description = "As the beautiful cherry blossoms sway in the wind, an abandoned scrapyard facility buzzes on below. Is this supposed to be a metaphor?"},
     {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG,  description = "Seemingly devoid of any intelligent life, the only things left roaming these hallways are sentient ice balls designed to slow you down."},
-    {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG,  description = "test"},
+    {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG,  description = "Toxic sludge and giant barrels of radioactive material. If you ask me, I would take this over a beach resort any day of the week!"},
     {filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_ALT ,  description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
     {filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_ALT ,  description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
     {filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch", type = stats.LVL_ALT ,  description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},

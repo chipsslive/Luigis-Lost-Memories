@@ -1,10 +1,7 @@
 --[[
-
     -- NOT PUBLICLY RELEASED --
-
     customSwimming.lua
     by MrDoubleA
-
 ]]
 
 local playerManager = require("playerManager")
@@ -113,7 +110,6 @@ function customSwimming.onInitAPI()
     registerEvent(customSwimming,"onTick")
     registerEvent(customSwimming,"onDraw")
     registerEvent(customSwimming,"onDrawEnd")
-
     registerEvent(customSwimming,"onStart")
 end
 
@@ -133,6 +129,9 @@ local function initialiseSwimming(p,data)
 
     Defines.player_runspeed = 16
     Defines.player_walkspeed = 16
+    Defines.player_grabSideEnabled  = false
+    Defines.player_grabTopEnabled   = false
+    Defines.player_grabShellEnabled = false
 end
 local speedNames = {[1] = "speedX",[2] = "speedY"}
 
@@ -184,6 +183,9 @@ function customSwimming.onTickPlayer(p) -- pseudo-event that runs for every play
 
         Defines.player_runspeed = nil
         Defines.player_walkspeed = nil
+        Defines.player_grabSideEnabled  = nil
+        Defines.player_grabTopEnabled   = nil
+        Defines.player_grabShellEnabled = nil
     end
 end
 
@@ -194,7 +196,6 @@ function customSwimming.onDrawPlayer(p)
     if swimTexture ~= nil then
         swimTexture = swimTexture[p.powerup]
     end
-
 
     if canUseSwimAnimation(p) and swimTexture ~= nil then
         initialiseSwimming(p,data)
