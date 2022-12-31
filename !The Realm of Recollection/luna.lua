@@ -6,15 +6,15 @@ local portalOpen = require("portalOpen")
 
 -- Floating Luigi head stuff
 
-local head = Graphics.loadImageResolved("LuigiHead.png");
+--local head = Graphics.loadImageResolved("LuigiHead.png");
 
 local sprite
 local v = vector.right2
 v.x = 0.5
 v.y = 0.5
 
-local initialX = 100
-local initialY = 620
+local sprite1X = -200096
+local sprite1Y = -200416
 
 -- Unlocking the Audiblette and Conceptuary variables/questions
 
@@ -101,12 +101,12 @@ function onStart()
     checkCoins()
 
     player.powerup = 2
-    sprite = Sprite.box{
+    --[[sprite = Sprite.box{
         texture = head,
-        x = initialX,
-        y = initialY,
+        x = sprite1X,
+        y = sprite1Y,
         pivot = v,
-    }
+    }]]
 
     chuck = Layer.get("chuck")
     originalSigns = Layer.get("originalSigns")
@@ -455,24 +455,13 @@ function onDraw()
     end
 
     -- Draw Luigi head sprite and start rotating
-    local parallax = 0.3
-    local c = camera
-    
-    local x = 100
-    local y = 500
-
-    local offsetX = c.width*0.5
-    local offsetY = c.height*0.5
-
-	sprite:draw{priority = -99.1}
-    sprite:rotate(0.7)
-    sprite.x = (x - offsetX)*parallax + offsetX
-    sprite.y = (y - offsetY)*parallax + offsetY
+	--sprite:draw{priority = -99, sceneCoords = true}
+    --sprite:rotate(0.7)
 
     -- Return Luigi head to bottom of screen when it passes the top (pseudo looping effect)
 
-    if sprite.y < -20 then
-        sprite.y = initialY
-        sprite.x = initialX
-    end
+    --[[if sprite.y < -20 then
+        y = 200
+        x = 200
+    end]]
 end
