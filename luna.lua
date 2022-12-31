@@ -345,9 +345,6 @@ function respawnRooms.onPostReset(fromRespawn)
     end
 end
 
-function onExitLevel()
-end
-
 -- Custom Coin Counter HUD Element
 
 local portalFont = textplus.loadFont("portalFont.ini")
