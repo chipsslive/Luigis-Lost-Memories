@@ -78,6 +78,20 @@ function showExit()
 	end
 end
 
+-- Check if accessibility options are active
+
+GameData.usedAccesibility = false
+GameData.usedSetPowerup = false
+
+function checkAccessibility()
+	if (pauseplus.getSelectionValue("accessibility","Invincibility") or pauseplus.getSelectionValue("infiniteJumps","Infinite Jumps")) and GameData.usedAccesibility == false then
+		GameData.usedAccesibility = true
+	elseif GameData.usedSetPowerup and GameData.usedAccesibility == false then
+		GameData.usedAccesibility = true
+	end
+end
+
+
 -- Add and subtract coins global functions
 
 function addCoins(n)
@@ -129,6 +143,27 @@ function onStart()
 	-- Check for current Purple Star count for achievements
 	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
     GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)
+
+	-- Reset accessbility checks
+	GameData.usedAccesibility = false
+	GameData.usedSetPowerup = false
+
+	-- Checks how many memories are completed for the achievement
+
+    local function getRecoveredCount()
+        local list = {}
+		for k,v in ipairs(stats.levelList) do
+			if SaveData.levelStats[stats.levelList[k].filename] and SaveData.levelStats[stats.levelList[k].filename].beaten then
+				table.insert(list, v)
+			end
+		end
+        return list
+    end
+
+	-- Other achievement stuff
+
+	GameData.ach_AllMemories:setCondition(1,#getRecoveredCount())
+	GameData.ach_HundredPercent:setCondition(1,#getRecoveredCount())
 
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
@@ -208,6 +243,7 @@ end
 function setPowerup(m)
     player.powerup = m
     setHeight()
+	GameData.usedSetPowerup = true
 end 
 
 -- Prevent janky teleports when changing powerups via the pause menu
@@ -263,6 +299,8 @@ function onTickEnd()
 end
 
 function onTick()
+	checkAccessibility()
+
 	-- Disable reserve powerup
 	player.reservePowerup = 0
 
@@ -305,6 +343,9 @@ function respawnRooms.onPostReset(fromRespawn)
 	if fromRespawn then
         respawnRooms.deathCoins = {}
     end
+end
+
+function onExitLevel()
 end
 
 -- Custom Coin Counter HUD Element

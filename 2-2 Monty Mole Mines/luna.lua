@@ -1,5 +1,11 @@
 local spawnzones = require("spawnzones");
 
+function onExitLevel(levelWinType)
+    if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and GameData.usedAccesibility == false then
+        GameData.ach_AllKeyholes:setCondition(3,true)
+    end
+end
+
 --[[function onTick()
 	if (player:mem(0x44, FIELD_BOOL)) then
 		Layer.get("Tracks"):show(true)

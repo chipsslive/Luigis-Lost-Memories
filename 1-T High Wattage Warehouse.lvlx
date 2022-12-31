@@ -11047,7 +11047,7 @@ LR:"Default";
 LR:"Destroyed Blocks";HD:1;
 LR:"Spawned NPCs";
 LR:"nsmbwalls";HD:1;
-LR:"spawnzones";
+LR:"spawnzones";HD:1;
 LR:"End Trigger";
 LR:"exit";HD:1;
 LAYERS_END

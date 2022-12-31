@@ -5,12 +5,12 @@ SECTION
 SC:0;L:-200000;R:-196320;T:-200600;B:-200000;MZ:24;MF:"2-2 Monty Mole Mines/Creepy Cavern - Mario Party 3 Soundtack.ogg";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"color\"\: \"#e8b479ff\"\,\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:1;L:-180000;R:-171456;T:-180600;B:-180000;MZ:24;MF:"2-2 Monty Mole Mines/Creepy Cavern - Mario Party 3 Soundtack.ogg";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"color\"\: \"#e8b479ff\"\,\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:2;L:-160000;R:-149024;T:-160600;B:-159904;MZ:24;MF:"2-2 Monty Mole Mines/Creepy Cavern - Mario Party 3 Soundtack.ogg";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"color\"\: \"#e8b479ff\"\,\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
-SC:3;L:-140000;R:-139200;T:-140600;B:-140000;MZ:24;MF:"2-2 Monty Mole Mines/Creepy Cavern - Mario Party 3 Soundtack.ogg";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"color\"\: \"#e8b479ff\"\,\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
+SC:3;L:-140000;R:-139200;T:-140600;B:-140000;MZ:24;MF:"2-2 Monty Mole Mines/Creepy Cavern - Mario Party 3 Soundtack.ogg";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"color\"\: \"#e8b479ff\"\,\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#818181ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
-ID:1;X:-199964;Y:-200150;D:1;
+ID:1;X:-199956;Y:-200150;D:1;
 STARTPOINT_END
 BLOCK
 ID:250;X:-200000;Y:-200096;W:32;H:32;

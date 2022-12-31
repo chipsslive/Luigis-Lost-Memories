@@ -151,8 +151,11 @@ function onDraw()
     end
 end
 
-function onExitLevel()
+function onExitLevel(levelWinType)
     GameData.cutscene = false
     GameData.awardCoins = true
     hudoverride.visible.starcoins = true
+    if levelWinType == LEVEL_WIN_TYPE_KEYHOLE then
+        GameData.ach_AllKeyholes:setCondition(2,true)
+    end
 end

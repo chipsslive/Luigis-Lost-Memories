@@ -1,29 +1,7 @@
 local darkness = require("darkness");
-
 local particles = require("particles")
-
+local respawnRooms = require("respawnRooms")
 local spawnzones = require("spawnzones")
-
-local effect = particles.Emitter(0, 0, Misc.resolveFile("particles/p_rain.ini"));
-effect:AttachToCamera(Camera.get()[1]);
-
-local darknessField = darkness.Create{
-	falloff = darkness.falloff.DEFAULT,
-	shadows = darkness.shadow.DEFAULT,
-	maxLights = 60, 
-	priorityType = darkness.priority.DISTANCE,
-	bounds = nil,
-	boundBlendLength = 64,
-	sections = -1,
-	ambient = Color.grey,
-    priority = 0,
-    distanceField = false,
-	enabled = true
-}
-
-function onCameraUpdate()
-    effect:Draw();
-end
 
 local Moving2
 local Moving
@@ -47,9 +25,12 @@ function onTick()
     end
 end
 
-function onRespawnReset()
+function respawnRooms.onPostReset(fromRespawn)
     myLayerTimer = 0
 end
-function onRoomEnter(roomIdx)
-    myLayerTimer = 0
+
+function onExitLevel(levelWinType)
+	if levelWinType == LEVEL_WIN_TYPE_KEYHOLE then
+		GameData.ach_AllKeyholes:setCondition(1,true)
+	end
 end
