@@ -1,0 +1,31 @@
+HEAD
+TL:"!Title Screen";CPID:"SMBX2";
+HEAD_END
+SECTION
+SC:0;L:-200000;R:-199200;T:-200600;B:-200000;MZ:24;MF:"!Title Screen/Red&Green - Forest Observatory.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#dac6eeff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
+SECTION_END
+STARTPOINT
+ID:1;X:-199996;Y:-200086;D:1;
+STARTPOINT_END
+BLOCK
+ID:1006;X:-200000;Y:-200032;W:32;H:32;
+ID:1006;X:-199968;Y:-200064;W:32;H:32;
+ID:1006;X:-199968;Y:-200096;W:32;H:32;
+ID:1006;X:-200000;Y:-200128;W:32;H:32;
+ID:1006;X:-200032;Y:-200096;W:32;H:32;
+ID:1006;X:-200032;Y:-200064;W:32;H:32;
+BLOCK_END
+LAYERS
+LR:"Default";
+LR:"Destroyed Blocks";HD:1;
+LR:"Spawned NPCs";
+LR:"Left Clouds";
+LR:"Right Clouds";
+LAYERS_END
+EVENTS_CLASSIC
+ET:"Level - Start";TE:"Move Left Clouds";AS:0;AX:0;AY:0;
+ET:"P Switch - Start";AS:0;AX:0;AY:0;
+ET:"P Switch - End";AS:0;AX:0;AY:0;
+ET:"Move Left Clouds";TE:"Move Right Clouds";ML:"Left Clouds";MX:-0.5;MY:0;AS:0;AX:0;AY:0;
+ET:"Move Right Clouds";ML:"Right Clouds";MX:0.5;MY:0;AS:0;AX:0;AY:0;
+EVENTS_CLASSIC_END

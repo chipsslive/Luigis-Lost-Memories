@@ -30,7 +30,7 @@ SaveData.coins = SaveData.coins or 0
 
 -- Progression flags
 
-SaveData.introFinished = true
+SaveData.introFinished = false
 SaveData.conceptuaryUnlocked = false
 SaveData.audibletteUnlocked = false
 SaveData.creditsSeen = false
@@ -140,6 +140,11 @@ function exitLevel()
 end
 
 function onStart()
+	-- Check if player has seen intro cutscene and load that level if not
+	--[[if not SaveData.introFinished and Level.filename() ~= "!Memory Center.lvlx" then
+		Level.load("!Memory Center.lvlx")
+	end]]
+
 	-- Check for current Purple Star count for achievements
 	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
     GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)

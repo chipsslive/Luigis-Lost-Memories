@@ -87,6 +87,7 @@ local reduceOpacity2 = false
 local defaultBloombas
 local defaultRedBloomba
 local hidePlayer = false
+local lockPlayer = false
 
 littleDialogue.registerAnswer("introQuestion",{text = "Let's do it!",addText = "HOORAY! Let's get this party started!",chosenFunction = function() startPortalSpawn = true end})
 littleDialogue.registerAnswer("introQuestion",{text = "Stuck in my mind!",addText = "Aw, man. Well, if you change your mind. I'll be waiting here for eternity.",chosenFunction = function() talkedToBloomba = true end})
@@ -211,6 +212,11 @@ function onTick()
 
     if SaveData.introFinished == false then
         GameData.cutscene = true
+        if introTimer == 0 then
+            lockPlayer = true
+            hidePlayer = true
+        end
+
         if stopIntroTimer == false then
             introTimer = introTimer + 1
         end
@@ -228,19 +234,11 @@ function onTick()
             }
         end
 
-        if introTimer < 91 then
-            triggerEvent("Lock Controls")
-            player:mem(0x11E, FIELD_WORD, 0)
-        elseif introTimer > 91 and (player.rawKeys.left == KEYS_PRESSED or player.rawKeys.right == KEYS_PRESSED or player.rawKeys.down == KEYS_PRESSED or player.rawKeys.jump == KEYS_PRESSED or player.rawKeys.altJump == KEYS_PRESSED) and playerStart == false then
-            triggerEvent("Unlock Controls")
-            player:mem(0x11E, FIELD_WORD, 1)
-            awakeLuigi:hide(true)
+        if introTimer > 91 and (player.rawKeys.left == KEYS_PRESSED or player.rawKeys.right == KEYS_PRESSED or player.rawKeys.down == KEYS_PRESSED or player.rawKeys.jump == KEYS_PRESSED or player.rawKeys.altJump == KEYS_PRESSED) and stopIntroTimer == false then
             stopIntroTimer = true
-            playerStart = true
-        end
-
-        if playerStart == false then
-            player:setFrame(-50 * player.direction)
+            hidePlayer = false
+            lockPlayer = false
+            awakeLuigi:hide(true)
         end
     else
         if GameData.cutscene then
@@ -258,18 +256,11 @@ function onTick()
     end
 
     if startPortalSpawn then
-        -- Empty this Bloomba's message because I lock the player's controls to hold up
-
-        for _,v in ipairs(extraNPCProperties.getWithTag("introBloomba")) do
-            v.msg = ""
-        end
-
         -- Sound effect that plays right when the first white flash happens
 
         if sfx1Played == false then
             SFX.play(61)
             sfx1Played = true
-            triggerEvent("Lock Controls")
         end
 
         Graphics.drawScreen{color = Color.white.. opacity,priority = 6}
@@ -288,10 +279,11 @@ function onTick()
             otherBloombas:show(true)
             awakeLuigi:show(true)
             maroonba:hide(true)
-            player.x = -199860
-            player.y = -200244
+            player.x = -199856
+            player.y = -200576
             reduceOpacity1 = true
             hidePlayer = true
+            lockPlayer = true
 
             -- Assign each colored Bloomba to its own variable
 
@@ -417,17 +409,30 @@ function onTick()
         -- Locks the player in place until they decide to move, then intro is considered finished
 
         if portalCutsceneTimer > 850 and (player.rawKeys.left == KEYS_PRESSED or player.rawKeys.right == KEYS_PRESSED or player.rawKeys.down == KEYS_PRESSED or player.rawKeys.jump == KEYS_PRESSED or player.rawKeys.altJump == KEYS_PRESSED) then
-            triggerEvent("Unlock Controls")
-            awakeLuigi:hide(true)
+            player.x = -199860
+            player.y = -200244
             hidePlayer = false
+            lockPlayer = false
             SaveData.introFinished = true
             pauseplus.canPause = true
+            portalCutsceneTimer = 0
+            portalCutsceneTimerStart = false
+            startPortalSpawn = false
+            awakeLuigi:hide(true)
         end
+    end
 
-        -- If I don't put this at the bottom, there is a weird graphical glitch when unhiding the player. I have no idea why
+    -- If I don't put this at the bottom, there is a weird graphical glitch when unhiding the player. I have no idea why
 
-        if hidePlayer then
-            player:setFrame(-50 * player.direction)
+    if hidePlayer then
+        player:setFrame(-50 * player.direction)
+    end
+
+    -- Self explanatory, locks player controls
+
+    if lockPlayer then
+        for k, v in pairs(player.keys) do
+            player.keys[k] = false
         end
     end
 end
