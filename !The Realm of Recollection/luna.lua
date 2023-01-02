@@ -88,6 +88,8 @@ local defaultBloombas
 local defaultRedBloomba
 local hidePlayer = false
 local lockPlayer = false
+local doEarthquake = false
+local currentQuakeIntensity = 2.5
 
 littleDialogue.registerAnswer("introQuestion",{text = "Let's do it!",addText = "HOORAY! Let's get this party started!",chosenFunction = function() startPortalSpawn = true end})
 littleDialogue.registerAnswer("introQuestion",{text = "Stuck in my mind!",addText = "Aw, man. Well, if you change your mind. I'll be waiting here for eternity.",chosenFunction = function() talkedToBloomba = true end})
@@ -321,6 +323,7 @@ function onTick()
 
         if portalCutsceneTimer == 10 then
             SFX.play("rumble.wav")
+            doEarthquake = true
         elseif portalCutsceneTimer > 10 and reduceOpacity2 == false then
             if opacity < 1 then
                 opacity = opacity + 0.003
@@ -384,9 +387,19 @@ function onTick()
 
         -- Fade out second white screen
 
+        if doEarthquake then
+            Defines.earthquake = currentQuakeIntensity
+        end
+
         if reduceOpacity2 then
             if opacity > 0 then
                 opacity = opacity -0.004
+            end
+            if currentQuakeIntensity > 0.01 then
+                currentQuakeIntensity = currentQuakeIntensity - 0.01
+            else
+                currentQuakeIntensity = 0
+                doEarthquake = false
             end
         end
 

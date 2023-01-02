@@ -1,6 +1,7 @@
 local warpTransition = require("warpTransition")
 local dropShadows = require("dropShadows")
 local textplus = require("textplus")
+local littleDialogue = require("littleDialogue")
 
 local triggerExit = false
 local sfxPlayed = false
@@ -16,6 +17,8 @@ local movementTimer = 0
 
 local alpha = 0
 local timer = 0
+
+local newTimer = 0
 
 -- Stuff for the text
 local portalFont = textplus.loadFont("portalFont.ini")
@@ -156,17 +159,55 @@ function onTick()
             alpha2 = alpha2 - 0.01
         end
 
-        Graphics.drawScreen{color = Color.black.. opacity,priority = 6}
+        Graphics.drawScreen{color = Color.black.. opacity,priority = 2}
         if opacity < 1 then
             opacity = opacity + 0.008
         else
-            if SaveData.introFinished then
-                Level.load("!The Realm of Recollection.lvlx")
-            else
-                Level.load("!Memory Center.lvlx")
+            if not stopTimer then
+                newTimer = newTimer + 1
+            end
+            if newTimer == 20 then
+                newTimer = newTimer + 1
+                if SaveData.introFinished then
+                    Level.load("!The Realm of Recollection.lvlx")
+                else
+                    stopTimer = true
+                    littleDialogue.create{
+                        text = "Quick question before you start! Have you played this game before?<question playedBefore>",
+                        pauses = false,
+                        forcedPosX = 400,
+                        forcedPosY = 300,
+                        settings = {typewriterEnabled = false}
+                    }
+                end
+            end
+            if hasPlayedBefore ~= nil then
+                stopTimer = false
+            end
+            if newTimer == 100 then
+                if hasPlayedBefore then
+                    playedBefore()
+                else
+                    notPlayedBefore()
+                end
             end
         end
     end
+end
+
+littleDialogue.registerAnswer("playedBefore",{text = "Yes",addText = "Cool! Want me to skip the intro sequence for ya'?<question confirmSkipIntro>"})
+littleDialogue.registerAnswer("playedBefore",{text = "No",chosenFunction = function() hasPlayedBefore = false end})
+
+littleDialogue.registerAnswer("confirmSkipIntro",{text = "Yes",chosenFunction = function() hasPlayedBefore = true end})
+littleDialogue.registerAnswer("confirmSkipIntro",{text = "No",chosenFunction = function() hasPlayedBefore = false end})
+
+function playedBefore()
+    SaveData.introFinished = true
+    Level.load("!The Realm of Recollection.lvlx")
+end
+
+function notPlayedBefore()
+    Level.load("!Memory Center.lvlx")
 end
 
 function onDraw()

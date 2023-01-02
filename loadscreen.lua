@@ -41,18 +41,18 @@ function onDraw()
         opacity = opacity + 0.02
     end
 
-    redY = math.cos(0.1 * movementTimerRed)*3 + 300
+    redY = math.sin(0.1 * movementTimerRed)*3 + 300
     
     if timer > 20 then
-        orangeY = math.cos(0.1 * movementTimerOrange)*3 + 300
+        orangeY = math.sin(0.1 * movementTimerOrange)*3 + 300
         movementTimerOrange = movementTimerOrange + 1
     end
     if timer > 40 then
-        blueY = math.cos(0.1 * movementTimerBlue)*3 + 300
+        blueY = math.sin(0.1 * movementTimerBlue)*3 + 300
         movementTimerBlue = movementTimerBlue + 1
     end
     if timer > 60 then
-        purpleY = math.cos(0.1 * movementTimerPurple)*3 + 300
+        purpleY = math.sin(0.1 * movementTimerPurple)*3 + 300
         movementTimerPurple = movementTimerPurple + 1
     end
 
