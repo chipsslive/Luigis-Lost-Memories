@@ -33,7 +33,7 @@ registerEvent(portalOpen, "onDraw")
 
 function portalOpen.onTick()
     for k, v in NPC.iterate(portalOpen.portalID) do
-        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal then
+        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal and SaveData.introFinished then
             isLerping = true
             targetPos.x = v.x+v.width/2
             targetPos.y = v.y+v.height/2
@@ -47,8 +47,10 @@ function portalOpen.onTick()
     end
 
     local textAlpha = Color(opacity,opacity,opacity,opacity)
-    textplus.print{text = portalOpen.enterText, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
-    textplus.print{text = "UP", x = 246, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
+    if SaveData.introFinished then
+        textplus.print{text = portalOpen.enterText, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
+        textplus.print{text = "UP", x = 246, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
+    end
 
     if isLerping then
         if player.keys.down == KEYS_PRESSED or player.keys.run == KEYS_PRESSED then

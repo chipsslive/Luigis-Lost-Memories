@@ -128,7 +128,7 @@ function onStart()
     -- Intro initializations
 
     if SaveData.introFinished == false then
-        sleepLuigi:show(true)
+        showAsleep = true
         portal:hide(true)
         maroonba:show(true)
         defaultBloombas:hide(true)
@@ -222,8 +222,8 @@ function onTick()
         end
 
         if introTimer == 55 then
-            sleepLuigi:hide(true)
-            awakeLuigi:show(true)
+            showAsleep = false
+            showAwake = true
         end
 
         if introTimer == 90 then
@@ -238,7 +238,7 @@ function onTick()
             stopIntroTimer = true
             hidePlayer = false
             lockPlayer = false
-            awakeLuigi:hide(true)
+            showAwake = false
         end
     else
         if GameData.cutscene then
@@ -261,6 +261,7 @@ function onTick()
         if sfx1Played == false then
             SFX.play(61)
             sfx1Played = true
+            lockPlayer = true
         end
 
         Graphics.drawScreen{color = Color.white.. opacity,priority = 6}
@@ -277,13 +278,12 @@ function onTick()
 
         if opacity >= 1 and portalCutsceneTimerStart == false then
             otherBloombas:show(true)
-            awakeLuigi:show(true)
+            showAwake = true
             maroonba:hide(true)
-            player.x = -199856
-            player.y = -200576
+            player.x = -199851
+            player.y = -200256
             reduceOpacity1 = true
             hidePlayer = true
-            lockPlayer = true
 
             -- Assign each colored Bloomba to its own variable
 
@@ -404,21 +404,19 @@ function onTick()
                 pauses = true,
                 speakerObj = defaultRedBloomba
             }
+            SaveData.introFinished = true
         end
 
         -- Locks the player in place until they decide to move, then intro is considered finished
 
         if portalCutsceneTimer > 850 and (player.rawKeys.left == KEYS_PRESSED or player.rawKeys.right == KEYS_PRESSED or player.rawKeys.down == KEYS_PRESSED or player.rawKeys.jump == KEYS_PRESSED or player.rawKeys.altJump == KEYS_PRESSED) then
-            player.x = -199860
-            player.y = -200244
             hidePlayer = false
             lockPlayer = false
-            SaveData.introFinished = true
             pauseplus.canPause = true
             portalCutsceneTimer = 0
             portalCutsceneTimerStart = false
             startPortalSpawn = false
-            awakeLuigi:hide(true)
+            showAwake = false
         end
     end
 
@@ -434,6 +432,14 @@ function onTick()
         for k, v in pairs(player.keys) do
             player.keys[k] = false
         end
+    end
+
+    -- Setting player frames for cutscene purposes
+
+    if showAwake then
+        player:setFrame(15 * player.direction)
+    elseif showAsleep then
+        player:setFrame(49 * player.direction)
     end
 end
 
