@@ -30,9 +30,9 @@ local unlockedConceptuary
 function checkCoins()
     littleDialogue.deregisterQuestion("unlockConceptuaryQuestion")
     littleDialogue.deregisterQuestion("unlockAudibletteQuestion")
-    if SaveData.coins >= 500 then
-        littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedConceptuary = true checkCoins() end})
-        littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(500) unlockedAudiblette = true checkCoins() end})
+    if SaveData.coins >= 1000 then
+        littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(1000) unlockedConceptuary = true checkCoins() end})
+        littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Exquisite! I will remove the lock at once!",chosenFunction = function() subtractCoins(1000) unlockedAudiblette = true checkCoins() end})
     else
         littleDialogue.registerAnswer("unlockConceptuaryQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})
         littleDialogue.registerAnswer("unlockAudibletteQuestion",{text = "Take my money!",addText = "Bah! You do not even possess the required funds. Be gone!"})

@@ -3,6 +3,8 @@ local bloombaOrange = Graphics.loadImage("bloombaOrange.png")
 local bloombaBlue = Graphics.loadImage("bloombaBlue.png")
 local bloombaPurple = Graphics.loadImage("bloombaPurple.png")
 
+local loading = Graphics.loadImage("loading.png")
+
 local redX = 330
 local redY = 300
 
@@ -27,6 +29,8 @@ function onDraw()
     if bloombaRed == nil or bloombaOrange == nil or bloombaBlue == nil or bloombaPurple == nil then
         return
     end
+
+    Graphics.drawImage(loading,315,260,opacity)
 
     Graphics.drawImage(bloombaRed, redX, redY, opacity)
     Graphics.drawImage(bloombaOrange, blueX, blueY, opacity)
