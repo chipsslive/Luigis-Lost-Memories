@@ -11,12 +11,12 @@ local dropShadows = {}
 -- How opaque the drop shadows are, from 0 to 1.
 dropShadows.opacity = 0.4
 -- How far away the drop shadows are from their casters.
-dropShadows.distance = 2
+dropShadows.distance = 4
 
 -- The maximum priority that is affected by the drop shadows.
-dropShadows.frontPriority = 7
+dropShadows.frontPriority = -0.1
 -- The priority that separates the background from the foreground.
-dropShadows.backPriority = -99
+dropShadows.backPriority = -51
 
 
 

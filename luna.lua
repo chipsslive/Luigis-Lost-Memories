@@ -28,13 +28,6 @@ SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 
--- Progression flags
-
-SaveData.introFinished = false
-SaveData.conceptuaryUnlocked = false
-SaveData.audibletteUnlocked = false
-SaveData.creditsSeen = false
-
 -- New talk-to-NPC image
 
 local myIMG = Graphics.loadImageResolved("talkImage.png")
@@ -139,11 +132,27 @@ function exitLevel()
 	Level.exit()
 end
 
+-- Checks if 'a' is null, if it is return the alternative, 'b'
+
+function nil_or(a,b)
+	if a == nil then
+		return b
+	end
+	return b
+end
+
 function onStart()
-	-- Check if player has seen intro cutscene and load that level if not
-	--[[if not SaveData.introFinished and Level.filename() ~= "!Memory Center.lvlx" then
-		Level.load("!Memory Center.lvlx")
-	end]]
+	-- Progression flags
+
+	SaveData.introFinished = SaveData.introFinished or nil_or(SaveData.introFinished, false)
+	SaveData.conceptuaryUnlocked = SaveData.conceptuaryUnlocked or nil_or(SaveData.conceptuaryUnlocked, false)
+	SaveData.audibletteUnlocked = SaveData.audibletteUnlocked or nil_or(SaveData.audibletteUnlocked, false)
+	SaveData.creditsSeen = SaveData.creditsSeen or nil_or(SaveData.creditsSeen, false)
+	
+	-- Check if player has seen the title screen yet
+	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
+		Level.load("!Title Screen.lvlx")
+	end
 
 	-- Check for current Purple Star count for achievements
 	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)

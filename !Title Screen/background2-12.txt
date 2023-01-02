@@ -43,7 +43,7 @@ y = 350
 
 [foregroundClouds]
 img="Foreground_Clouds.png"
-priority=-5
+priority=-52
 alignY=TOP
 repeatX=true
 repeatY=false
