@@ -37,6 +37,25 @@ stats.movement.tabs    = {type = 0, position = -213, origin = -213, goal =  12, 
 stats.movement.list    = {type = 0, position =  346, origin =  346, goal = 124, speed = -15}
 stats.movement.details = {type = 0, position =  660, origin =  660, goal = 540, speed = -8}
 
+-- Audiblette stuff
+stats.movement.audibletteTitle = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
+stats.movement.trackList       = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
+stats.movement.currentTrack    = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
+
+stats.unusedMusic = {
+    {filename = "Noodle - Boss Jingle.ogg",                name = "Boss Jingle",              artist = "Noodle"},
+    {filename = "Noodle - Boss Theme.ogg",                 name = "Boss Theme",               artist = "Noodle"},
+    {filename = "Noodle - Unfinished Trailer Theme.ogg",   name = "Unfinished Trailer Theme", artist = "Noodle"},
+    {filename = "Noodle - Victory Jingle.ogg",             name = "Victory Jingle",           artist = "Noodle"},
+    {filename = "Noodle - NewerSMBWii Castle Remix.ogg",   name = "NewerSMBWii Castle Remix", artist = "Noodle"},
+    {filename = "Noodle - SMM2 SMB1 Forest Remix.ogg",     name = "SMM2 SMB1 Forest Remix",   artist = "Noodle"},
+    {filename = "galaxy - Chainlink Charge Remix.ogg",     name = "Chainlink Charge Remix",   artist = "galaxy"},
+    {filename = "galaxy - Island Athletic.ogg",            name = "Island Athletic",          artist = "galaxy"},
+    {filename = "galaxy - Space Junk Galaxy Remix.ogg",    name = "Space Junk Galaxy Remix",  artist = "galaxy"},
+    {filename = "JerryCoxalot - Haunted Desert Theme.mp3", name = "Victory Jingle",           artist = "JerryCoxalot"},
+    {filename = "leitakcoc - Desert Theme.mp3",            name = "Victory Jingle",           artist = "leitakcoc"},
+}
+
 stats.notEnough = "You need more Purple Stars to access this sector of memory recovery."
 stats.pressJump = "Press JUMP to activate this sector of memory recovery!"
 stats.locked    = "Unlock to see the details."

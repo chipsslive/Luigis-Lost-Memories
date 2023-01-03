@@ -1,8 +1,9 @@
-local littleDialogue = require("littleDialogue")
-local warpTransition = require("warpTransition")
+local littleDialogue     = require("littleDialogue")
+local warpTransition     = require("warpTransition")
 local extraNPCProperties = require("extraNPCProperties")
-local pauseplus = require("pauseplus")
-local portalOpen = require("portalOpen")
+local pauseplus          = require("pauseplus")
+local portalOpen         = require("portalOpen")
+local audiblette         = require("audiblette")
 
 -- Floating Luigi head stuff
 
@@ -73,7 +74,7 @@ local sfx1Played = false
 local otherBloombas
 local reduceOpacity1 = false
 local maroonba
-local portalCutsceneTimerStart =  false
+local portalCutsceneTimerStart = false
 local portalCutsceneTimer = 0
 local orangeBloomba
 local blueBloomba
@@ -462,17 +463,22 @@ function onEvent(eventName)
     if eventName == "Lock Controls" then
         Effect.spawn(805,-158214,-160222)
     end
+
+    -- Opening audiblette menu
+    if eventName == "audiblette" then
+        audiblette.open()
+    end
 end
 
 -- pls don't mind this jank
 local teleported = false
 
 function onDraw()
-    if teleported == false then
+    --[[if teleported == false then
         player.x = -199856
         player.y = -200240
         teleported = true
-    end 
+    end ]]
 
     if player.powerup ~= 2 then
         player.powerup = 2
