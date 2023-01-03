@@ -2,6 +2,9 @@ local warpTransition = require("warpTransition")
 local dropShadows = require("dropShadows")
 local textplus = require("textplus")
 local littleDialogue = require("littleDialogue")
+local pauseplus = require("pauseplus")
+
+pauseplus.canPause = false
 
 local triggerExit = false
 local sfxPlayed = false

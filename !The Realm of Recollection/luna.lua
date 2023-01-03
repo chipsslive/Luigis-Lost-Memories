@@ -1,3 +1,6 @@
+-- Written by Chipss
+
+-- Library loading
 local littleDialogue     = require("littleDialogue")
 local warpTransition     = require("warpTransition")
 local extraNPCProperties = require("extraNPCProperties")
@@ -5,7 +8,7 @@ local pauseplus          = require("pauseplus")
 local portalOpen         = require("portalOpen")
 local audiblette         = require("audiblette")
 
--- Floating Luigi head stuff
+-- Floating Luigi head stuff (scrapped)
 
 --local head = Graphics.loadImageResolved("LuigiHead.png");
 
@@ -112,21 +115,21 @@ function onStart()
         pivot = v,
     }]]
 
-    chuck = Layer.get("chuck")
-    originalSigns = Layer.get("originalSigns")
-    otherSigns = Layer.get("otherSigns")
-    sleepLuigi = Layer.get("sleepLuigi")
-    awakeLuigi = Layer.get("awakeLuigi")
-    portal = Layer.get("portal")
-    otherBloombas = Layer.get("otherBloombas")
-    maroonba = Layer.get("maroonba")
+    chuck           = Layer.get("chuck")
+    originalSigns   = Layer.get("originalSigns")
+    otherSigns      = Layer.get("otherSigns")
+    sleepLuigi      = Layer.get("sleepLuigi")
+    awakeLuigi      = Layer.get("awakeLuigi")
+    portal          = Layer.get("portal")
+    otherBloombas   = Layer.get("otherBloombas")
+    maroonba        = Layer.get("maroonba")
     defaultBloombas = Layer.get("defaultBloombas")
     conceptuaryWarp = Layer.get("conceptuaryWarp")
-    audibletteWarp = Layer.get("audibletteWarp")
-    audibletteLock = Layer.get("audibletteLock")
+    audibletteWarp  = Layer.get("audibletteWarp")
+    audibletteLock  = Layer.get("audibletteLock")
     conceptuaryLock = Layer.get("conceptuaryLock")
-    audibletteNPC = Layer.get("audibletteNPC")
-    conceptuaryNPC = Layer.get("conceptuaryNPC")
+    audibletteNPC   = Layer.get("audibletteNPC")
+    conceptuaryNPC  = Layer.get("conceptuaryNPC")
 
     -- Intro initializations
 
@@ -178,7 +181,16 @@ function onTick()
         unlockedAudiblette = false
     end
 
-    -- Chuck's Return Service Handling
+    -- For Ceruloomba and Mauvoomba's completion requirements
+
+    if GameData.ach_AllPurpleStars.collected then
+		for _,v in ipairs(extraNPCProperties.getWithTag("purpleBloomba")) do
+            v.msg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found all the Purple Stars! Magnificent!<page>Huh? What's that? What's your reward?<page>Well, about that. There... isn't one.<page>I was told by the higher-ups to blame something called 'avoiding scope creep.'<page>Not sure what that means, though.<page>Regardless, we have to celebrate somehow! Here, check this out!"
+        end
+    end
+
+    -- Chuck's Return Service Handling 
+    -- (this was written a long time ago and is very bad but it functions so I'm keeping it)
 
     if launch then
         timer = timer + 1

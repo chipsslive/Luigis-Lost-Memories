@@ -393,6 +393,11 @@ function customExit.onTickNPC(v)
 				awardCoins((v.animationFrame+1)*5)
 				customExit.startExit(p)
 				v:kill(HARM_TYPE_VANISH)
+
+				if Level.filename() == "3-3 Lightweight Library.lvlx" and SaveData.levelStats[Level.filename()].timer < lunatime.toTicks(120) then
+					GameData.ach_Challenge1:collect()
+					GameData.ach_HundredPercent:progressCondition(3)
+				end
 			end
 		end
 	end

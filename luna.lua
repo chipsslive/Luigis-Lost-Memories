@@ -1,3 +1,5 @@
+-- Written by Chipss
+
 --[[ The Scripts of Old
 local rooms = require("rooms")
 ]]
@@ -24,7 +26,7 @@ for k, v in ipairs(stats.levelList) do
 end
 
 local starcoin = require("npcs/AI/starcoin")
-SaveData.starcoins = starcoin.getEpisodeCollected()
+SaveData.starcoins = 52--starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 
@@ -43,6 +45,8 @@ GameData.awardCoins = true
 -- All this does is hide the coin count from the HUD
 
 GameData.cutscene = false
+
+local accessbilityWarning = "<align center><color red>WARNING</color><br>While any of these options<br>are enabled, challenge<br>and keyhole achievements<br>cannot be collected!<br></align>"
 
 -- Achievements Stuff
 
@@ -148,6 +152,14 @@ function onStart()
 	SaveData.conceptuaryUnlocked = SaveData.conceptuaryUnlocked or nil_or(SaveData.conceptuaryUnlocked, false)
 	SaveData.audibletteUnlocked = SaveData.audibletteUnlocked or nil_or(SaveData.audibletteUnlocked, false)
 	SaveData.creditsSeen = SaveData.creditsSeen or nil_or(SaveData.creditsSeen, false)
+
+	-- Achievement flags
+
+	SaveData.keyhole1Found = SaveData.keyhole1Found or nil_or(SaveData.keyhole1Found, false)
+	SaveData.keyhole2Found = SaveData.keyhole2Found or nil_or(SaveData.keyhole2Found, false)
+	SaveData.keyhole3Found = SaveData.keyhole3Found or nil_or(SaveData.keyhole3Found, false)
+	SaveData.keyhole4Found = SaveData.keyhole4Found or nil_or(SaveData.keyhole4Found, false)
+	SaveData.keyhole5Found = SaveData.keyhole5Found or nil_or(SaveData.keyhole5Found, false)
 	
 	-- Check if player has seen the title screen yet
 	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
@@ -234,7 +246,7 @@ function onStart()
 
 	-- Restart Confirmation Menu
 	pauseplus.createSubmenu("restartConfirmation",{headerText = "<align center>Restart the memory?<br>All progress up until<br>this point will be lost.</align>"})
-	pauseplus.createOption("restartConfirmation",{text = "Yes",closeMenu = true,action = function() Level.load(Level.filename()) end})
+	pauseplus.createOption("restartConfirmation",{text = "Yes",closeMenu = true,action = function() Level.load(Level.filename()) Checkpoint.reset() end})
 	pauseplus.createOption("restartConfirmation",{text = "No",goToSubmenu = "main"})
 
 	-- Quit Confirmation Menu
@@ -244,12 +256,12 @@ function onStart()
 
 	-- Accessbility Menu
 	pauseplus.createSubmenu("accessibility",{headerText = "ACCESSIBILITY",headerTextFont = MKDS})
-	pauseplus.createOption("accessibility",{text = "Invincibility",selectionType = pauseplus.SELECTION_CHECKBOX})
-	pauseplus.createOption("accessibility",{text = "Infinite Jumps",selectionType = pauseplus.SELECTION_CHECKBOX})
+	pauseplus.createOption("accessibility",{text = "Invincibility",selectionType = pauseplus.SELECTION_CHECKBOX,description = accessbilityWarning})
+	pauseplus.createOption("accessibility",{text = "Infinite Jumps",selectionType = pauseplus.SELECTION_CHECKBOX,description = accessbilityWarning})
 	if Level.filename() == "!The Realm of Recollection.lvlx" or Level.filename() == "!Memory Center.lvlx" then
-		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup",sfx="error.mp3"})
+		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup",sfx="error.mp3",description = accessbilityWarning})
 	else
-		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup"})
+		pauseplus.createOption("accessibility",{text = "Set Powerup",goToSubmenu = "setPowerup",description = accessbilityWarning})
 	end
 end
 

@@ -30,7 +30,11 @@ function respawnRooms.onPostReset(fromRespawn)
 end
 
 function onExitLevel(levelWinType)
-	if levelWinType == LEVEL_WIN_TYPE_KEYHOLE then
+	if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and not GameData.usedAccesibility then
 		GameData.ach_AllKeyholes:setCondition(1,true)
+		if not SaveData.keyhole1Found then
+			GameData.ach_HundredPercent:progressCondition(4)
+			SaveData.keyhole1Found = true
+		end
 	end
 end

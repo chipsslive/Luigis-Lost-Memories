@@ -23,6 +23,7 @@ SaveData.levelStats[Level.filename()] = SaveData.levelStats[Level.filename()] or
 
 stats.font      = textplus.loadFont("portalFont.ini")
 stats.fontGreen = textplus.loadFont("portalFontGreen.ini")
+stats.fontRed = textplus.loadFont("portalFontRed.ini")
 stats.smallFont = textplus.loadFont("textplus/font/4.ini")
 stats.listOffsetX   = 36
 stats.listOffsetY   = 28
@@ -40,7 +41,7 @@ stats.movement.details = {type = 0, position =  660, origin =  660, goal = 540, 
 -- Audiblette stuff
 stats.movement.audibletteTitle = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
 stats.movement.trackList       = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
-stats.movement.currentTrack    = {type = 0, position = -4, origin = -4, goal = 18, speed = 1.5}
+stats.movement.currentTrack    = {type = 0, position = 18, origin = 18, goal = -4, speed = 1.5}
 
 stats.unusedMusic = {
     {filename = "Noodle - Boss Jingle.ogg",                name = "Boss Jingle",              artist = "Noodle"},

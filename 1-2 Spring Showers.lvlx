@@ -5,7 +5,7 @@ SECTION
 SC:0;L:-200000;R:-189504;T:-201280;B:-200000;MZ:24;MF:"1-2 Spring Showers/Donkey Kong Country 3 - Enchanted Riverbank.mp3";BG:8;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b9b9b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 1\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-199948;Y:-200150;D:1;
+ID:1;X:-199980;Y:-200150;D:1;
 STARTPOINT_END
 BLOCK
 ID:81;X:-200000;Y:-200096;W:32;H:32;
