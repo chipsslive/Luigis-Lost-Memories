@@ -1,8 +1,0 @@
-height=28
-width=34
-gfxheight=30
-gfxwidth=38
-lightradius=64
-lightbrightness=2
-lightcolor=orange
-

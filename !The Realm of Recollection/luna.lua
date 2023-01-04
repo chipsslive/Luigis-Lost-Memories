@@ -105,7 +105,7 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 
 local mauvoomba
 local emitConfetti = false
-local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found all the Purple Stars! Magnificent!<page>Huh? What's that? What's your reward?<page>Well, about that. There... isn't one.<page>I was told by the higher-ups to blame something called 'avoiding scope creep.'<page>Not sure what that means, though.<page>Regardless, we have to celebrate somehow! Here, check this out!"
+local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found all the Purple Stars! Magnificent!<page>Huh? What's that? Your reward?<page>Well, about that. There... isn't one.<page>I was told by the higher-ups to blame something called 'avoiding scope creep.'<page>Not sure what that means, though.<page>Regardless, we have to celebrate somehow! Here, check this out!"
 local startConfettiTimer = false
 local confettiTimer = 0
 

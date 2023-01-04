@@ -3,6 +3,7 @@ TL:"!Title Screen";CPID:"SMBX2";
 HEAD_END
 SECTION
 SC:0;L:-200000;R:-199200;T:-200600;B:-200000;MZ:24;MF:"!Title Screen/Red&Green - Forest Observatory.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#dac6eeff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
+SC:11;L:20000;R:20800;T:19400;B:20000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
 ID:1;X:-199996;Y:-200054;D:1;

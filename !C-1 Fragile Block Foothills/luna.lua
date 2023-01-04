@@ -2,6 +2,8 @@ local autoscroll = require("autoscroll")
 local respawnRooms = require("respawnRooms")
 local helmets = require("helmets")
 
+respawnRooms.roomSettings.jumpFromBelowSpeed = -14
+
 function onEvent(eventName)
     if eventName == "go" then
         autoscroll.scrollRight(4)
@@ -104,4 +106,14 @@ end
 
 function respawnRooms.onPreReset(fromRespawn)
     helmets.setCurrentType(p,nil)
+end
+
+function onExitLevel(levelWinType)
+	if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and not GameData.usedAccesibility then
+		GameData.ach_AllKeyholes:setCondition(5,true)
+		if not SaveData.keyhole5Found then
+			GameData.ach_HundredPercent:progressCondition(4)
+			SaveData.keyhole5Found = true
+		end
+	end
 end
