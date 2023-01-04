@@ -7,6 +7,7 @@ local extraNPCProperties = require("extraNPCProperties")
 local pauseplus          = require("pauseplus")
 local portalOpen         = require("portalOpen")
 local audiblette         = require("audiblette")
+local particles          = require("particles")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -100,6 +101,18 @@ littleDialogue.registerAnswer("introQuestion",{text = "Stuck in my mind!",addTex
 littleDialogue.registerAnswer("introQuestion2",{text = "I'm ready!",addText = "HOORAY! Let's get this party started!",chosenFunction = function() startPortalSpawn = true end})
 littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addText = "Ugh, I guess I can't force you to do this. I am really bored, though."})
 
+-- Other stuff that is relevant after progression
+
+local mauvoomba
+local emitConfetti = false
+local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found all the Purple Stars! Magnificent!<page>Huh? What's that? What's your reward?<page>Well, about that. There... isn't one.<page>I was told by the higher-ups to blame something called 'avoiding scope creep.'<page>Not sure what that means, though.<page>Regardless, we have to celebrate somehow! Here, check this out!"
+local startConfettiTimer = false
+local confettiTimer = 0
+
+-- Confetti particle emitter
+
+local confetti = particles.Emitter(0, 0, "p_confetti.ini")
+
 function onStart()
     -- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
@@ -160,6 +173,25 @@ if SaveData.introFinished == false then
 end
 
 function onTick()
+    -- Confetti stuff
+
+    for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
+        mauvoomba = v
+        confetti:Attach(mauvoomba, true, true)
+    end
+
+    if startConfettiTimer then
+        confettiTimer = confettiTimer + 1
+        if confettiTimer > 20 then
+            emitConfetti = true
+            startConfettiTimer = false
+        end
+    end
+
+    if emitConfetti then
+        confetti:Emit(1)
+    end
+
     -- Check if Conceptuary/Audiblette have just been unlocked
     if unlockedConceptuary then
         conceptuaryWarp:show(true)
@@ -183,9 +215,9 @@ function onTick()
 
     -- For Ceruloomba and Mauvoomba's completion requirements
 
-    if GameData.ach_AllPurpleStars.collected then
-		for _,v in ipairs(extraNPCProperties.getWithTag("purpleBloomba")) do
-            v.msg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found all the Purple Stars! Magnificent!<page>Huh? What's that? What's your reward?<page>Well, about that. There... isn't one.<page>I was told by the higher-ups to blame something called 'avoiding scope creep.'<page>Not sure what that means, though.<page>Regardless, we have to celebrate somehow! Here, check this out!"
+    if GameData.ach_AllPurpleStars.collected and not emitConfetti and not startConfettiTimer then
+		for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
+            v.msg = allPurpleStarsMsg
         end
     end
 
@@ -496,6 +528,10 @@ function onDraw()
         player.powerup = 2
     end
 
+    -- More confetti stuff
+
+    confetti:Draw(-1)
+
     -- Draw Luigi head sprite and start rotating
 	--sprite:draw{priority = -99, sceneCoords = true}
     --sprite:rotate(0.7)
@@ -506,4 +542,18 @@ function onDraw()
         y = 200
         x = 200
     end]]
+end
+
+function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
+    littleDialogue.create{
+        text = text,
+        speakerObj = npcObj or playerObj or player,
+    }
+
+    eventObj.cancelled = true
+    
+    if text == allPurpleStarsMsg and GameData.ach_AllPurpleStars.collected then
+        startConfettiTimer = true
+        mauvoomba.msg = "<speakerName Mauvoomba>I could do this for hours!"
+    end
 end

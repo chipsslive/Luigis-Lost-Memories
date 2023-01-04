@@ -54,6 +54,7 @@ local sampleNPCSettings = {
 	spinjumpsafe = false, --If true, prevents player hurt when spinjumping
 	harmlessgrab = true, --Held NPC hurts other NPCs if false
 	harmlessthrown = true, --Thrown NPC hurts other NPCs if false
+	cliffturn = true,
 
 	--Identity-related flags. Apply various vanilla AI based on the flag:
 	--iswalker = false,

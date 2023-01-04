@@ -26,7 +26,7 @@ for k, v in ipairs(stats.levelList) do
 end
 
 local starcoin = require("npcs/AI/starcoin")
-SaveData.starcoins = 52--starcoin.getEpisodeCollected()
+SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 
@@ -50,18 +50,18 @@ local accessbilityWarning = "<align center><color red>WARNING</color><br>While a
 
 -- Achievements Stuff
 
-GameData.ach_Audiblette = Achievements(1)
-GameData.ach_Conceptuary = Achievements(2)
-GameData.ach_AllMemories = Achievements(3)
+GameData.ach_Audiblette  	= Achievements(1)
+GameData.ach_Conceptuary 	= Achievements(2)
+GameData.ach_AllMemories 	= Achievements(3)
 GameData.ach_AllPurpleStars = Achievements(4)
-GameData.ach_AllKeyholes = Achievements(5)
-GameData.ach_Challenge1 = Achievements(6)
-GameData.ach_Challenge2 = Achievements(7)
-GameData.ach_Challenge3 = Achievements(8)
-GameData.ach_Challenge4 = Achievements(9)
-GameData.ach_Challenge5 = Achievements(10)
+GameData.ach_AllKeyholes 	= Achievements(5)
+GameData.ach_Challenge1 	= Achievements(6)
+GameData.ach_Challenge2 	= Achievements(7)
+GameData.ach_Challenge3 	= Achievements(8)
+GameData.ach_Challenge4 	= Achievements(9)
+GameData.ach_Challenge5 	= Achievements(10)
 GameData.ach_HundredPercent = Achievements(11)
-GameData.ach_Chuck = Achievements(12)
+GameData.ach_Chuck 			= Achievements(12)
 
 -- Question asked when at end of Fragmented Memory
 
@@ -148,10 +148,10 @@ end
 function onStart()
 	-- Progression flags
 
-	SaveData.introFinished = SaveData.introFinished or nil_or(SaveData.introFinished, false)
+	SaveData.introFinished 		 = SaveData.introFinished 		or nil_or(SaveData.introFinished, false)
 	SaveData.conceptuaryUnlocked = SaveData.conceptuaryUnlocked or nil_or(SaveData.conceptuaryUnlocked, false)
-	SaveData.audibletteUnlocked = SaveData.audibletteUnlocked or nil_or(SaveData.audibletteUnlocked, false)
-	SaveData.creditsSeen = SaveData.creditsSeen or nil_or(SaveData.creditsSeen, false)
+	SaveData.audibletteUnlocked  = SaveData.audibletteUnlocked  or nil_or(SaveData.audibletteUnlocked, false)
+	SaveData.creditsSeen 		 = SaveData.creditsSeen 		or nil_or(SaveData.creditsSeen, false)
 
 	-- Achievement flags
 

@@ -910,13 +910,8 @@ ID:596;X:-179264;Y:-180416;W:32;H:32;
 ID:595;X:-179456;Y:-180384;W:32;H:32;
 ID:596;X:-179456;Y:-180416;W:32;H:32;
 ID:127;X:-179456;Y:-180448;W:32;H:32;
-ID:658;X:-199712;Y:-200416;W:32;H:32;
-ID:658;X:-200000;Y:-200416;W:32;H:32;
-ID:658;X:-200192;Y:-200384;W:32;H:32;
-ID:658;X:-200480;Y:-200384;W:32;H:32;
+ID:658;X:-199744;Y:-200416;W:32;H:32;
 ID:658;X:-200256;Y:-200192;W:32;H:32;
-ID:658;X:-199520;Y:-200384;W:32;H:32;
-ID:658;X:-199232;Y:-200384;W:32;H:32;
 ID:16;X:-158592;Y:-160128;W:32;H:32;
 ID:16;X:-158624;Y:-160064;W:32;H:32;
 ID:16;X:-158560;Y:-160128;W:32;H:32;
@@ -1255,6 +1250,11 @@ ID:1020;X:-158048;Y:-160192;W:32;H:32;
 ID:1020;X:-158080;Y:-160096;W:32;H:32;
 ID:1024;X:-179904;Y:-180032;W:32;H:32;
 ID:281;X:-179712;Y:-180288;W:32;H:32;EH:"audiblette";
+ID:658;X:-200480;Y:-200384;W:32;H:32;
+ID:658;X:-199968;Y:-200416;W:32;H:32;
+ID:658;X:-199520;Y:-200384;W:32;H:32;
+ID:658;X:-199232;Y:-200384;W:32;H:32;
+ID:658;X:-200192;Y:-200384;W:32;H:32;
 BLOCK_END
 BGO
 ID:63;X:-199968;Y:-200064;
@@ -2192,7 +2192,6 @@ ID:758;X:-200136;Y:-200192;D:-1;MG:"<speakerName \"Maroonba\">Master Luigi! We h
 ID:758;X:-200144;Y:-200192;D:1;MG:"<speakerName Maroonba>Master Luigi! Hope you're making good progress on that memory recovery. Not because the stakes are high or anything\, I just care about you.<page>In fact\, if you died\, I would cease to exist! Isn't that something?";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"defaultRedBloomba\"\n    }\n}\n";
 ID:760;X:-200368;Y:-200384;D:-1;MG:"<speakerName Ceruloomba>*Ceruloomba side eyes you dismissively*<page>Come back when you've recovered every last one of those memories of yours\, aside from the Map of Memories\, duh.<page>I don't even wanna see your face until then.<page>*spits on you*";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"blueBloomba\"\n    }\n}\n";
 ID:761;X:-199824;Y:-200416;D:-1;MG:"<setPos 400 250 0.5 0><speakerName Tangeroomba>Itsa Masta Luigi! I can tell ya' anything you wanna know. A fair warnin'\, though. I've been told I tend to do this thing called \"breaking the fourth wall.\"<question tangeroombaInitial>";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
-ID:759;X:-199328;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can punch me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"purpleBloomba\"\n    }\n}\n";
 ID:465;X:-199376;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Conceptuary\, I will need to see 1\,000 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockConceptuaryQuestion>";FD:1;LR:"conceptuaryNPC";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:465;X:-200336;Y:-200224;D:-1;MG:"Oi! Greenie! If you desire access to The Audiblette\, I will need to see 1\,000 Coins leave those denim pockets!<page>Make a decision\, quickly!<question unlockAudibletteQuestion>";FD:1;LR:"audibletteNPC";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:94;X:-158464;Y:-160217;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>The only piece of completed promotional art for the game.";FD:1;LR:"originalSigns";
@@ -2203,6 +2202,7 @@ ID:94;X:-158464;Y:-160217;D:-1;FD:1;LR:"otherSigns";
 ID:94;X:-159825;Y:-160216;D:-1;FD:1;LR:"otherSigns";
 ID:94;X:-159572;Y:-160221;D:-1;FD:1;LR:"otherSigns";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
+ID:759;X:-199416;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can punch me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"mauvoomba\"\n    }\n}\n";
 NPC_END
 DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
