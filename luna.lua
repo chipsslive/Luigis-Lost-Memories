@@ -160,6 +160,12 @@ function onStart()
 	SaveData.keyhole3Found = SaveData.keyhole3Found or nil_or(SaveData.keyhole3Found, false)
 	SaveData.keyhole4Found = SaveData.keyhole4Found or nil_or(SaveData.keyhole4Found, false)
 	SaveData.keyhole5Found = SaveData.keyhole5Found or nil_or(SaveData.keyhole5Found, false)
+
+	SaveData.challenge1Completed = SaveData.challenge1Completed or nil_or(SaveData.challenge1Completed, false)
+	SaveData.challenge2Completed = SaveData.challenge2Completed or nil_or(SaveData.challenge2Completed, false)
+	SaveData.challenge3Completed = SaveData.challenge3Completed or nil_or(SaveData.challenge3Completed, false)
+	SaveData.challenge4Completed = SaveData.challenge4Completed or nil_or(SaveData.challenge4Completed, false)
+	SaveData.challenge5Completed = SaveData.challenge5Completed or nil_or(SaveData.challenge5Completed, false)
 	
 	-- Check if player has seen the title screen yet
 	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
@@ -363,6 +369,20 @@ function onTick()
     local infiniteJumps = pauseplus.getSelectionValue("accessibility","Infinite Jumps")
 
     Defines.cheat_ahippinandahoppin = ahippinandahoppinActive or infiniteJumps
+
+	-- Achievement flags
+
+	if GameData.ach_Challenge1.collected and not SaveData.challenge1Completed then
+		SaveData.challenge1Completed = true
+	elseif GameData.ach_Challenge2.collected and not SaveData.challenge2Completed then
+		SaveData.challenge2Completed = true
+	elseif GameData.ach_Challenge3.collected and not SaveData.challenge3Completed then
+		SaveData.challenge3Completed = true
+	elseif GameData.ach_Challenge4.collected and not SaveData.challenge4Completed then
+		SaveData.challenge4Completed = true
+	elseif GameData.ach_Challenge5.collected and not SaveData.challenge5Completed then
+		SaveData.challenge5Completed = true
+	end
 end
 
 function respawnRooms.onPostReset(fromRespawn)

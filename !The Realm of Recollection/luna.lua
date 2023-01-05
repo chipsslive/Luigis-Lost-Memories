@@ -60,8 +60,10 @@ littleDialogue.registerAnswer("chuckQuestion",{text = "Not Yet!"})
 -- Tangeroomba Dialogue
 
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?",addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?",addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?" ,addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Conceptuary?"     ,addText = "The Conceptuary holds a collection of every piece of art, whether that be for concept or promotional purposes, created for the game. Most of them were created by galaxy, while the piece of art at the far end of the building was created by FurballArts.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>What else can I tell ya' about?<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
 
 -- All intro-related variables + questions
@@ -102,6 +104,11 @@ littleDialogue.registerAnswer("introQuestion2",{text = "I'm ready!",addText = "H
 littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addText = "Ugh, I guess I can't force you to do this. I am really bored, though."})
 
 -- Other stuff that is relevant after progression
+
+local maroonba2
+local ceruloomba
+local allMemoriesMsgMaroonba = "<speakerName Maroonba>placeholder"
+local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>placeholder"
 
 local mauvoomba
 local emitConfetti = false
@@ -190,6 +197,16 @@ function onTick()
 
     if emitConfetti then
         confetti:Emit(1)
+    end
+
+    -- Stuff related to what happens after recovering every memory
+
+    for _,v in ipairs(extraNPCProperties.getWithTag("maroonba2")) do
+        maroonba2 = v
+    end
+
+    for _,v in ipairs(extraNPCProperties.getWithTag("ceruloomba")) do
+        ceruloomba = v
     end
 
     -- Check if Conceptuary/Audiblette have just been unlocked

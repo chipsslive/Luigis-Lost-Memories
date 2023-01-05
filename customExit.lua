@@ -396,7 +396,9 @@ function customExit.onTickNPC(v)
 
 				if Level.filename() == "3-3 Lightweight Library.lvlx" and SaveData.levelStats[Level.filename()].timer < lunatime.toTicks(120) then
 					GameData.ach_Challenge1:collect()
-					GameData.ach_HundredPercent:progressCondition(3)
+					if not SaveData.challenge1Completed then
+						GameData.ach_HundredPercent:progressCondition(3)
+					end
 				end
 			end
 		end
