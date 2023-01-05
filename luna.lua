@@ -20,6 +20,7 @@ local extraNPCProperties = require("extraNPCProperties")
 local pastPortal = require("pastPortal")
 local stats = require("statsMisc")
 local koopas = require("koopas")
+local newcheats = require("base/game/newcheats")
 
 for k, v in ipairs(stats.levelList) do
     pastPortal.registerLevel(v)
@@ -88,7 +89,6 @@ function checkAccessibility()
 	end
 end
 
-
 -- Add and subtract coins global functions
 
 function addCoins(n)
@@ -146,6 +146,8 @@ function nil_or(a,b)
 end
 
 function onStart()
+	newcheats.enabled = false
+
 	-- Progression flags
 
 	SaveData.introFinished 		  = SaveData.introFinished 		   or nil_or(SaveData.introFinished, false)
@@ -345,6 +347,7 @@ function onTickEnd()
 end
 
 function onTick()
+	Defines.player_hasCheated = false
 	checkAccessibility()
 
 	-- Disable reserve powerup

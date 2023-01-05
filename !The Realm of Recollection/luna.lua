@@ -120,6 +120,15 @@ local confettiTimer = 0
 
 local confetti = particles.Emitter(0, 0, "p_confetti.ini")
 
+-- Speakers inside the Audiblette
+
+local speakers
+local speaker1
+local speaker2
+local speaker3
+local speaker4
+local speakerImg = Graphics.loadImageResolved("speaker.png")
+
 function onStart()
     -- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
@@ -134,6 +143,36 @@ function onStart()
         y = sprite1Y,
         pivot = v,
     }]]
+
+    -- Speakers inside the Audiblette
+
+    speakers = BGO.get(239)
+
+    speaker1 = Sprite.box{
+        texture = speakerImg,
+        x = speakers[1].x,
+        y = speakers[1].y,
+    }
+
+    speaker2 = Sprite.box{
+        texture = speakerImg,
+        x = speakers[2].x,
+        y = speakers[2].y,
+    }
+
+    speaker3 = Sprite.box{
+        texture = speakerImg,
+        x = speakers[3].x,
+        y = speakers[3].y,
+    }
+
+    speaker4 = Sprite.box{
+        texture = speakerImg,
+        x = speakers[4].x,
+        y = speakers[4].y,
+    }
+
+    -- A bunch of layers (some aren't even used anymore)
 
     chuck           = Layer.get("chuck")
     originalSigns   = Layer.get("originalSigns")
@@ -167,7 +206,8 @@ function onStart()
         conceptuaryWarp:show(true)
         conceptuaryLock:hide(true)
         conceptuaryNPC:hide(true)
-    elseif SaveData.audibletteUnlocked then
+    end
+    if SaveData.audibletteUnlocked then
         audibletteWarp:show(true)
         audibletteLock:hide(true)
         audibletteNPC:hide(true)
@@ -552,6 +592,15 @@ function onDraw()
         player.y = -200240
         teleported = true
     end ]]
+
+    -- Speakers
+
+    speaker1:draw{priority = -60,sceneCoords = true}
+    speaker2:draw{priority = -60,sceneCoords = true}
+    speaker3:draw{priority = -60,sceneCoords = true}
+    speaker4:draw{priority = -60,sceneCoords = true}
+
+    -- This is a failsafe
 
     if player.powerup ~= 2 then
         player.powerup = 2

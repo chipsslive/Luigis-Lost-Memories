@@ -197,17 +197,16 @@ function audiblette.onDraw()
     textplus.print{font = titleFont, x = 252, y = mov.audibletteTitle.position+74, text = "The Audiblette", priority = 5.2, color = textOpacity}
     
     -- Choose track
-    draw9Slice{texture = img.frame1, x = 165, y = mov.trackList.position+120, w = 470, h = 230, priority = 5.1, color = Color.white..menuOpacity}
-    textplus.print{font = stats.font, x = 184, y = mov.trackList.position+158, text = stats.unusedMusic[trackSelection].name, priority = 5.2, color = textOpacity}
-    textplus.print{font = stats.font, x = 300, y = mov.trackList.position+190, text = "By: "..stats.unusedMusic[trackSelection].artist, priority = 5.2, color = textOpacity}
+    draw9Slice{texture = img.frame1, x = 165, y = mov.trackList.position+120, w = 470, h = 100, priority = 5.1, color = Color.white..menuOpacity}
+    textplus.print{font = stats.font, x = 400, y = mov.trackList.position+145, text = stats.unusedMusic[trackSelection].name, priority = 5.2, color = textOpacity,pivot = {0.5, 0}}
+    textplus.print{font = stats.font, x = 400, y = mov.trackList.position+177, text = "By: "..stats.unusedMusic[trackSelection].artist, priority = 5.2, color = textOpacity,pivot = {0.5, 0}}
 
     Graphics.drawImageWP(img.selector, 12 + stats.listOffsetX + 290 + sine, currentPos, menuOpacity, 5.3)
 
     -- Current track
-    textplus.print{font = stats.font, x = 250, y = -mov.currentTrack.position+400, text = "Currently Playing", priority = 5.2, color = textOpacity}
-    draw9Slice{texture = img.frame1, x = 165, y = -mov.currentTrack.position+420, w = 470, h = 60, priority = 5.1, color = Color.white..menuOpacity}
-    textplus.print{font = stats.font, x = 184, y = -mov.currentTrack.position+442, text = currentlyPlaying, priority = 5.2, color = textOpacity}
-    textplus.print{font = stats.font, x = 168, y = -mov.currentTrack.position+484, text = "Left/Right to Select Track", priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 250, y = -mov.currentTrack.position+420, text = "Currently Playing", priority = 5.2, color = textOpacity}
+    draw9Slice{texture = img.frame1, x = 165, y = -mov.currentTrack.position+440, w = 470, h = 60, priority = 5.1, color = Color.white..menuOpacity}
+    textplus.print{font = stats.font, x = 400, y = -mov.currentTrack.position+462, text = currentlyPlaying, priority = 5.2, color = textOpacity,pivot = {0.5, 0}}
 
     -- Warn if music is currently muted
     if pauseplus.getSelectionValue("settings","Mute Music") then
@@ -217,8 +216,10 @@ function audiblette.onDraw()
 
     -- Choices
 
-    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+264, text = "Play", priority = 5.2, color = textOpacity}
-    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+296, text = "Stop", priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 168, y = mov.trackList.position+234, text = "Left/Right to Select Track", priority = 5.2, color = textOpacity}
+    draw9Slice{texture = img.frame1, x = 318, y = mov.trackList.position+265, w = 150, h = 100, priority = 5.1, color = Color.white..menuOpacity}
+    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+289, text = "Play", priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+321, text = "Stop", priority = 5.2, color = textOpacity}
 
     if isTargeting then
         local oldPos = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY
@@ -232,8 +233,8 @@ function audiblette.onDraw()
             isTargeting = false
         end
     else
-        currentPos = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 236
-        targetPos  = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 236
+        currentPos = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 261
+        targetPos  = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 261
     end
 end
 

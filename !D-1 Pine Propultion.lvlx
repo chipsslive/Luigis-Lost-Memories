@@ -4652,7 +4652,7 @@ ID:275;X:-178510;Y:-180280;D:-1;
 ID:339;X:-178526;Y:-180256;D:-1;S1:4;
 ID:77;X:-139695;Y:-140352;D:1;
 ID:314;X:-139641;Y:-140368;D:-1;
-ID:77;X:-199885;Y:-201920;D:1;MG:"<speakerName \"Introverted Ninji\">I see you found the accessbility options menu...<page>...or you could have just typed in the cheat...<page>Either way\, I came up here to be alone. Do you mind?";FD:1;NM:1;
+ID:77;X:-199885;Y:-201920;D:1;MG:"<speakerName \"Introverted Ninji\">I see you found the accessbility options menu...<page>Isn't it obvious that I came up here to be alone? Do you mind?";FD:1;NM:1;
 NPC_END
 DOORS
 IX:-191648;IY:-202128;OX:-159584;OY:-159968;DT:0;ID:1;OD:1;
