@@ -148,10 +148,12 @@ end
 function onStart()
 	-- Progression flags
 
-	SaveData.introFinished 		 = SaveData.introFinished 		or nil_or(SaveData.introFinished, false)
-	SaveData.conceptuaryUnlocked = SaveData.conceptuaryUnlocked or nil_or(SaveData.conceptuaryUnlocked, false)
-	SaveData.audibletteUnlocked  = SaveData.audibletteUnlocked  or nil_or(SaveData.audibletteUnlocked, false)
-	SaveData.creditsSeen 		 = SaveData.creditsSeen 		or nil_or(SaveData.creditsSeen, false)
+	SaveData.introFinished 		  = SaveData.introFinished 		   or nil_or(SaveData.introFinished, false)
+	SaveData.conceptuaryUnlocked  = SaveData.conceptuaryUnlocked   or nil_or(SaveData.conceptuaryUnlocked, false)
+	SaveData.audibletteUnlocked   = SaveData.audibletteUnlocked    or nil_or(SaveData.audibletteUnlocked, false)
+	SaveData.allMemoriesRecovered = SaveData.allMemoriesRecovered  or nil_or(SaveData.allMemoriesRecovered, false)
+	SaveData.allPurpleStarsFound  = SaveData.allPurpleStarsFound   or nil_or(SaveData.allPurpleStarsFound, false)
+	SaveData.creditsSeen 		  = SaveData.creditsSeen 		   or nil_or(SaveData.creditsSeen, false)
 
 	-- Achievement flags
 
@@ -172,9 +174,11 @@ function onStart()
 		Level.load("!Title Screen.lvlx")
 	end
 
-	-- Check for current Purple Star count for achievements
-	GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
-    GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)
+	-- Check for current Purple Star count for achievements, but be mindful of other save files
+	if GameData.ach_AllPurpleStars:getCondition(1).value < SaveData.starcoins then
+		GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
+		GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)
+	end
 
 	-- Reset accessbility checks
 	GameData.usedAccesibility = false
@@ -193,9 +197,18 @@ function onStart()
     end
 
 	-- Other achievement stuff
+	if GameData.ach_AllMemories:getCondition(1).value < #getRecoveredCount() then
+		GameData.ach_AllMemories:setCondition(1,#getRecoveredCount())
+		GameData.ach_HundredPercent:setCondition(1,#getRecoveredCount())
+	end
 
-	GameData.ach_AllMemories:setCondition(1,#getRecoveredCount())
-	GameData.ach_HundredPercent:setCondition(1,#getRecoveredCount())
+	if #getRecoveredCount() >= 20 and not SaveData.allMemoriesRecovered then
+		SaveData.allMemoriesRecovered = true
+	end
+
+	if SaveData.starcoins >= 52 and not SaveData.allPurpleStarsFound then
+		SaveData.allPurpleStarsFound = true
+	end
 
 	-- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)

@@ -107,8 +107,8 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 
 local maroonba2
 local ceruloomba
-local allMemoriesMsgMaroonba = "<speakerName Maroonba>placeholder"
-local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>placeholder"
+local allMemoriesMsgMaroonba = "<speakerName Maroonba>Wowza! Would you look at that! You recovered every last one of those memories!<page>Well, actually, there are still plenty of them left unrecovered, but your amnesia was so strong that I'm fairly sure we'll never be able to find those, even inside the Realm of Recollection.<page>Ah, well, at least we tried, right?"
+local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?"
 
 local mauvoomba
 local emitConfetti = false
@@ -201,11 +201,11 @@ function onTick()
 
     -- Stuff related to what happens after recovering every memory
 
-    for _,v in ipairs(extraNPCProperties.getWithTag("maroonba2")) do
+    for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
         maroonba2 = v
     end
 
-    for _,v in ipairs(extraNPCProperties.getWithTag("ceruloomba")) do
+    for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
         ceruloomba = v
     end
 
@@ -232,7 +232,19 @@ function onTick()
 
     -- For Ceruloomba and Mauvoomba's completion requirements
 
-    if GameData.ach_AllPurpleStars.collected and not emitConfetti and not startConfettiTimer then
+    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered then
+		for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
+            v.msg = allMemoriesMsgCeruloomba
+        end
+    end
+
+    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered then
+		for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
+            v.msg = allMemoriesMsgMaroonba
+        end
+    end
+
+    if GameData.ach_AllPurpleStars.collected and not emitConfetti and not startConfettiTimer and SaveData.allPurpleStarsFound then
 		for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
             v.msg = allPurpleStarsMsg
         end
@@ -569,7 +581,7 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
 
     eventObj.cancelled = true
     
-    if text == allPurpleStarsMsg and GameData.ach_AllPurpleStars.collected then
+    if text == allPurpleStarsMsg and GameData.ach_AllPurpleStars.collected and SaveData.allPurpleStarsFound then
         startConfettiTimer = true
         mauvoomba.msg = "<speakerName Mauvoomba>I could do this for hours!"
     end
