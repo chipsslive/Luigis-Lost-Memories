@@ -2,7 +2,7 @@ HEAD
 TL:"5-1 Toxic Tumble";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-196128;T:-201344;B:-200128;MZ:24;MF:"5-1 Toxic Tumble/Rewitkin - Puzzling Caverns.wav";BG:55;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c9d1b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:0;L:-200000;R:-196128;T:-201344;B:-200128;MZ:24;MF:"5-1 Toxic Tumble/Rewitkin - Puzzling Caverns.ogg";BG:55;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c9d1b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:1;L:-180000;R:-179200;T:-180600;B:-180000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT

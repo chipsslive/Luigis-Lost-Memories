@@ -2,9 +2,9 @@ HEAD
 TL:"!B-1 Swooper Drop Sneak";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-188256;T:-200600;B:-200000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
-SC:1;L:-180000;R:-170816;T:-180608;B:-180000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
-SC:2;L:-160000;R:-158560;T:-160600;B:-160000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
+SC:0;L:-200000;R:-188256;T:-200600;B:-200000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc|0\;g=2.1";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
+SC:1;L:-180000;R:-170816;T:-180608;B:-180000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc|0\;g=2.1";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"flicker\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
+SC:2;L:-160000;R:-158560;T:-160600;B:-160000;MZ:24;MF:"!B-1 Swooper Drop Sneak/HaruMKT - Damp Dugout.spc|0\;g=2.1";BG:7;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7c87b9ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"radius\"\: 72\n        }\n    }\n}\n";
 SC:3;L:-140000;R:-139200;T:-140600;B:-140000;MZ:0;MF:"";BG:0;
 SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:0;
 SECTION_END

@@ -3,6 +3,9 @@ local lineguide = require("lineguide")
 local spawnzones = require("spawnzones")
 local respawnRooms = require("respawnRooms")
 
+lineguide.registerNPCs(67)
+lineguide.properties[67] = {lineSpeed = 2}
+
 function onStart()
     GameData.awardCoins = false
 

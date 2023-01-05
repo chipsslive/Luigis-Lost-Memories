@@ -46,6 +46,7 @@ function audiblette.open()
     SFXPlay("enter")
     isOpen       = true
     selection    = 1
+    trackSelection = 1
     movementOver = false
     menuOpacity  = 0
     fadeType     = 1
@@ -172,6 +173,12 @@ function audiblette.onDraw()
     mov.trackList.position       = movClamp("trackList",       "origin", "goal")
     mov.currentTrack.position    = movClamp("currentTrack",    "goal", "origin")
 
+    if mov.audibletteTitle.position == mov.audibletteTitle.goal
+    and mov.trackList.position      == mov.trackList.goal
+    and mov.currentTrack.position   == mov.currentTrack.origin then
+        movementOver = true
+    end
+
     if menuOpacity == 0 and fadeType == -1 then
         Misc.unpause()
         isOpen = false
@@ -203,32 +210,72 @@ function audiblette.onDraw()
         textplus.print{font = stats.font, x = 70, y = -mov.currentTrack.position+502, text = "<align center><br>The 'Mute Music' setting is<br>currently enabled in the pause menu!</align>", priority = 5.2, color = textOpacity}
     end
 
+    if isTargeting then
+        local oldPos = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
+        selLerpSpeed = math.min(selLerpSpeed + 0.025, 1)
+        selLerpTimer = math.min(selLerpTimer + selLerpSpeed, 1)
+        currentPos = math.floor(math.lerp(oldPos, targetPos, selLerpTimer) + 0.5)
+        if selLerpTimer == 1 then
+            selection = selTarget
+            selLerpSpeed = 0
+            selLerpTimer = 0
+            isTargeting = false
+        end
+    else
+        currentPos = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
+        targetPos  = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
+    end
+
     Text.print(selection,0,0)
+    Text.print(movementOver,0,16)
 end
 
 function audiblette.onInputUpdate()
     if not isOpen then return end
-
-    if player.rawKeys.run == KEYS_PRESSED then
-        audiblette.close()
-        player:mem(0x172, FIELD_BOOL, false)
-    end
-
-    if player.rawKeys.up == KEYS_PRESSED then
-        if selection ~= 1 then
-            selection = 1
+    if canUpdateInput() then
+        if player.rawKeys.run == KEYS_PRESSED then
+            audiblette.close()
+            player:mem(0x172, FIELD_BOOL, false)
         end
-    elseif player.rawKeys.down == KEYS_PRESSED then
-        if selection ~= 2 then
-            selection = 2
-        end
-    end
 
-    if player.rawKeys.jump == KEYS_PRESSED then
-        if selection == 1 then
-            Audio.MusicChange(1,stats.unusedMusic[trackSelection].filename)
-        elseif selection == 2 then
-            Audio.MusicChange(1,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+        if player.rawKeys.up == KEYS_PRESSED then
+            if selection ~= 1 then
+                selection = 1
+                SFXPlay("cursor")
+            end
+        elseif player.rawKeys.down == KEYS_PRESSED then
+            if selection ~= 2 then
+                selection = 2
+                SFXPlay("cursor")
+            end
+        end
+
+        if player.rawKeys.left == KEYS_PRESSED then
+            if trackSelection == 1 then
+                trackSelection = 11
+            else
+                trackSelection = trackSelection - 1
+            end
+            SFXPlay("switch")
+        elseif player.rawKeys.right == KEYS_PRESSED then
+            if trackSelection == 11 then
+                trackSelection = 1
+            else
+                trackSelection = trackSelection + 1
+            end
+            SFXPlay("switch")
+        end
+
+        if player.rawKeys.jump == KEYS_PRESSED then
+            if selection == 1 then
+                Audio.MusicChange(0,stats.unusedMusic[trackSelection].filename)
+                Audio.MusicChange(1,stats.unusedMusic[trackSelection].filename)
+                Audio.MusicChange(2,stats.unusedMusic[trackSelection].filename)
+            elseif selection == 2 then
+                Audio.MusicChange(0,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+                Audio.MusicChange(1,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+                Audio.MusicChange(2,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+            end
         end
     end
 end
