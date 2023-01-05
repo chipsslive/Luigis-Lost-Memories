@@ -53,8 +53,8 @@ stats.unusedMusic = {
     {filename = "unusedMusic/galaxy - Chainlink Charge Remix.ogg",     name = "Chainlink Charge Remix",   artist = "galaxy"},
     {filename = "unusedMusic/galaxy - Island Athletic.ogg",            name = "Island Athletic",          artist = "galaxy"},
     {filename = "unusedMusic/galaxy - Space Junk Galaxy Remix.ogg",    name = "Space Junk Galaxy Remix",  artist = "galaxy"},
-    {filename = "unusedMusic/JerryCoxalot - Haunted Desert Theme.mp3", name = "Victory Jingle",           artist = "JerryCoxalot"},
-    {filename = "unusedMusic/leitakcoc - Desert Theme.mp3",            name = "Victory Jingle",           artist = "leitakcoc"},
+    {filename = "unusedMusic/JerryCoxalot - Haunted Desert Theme.mp3", name = "Haunted Desert Theme",     artist = "JerryCoxalot"},
+    {filename = "unusedMusic/leitakcoc - Desert Theme.mp3",            name = "Desert Theme",             artist = "leitakcoc"},
 }
 
 stats.notEnough = "You need more Purple Stars to access this sector of memory recovery."

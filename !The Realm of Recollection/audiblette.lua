@@ -8,27 +8,28 @@ local titleFont = textplus.loadFont("MKDS-Exit.ini")
 
 local audiblette = {}
 
-local mov            = stats.movement
-local img            = stats.images
-local isOpen         = false
-local isPlaying      = false
-local selection      = 1
-local trackSelection = 1
-local movementOver   = true
-local menuOpacity    = 0
-local fadeType       = -1
-local isTargeting    = false
-local targetPos      = 0
-local currentPos     = 0
-local selLerpTimer   = 0
-local selLerpSpeed   = 0
-local selTarget      = 1
-local pressTimer     = 0
-local flashOpacity   = 0
-local waitTimer      = stats.waitTime
-local waitFunc       = function() end
-local waitOpacity    = 0
-local executed       = false
+local mov              = stats.movement
+local img              = stats.images
+local isOpen           = false
+local isPlaying        = false
+local selection        = 1
+local trackSelection   = 1
+local movementOver     = true
+local menuOpacity      = 0
+local fadeType         = -1
+local isTargeting      = false
+local targetPos        = 0
+local currentPos       = 0
+local selLerpTimer     = 0
+local selLerpSpeed     = 0
+local selTarget        = 1
+local pressTimer       = 0
+local flashOpacity     = 0
+local waitTimer        = stats.waitTime
+local waitFunc         = function() end
+local waitOpacity      = 0
+local executed         = false
+local currentlyPlaying = "Default"
 
 registerEvent(audiblette, "onStart")
 registerEvent(audiblette, "onDraw")
@@ -197,21 +198,30 @@ function audiblette.onDraw()
     
     -- Choose track
     draw9Slice{texture = img.frame1, x = 165, y = mov.trackList.position+120, w = 470, h = 230, priority = 5.1, color = Color.white..menuOpacity}
+    textplus.print{font = stats.font, x = 184, y = mov.trackList.position+158, text = stats.unusedMusic[trackSelection].name, priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 300, y = mov.trackList.position+190, text = "By: "..stats.unusedMusic[trackSelection].artist, priority = 5.2, color = textOpacity}
 
-    Graphics.drawImageWP(img.selector, 12 + stats.listOffsetX - 20 + sine, currentPos, menuOpacity, 5.3)
+    Graphics.drawImageWP(img.selector, 12 + stats.listOffsetX + 290 + sine, currentPos, menuOpacity, 5.3)
 
     -- Current track
-    textplus.print{font = stats.font, x = 290, y = -mov.currentTrack.position+400, text = "Current Track", priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 250, y = -mov.currentTrack.position+400, text = "Currently Playing", priority = 5.2, color = textOpacity}
     draw9Slice{texture = img.frame1, x = 165, y = -mov.currentTrack.position+420, w = 470, h = 60, priority = 5.1, color = Color.white..menuOpacity}
+    textplus.print{font = stats.font, x = 184, y = -mov.currentTrack.position+442, text = currentlyPlaying, priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 168, y = -mov.currentTrack.position+484, text = "Left/Right to Select Track", priority = 5.2, color = textOpacity}
 
     -- Warn if music is currently muted
     if pauseplus.getSelectionValue("settings","Mute Music") then
-        textplus.print{font = stats.fontRed, x = 330, y = -mov.currentTrack.position+500, text = "<align center>WARNING!</align>", priority = 5.2, color = textOpacity}
-        textplus.print{font = stats.font, x = 70, y = -mov.currentTrack.position+502, text = "<align center><br>The 'Mute Music' setting is<br>currently enabled in the pause menu!</align>", priority = 5.2, color = textOpacity}
+        textplus.print{font = stats.fontRed, x = 330, y = -mov.currentTrack.position+532, text = "<align center>WARNING!</align>", priority = 5.2, color = textOpacity}
+        textplus.print{font = stats.font, x = 70, y = -mov.currentTrack.position+534, text = "<align center><br>The 'Mute Music' setting is<br>currently enabled in the pause menu!</align>", priority = 5.2, color = textOpacity}
     end
 
+    -- Choices
+
+    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+264, text = "Play", priority = 5.2, color = textOpacity}
+    textplus.print{font = stats.font, x = 360, y = mov.trackList.position+296, text = "Stop", priority = 5.2, color = textOpacity}
+
     if isTargeting then
-        local oldPos = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
+        local oldPos = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY
         selLerpSpeed = math.min(selLerpSpeed + 0.025, 1)
         selLerpTimer = math.min(selLerpTimer + selLerpSpeed, 1)
         currentPos = math.floor(math.lerp(oldPos, targetPos, selLerpTimer) + 0.5)
@@ -222,12 +232,9 @@ function audiblette.onDraw()
             isTargeting = false
         end
     else
-        currentPos = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
-        targetPos  = ((selection-1) * 32) + mov.list.position + stats.listOffsetY
+        currentPos = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 236
+        targetPos  = ((selection-1) * 32) + mov.trackList.position + stats.listOffsetY + 236
     end
-
-    Text.print(selection,0,0)
-    Text.print(movementOver,0,16)
 end
 
 function audiblette.onInputUpdate()
@@ -271,10 +278,12 @@ function audiblette.onInputUpdate()
                 Audio.MusicChange(0,stats.unusedMusic[trackSelection].filename)
                 Audio.MusicChange(1,stats.unusedMusic[trackSelection].filename)
                 Audio.MusicChange(2,stats.unusedMusic[trackSelection].filename)
+                currentlyPlaying = stats.unusedMusic[trackSelection].name
             elseif selection == 2 then
                 Audio.MusicChange(0,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
                 Audio.MusicChange(1,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
                 Audio.MusicChange(2,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+                currentlyPlaying = "Default"
             end
         end
     end
