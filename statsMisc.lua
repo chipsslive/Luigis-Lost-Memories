@@ -44,17 +44,17 @@ stats.movement.trackList       = {type = 0, position = -4, origin = -4, goal = 1
 stats.movement.currentTrack    = {type = 0, position = 18, origin = 18, goal = -4, speed = 1.5}
 
 stats.unusedMusic = {
-    {filename = "Noodle - Boss Jingle.ogg",                name = "Boss Jingle",              artist = "Noodle"},
-    {filename = "Noodle - Boss Theme.ogg",                 name = "Boss Theme",               artist = "Noodle"},
-    {filename = "Noodle - Unfinished Trailer Theme.ogg",   name = "Unfinished Trailer Theme", artist = "Noodle"},
-    {filename = "Noodle - Victory Jingle.ogg",             name = "Victory Jingle",           artist = "Noodle"},
-    {filename = "Noodle - NewerSMBWii Castle Remix.ogg",   name = "NewerSMBWii Castle Remix", artist = "Noodle"},
-    {filename = "Noodle - SMM2 SMB1 Forest Remix.ogg",     name = "SMM2 SMB1 Forest Remix",   artist = "Noodle"},
-    {filename = "galaxy - Chainlink Charge Remix.ogg",     name = "Chainlink Charge Remix",   artist = "galaxy"},
-    {filename = "galaxy - Island Athletic.ogg",            name = "Island Athletic",          artist = "galaxy"},
-    {filename = "galaxy - Space Junk Galaxy Remix.ogg",    name = "Space Junk Galaxy Remix",  artist = "galaxy"},
-    {filename = "JerryCoxalot - Haunted Desert Theme.mp3", name = "Victory Jingle",           artist = "JerryCoxalot"},
-    {filename = "leitakcoc - Desert Theme.mp3",            name = "Victory Jingle",           artist = "leitakcoc"},
+    {filename = "unusedMusic/Noodle - Boss Jingle.ogg",                name = "Boss Jingle",              artist = "Noodle"},
+    {filename = "unusedMusic/Noodle - Boss Theme.ogg",                 name = "Boss Theme",               artist = "Noodle"},
+    {filename = "unusedMusic/Noodle - Unfinished Trailer Theme.ogg",   name = "Unfinished Trailer Theme", artist = "Noodle"},
+    {filename = "unusedMusic/Noodle - Victory Jingle.ogg",             name = "Victory Jingle",           artist = "Noodle"},
+    {filename = "unusedMusic/Noodle - NewerSMBWii Castle Remix.ogg",   name = "NewerSMBWii Castle Remix", artist = "Noodle"},
+    {filename = "unusedMusic/Noodle - SMM2 SMB1 Forest Remix.ogg",     name = "SMM2 SMB1 Forest Remix",   artist = "Noodle"},
+    {filename = "unusedMusic/galaxy - Chainlink Charge Remix.ogg",     name = "Chainlink Charge Remix",   artist = "galaxy"},
+    {filename = "unusedMusic/galaxy - Island Athletic.ogg",            name = "Island Athletic",          artist = "galaxy"},
+    {filename = "unusedMusic/galaxy - Space Junk Galaxy Remix.ogg",    name = "Space Junk Galaxy Remix",  artist = "galaxy"},
+    {filename = "unusedMusic/JerryCoxalot - Haunted Desert Theme.mp3", name = "Victory Jingle",           artist = "JerryCoxalot"},
+    {filename = "unusedMusic/leitakcoc - Desert Theme.mp3",            name = "Victory Jingle",           artist = "leitakcoc"},
 }
 
 stats.notEnough = "You need more Purple Stars to access this sector of memory recovery."

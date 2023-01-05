@@ -8,26 +8,27 @@ local titleFont = textplus.loadFont("MKDS-Exit.ini")
 
 local audiblette = {}
 
-local mov          = stats.movement
-local img          = stats.images
-local isOpen       = false
-local isPlaying    = false
-local selection    = 1
-local movementOver = true
-local menuOpacity  = 0
-local fadeType     = -1
-local isTargeting  = false
-local targetPos    = 0
-local currentPos   = 0
-local selLerpTimer = 0
-local selLerpSpeed = 0
-local selTarget    = 1
-local pressTimer   = 0
-local flashOpacity = 0
-local waitTimer    = stats.waitTime
-local waitFunc     = function() end
-local waitOpacity  = 0
-local executed     = false
+local mov            = stats.movement
+local img            = stats.images
+local isOpen         = false
+local isPlaying      = false
+local selection      = 1
+local trackSelection = 1
+local movementOver   = true
+local menuOpacity    = 0
+local fadeType       = -1
+local isTargeting    = false
+local targetPos      = 0
+local currentPos     = 0
+local selLerpTimer   = 0
+local selLerpSpeed   = 0
+local selTarget      = 1
+local pressTimer     = 0
+local flashOpacity   = 0
+local waitTimer      = stats.waitTime
+local waitFunc       = function() end
+local waitOpacity    = 0
+local executed       = false
 
 registerEvent(audiblette, "onStart")
 registerEvent(audiblette, "onDraw")
@@ -91,7 +92,7 @@ local function getVert(pos, center, scale)
 	return (pos-center)*scale + center
 end
 
-local function draw9Slice(args) -- credit Enjl and Hoeloe for this function
+local function draw9Slice(args) -- credit to Enjl and Hoeloe for this function
 	if not args.texture and not args.image then error("No image was provided as a texture!") end
 	args.texture     = args.texture or args.image
 	args.x, args.y   = args.x or 0, args.y or 0
@@ -201,6 +202,8 @@ function audiblette.onDraw()
         textplus.print{font = stats.fontRed, x = 330, y = -mov.currentTrack.position+500, text = "<align center>WARNING!</align>", priority = 5.2, color = textOpacity}
         textplus.print{font = stats.font, x = 70, y = -mov.currentTrack.position+502, text = "<align center><br>The 'Mute Music' setting is<br>currently enabled in the pause menu!</align>", priority = 5.2, color = textOpacity}
     end
+
+    Text.print(selection,0,0)
 end
 
 function audiblette.onInputUpdate()
@@ -209,6 +212,24 @@ function audiblette.onInputUpdate()
     if player.rawKeys.run == KEYS_PRESSED then
         audiblette.close()
         player:mem(0x172, FIELD_BOOL, false)
+    end
+
+    if player.rawKeys.up == KEYS_PRESSED then
+        if selection ~= 1 then
+            selection = 1
+        end
+    elseif player.rawKeys.down == KEYS_PRESSED then
+        if selection ~= 2 then
+            selection = 2
+        end
+    end
+
+    if player.rawKeys.jump == KEYS_PRESSED then
+        if selection == 1 then
+            Audio.MusicChange(1,stats.unusedMusic[trackSelection].filename)
+        elseif selection == 2 then
+            Audio.MusicChange(1,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
+        end
     end
 end
 
