@@ -1,0 +1,5 @@
+width=32
+framestyle=1
+frames=4
+friendly=true
+foreground=true

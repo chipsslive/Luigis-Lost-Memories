@@ -1,0 +1,13 @@
+gfxwidth=64
+gfxheight=96
+foreground=0
+width=64
+height=96
+playerblock=0
+playerblocktop=1
+npcblock=0
+npcblocktop=1
+grabside=0
+grabtop=0
+jumphurt=0
+nohurt=1

@@ -49,7 +49,5 @@ function onPostNPCKill(npc, reason)
 	if npc.id == 320 then
 		local effect = Animation.spawn(10, npc.x + npc.width*0.5, npc.y + npc.height*0.5)
 		effect.x, effect.y = effect.x - effect.width*0.5, effect.y - effect.height*0.5
-
-
   	end 
 end
