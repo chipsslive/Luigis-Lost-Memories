@@ -1,0 +1,22 @@
+HEAD
+TL:"!Memory Amalgamation";CPID:"SMBX2";
+HEAD_END
+SECTION
+SC:0;L:-200000;R:-197696;T:-200600;B:-200000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
+SECTION_END
+STARTPOINT
+ID:1;X:-199948;Y:-200150;D:1;
+STARTPOINT_END
+BLOCK
+ID:1103;X:-199968;Y:-200096;W:64;H:64;
+BLOCK_END
+LAYERS
+LR:"Default";
+LR:"Destroyed Blocks";HD:1;
+LR:"Spawned NPCs";
+LAYERS_END
+EVENTS_CLASSIC
+ET:"Level - Start";AS:0;AX:0;AY:0;
+ET:"P Switch - Start";AS:0;AX:0;AY:0;
+ET:"P Switch - End";AS:0;AX:0;AY:0;
+EVENTS_CLASSIC_END

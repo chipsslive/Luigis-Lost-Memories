@@ -29,7 +29,7 @@ local waitTimer        = stats.waitTime
 local waitFunc         = function() end
 local waitOpacity      = 0
 local executed         = false
-local currentlyPlaying = "Default"
+audiblette.currentlyPlaying = "Default"
 
 registerEvent(audiblette, "onStart")
 registerEvent(audiblette, "onDraw")
@@ -206,7 +206,7 @@ function audiblette.onDraw()
     -- Current track
     textplus.print{font = stats.font, x = 250, y = -mov.currentTrack.position+420, text = "Currently Playing", priority = 5.2, color = textOpacity}
     draw9Slice{texture = img.frame1, x = 165, y = -mov.currentTrack.position+440, w = 470, h = 60, priority = 5.1, color = Color.white..menuOpacity}
-    textplus.print{font = stats.font, x = 400, y = -mov.currentTrack.position+462, text = currentlyPlaying, priority = 5.2, color = textOpacity,pivot = {0.5, 0}}
+    textplus.print{font = stats.font, x = 400, y = -mov.currentTrack.position+462, text = audiblette.currentlyPlaying, priority = 5.2, color = textOpacity,pivot = {0.5, 0}}
 
     -- Warn if music is currently muted
     if pauseplus.getSelectionValue("settings","Mute Music") then
@@ -279,12 +279,12 @@ function audiblette.onInputUpdate()
                 Audio.MusicChange(0,stats.unusedMusic[trackSelection].filename)
                 Audio.MusicChange(1,stats.unusedMusic[trackSelection].filename)
                 Audio.MusicChange(2,stats.unusedMusic[trackSelection].filename)
-                currentlyPlaying = stats.unusedMusic[trackSelection].name
+                audiblette.currentlyPlaying = stats.unusedMusic[trackSelection].name
             elseif selection == 2 then
                 Audio.MusicChange(0,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
                 Audio.MusicChange(1,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
                 Audio.MusicChange(2,"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3")
-                currentlyPlaying = "Default"
+                audiblette.currentlyPlaying = "Default"
             end
         end
     end

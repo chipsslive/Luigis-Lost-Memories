@@ -1,0 +1,2 @@
+foreground=0
+npcblock=1

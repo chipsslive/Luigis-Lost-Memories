@@ -109,7 +109,7 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 local maroonba2
 local ceruloomba
 local allMemoriesMsgMaroonba = "<speakerName Maroonba>Wowza! Would you look at that! You recovered every last one of those memories!<page>Well, actually, there are still plenty of them left unrecovered, but your amnesia was so strong that I'm fairly sure we'll never be able to find those, even inside the Realm of Recollection.<page>Ah, well, at least we tried, right?"
-local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?"
+local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?<question enterAmalgamation>"
 
 local mauvoomba
 local emitConfetti = false
@@ -117,7 +117,16 @@ local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found
 local startConfettiTimer = false
 local confettiTimer = 0
 
+littleDialogue.registerAnswer("enterAmalgamation",{text = "I'm ready!",addText = "Don't screw up out there kid. Your future depends on it.",chosenFunction = function() Level.load("!Memory Amalgamation") end})
+littleDialogue.registerAnswer("enterAmalgamation",{text = "That sounds scary!",addText = "What a quitter! You should be ashamed of yourself, dimwit."})
+
+littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Let's do it!",addText = "Enjoy it kid. You earned this.",chosenFunction = function() Level.load("!Memory Amalgamation") end})
+littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Not right now.",addText = "No worries. This time's just for fun anyway."})
+
+local afterCreditsMsgCeruloomba = "<speakerName Ceruloomba>Hey kid. Sorry I was so rude to ya' before. Hopefully you can forgive me, I'm working through some stuff.<page>You did good out there in the Memory Amalgamation. If you'd like, I can send ya' through it again. Whaddya think?<question enterAmalgamationAfterCredits>"
+
 local hundo
+local hundoMsgMaroonba = "<speakerName Maroonba>Master Luigi! Look! Up in the sky! Who put those numbers there? Was that you?"
 
 -- Confetti particle emitter
 
@@ -156,26 +165,30 @@ function onStart()
 
     speaker1 = Sprite.box{
         texture = speakerImg,
-        x = speakers[1].x,
-        y = speakers[1].y,
+        x = speakers[1].x + 16,
+        y = speakers[1].y + 16,
+        pivot = {0.5,0.5}
     }
 
     speaker2 = Sprite.box{
         texture = speakerImg,
-        x = speakers[2].x,
-        y = speakers[2].y,
+        x = speakers[2].x + 16,
+        y = speakers[2].y + 16,
+        pivot = {0.5,0.5}
     }
 
     speaker3 = Sprite.box{
         texture = speakerImg,
-        x = speakers[3].x,
-        y = speakers[3].y,
+        x = speakers[3].x + 16,
+        y = speakers[3].y + 16,
+        pivot = {0.5,0.5}
     }
 
     speaker4 = Sprite.box{
         texture = speakerImg,
-        x = speakers[4].x,
-        y = speakers[4].y,
+        x = speakers[4].x + 16,
+        y = speakers[4].y + 16,
+        pivot = {0.5,0.5}
     }
 
     -- A bunch of layers (some aren't even used anymore)
@@ -298,14 +311,26 @@ function onTick()
     -- For Ceruloomba and Mauvoomba's completion requirements
 
     if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered then
-		for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
-            v.msg = allMemoriesMsgCeruloomba
+        if SaveData.creditsSeen then
+            for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
+                v.msg = afterCreditsMsgCeruloomba
+            end
+        else
+            for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
+                v.msg = allMemoriesMsgCeruloomba
+            end
         end
     end
 
-    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered then
+    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered and not SaveData.fullyComplete then
 		for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
             v.msg = allMemoriesMsgMaroonba
+        end
+    end
+
+    if GameData.ach_HundredPercent.collected and SaveData.fullyComplete then
+        for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
+            v.msg = hundoMsgMaroonba
         end
     end
 
@@ -606,6 +631,10 @@ end
 -- pls don't mind this jank
 local teleported = false
 
+local scale = 1
+local raiseScale = true
+local lowerScale = false
+
 function onDraw()
     --[[if teleported == false then
         player.x = -199856
@@ -619,10 +648,28 @@ function onDraw()
 
     -- Speakers
 
-    speaker1:draw{priority = -60,sceneCoords = true}
-    speaker2:draw{priority = -60,sceneCoords = true}
-    speaker3:draw{priority = -60,sceneCoords = true}
-    speaker4:draw{priority = -60,sceneCoords = true}
+    local sine = 1 + math.abs(math.sin(lunatime.drawtick() * 0.07)) * 0.3
+
+    if sine > 1.3 then
+        sine = 1.3
+    end
+
+    speaker1:draw{priority = -30,sceneCoords = true}
+    speaker2:draw{priority = -30,sceneCoords = true}
+    speaker3:draw{priority = -30,sceneCoords = true}
+    speaker4:draw{priority = -30,sceneCoords = true}
+
+    if audiblette.currentlyPlaying ~= "Default" then
+        speaker1.transform.scale = {sine,sine}
+        speaker2.transform.scale = {sine,sine}
+        speaker3.transform.scale = {sine,sine}
+        speaker4.transform.scale = {sine,sine}
+    else
+        speaker1.transform.scale = {1,1}
+        speaker2.transform.scale = {1,1}
+        speaker3.transform.scale = {1,1}
+        speaker4.transform.scale = {1,1}
+    end
 
     -- This is a failsafe
 
