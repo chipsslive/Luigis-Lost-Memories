@@ -8,6 +8,7 @@ local pauseplus          = require("pauseplus")
 local portalOpen         = require("portalOpen")
 local audiblette         = require("audiblette")
 local particles          = require("particles")
+local slm                = require("simpleLayerMovement")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -116,6 +117,8 @@ local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found
 local startConfettiTimer = false
 local confettiTimer = 0
 
+local hundo
+
 -- Confetti particle emitter
 
 local confetti = particles.Emitter(0, 0, "p_confetti.ini")
@@ -128,8 +131,11 @@ local speaker2
 local speaker3
 local speaker4
 local speakerImg = Graphics.loadImageResolved("speaker.png")
+local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
+    slm.addLayer{name = "hundo",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = 0.1}
+
     -- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
     
@@ -189,6 +195,7 @@ function onStart()
     conceptuaryLock = Layer.get("conceptuaryLock")
     audibletteNPC   = Layer.get("audibletteNPC")
     conceptuaryNPC  = Layer.get("conceptuaryNPC")
+    hundo           = Layer.get("hundo")
 
     -- Intro initializations
 
@@ -220,6 +227,24 @@ if SaveData.introFinished == false then
 end
 
 function onTick()
+    -- Check if intersected with boomobox
+
+    for k,v in ipairs(BGO.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height)) do
+        if v.id == 283 then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * myIMG.width) 
+            local trueY = (v.y - 8 - gfxHeight) - myIMG.height + 36
+
+            Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -40)
+
+            if player.rawKeys.up == KEYS_PRESSED then
+                audiblette.open()
+            end
+        end
+    end
+
     -- Confetti stuff
 
     for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
@@ -576,11 +601,6 @@ function onEvent(eventName)
     if eventName == "Lock Controls" then
         Effect.spawn(805,-158214,-160222)
     end
-
-    -- Opening audiblette menu
-    if eventName == "audiblette" then
-        audiblette.open()
-    end
 end
 
 -- pls don't mind this jank
@@ -592,6 +612,10 @@ function onDraw()
         player.y = -200240
         teleported = true
     end ]]
+
+    if SaveData.fullyComplete and hundo.isHidden then
+        hundo:show(true)
+    end
 
     -- Speakers
 
