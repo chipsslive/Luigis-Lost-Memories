@@ -129,6 +129,8 @@ function jewel.onTickNPC(n)
 	else
 		data.wasactive = false
 	end
+
+  npcutils.applyLayerMovement(n)
 end
 
 function jewel.onTick()

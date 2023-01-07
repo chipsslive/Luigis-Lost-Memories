@@ -26,6 +26,7 @@ function onStart()
 	hasRemoverBGOs = #BGO.get(752)
 
     slm.addLayer{name = "Float1",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = 0.1}
+	slm.addLayer{name = "Float2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = -0.1}
 end
 
 function onTick()
