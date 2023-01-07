@@ -158,7 +158,10 @@ function onExitLevel(levelWinType)
     if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and not GameData.usedAccesibility then
         GameData.ach_AllKeyholes:setCondition(2,true)
         if not SaveData.keyhole2Found then
-			GameData.ach_HundredPercent:progressCondition(4)
+			if GameData.ach_HundredPercent:getCondition(4).value < SaveData.totalKeyholesFound + 1 then
+			    GameData.ach_HundredPercent:setCondition(4,SaveData.totalKeyholesFound + 1)
+            end
+			SaveData.totalKeyholesFound = SaveData.totalKeyholesFound + 1
 			SaveData.keyhole2Found = true
 		end
     end

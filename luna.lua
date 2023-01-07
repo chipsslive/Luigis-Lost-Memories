@@ -78,14 +78,14 @@ end
 
 -- Check if accessibility options are active
 
-GameData.usedAccesibility = false
+GameData.usedAccessibility = false
 GameData.usedSetPowerup = false
 
 function checkAccessibility()
 	if (pauseplus.getSelectionValue("accessibility","Invincibility") or pauseplus.getSelectionValue("infiniteJumps","Infinite Jumps")) and GameData.usedAccesibility == false then
-		GameData.usedAccesibility = true
-	elseif GameData.usedSetPowerup and GameData.usedAccesibility == false then
-		GameData.usedAccesibility = true
+		GameData.usedAccessibility = true
+	elseif GameData.usedSetPowerup and GameData.usedAccessibility == false then
+		GameData.usedAccessibility = true
 	end
 end
 
@@ -165,12 +165,16 @@ function onStart()
 	SaveData.keyhole3Found = SaveData.keyhole3Found or nil_or(SaveData.keyhole3Found, false)
 	SaveData.keyhole4Found = SaveData.keyhole4Found or nil_or(SaveData.keyhole4Found, false)
 	SaveData.keyhole5Found = SaveData.keyhole5Found or nil_or(SaveData.keyhole5Found, false)
+	
+	SaveData.totalKeyholesFound = SaveData.totalKeyholesFound or nil_or(SaveData.totalKeyholesFound, 0)
 
 	SaveData.challenge1Completed = SaveData.challenge1Completed or nil_or(SaveData.challenge1Completed, false)
 	SaveData.challenge2Completed = SaveData.challenge2Completed or nil_or(SaveData.challenge2Completed, false)
 	SaveData.challenge3Completed = SaveData.challenge3Completed or nil_or(SaveData.challenge3Completed, false)
 	SaveData.challenge4Completed = SaveData.challenge4Completed or nil_or(SaveData.challenge4Completed, false)
 	SaveData.challenge5Completed = SaveData.challenge5Completed or nil_or(SaveData.challenge5Completed, false)
+
+	SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted or nil_or(SaveData.totalChallengesCompleted, 0)
 	
 	-- Check if player has seen the title screen yet
 	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
@@ -184,7 +188,7 @@ function onStart()
 	end
 
 	-- Reset accessbility checks
-	GameData.usedAccesibility = false
+	GameData.usedAccessibility = false
 	GameData.usedSetPowerup = false
 
 	-- Checks how many memories are completed for the achievement
@@ -336,6 +340,24 @@ function onDraw()
         	Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -40)
 		end
     end
+
+	if SaveData.allMemoriesRecovered 
+	and SaveData.creditsSeen
+	and SaveData.allPurpleStarsFound 
+	and SaveData.keyhole1Found 
+	and SaveData.keyhole2Found 
+	and SaveData.keyhole3Found
+	and SaveData.keyhole4Found
+	and SaveData.keyhole5Found 
+	and SaveData.challenge1Completed
+	and SaveData.challenge2Completed
+	and SaveData.challenge3Completed
+	and SaveData.challenge4Completed
+	and SaveData.challenge5Completed
+	and SaveData.conceptuaryUnlocked
+	and SaveData.audibletteUnlocked then
+		SaveData.fullyComplete = true
+	end
 end
 
 function onTickEnd()

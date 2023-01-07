@@ -117,10 +117,10 @@ local allPurpleStarsMsg = "<speakerName Mauvoomba>Ah, Master Luigi! You've found
 local startConfettiTimer = false
 local confettiTimer = 0
 
-littleDialogue.registerAnswer("enterAmalgamation",{text = "I'm ready!",addText = "Don't screw up out there kid. Your future depends on it.",chosenFunction = function() Level.load("!Memory Amalgamation") end})
+littleDialogue.registerAnswer("enterAmalgamation",{text = "I'm ready!",addText = "Don't screw up out there kid. Your future depends on it.",chosenFunction = function() Level.load("!Memory Amalgamation.lvlx") end})
 littleDialogue.registerAnswer("enterAmalgamation",{text = "That sounds scary!",addText = "What a quitter! You should be ashamed of yourself, dimwit."})
 
-littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Let's do it!",addText = "Enjoy it kid. You earned this.",chosenFunction = function() Level.load("!Memory Amalgamation") end})
+littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Let's do it!",addText = "Enjoy it kid. You earned this.",chosenFunction = function() Level.load("!Memory Amalgamation.lvlx") end})
 littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Not right now.",addText = "No worries. This time's just for fun anyway."})
 
 local afterCreditsMsgCeruloomba = "<speakerName Ceruloomba>Hey kid. Sorry I was so rude to ya' before. Hopefully you can forgive me, I'm working through some stuff.<page>You did good out there in the Memory Amalgamation. If you'd like, I can send ya' through it again. Whaddya think?<question enterAmalgamationAfterCredits>"

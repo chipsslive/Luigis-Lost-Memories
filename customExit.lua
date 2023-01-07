@@ -394,10 +394,14 @@ function customExit.onTickNPC(v)
 				customExit.startExit(p)
 				v:kill(HARM_TYPE_VANISH)
 
-				if Level.filename() == "3-3 Lightweight Library.lvlx" and SaveData.levelStats[Level.filename()].timer < lunatime.toTicks(120) then
+				if Level.filename() == "3-3 Lightweight Library.lvlx" and SaveData.levelStats[Level.filename()].timer < lunatime.toTicks(120) and not GameData.usedAccessibility then
 					GameData.ach_Challenge1:collect()
 					if not SaveData.challenge1Completed then
-						GameData.ach_HundredPercent:progressCondition(3)
+						if GameData.ach_HundredPercent:getCondition(3).value < SaveData.totalChallengesCompleted + 1 then
+							GameData.ach_HundredPercent:setCondition(3,SaveData.totalChallengesCompleted + 1)
+						end
+						SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
+						SaveData.challenge1Completed = true
 					end
 				end
 			end
