@@ -27,7 +27,7 @@ for k, v in ipairs(stats.levelList) do
 end
 
 local starcoin = require("npcs/AI/starcoin")
-SaveData.starcoins = starcoin.getEpisodeCollected()
+SaveData.starcoins = 52 --starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 
@@ -145,6 +145,8 @@ function nil_or(a,b)
 	return b
 end
 
+local MAX_VALUE = 100
+
 function onStart()
 	newcheats.enabled = false
 
@@ -157,6 +159,8 @@ function onStart()
 	SaveData.allPurpleStarsFound  = SaveData.allPurpleStarsFound   or nil_or(SaveData.allPurpleStarsFound, false)
 	SaveData.creditsSeen 		  = SaveData.creditsSeen 		   or nil_or(SaveData.creditsSeen, false)
 	SaveData.fullyComplete        = SaveData.fullyComplete         or nil_or(SaveData.fullyComplete, false)
+
+	SaveData.totalMemoriesRecovered = SaveData.totalMemoriesRecovered or nil_or(SaveData.totalMemoriesRecovered, 0)
 
 	-- Achievement flags
 
@@ -175,6 +179,13 @@ function onStart()
 	SaveData.challenge5Completed = SaveData.challenge5Completed or nil_or(SaveData.challenge5Completed, false)
 
 	SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted or nil_or(SaveData.totalChallengesCompleted, 0)
+
+	-- Progress variables (percentage in launcher)
+
+	creditsSeenVar = (SaveData.creditsSeen and 8) or 0
+
+	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + creditsSeenVar
+    Progress.value = (totalProg/MAX_VALUE)*100
 	
 	-- Check if player has seen the title screen yet
 	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
