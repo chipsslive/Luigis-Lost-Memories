@@ -148,7 +148,9 @@ end
 local MAX_VALUE = 100
 
 function onStart()
+	Misc.saveGame()
 	newcheats.enabled = false
+	player.powerup = 2
 
 	-- Progression flags
 
@@ -170,7 +172,8 @@ function onStart()
 	SaveData.keyhole4Found = SaveData.keyhole4Found or nil_or(SaveData.keyhole4Found, false)
 	SaveData.keyhole5Found = SaveData.keyhole5Found or nil_or(SaveData.keyhole5Found, false)
 	
-	SaveData.totalKeyholesFound = SaveData.totalKeyholesFound or nil_or(SaveData.totalKeyholesFound, 0)
+	SaveData.totalKeyholesFound      = SaveData.totalKeyholesFound      or nil_or(SaveData.totalKeyholesFound, 0)
+	SaveData.shownKeyholeAchievement = SaveData.shownKeyholeAchievement or nil_or(SaveData.shownKeyholeAchievement, false)
 
 	SaveData.challenge1Completed = SaveData.challenge1Completed or nil_or(SaveData.challenge1Completed, false)
 	SaveData.challenge2Completed = SaveData.challenge2Completed or nil_or(SaveData.challenge2Completed, false)
@@ -439,6 +442,8 @@ function respawnRooms.onPostReset(fromRespawn)
 	if fromRespawn then
         respawnRooms.deathCoins = {}
     end
+
+	player.powerup = 2
 end
 
 -- Custom Coin Counter HUD Element

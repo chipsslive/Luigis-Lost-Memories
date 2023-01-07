@@ -122,7 +122,7 @@ function jewel.onTickNPC(n)
   end
 
 	if data.active then
-		if not data.wasactive and data.offtime > 0 then
+		if not data.wasactive and data.offtime > 0 and (n.x + -player.x < 960) then
 			SFX.play(sfx_power)
 		end
 		data.wasactive = true

@@ -9,6 +9,7 @@ local portalOpen         = require("portalOpen")
 local audiblette         = require("audiblette")
 local particles          = require("particles")
 local slm                = require("simpleLayerMovement")
+local starcoin           = require("npcs/AI/starcoin")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -60,12 +61,32 @@ littleDialogue.registerAnswer("chuckQuestion",{text = "Not Yet!"})
 
 -- Tangeroomba Dialogue
 
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+local creditText = ""
+
+if SaveData.creditsSeen then
+    creditText = "Yes"
+else
+    creditText = "No"
+end
+
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>And to think some developers release stuff like this and then make you pay for the rest! Heh. What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>Hey, they may not be the greatest memories, but at least they're still included! Anything else ya' wanna know?<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?" ,addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>What else can I tell ya' about??<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Conceptuary?"     ,addText = "The Conceptuary holds a collection of every piece of art, whether that be for concept or promotional purposes, created for the game. Most of them were created by galaxy, while the piece of art at the far end of the building was created by FurballArts.<page>What else can I tell ya' about?<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>What else can I tell ya' about?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"      ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
 littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
+
+littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather<br><color purple>2. </color>A Shocking Discovery<br><color purple>3. </color>Rodents Run Wild<br><color purple>4. </color>Of Knowledge And Boos<br><color purple>5. </color>Above Loose Dirt<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
+
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<page>Let's hope you've brushed up on your paranormal movement techniques! Anything else ya' wanna know?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Anything else?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "Anything else?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "Anything else?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "Anything else?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind"   ,addText = "Not up for a challenge, eh? Well, that's quite alright. Anything else I can tell ya'?<question tangeroombaInitial>"})
 
 -- All intro-related variables + questions
 
@@ -637,6 +658,8 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
+    Text.print(SaveData.totalKeyholesFound,0,0)
+    Text.print(SaveData.shownKeyholeAchievement,0,16)
     --[[if teleported == false then
         player.x = -199856
         player.y = -200240
@@ -650,10 +673,6 @@ function onDraw()
     -- Speakers
 
     local sine = 1 + math.abs(math.sin(lunatime.drawtick() * 0.07)) * 0.3
-
-    if sine > 1.3 then
-        sine = 1.3
-    end
 
     speaker1:draw{priority = -30,sceneCoords = true}
     speaker2:draw{priority = -30,sceneCoords = true}

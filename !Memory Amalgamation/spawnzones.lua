@@ -11,7 +11,7 @@ function sz.onTick()
     for k,v in ipairs(Block.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height)) do
         if v.id == sz.block then
             for k,n in ipairs(NPC.getIntersecting(v.x, v.y, v.x + v.width, v.y + v.height)) do
-                if not n.isHidden then
+                if not n.isHidden and n.id ~= 930 then
                     if n:mem(0x124,FIELD_BOOL) then
                         n:mem(0x12A, FIELD_WORD, 180)
                     elseif n:mem(0x12A, FIELD_WORD) == -1 then

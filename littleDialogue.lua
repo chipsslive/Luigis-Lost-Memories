@@ -1768,10 +1768,10 @@ littleDialogue.defaultBoxSettings = {
 
     
     -- Question related
-    questionGap = 16, -- The gap between each a question and all of its answers.
+    questionGap = 4, -- The gap between each a question and all of its answers.
     answerGap = 0,    -- The gap between each answer for a question.
 
-    answerPageMaxHeight = 160, -- The maximum height of an answers list before it splits off into another page.
+    answerPageMaxHeight = 193, -- The maximum height of an answers list before it splits off into another page.
 
     answerUnselectedColor = Color.white,   -- The color of an answer when it's not being hovered over.
     answerSelectedColor = Color(1,1,0.25), -- The color of an answer when it is being hovered over.
