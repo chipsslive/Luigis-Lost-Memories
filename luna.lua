@@ -27,7 +27,7 @@ for k, v in ipairs(stats.levelList) do
 end
 
 local starcoin = require("npcs/AI/starcoin")
-SaveData.starcoins = 52 --starcoin.getEpisodeCollected()
+SaveData.starcoins = starcoin.getEpisodeCollected()
 
 SaveData.coins = SaveData.coins or 0
 
