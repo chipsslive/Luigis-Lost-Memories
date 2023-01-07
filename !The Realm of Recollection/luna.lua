@@ -344,6 +344,7 @@ function onTick()
     -- (this was written a long time ago and is very bad but it functions so I'm keeping it)
 
     if launch then
+        GameData.ach_Chuck:collect()
         timer = timer + 1
         player.speedX = -300000 -- this is absolute overkill but its funny
         player.speedY = -1.8
