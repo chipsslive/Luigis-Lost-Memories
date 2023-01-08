@@ -198,7 +198,7 @@ function onTick()
     end
 end
 
-littleDialogue.registerAnswer("playedBefore",{text = "Yes",addText = "Cool! Want me to skip the intro sequence for ya'?<question confirmSkipIntro>"})
+littleDialogue.registerAnswer("playedBefore",{text = "Yes",addText = "Cool! Want me to skip the intro sequence for you?<question confirmSkipIntro>"})
 littleDialogue.registerAnswer("playedBefore",{text = "No",chosenFunction = function() hasPlayedBefore = false end})
 
 littleDialogue.registerAnswer("confirmSkipIntro",{text = "Yes",chosenFunction = function() hasPlayedBefore = true end})
