@@ -19,7 +19,7 @@ paddleWheel.linkConfig = npcManager.setNpcSettings{
 	npcblock=false,
 	npcblocktop=false,
 	nogravity=true,
-	noblockcollision=true,
+	noblockcollision=false,
 	nofireball=true,
 	noiceball=true,
 	noyoshi=true,
@@ -34,7 +34,7 @@ paddleWheel.linkConfig = npcManager.setNpcSettings{
 	maxrotspeed=0.3,
 	resist=0.01,
 	linespeedmultiplier = 5,
-	platformid = 822,
+	platformid = 826,
     autorotate = false
 };
 
