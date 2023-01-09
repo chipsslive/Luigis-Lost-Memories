@@ -15,11 +15,9 @@ end
 
 function onExitLevel(levelWinType)
     if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and not GameData.usedAccessibility then
-        GameData.ach_AllKeyholes:setCondition(4,true,true)
         if not SaveData.keyhole4Found then
-            if GameData.ach_HundredPercent:getCondition(4).value < SaveData.totalKeyholesFound + 1 then
-			    GameData.ach_HundredPercent:setCondition(4,SaveData.totalKeyholesFound + 1,true)
-            end
+            GameData.exitedWithKeyhole = true
+			GameData.lastCondition = 4
 			SaveData.totalKeyholesFound = SaveData.totalKeyholesFound + 1
 			SaveData.keyhole4Found = true
 		end

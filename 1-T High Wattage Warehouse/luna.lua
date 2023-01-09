@@ -156,11 +156,9 @@ function onExitLevel(levelWinType)
     GameData.awardCoins = true
     hudoverride.visible.starcoins = true
     if levelWinType == LEVEL_WIN_TYPE_KEYHOLE and not GameData.usedAccesibility then
-        GameData.ach_AllKeyholes:setCondition(2,true,true)
         if not SaveData.keyhole2Found then
-			if GameData.ach_HundredPercent:getCondition(4).value < SaveData.totalKeyholesFound + 1 then
-			    GameData.ach_HundredPercent:setCondition(4,SaveData.totalKeyholesFound + 1,true)
-            end
+            GameData.exitedWithKeyhole = true
+            GameData.lastCondition = 2
 			SaveData.totalKeyholesFound = SaveData.totalKeyholesFound + 1
 			SaveData.keyhole2Found = true
 		end

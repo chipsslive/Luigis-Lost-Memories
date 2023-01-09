@@ -2,36 +2,36 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["starcoins"]=1,
-   ["levelStats"]={3},
+   ["totalChallengesCompleted"]=0,
+   ["allMemoriesRecovered"]=true,
    ["audibletteUnlocked"]=false,
-   ["__costumes"]={4},
-   ["challenge1Completed"]=true,
-   ["keyhole3Found"]=false,
-   ["_basegame"]={5},
-   ["__progress"]=37.5,
+   ["__costumes"]={3},
+   ["challenge1Completed"]=false,
+   ["_basegame"]={4},
+   ["__launcher"]={5},
+   ["__progress"]=1,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
-   ["challenge3Completed"]=false,
-   ["allMemoriesRecovered"]=false,
+   ["starcoins"]=0,
+   ["levelStats"]={6},
    ["shownKeyholeAchievement"]=false,
-   ["__launcher"]={6},
-   ["totalMemoriesRecovered"]=19,
+   ["totalKeyholesFound"]=1,
+   ["totalMemoriesRecovered"]=0,
    ["challenge4Completed"]=false,
    ["introFinished"]=true,
-   ["totalKeyholesFound"]=0,
-   ["spentStars"]=0,
+   ["coins"]=24,
+   ["keyhole5Found"]=true,
    ["keyhole2Found"]=false,
-   ["coins"]=973,
+   ["keyhole3Found"]=false,
    ["unlockedTabs"]={7},
-   ["creditsSeen"]=true,
-   ["keyhole5Found"]=false,
+   ["creditsSeen"]=false,
+   ["spentStars"]=0,
    ["keyhole4Found"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
    ["conceptuaryUnlocked"]=false,
-   ["fullyComplete"]=false,
-   ["totalChallengesCompleted"]=0
+   ["fullyComplete"]=true,
+   ["challenge3Completed"]=false
 },
 --[2]--
 {
@@ -39,30 +39,26 @@
 },
 --[3]--
 {
-   ["5-1 Toxic Tumble.lvlx"]={9},
-   ["!The Realm of Recollection.lvlx"]={10},
-   ["!Title Screen.lvlx"]={11},
-   ["3-3 Lightweight Library.lvlx"]={12},
-   ["1-3 Sakura Scrapyard.lvlx"]={13},
-   ["1-1 Piranha Plant Pinch!.lvlx"]={14},
-   ["!B-1 Swooper Drop Sneak.lvlx"]={15},
-   ["!Memory Amalgamation.lvlx"]={16}
+
 },
 --[4]--
 {
-
+   ["bigSwitch"]={9},
+   ["_characterdata"]={10},
+   ["starcoin"]={11},
+   ["hud"]={12},
+   ["starcoinCounter"]=0
 },
 --[5]--
 {
-   ["bigSwitch"]={17},
-   ["_characterdata"]={18},
-   ["starcoinCounter"]=0,
-   ["hud"]={19},
-   ["starcoin"]={20}
+
 },
 --[6]--
 {
-
+   ["!C-1 Fragile Block Foothills.lvlx"]={13},
+   ["!The Realm of Recollection.lvlx"]={14},
+   ["!Title Screen.lvlx"]={15},
+   ["!Memory Amalgamation.lvlx"]={16}
 },
 --[7]--
 {
@@ -73,99 +69,103 @@
 },
 --[8]--
 {
-   ["accessibility"]={21},
-   ["settings"]={22}
+   ["accessibility"]={17},
+   ["settings"]={18}
 },
 --[9]--
 {
-   ["beaten"]=true,
-   ["timer"]=1746,
-   ["bestTime"]=-1
+
 },
 --[10]--
+{
+   ["8"]={19},
+   ["10"]={20},
+   ["9"]={21},
+   ["6"]={22},
+   ["16"]={23},
+   ["11"]={24},
+   ["12"]={25},
+   ["7"]={26},
+   ["15"]={27},
+   ["13"]={28},
+   ["14"]={29}
+},
+--[11]--
+{
+   ["!C-1 Fragile Block Foothills.lvlx"]={30},
+   ["!The Realm of Recollection.lvlx"]={31},
+   ["!Title Screen.lvlx"]={32},
+   ["!Memory Amalgamation.lvlx"]={33}
+},
+--[12]--
+{
+   ["score"]=1100
+},
+--[13]--
+{
+   ["beaten"]=false,
+   ["timer"]=88,
+   ["bestTime"]=-1
+},
+--[14]--
 {
    ["beaten"]=false,
    ["timer"]=0,
    ["bestTime"]=-1
 },
---[11]--
-{
-   ["beaten"]=false,
-   ["timer"]=246,
-   ["bestTime"]=-1
-},
---[12]--
-{
-   ["beaten"]=false,
-   ["timer"]=118,
-   ["bestTime"]=-1
-},
---[13]--
-{
-   ["beaten"]=false,
-   ["timer"]=1952,
-   ["bestTime"]=-1
-},
---[14]--
-{
-   ["beaten"]=true,
-   ["timer"]=227,
-   ["bestTime"]=-1
-},
 --[15]--
 {
-   ["beaten"]=true,
-   ["timer"]=71,
+   ["beaten"]=false,
+   ["timer"]=668,
    ["bestTime"]=-1
 },
 --[16]--
 {
    ["beaten"]=false,
-   ["timer"]=24191,
+   ["timer"]=1838,
    ["bestTime"]=-1
 },
 --[17]--
 {
-
-},
---[18]--
-{
-   ["8"]={23},
-   ["10"]={24},
-   ["9"]={25},
-   ["6"]={26},
-   ["16"]={27},
-   ["11"]={28},
-   ["12"]={29},
-   ["7"]={30},
-   ["15"]={31},
-   ["13"]={32},
-   ["14"]={33}
-},
---[19]--
-{
-   ["score"]=64050
-},
---[20]--
-{
-   ["5-1 Toxic Tumble.lvlx"]={34},
-   ["!The Realm of Recollection.lvlx"]={35},
-   ["!Title Screen.lvlx"]={36},
-   ["3-3 Lightweight Library.lvlx"]={37},
-   ["1-3 Sakura Scrapyard.lvlx"]={38},
-   ["1-1 Piranha Plant Pinch!.lvlx"]={39},
-   ["!B-1 Swooper Drop Sneak.lvlx"]={40},
-   ["!Memory Amalgamation.lvlx"]={41}
-},
---[21]--
-{
    ["invincibility"]=false,
    ["infinite jumps"]=false
 },
---[22]--
+--[18]--
 {
    ["mute music"]=false,
    ["show speedrun timer"]=false
+},
+--[19]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[20]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[21]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[22]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[23]--
 {
@@ -225,122 +225,42 @@
 },
 --[30]--
 {
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={34}
 },
 --[31]--
 {
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
+   ["maxID"]=0,
+   ["alive"]={35}
 },
 --[32]--
 {
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
+   ["maxID"]=0,
+   ["alive"]={36}
 },
 --[33]--
 {
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
+   ["maxID"]=0,
+   ["alive"]={37}
 },
 --[34]--
 {
-   3,
-   ["maxID"]=1,
-   ["alive"]={42}
+   true,
+   true,
+   true
 },
 --[35]--
 {
-   ["maxID"]=0,
-   ["alive"]={43}
+
 },
 --[36]--
 {
-   ["maxID"]=0,
-   ["alive"]={44}
+
 },
 --[37]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={45}
-},
---[38]--
-{
-   0,
-   ["maxID"]=1,
-   ["alive"]={46}
-},
---[39]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={47}
-},
---[40]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={48}
-},
---[41]--
-{
-   ["maxID"]=0,
-   ["alive"]={49}
-},
---[42]--
-{
-   true
-},
---[43]--
-{
-
-},
---[44]--
-{
-
-},
---[45]--
-{
-   true,
-   true,
-   true
-},
---[46]--
-{
-   true
-},
---[47]--
-{
-   true,
-   true,
-   true
-},
---[48]--
-{
-   true,
-   true,
-   true
-},
---[49]--
 {
 
 }

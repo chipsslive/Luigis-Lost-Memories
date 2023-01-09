@@ -63,6 +63,8 @@ GameData.ach_Challenge4 	= Achievements(9)
 GameData.ach_Challenge5 	= Achievements(10)
 GameData.ach_HundredPercent = Achievements(11)
 GameData.ach_Chuck 			= Achievements(12)
+GameData.ach_MapOfMemories  = Achievements(13)
+GameData.ach_Credits		= Achievements(14)
 
 -- Question asked when at end of Fragmented Memory
 
@@ -77,9 +79,6 @@ function showExit()
 end
 
 -- Check if accessibility options are active
-
-GameData.usedAccessibility = false
-GameData.usedSetPowerup = false
 
 function checkAccessibility()
 	if (pauseplus.getSelectionValue("accessibility","Invincibility") or pauseplus.getSelectionValue("infiniteJumps","Infinite Jumps")) and GameData.usedAccesibility == false then
@@ -149,6 +148,10 @@ local MAX_VALUE = 100
 
 function onStart()
 	Misc.saveGame()
+
+	GameData.usedAccessibility = false
+	GameData.usedSetPowerup = false
+
 	newcheats.enabled = false
 	player.powerup = 2
 
@@ -172,8 +175,7 @@ function onStart()
 	SaveData.keyhole4Found = SaveData.keyhole4Found or nil_or(SaveData.keyhole4Found, false)
 	SaveData.keyhole5Found = SaveData.keyhole5Found or nil_or(SaveData.keyhole5Found, false)
 	
-	SaveData.totalKeyholesFound      = SaveData.totalKeyholesFound      or nil_or(SaveData.totalKeyholesFound, 0)
-	SaveData.shownKeyholeAchievement = SaveData.shownKeyholeAchievement or nil_or(SaveData.shownKeyholeAchievement, false)
+	SaveData.totalKeyholesFound  = SaveData.totalKeyholesFound or nil_or(SaveData.totalKeyholesFound, 0)
 
 	SaveData.challenge1Completed = SaveData.challenge1Completed or nil_or(SaveData.challenge1Completed, false)
 	SaveData.challenge2Completed = SaveData.challenge2Completed or nil_or(SaveData.challenge2Completed, false)
@@ -185,20 +187,26 @@ function onStart()
 
 	-- Progress variables (percentage in launcher)
 
-	creditsSeenVar = (SaveData.creditsSeen and 8) or 0
+	creditsSeenVar = (SaveData.creditsSeen and 7) or 0
+	audibletteUnlockedVar = (SaveData.audibletteUnlocked and 3) or 0
+	conceptuaryUnlockedVar = (SaveData.conceptuaryUnlocked and 3) or 0
 
-	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + creditsSeenVar
+	--[[
+	Memories = 30%
+	Purple Stars = 39%
+	Keyholes = 8%
+	Challenges = 10%
+	Audiblette = 3%
+	Conceptuary = 3%
+	Credits = 7%
+	]]
+
+	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins*0.75 + SaveData.totalKeyholesFound*1.6 + SaveData.totalChallengesCompleted*2 + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
     Progress.value = (totalProg/MAX_VALUE)*100
 	
 	-- Check if player has seen the title screen yet
 	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
 		Level.load("!Title Screen.lvlx")
-	end
-
-	-- Check for current Purple Star count for achievements, but be mindful of other save files
-	if GameData.ach_AllPurpleStars:getCondition(1).value < SaveData.starcoins then
-		GameData.ach_AllPurpleStars:setCondition(1,SaveData.starcoins)
-		GameData.ach_HundredPercent:setCondition(2,SaveData.starcoins)
 	end
 
 	-- Reset accessbility checks
@@ -207,7 +215,7 @@ function onStart()
 
 	-- Checks how many memories are completed for the achievement
 
-    local function getRecoveredCount()
+    function getRecoveredCount()
         local list = {}
 		for k,v in ipairs(stats.levelList) do
 			if SaveData.levelStats[stats.levelList[k].filename] and SaveData.levelStats[stats.levelList[k].filename].beaten then
@@ -218,10 +226,14 @@ function onStart()
     end
 
 	-- Other achievement stuff
-	if GameData.ach_AllMemories:getCondition(1).value < #getRecoveredCount() then
-		GameData.ach_AllMemories:setCondition(1,#getRecoveredCount())
-		GameData.ach_HundredPercent:setCondition(1,#getRecoveredCount())
-	end
+	GameData.ach_AllMemories:setCondition(1,math.max(#getRecoveredCount(), GameData.ach_AllMemories:getCondition(1).value))
+
+	GameData.ach_AllPurpleStars:setCondition(1,math.max(SaveData.starcoins, GameData.ach_AllPurpleStars:getCondition(1).value))
+
+	GameData.ach_HundredPercent:setCondition(1,math.max(#getRecoveredCount(), GameData.ach_HundredPercent:getCondition(1).value))
+    GameData.ach_HundredPercent:setCondition(2,math.max(SaveData.starcoins, GameData.ach_HundredPercent:getCondition(2).value))
+    GameData.ach_HundredPercent:setCondition(3,math.max(SaveData.totalChallengesCompleted, GameData.ach_HundredPercent:getCondition(3).value))
+    GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
 
 	if #getRecoveredCount() >= 20 and not SaveData.allMemoriesRecovered then
 		SaveData.allMemoriesRecovered = true
@@ -444,6 +456,7 @@ function respawnRooms.onPostReset(fromRespawn)
     end
 
 	player.powerup = 2
+	setHeight()
 end
 
 -- Custom Coin Counter HUD Element

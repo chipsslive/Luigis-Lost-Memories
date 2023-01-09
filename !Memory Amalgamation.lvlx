@@ -2,7 +2,7 @@ HEAD
 TL:"!Memory Amalgamation";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-197552;T:-200600;B:-200000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 0\n    }\n}\n";
+SC:0;L:-200000;R:-197600;T:-200600;B:-200000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 0\n    }\n}\n";
 SECTION_END
 STARTPOINT
 ID:1;X:-199836;Y:-200214;D:1;
@@ -206,7 +206,7 @@ ID:3;X:-197760;Y:-200192;W:32;H:32;
 ID:16;X:-197760;Y:-200160;W:32;H:32;
 ID:16;X:-197792;Y:-200160;W:32;H:32;
 ID:16;X:-197824;Y:-200160;W:32;H:32;
-ID:16;X:-198048;Y:-200160;W:32;H:32;
+ID:16;X:-197856;Y:-200160;W:32;H:32;
 ID:275;X:-198016;Y:-200192;W:32;H:32;
 ID:274;X:-198080;Y:-200192;W:32;H:32;
 ID:276;X:-198048;Y:-200192;W:32;H:32;
@@ -318,7 +318,6 @@ ID:16;X:-197888;Y:-200384;W:32;H:32;
 ID:1022;X:-197920;Y:-200384;W:32;H:32;
 ID:276;X:-198608;Y:-200096;W:32;H:32;
 ID:703;X:-198944;Y:-200464;W:64;H:32;LR:"Float2";
-ID:1025;X:-197856;Y:-200160;W:32;H:32;
 BLOCK_END
 BGO
 ID:113;X:-199904;Y:-200160;
@@ -749,9 +748,9 @@ ID:294;X:-198304;Y:-200448;
 ID:159;X:-198112;Y:-200160;
 BGO_END
 NPC
-ID:313;X:-199904;Y:-200400;D:1;XTRA:"{\n    \"volley\"\: 15\n}\n";
+ID:313;X:-199904;Y:-200400;D:1;
 ID:821;X:-199456;Y:-200160;D:-1;
-ID:313;X:-199232;Y:-200352;D:1;LR:"Float1";XTRA:"{\n    \"volley\"\: 15\n}\n";
+ID:313;X:-199232;Y:-200352;D:1;LR:"Float1";
 ID:822;X:-199024;Y:-200240;D:1;
 ID:10;X:-198942;Y:-200400;D:-1;LR:"Float2";
 ID:10;X:-198910;Y:-200400;D:-1;LR:"Float2";
@@ -763,6 +762,7 @@ ID:437;X:-198605;Y:-200233;D:-1;
 ID:853;X:-197952;Y:-199968;D:-1;GE:1;GT:1;GD:1;GM:10;
 ID:10;X:-198206;Y:-200352;D:-1;
 ID:10;X:-198206;Y:-200256;D:-1;
+ID:9;X:-199952;Y:-200192;D:-1;NM:1;
 ID:930;X:-198592;Y:-200560;D:-1;LR:"Float1";XTRA:"{\n    \"offtime\"\: 75\,\n    \"ontime\"\: 50\,\n    \"tagstext\"\: \"a\"\n}\n";
 ID:853;X:-198160;Y:-199968;D:-1;GE:1;GT:1;GD:1;GM:10;
 ID:751;X:-197888;Y:-200640;D:-1;

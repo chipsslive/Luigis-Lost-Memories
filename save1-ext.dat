@@ -2,25 +2,24 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["totalChallengesCompleted"]=0,
+   ["starcoins"]=0,
    ["levelStats"]={3},
    ["audibletteUnlocked"]=false,
    ["__costumes"]={4},
    ["challenge1Completed"]=false,
-   ["challenge3Completed"]=false,
-   ["allMemoriesRecovered"]=false,
-   ["__progress"]=0,
    ["challenge2Completed"]=false,
-   ["keyhole1Found"]=false,
+   ["__progress"]=0,
+   ["challenge3Completed"]=false,
+   ["_basegame"]={5},
    ["conceptuaryUnlocked"]=false,
-   ["__launcher"]={5},
-   ["shownKeyholeAchievement"]=false,
+   ["totalChallengesCompleted"]=0,
+   ["allMemoriesRecovered"]=false,
    ["coins"]=0,
    ["totalMemoriesRecovered"]=0,
    ["keyhole4Found"]=false,
    ["introFinished"]=true,
    ["totalKeyholesFound"]=0,
-   ["spentStars"]=0,
+   ["spentStars"]=-20,
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
    ["unlockedTabs"]={6},
@@ -29,9 +28,9 @@
    ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
-   ["starcoins"]=0,
+   ["__launcher"]={7},
    ["fullyComplete"]=false,
-   ["_basegame"]={7}
+   ["keyhole1Found"]=false
 },
 --[2]--
 {
@@ -49,22 +48,22 @@
 },
 --[5]--
 {
-
+   ["bigSwitch"]={12},
+   ["_characterdata"]={13},
+   ["starcoinCounter"]=0,
+   ["hud"]={14},
+   ["starcoin"]={15}
 },
 --[6]--
 {
    true,
    false,
    false,
-   false
+   true
 },
 --[7]--
 {
-   ["bigSwitch"]={12},
-   ["_characterdata"]={13},
-   ["starcoinCounter"]=0,
-   ["hud"]={14},
-   ["starcoin"]={15}
+
 },
 --[8]--
 {
@@ -74,13 +73,13 @@
 --[9]--
 {
    ["beaten"]=false,
-   ["timer"]=273,
+   ["timer"]=148,
    ["bestTime"]=-1
 },
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=725,
+   ["timer"]=519,
    ["bestTime"]=-1
 },
 --[11]--
@@ -119,8 +118,8 @@
 },
 --[16]--
 {
-   ["invincibility"]=true,
-   ["infinite jumps"]=true
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
 },
 --[17]--
 {
@@ -217,9 +216,7 @@
 },
 --[29]--
 {
-   0,
-   0,
-   ["maxID"]=2,
+   ["maxID"]=0,
    ["alive"]={32}
 },
 --[30]--
@@ -234,8 +231,7 @@
 },
 --[32]--
 {
-   true,
-   true
+
 },
 --[33]--
 {

@@ -568,6 +568,7 @@ function pastPortal.onInputUpdate()
                     waitFunc = function()
                         Misc.unpause()
                         mem(0xB25728, FIELD_BOOL, false)
+                        GameData.ach_MapOfMemories:collect(true)
                         Level.exit()
                     end
                     executed = true

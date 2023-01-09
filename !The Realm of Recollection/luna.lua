@@ -83,24 +83,18 @@ else
     audibletteText = "No"
 end
 
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>And to think some developers release stuff like this and then make you pay for the rest! Heh. What else can I tell ya' about?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>Hey, they may not be the greatest memories, but at least they're still included! Anything else ya' wanna know?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?" ,addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>Sounds pretty useless, but a fun inclusion nonetheless! What else can I tell ya' about??<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Conceptuary?"     ,addText = "The Conceptuary holds a collection of every piece of art, whether that be for concept or promotional purposes, created for the game. Most of them were created by galaxy, while the piece of art at the far end of the building was created by FurballArts.<page>I'm not really the type that stands around staring at art, but maybe it's your cup of tea? Can I inform you of anything else?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>I love me some tunes! I've heard The Audiblette has some great ones! What else can I tell ya' about?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"      ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
-littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
+-- For the question titled 'tangeroombaInitial', check the bottom of onTick() (it needs to be updated in realtime)
 
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather<br><color purple>2. </color>A Shocking Discovery<br><color purple>3. </color>Rodents Run Wild<br><color purple>4. </color>Of Knowledge And Boos<br><color purple>5. </color>Above Loose Dirt<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<page>Let's hope you've brushed up on your paranormal movement techniques! Anything else ya' wanna know?<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "TBA<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "TBA<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "TBA<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "TBA<question tangeroombaInitial>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind"   ,addText = "Not up for a challenge, eh? Well, that's quite alright. Anything else I can tell ya'?<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind"   ,addText = "So, planning on taking on one of those challenges? I'm rootin' for ya'! Anything else you wanna know?<question tangeroombaInitial>"})
 
 -- All intro-related variables + questions
 
@@ -144,7 +138,7 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 local maroonba2
 local ceruloomba
 local allMemoriesMsgMaroonba = "<speakerName Maroonba>Wowza! Would you look at that! You recovered every last one of those memories!<page>Well, actually, there are still plenty of them left unrecovered, but your amnesia was so strong that I'm fairly sure we'll never be able to find those, even inside the Realm of Recollection.<page>Ah, well, at least we tried, right?"
-local allMemoriesMsgCeruloomba = "<speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?<question enterAmalgamation>"
+local allMemoriesMsgCeruloomba = "<setPos 220 30 0.5 0><speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?<question enterAmalgamation>"
 
 local mauvoomba
 local emitConfetti = false
@@ -158,9 +152,10 @@ littleDialogue.registerAnswer("enterAmalgamation",{text = "That sounds scary!",a
 littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Let's do it!",addText = "Enjoy it kid. You earned this.",chosenFunction = function() Level.load("!Memory Amalgamation.lvlx") end})
 littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Not right now.",addText = "No worries. This time's just for fun anyway."})
 
-local afterCreditsMsgCeruloomba = "<speakerName Ceruloomba>Hey kid. Sorry I was so rude to ya' before. Hopefully you can forgive me, I'm working through some stuff.<page>You did good out there in the Memory Amalgamation. If you'd like, I can send ya' through it again. Whaddya think?<question enterAmalgamationAfterCredits>"
+local afterCreditsMsgCeruloomba = "<setPos 220 30 0.5 0><speakerName Ceruloomba>Hey kid. Sorry I was so rude to ya' before. Hopefully you can forgive me, I'm working through some stuff.<page>You did good out there in the Memory Amalgamation. If you'd like, I can send ya' through it again. Whaddya think?<question enterAmalgamationAfterCredits>"
 
-local hundo
+local hundo = Graphics.loadImageResolved("hundo.png")
+local hundoAlpha = 0
 local hundoMsgMaroonba = "<speakerName Maroonba>Master Luigi! Look! Up in the sky! Who put those numbers there? Was that you?"
 
 -- Confetti particle emitter
@@ -178,7 +173,14 @@ local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
-    slm.addLayer{name = "hundo",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = 0.1}
+    SaveData.spentStars = -20
+    -- Very janky keyhole achievement fix
+
+    if GameData.exitedWithKeyhole then
+        GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,SaveData.keyhole4Found)
+        GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
+        GameData.exitedWithKeyhole = false
+    end
 
     -- This is needed to allow the world map to be accessed from the hub
     mem(0xB25728, FIELD_BOOL, true)
@@ -226,6 +228,14 @@ function onStart()
         pivot = {0.5,0.5}
     }
 
+    -- 100% text in the sky
+
+    hundo = Sprite.box{
+        texture = hundo,
+        x = -199880,
+        y = -200568
+    }
+
     -- A bunch of layers (some aren't even used anymore)
 
     chuck           = Layer.get("chuck")
@@ -243,7 +253,6 @@ function onStart()
     conceptuaryLock = Layer.get("conceptuaryLock")
     audibletteNPC   = Layer.get("audibletteNPC")
     conceptuaryNPC  = Layer.get("conceptuaryNPC")
-    hundo           = Layer.get("hundo")
 
     -- Intro initializations
 
@@ -345,7 +354,7 @@ function onTick()
 
     -- For Ceruloomba and Mauvoomba's completion requirements
 
-    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered then
+    if SaveData.allMemoriesRecovered then
         if SaveData.creditsSeen then
             for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
                 v.msg = afterCreditsMsgCeruloomba
@@ -357,19 +366,19 @@ function onTick()
         end
     end
 
-    if GameData.ach_AllMemories.collected and SaveData.allMemoriesRecovered and not SaveData.fullyComplete then
+    if SaveData.allMemoriesRecovered and not SaveData.fullyComplete then
 		for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
             v.msg = allMemoriesMsgMaroonba
         end
     end
 
-    if GameData.ach_HundredPercent.collected and SaveData.fullyComplete then
+    if SaveData.fullyComplete then
         for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
             v.msg = hundoMsgMaroonba
         end
     end
 
-    if GameData.ach_AllPurpleStars.collected and not emitConfetti and not startConfettiTimer and SaveData.allPurpleStarsFound then
+    if not emitConfetti and not startConfettiTimer and SaveData.allPurpleStarsFound then
 		for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
             v.msg = allPurpleStarsMsg
         end
@@ -386,7 +395,7 @@ function onTick()
         if not triggered then
             -- Chuck is hidden to play the effect (effect-805.png)
             chuck:hide(true)
-            -- I have to hide the signs containing messages because Lock Controls holds the UP button
+            -- I have to hide the signs containing messages because Lock Controls holds the UP button (this is the only place I do this anymore I know it's bad lol)
             originalSigns:hide(true)
             otherSigns:show(true)
             triggerEvent("Lock Controls")
@@ -654,6 +663,40 @@ function onTick()
     elseif showAsleep then
         player:setFrame(49 * player.direction)
     end
+
+    -- Changes Text in Tangeroomba dialogue
+
+    littleDialogue.deregisterQuestion("tangeroombaInitial")
+
+    if SaveData.creditsSeen then
+        creditText = "Yes"
+    else
+        creditText = "No"
+    end
+    
+    if SaveData.conceptuaryUnlocked then
+        conceptuaryText = "Yes"
+    else
+        conceptuaryText = "No"
+    end
+    
+    if SaveData.audibletteUnlocked then
+        audibletteText = "Yes"
+    else
+        audibletteText = "No"
+    end
+
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>And to think some developers release stuff like this and then make you pay for the rest! Heh. What else can I tell ya' about?<question tangeroombaInitial>"})
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>Hey, they may not be the greatest memories, but at least they're still included! Anything else ya' wanna know?<question tangeroombaInitial>"})
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?" ,addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>Sounds pretty useless, but a fun inclusion nonetheless! What else can I tell ya' about?<question tangeroombaInitial>"})
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Conceptuary?"     ,addText = "The Conceptuary holds a collection of every piece of art, whether that be for concept or promotional purposes, created for the game. Most of them were created by galaxy, while the piece of art at the far end of the building was created by FurballArts.<page>I'm not really the type that stands around staring at art, but maybe it's your cup of tea? Can I inform you of anything else?<question tangeroombaInitial>"})
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>I love me some tunes! I've heard The Audiblette has some great ones! What else can I tell ya' about?<question tangeroombaInitial>"})
+    if SaveData.fullyComplete then
+        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Holy canoli! You've done it all, Master Luigi! I'm proud of ya', really!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
+    end
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
 end
 
 function onEvent(eventName)
@@ -672,13 +715,11 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
-    Text.print(SaveData.totalKeyholesFound,0,0)
-    Text.print(SaveData.shownKeyholeAchievement,0,16)
-    --[[if teleported == false then
+    if teleported == false then
         player.x = -199856
         player.y = -200240
         teleported = true
-    end ]]
+    end
 
     if SaveData.fullyComplete and hundo.isHidden then
         hundo:show(true)
@@ -725,6 +766,17 @@ function onDraw()
         y = 200
         x = 200
     end]]
+
+    local sine = -math.sin(lunatime.drawtick() * 0.03) * 4
+
+    if SaveData.fullyComplete then
+        hundo:draw{priority = -60, sceneCoords = true, color = Color.white..hundoAlpha}
+        if hundoAlpha < 1 then
+            hundoAlpha = hundoAlpha + 0.02
+        end
+
+        hundo.y = -200568 + sine
+    end
 end
 
 function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
