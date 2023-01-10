@@ -36,7 +36,7 @@ local config = npcManager.setNpcSettings({
 	nohurt = false,
 	iscoin = false,
 	jumphurt = true,
-	spinjumpsafe = true,
+	spinjumpsafe = false,
 	notcointransformable = true,
 
 	poweredframes = 4

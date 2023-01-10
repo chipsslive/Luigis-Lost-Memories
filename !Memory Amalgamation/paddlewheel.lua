@@ -1,6 +1,6 @@
 local npcManager = require("npcManager");
 local orbits = require("orbits");
-local lineguide = require("base/lineguide");
+--local lineguide = require("base/lineguide");
 
 local paddleWheel = {};
 
@@ -12,11 +12,11 @@ local AXIS = {
 function paddleWheel.register(id)
 	npcManager.registerEvent(id, paddleWheel, "onTickNPC", "onTickPaddleWheel");
 	npcManager.registerEvent(id, paddleWheel, "onDrawNPC", "onDrawPaddleWheel");
-    lineguide.registerNpcs(id);
+    --lineguide.registerNpcs(id);
 
-    lineguide.properties[id] = {
+    --[[lineguide.properties[id] = {
         lineSpeed = 0,
-    }
+    }]]
 end
 
 function paddleWheel.onTickPaddleWheel(npc)
@@ -94,9 +94,9 @@ function paddleWheel.onTickPaddleWheel(npc)
         wheel.rotationSpeed = maxRotSpeed
     end
 	
-	if npc.data._basegame.lineguide.state == lineguide.states.ONLINE then		
+	--[[if npc.data._basegame.lineguide.state == lineguide.states.ONLINE then		
 		npc.data._basegame.lineguide.lineSpeed = wheel.rotationSpeed * cfg.linespeedmultiplier;
-	else
+	else]]
         if npc:mem(0x132, FIELD_WORD) == 0 then
             local mod = 1
             if cfg.autorotate then
@@ -116,7 +116,7 @@ function paddleWheel.onTickPaddleWheel(npc)
 				npc.speedY = -Defines.npc_grav;
 			end
 		end
-	end
+	--end
     if cfg.autorotate then
         wheel.rotationSpeed = maxRotSpeed * data.direction
     end
