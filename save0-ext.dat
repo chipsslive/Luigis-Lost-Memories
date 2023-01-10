@@ -3,35 +3,35 @@
 {
    ["pauseplus"]={2},
    ["__launcher"]={3},
-   ["levelStats"]={4},
+   ["allMemoriesRecovered"]=true,
    ["audibletteUnlocked"]=false,
-   ["__costumes"]={5},
+   ["__costumes"]={4},
    ["challenge1Completed"]=false,
-   ["_basegame"]={6},
-   ["totalChallengesCompleted"]=0,
+   ["challenge3Completed"]=false,
+   ["levelStats"]={5},
    ["__progress"]=1.6,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
-   ["starcoins"]=0,
-   ["allMemoriesRecovered"]=true,
+   ["conceptuaryUnlocked"]=false,
+   ["totalChallengesCompleted"]=0,
    ["shownKeyholeAchievement"]=false,
-   ["totalKeyholesFound"]=1,
+   ["coins"]=18,
    ["totalMemoriesRecovered"]=0,
-   ["challenge4Completed"]=false,
+   ["keyhole4Found"]=false,
    ["introFinished"]=true,
-   ["coins"]=72,
-   ["keyhole5Found"]=true,
+   ["totalKeyholesFound"]=1,
+   ["spentStars"]=-20,
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
-   ["unlockedTabs"]={7},
+   ["unlockedTabs"]={6},
    ["creditsSeen"]=false,
-   ["spentStars"]=-20,
-   ["keyhole4Found"]=false,
+   ["keyhole5Found"]=true,
+   ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
-   ["conceptuaryUnlocked"]=false,
+   ["starcoins"]=0,
    ["fullyComplete"]=true,
-   ["challenge3Completed"]=false
+   ["_basegame"]={7}
 },
 --[2]--
 {
@@ -43,31 +43,31 @@
 },
 --[4]--
 {
-   ["!Title Screen.lvlx"]={9},
-   ["3-1 Paddlewheel Peril.lvlx"]={10},
-   ["!Final Cutscene.lvlx"]={11},
-   ["!The Realm of Recollection.lvlx"]={12},
-   ["!C-1 Fragile Block Foothills.lvlx"]={13},
-   ["!Memory Amalgamation.lvlx"]={14}
+
 },
 --[5]--
 {
-
+   ["!Title Screen.lvlx"]={9},
+   ["!Memory Amalgamation.lvlx"]={10},
+   ["3-1 Paddlewheel Peril.lvlx"]={11},
+   ["!The Realm of Recollection.lvlx"]={12},
+   ["!C-1 Fragile Block Foothills.lvlx"]={13},
+   ["!Final Cutscene.lvlx"]={14}
 },
 --[6]--
-{
-   ["bigSwitch"]={15},
-   ["_characterdata"]={16},
-   ["starcoin"]={17},
-   ["hud"]={18},
-   ["starcoinCounter"]=0
-},
---[7]--
 {
    true,
    false,
    false,
    false
+},
+--[7]--
+{
+   ["bigSwitch"]={15},
+   ["_characterdata"]={16},
+   ["starcoinCounter"]=0,
+   ["hud"]={17},
+   ["starcoin"]={18}
 },
 --[8]--
 {
@@ -83,13 +83,13 @@
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=622,
+   ["timer"]=38236,
    ["bestTime"]=-1
 },
 --[11]--
 {
    ["beaten"]=false,
-   ["timer"]=0,
+   ["timer"]=622,
    ["bestTime"]=-1
 },
 --[12]--
@@ -107,7 +107,7 @@
 --[14]--
 {
    ["beaten"]=false,
-   ["timer"]=2271,
+   ["timer"]=11610,
    ["bestTime"]=-1
 },
 --[15]--
@@ -130,16 +130,16 @@
 },
 --[17]--
 {
-   ["!Title Screen.lvlx"]={32},
-   ["3-1 Paddlewheel Peril.lvlx"]={33},
-   ["!Final Cutscene.lvlx"]={34},
-   ["!The Realm of Recollection.lvlx"]={35},
-   ["!C-1 Fragile Block Foothills.lvlx"]={36},
-   ["!Memory Amalgamation.lvlx"]={37}
+   ["score"]=21540
 },
 --[18]--
 {
-   ["score"]=15520
+   ["!Title Screen.lvlx"]={32},
+   ["!Memory Amalgamation.lvlx"]={33},
+   ["3-1 Paddlewheel Peril.lvlx"]={34},
+   ["!The Realm of Recollection.lvlx"]={35},
+   ["!C-1 Fragile Block Foothills.lvlx"]={36},
+   ["!Final Cutscene.lvlx"]={37}
 },
 --[19]--
 {
@@ -246,15 +246,15 @@
 },
 --[33]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={39}
 },
 --[34]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={40}
 },
 --[35]--
@@ -281,13 +281,13 @@
 },
 --[39]--
 {
-   true,
-   true,
-   true
+
 },
 --[40]--
 {
-
+   true,
+   true,
+   true
 },
 --[41]--
 {

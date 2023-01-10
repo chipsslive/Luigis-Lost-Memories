@@ -15,7 +15,7 @@ local ai = require("kritter_ai")
 local kritter = {}
 local npcID = NPC_ID
 
-local deathEffectID = 756
+local deathEffectID = 775
 
 local kritterSettings = {
 	id = npcID,

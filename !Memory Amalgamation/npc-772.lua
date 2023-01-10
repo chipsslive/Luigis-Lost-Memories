@@ -15,7 +15,7 @@ local ai = require("kritter_ai")
 local kritter = {}
 local npcID = NPC_ID
 
-local deathEffectID = 753
+local deathEffectID = 772
 
 local kritterSettings = {
 	id = npcID,
@@ -58,7 +58,7 @@ local kritterSettings = {
 	bounces = 0,      -- The amount of bounces the NPC does before a larger jump. (Only affects blue and black kritters.)
 	bounceYSpeed = 0, -- The Y speed the NPC gets when bouncing before a larger jump. (Only affects blue and black kritters.)
 
-	jumpYSpeed = -6.5, -- The Y speed the NPC gets when jumping. (Only affects blue, black, yellow, and purple kritters.)
+	jumpYSpeed = -9.5, -- The Y speed the NPC gets when jumping. (Only affects blue, black, yellow, and purple kritters.)
 }
 
 npcManager.setNpcSettings(kritterSettings)

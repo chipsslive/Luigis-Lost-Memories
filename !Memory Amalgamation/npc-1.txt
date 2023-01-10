@@ -1,0 +1,11 @@
+width=40
+height=44
+gfxwidth=40
+gfxheight=46
+grabtop=1
+playerblocktop=1
+npcblocktop=1
+nofireball=1
+cliffturn=1
+frames=4
+framestyle=2
