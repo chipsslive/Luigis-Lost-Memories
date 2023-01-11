@@ -2,20 +2,20 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["__launcher"]={3},
-   ["allMemoriesRecovered"]=true,
+   ["totalChallengesCompleted"]=0,
+   ["levelStats"]={3},
    ["audibletteUnlocked"]=false,
    ["__costumes"]={4},
    ["challenge1Completed"]=false,
    ["challenge3Completed"]=false,
-   ["levelStats"]={5},
+   ["allMemoriesRecovered"]=true,
    ["__progress"]=1.6,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
    ["conceptuaryUnlocked"]=false,
-   ["totalChallengesCompleted"]=0,
+   ["__launcher"]={5},
    ["shownKeyholeAchievement"]=false,
-   ["coins"]=18,
+   ["coins"]=81,
    ["totalMemoriesRecovered"]=0,
    ["keyhole4Found"]=false,
    ["introFinished"]=true,
@@ -39,7 +39,13 @@
 },
 --[3]--
 {
-
+   ["!Memory Amalgamation.lvlx"]={9},
+   ["!Title Screen.lvlx"]={10},
+   ["3-1 Paddlewheel Peril.lvlx"]={11},
+   ["2-2 Monty Mole Mines.lvlx"]={12},
+   ["!The Realm of Recollection.lvlx"]={13},
+   ["!C-1 Fragile Block Foothills.lvlx"]={14},
+   ["!Final Cutscene.lvlx"]={15}
 },
 --[4]--
 {
@@ -47,12 +53,7 @@
 },
 --[5]--
 {
-   ["!Title Screen.lvlx"]={9},
-   ["!Memory Amalgamation.lvlx"]={10},
-   ["3-1 Paddlewheel Peril.lvlx"]={11},
-   ["!The Realm of Recollection.lvlx"]={12},
-   ["!C-1 Fragile Block Foothills.lvlx"]={13},
-   ["!Final Cutscene.lvlx"]={14}
+
 },
 --[6]--
 {
@@ -63,27 +64,27 @@
 },
 --[7]--
 {
-   ["bigSwitch"]={15},
-   ["_characterdata"]={16},
+   ["bigSwitch"]={16},
+   ["_characterdata"]={17},
    ["starcoinCounter"]=0,
-   ["hud"]={17},
-   ["starcoin"]={18}
+   ["hud"]={18},
+   ["starcoin"]={19}
 },
 --[8]--
 {
-   ["accessibility"]={19},
-   ["settings"]={20}
+   ["accessibility"]={20},
+   ["settings"]={21}
 },
 --[9]--
 {
    ["beaten"]=false,
-   ["timer"]=668,
+   ["timer"]=3223,
    ["bestTime"]=-1
 },
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=38236,
+   ["timer"]=668,
    ["bestTime"]=-1
 },
 --[11]--
@@ -94,70 +95,69 @@
 },
 --[12]--
 {
-   ["beaten"]=false,
-   ["timer"]=651,
+   ["beaten"]=true,
+   ["timer"]=11144,
    ["bestTime"]=-1
 },
 --[13]--
 {
    ["beaten"]=false,
-   ["timer"]=88,
+   ["timer"]=651,
    ["bestTime"]=-1
 },
 --[14]--
 {
    ["beaten"]=false,
-   ["timer"]=11610,
+   ["timer"]=88,
    ["bestTime"]=-1
 },
 --[15]--
 {
-
+   ["beaten"]=false,
+   ["timer"]=11610,
+   ["bestTime"]=-1
 },
 --[16]--
 {
-   ["8"]={21},
-   ["10"]={22},
-   ["9"]={23},
-   ["6"]={24},
-   ["16"]={25},
-   ["11"]={26},
-   ["12"]={27},
-   ["7"]={28},
-   ["15"]={29},
-   ["13"]={30},
-   ["14"]={31}
+
 },
 --[17]--
 {
-   ["score"]=21540
+   ["8"]={22},
+   ["10"]={23},
+   ["9"]={24},
+   ["6"]={25},
+   ["16"]={26},
+   ["11"]={27},
+   ["12"]={28},
+   ["7"]={29},
+   ["15"]={30},
+   ["13"]={31},
+   ["14"]={32}
 },
 --[18]--
 {
-   ["!Title Screen.lvlx"]={32},
-   ["!Memory Amalgamation.lvlx"]={33},
-   ["3-1 Paddlewheel Peril.lvlx"]={34},
-   ["!The Realm of Recollection.lvlx"]={35},
-   ["!C-1 Fragile Block Foothills.lvlx"]={36},
-   ["!Final Cutscene.lvlx"]={37}
+   ["score"]=36540
 },
 --[19]--
+{
+   ["!Memory Amalgamation.lvlx"]={33},
+   ["!Title Screen.lvlx"]={34},
+   ["3-1 Paddlewheel Peril.lvlx"]={35},
+   ["2-2 Monty Mole Mines.lvlx"]={36},
+   ["!The Realm of Recollection.lvlx"]={37},
+   ["!C-1 Fragile Block Foothills.lvlx"]={38},
+   ["!Final Cutscene.lvlx"]={39}
+},
+--[20]--
 {
    ["invincibility"]=false,
    ["infinite jumps"]=false
 },
---[20]--
+--[21]--
 {
    ["mute music"]=false,
    ["show speedrun timer"]=false
-},
---[21]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
 },
 --[22]--
 {
@@ -241,28 +241,23 @@
 },
 --[32]--
 {
-   ["maxID"]=0,
-   ["alive"]={38}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[33]--
 {
    ["maxID"]=0,
-   ["alive"]={39}
-},
---[34]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
    ["alive"]={40}
 },
---[35]--
+--[34]--
 {
    ["maxID"]=0,
    ["alive"]={41}
 },
---[36]--
+--[35]--
 {
    0,
    0,
@@ -270,24 +265,35 @@
    ["maxID"]=3,
    ["alive"]={42}
 },
+--[36]--
+{
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={43}
+},
 --[37]--
 {
    ["maxID"]=0,
-   ["alive"]={43}
+   ["alive"]={44}
 },
 --[38]--
 {
-
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={45}
 },
 --[39]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={46}
 },
 --[40]--
 {
-   true,
-   true,
-   true
+
 },
 --[41]--
 {
@@ -300,6 +306,22 @@
    true
 },
 --[43]--
+{
+   true,
+   true,
+   true
+},
+--[44]--
+{
+
+},
+--[45]--
+{
+   true,
+   true,
+   true
+},
+--[46]--
 {
 
 }

@@ -80,6 +80,12 @@ function onEvent(eventName)
 	end
 end
 
+local silence = SFX.open("Silence.ogg")
+
+function onLoadSection2()
+	Audio.sounds[24].sfx = silence
+end
+
 function onPostNPCKill(npc, reason)
 	if npc.id == 319 then
 	  	local effect = Animation.spawn(176, npc.x + npc.width*0.5, npc.y + npc.height*0.5)

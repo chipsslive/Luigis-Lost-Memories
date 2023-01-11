@@ -1,1 +1,2 @@
+npcblock=0
 cliffturn=1
