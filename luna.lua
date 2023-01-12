@@ -386,6 +386,10 @@ function onDraw()
 	end
 end
 
+function onLoadSection20()
+	respawnRooms.reset(false)
+end
+
 function onTickEnd()
 	local hijackedValue = mem(0x00B2C5A8, FIELD_WORD)
 	if hijackedValue > 0 then
@@ -453,10 +457,9 @@ end
 function respawnRooms.onPostReset(fromRespawn)
 	if fromRespawn then
         respawnRooms.deathCoins = {}
+		player.powerup = 2
+		setHeight()
     end
-
-	player.powerup = 2
-	setHeight()
 end
 
 -- Custom Coin Counter HUD Element

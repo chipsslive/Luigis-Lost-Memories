@@ -9,7 +9,7 @@ local autoscroll = require("autoscroll")
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
 lineguide.registerNpcs(88)
-lineguide.properties[88] = {lineSpeed = 1}
+lineguide.properties[88].lineSpeed = 1
 
 -- Assign stuff to clearpipes
 

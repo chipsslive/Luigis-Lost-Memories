@@ -1,5 +1,6 @@
 --NPCManager is required for setting basic NPC properties
 local npcManager = require("npcManager")
+local respawnRooms = require("respawnRooms")
 
 --Create the library table
 local weakBrown = {}
@@ -173,5 +174,13 @@ function weakBrown.onNPCKill(eventObj, v, killReason, culprit)
 	end
 	data.respite = true
 end
+
+function respawnRooms.onPreReset(fromRespawn)
+	for k,v in ipairs(NPC.get(800)) do
+		local data = v.data
+		data.strength = 0
+	end
+end
+
 --Gotta return the library table!
 return weakBrown

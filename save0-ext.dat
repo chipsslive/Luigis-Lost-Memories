@@ -2,24 +2,24 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["__launcher"]={3},
-   ["levelStats"]={4},
-   ["audibletteUnlocked"]=false,
-   ["__costumes"]={5},
-   ["challenge1Completed"]=false,
-   ["_basegame"]={6},
    ["totalChallengesCompleted"]=0,
+   ["allMemoriesRecovered"]=true,
+   ["audibletteUnlocked"]=false,
+   ["__costumes"]={3},
+   ["challenge1Completed"]=false,
+   ["_basegame"]={4},
+   ["__launcher"]={5},
    ["__progress"]=2.35,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
    ["starcoins"]=1,
-   ["allMemoriesRecovered"]=true,
+   ["levelStats"]={6},
    ["shownKeyholeAchievement"]=false,
    ["totalKeyholesFound"]=1,
    ["totalMemoriesRecovered"]=0,
    ["challenge4Completed"]=false,
    ["introFinished"]=true,
-   ["coins"]=552,
+   ["coins"]=476,
    ["keyhole5Found"]=true,
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
@@ -43,14 +43,11 @@
 },
 --[4]--
 {
-   ["!Credits.lvlx"]={9},
-   ["3-1 Paddlewheel Peril.lvlx"]={10},
-   ["!Title Screen.lvlx"]={11},
-   ["2-2 Monty Mole Mines.lvlx"]={12},
-   ["!Memory Amalgamation.lvlx"]={13},
-   ["!The Realm of Recollection.lvlx"]={14},
-   ["!C-1 Fragile Block Foothills.lvlx"]={15},
-   ["!Final Cutscene.lvlx"]={16}
+   ["bigSwitch"]={9},
+   ["_characterdata"]={10},
+   ["starcoin"]={11},
+   ["hud"]={12},
+   ["starcoinCounter"]=0
 },
 --[5]--
 {
@@ -58,11 +55,14 @@
 },
 --[6]--
 {
-   ["bigSwitch"]={17},
-   ["_characterdata"]={18},
-   ["starcoin"]={19},
-   ["hud"]={20},
-   ["starcoinCounter"]=0
+   ["!Credits.lvlx"]={13},
+   ["2-2 Monty Mole Mines.lvlx"]={14},
+   ["!Title Screen.lvlx"]={15},
+   ["!Final Cutscene.lvlx"]={16},
+   ["!Memory Amalgamation.lvlx"]={17},
+   ["!The Realm of Recollection.lvlx"]={18},
+   ["!C-1 Fragile Block Foothills.lvlx"]={19},
+   ["3-1 Paddlewheel Peril.lvlx"]={20}
 },
 --[7]--
 {
@@ -78,57 +78,9 @@
 },
 --[9]--
 {
-   ["beaten"]=false,
-   ["timer"]=0,
-   ["bestTime"]=-1
-},
---[10]--
-{
-   ["beaten"]=false,
-   ["timer"]=622,
-   ["bestTime"]=-1
-},
---[11]--
-{
-   ["beaten"]=false,
-   ["timer"]=109,
-   ["bestTime"]=-1
-},
---[12]--
-{
-   ["beaten"]=true,
-   ["timer"]=11144,
-   ["bestTime"]=-1
-},
---[13]--
-{
-   ["beaten"]=false,
-   ["timer"]=21121,
-   ["bestTime"]=-1
-},
---[14]--
-{
-   ["beaten"]=false,
-   ["timer"]=651,
-   ["bestTime"]=-1
-},
---[15]--
-{
-   ["beaten"]=true,
-   ["timer"]=2215,
-   ["bestTime"]=-1
-},
---[16]--
-{
-   ["beaten"]=false,
-   ["timer"]=61,
-   ["bestTime"]=-1
-},
---[17]--
-{
 
 },
---[18]--
+--[10]--
 {
    ["8"]={23},
    ["10"]={24},
@@ -142,25 +94,73 @@
    ["13"]={32},
    ["14"]={33}
 },
---[19]--
+--[11]--
 {
    ["!Credits.lvlx"]={34},
-   ["3-1 Paddlewheel Peril.lvlx"]={35},
+   ["2-2 Monty Mole Mines.lvlx"]={35},
    ["!Title Screen.lvlx"]={36},
-   ["2-2 Monty Mole Mines.lvlx"]={37},
+   ["!Final Cutscene.lvlx"]={37},
    ["!Memory Amalgamation.lvlx"]={38},
    ["!The Realm of Recollection.lvlx"]={39},
    ["!C-1 Fragile Block Foothills.lvlx"]={40},
-   ["!Final Cutscene.lvlx"]={41}
+   ["3-1 Paddlewheel Peril.lvlx"]={41}
+},
+--[12]--
+{
+   ["score"]=118410
+},
+--[13]--
+{
+   ["beaten"]=false,
+   ["timer"]=0,
+   ["bestTime"]=-1
+},
+--[14]--
+{
+   ["beaten"]=true,
+   ["timer"]=11144,
+   ["bestTime"]=-1
+},
+--[15]--
+{
+   ["beaten"]=false,
+   ["timer"]=109,
+   ["bestTime"]=-1
+},
+--[16]--
+{
+   ["beaten"]=false,
+   ["timer"]=61,
+   ["bestTime"]=-1
+},
+--[17]--
+{
+   ["beaten"]=false,
+   ["timer"]=36430,
+   ["bestTime"]=-1
+},
+--[18]--
+{
+   ["beaten"]=false,
+   ["timer"]=651,
+   ["bestTime"]=-1
+},
+--[19]--
+{
+   ["beaten"]=true,
+   ["timer"]=2215,
+   ["bestTime"]=-1
 },
 --[20]--
 {
-   ["score"]=106980
+   ["beaten"]=false,
+   ["timer"]=622,
+   ["bestTime"]=-1
 },
 --[21]--
 {
    ["invincibility"]=false,
-   ["infinite jumps"]=false
+   ["infinite jumps"]=true
 },
 --[22]--
 {
@@ -275,10 +275,7 @@
 },
 --[37]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={45}
 },
 --[38]--
@@ -301,7 +298,10 @@
 },
 --[41]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={49}
 },
 --[42]--
@@ -320,9 +320,7 @@
 },
 --[45]--
 {
-   true,
-   true,
-   true
+
 },
 --[46]--
 {
@@ -340,6 +338,8 @@
 },
 --[49]--
 {
-
+   true,
+   true,
+   true
 }
 }

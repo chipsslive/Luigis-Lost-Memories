@@ -9,7 +9,7 @@ local dropShadows = require("dropShadows")
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
 lineguide.registerNpcs(10)
-lineguide.properties[10] = {lineSpeed = 1}
+lineguide.properties[10].lineSpeed = 1
 
 -- 'Jump rope' coin movement effect    
 
