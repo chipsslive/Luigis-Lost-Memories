@@ -1,6 +1,8 @@
-width=40
-height=44
 gfxwidth=40
 gfxheight=46
+width=40
+height=44
+npcblock=0
+cliffturn=0
 frames=4
 framestyle=2

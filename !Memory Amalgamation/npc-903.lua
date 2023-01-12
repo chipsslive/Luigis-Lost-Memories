@@ -1,9 +1,6 @@
 local npcManager = require("npcManager")
 local colliders = require("colliders")
 
-local lineguide = require("lineguide")
-lineguide.registerNpcs(NPC_ID)
-
 local touched = false
 local sound = false
 local timer = 0
@@ -37,7 +34,7 @@ local slowBallSettings = {
 
 	nohurt=true,
 	nogravity = false,
-	noblockcollision = true,
+	noblockcollision = false,
 	nofireball = true,
 	noiceball = true,
 	noyoshi= true,
@@ -91,6 +88,8 @@ function slowBall.onTickNPC(v)
 	if (colliders.collide(player, v)) then
         touched = true
     end
+
+	v.speedX = 0.7 * v.direction
 end
 
 function slowBall.onTick()

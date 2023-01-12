@@ -1,6 +1,7 @@
 local npcManager = require("npcManager")
 local whistle = require("npcs/ai/whistle")
 local monty = require("montymolehole")
+local respawnRooms = require("respawnRooms")
 
 local montyMoles = {}
 
@@ -54,6 +55,7 @@ function montyMoles.onInitAPI()
 	npcManager.registerEvent(npcID, montyMoles, "onTickNPC")
 	npcManager.registerEvent(npcID, montyMoles, "onStartNPC")
 	npcManager.registerEvent(npcID, montyMoles, "onTickEndNPC")
+	registerEvent(npcID, montyMoles, "respawnRooms.onPostReset")
 	registerEvent(montyMoles, "onDraw")
 end
 
@@ -272,6 +274,23 @@ function montyMoles.onTickEndNPC(v)
 	end
 	
 	firstTick = false
+end
+
+function respawnRooms.onPostReset(fromRespawn)
+	for k,v in ipairs(NPC.get(902)) do
+		local data = v.data._basegame
+		data.wasBuried = ST_HIDDEN
+		if v.data._settings.startHidden == false then
+			data.wasBuried = ST_CHASE
+		else
+			data.vanillaFriendly = v.friendly
+			v.friendly = true
+			v.noblockcollision = true
+		end
+		data.timer = 0
+		data.direction = v.direction
+		data.state = data.wasBuried
+	end
 end
 
 return montyMoles

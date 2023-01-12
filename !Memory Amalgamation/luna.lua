@@ -1,12 +1,23 @@
 local spawnzones = require("spawnzones")
 local slm = require("simpleLayerMovement")
 local respawnRooms = require("respawnRooms")
-clearpipe = require("blocks/ai/clearpipe")
-clearpipe_npc = require("npcs/ai/clearpipeNPC")
+local clearpipe = require("blocks/ai/clearpipe")
+local clearpipe_npc = require("npcs/ai/clearpipeNPC")
+local lineguide = require("lineguide")
+local autoscroll = require("autoscroll")
+
+-- There are two variants of coins used in the level, so only register 1 to lineguides
+
+lineguide.registerNpcs(88)
+lineguide.properties[88] = {lineSpeed = 1}
+
+-- Assign stuff to clearpipes
 
 table.insert(clearpipe_npc.ids, 312)
 clearpipe_npc.ids_map[312] = true
 clearpipe.registerPipe(1, "END", "VERT", {true, true, false, false})
+
+-- NPC remover stuff
 
 local hasRemoverBGOs = 0
 local extraPadding = 256
@@ -72,6 +83,12 @@ function onTick()
 		triggerEvent("Launch Tree1")
 		launched = true
 	end
+
+	if player.deathTimer > 0 then return end
+    if player:mem(0x148, FIELD_WORD) > 0
+    and player:mem(0x14C, FIELD_WORD) > 0 then
+        player:kill()
+    end
 end
 
 function onEvent(eventName)

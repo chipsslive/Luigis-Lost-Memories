@@ -1,4 +1,6 @@
-height=108
-width=104
-gfxheight=108
 gfxwidth=104
+gfxheight=108
+width=104
+height=108
+npcblock=0
+noshell=1

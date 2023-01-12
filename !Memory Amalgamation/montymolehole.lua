@@ -1,3 +1,5 @@
+local respawnRooms = require("respawnRooms")
+
 local monty = {}
 
 local montymoles = {}
@@ -68,6 +70,10 @@ function monty.onDraw()
             Graphics.drawImageToSceneWP(Graphics.sprites.background[dirtID].img, v.x, v.y, -60) -- TODO: BGO.spawn!
         end
     end
+end
+
+function respawnRooms.onPostReset(fromRespawn) 
+	dirtTable = {}
 end
 
 return monty

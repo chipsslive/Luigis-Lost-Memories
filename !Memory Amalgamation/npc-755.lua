@@ -1,5 +1,7 @@
 --NPCManager is required for setting basic NPC properties
 local npcManager = require("npcManager")
+local autoscroll = require("autoscroll")
+local respawnRooms = require("respawnRooms")
 
 --Create the library table
 local heaveho = {}
@@ -104,20 +106,28 @@ npcManager.registerHarmTypes(npcID,
 
 --Custom local definitions below
 
+local barrel
 
 --Register events
 function heaveho.onInitAPI()
 	npcManager.registerEvent(npcID, heaveho, "onTickNPC")
 	--npcManager.registerEvent(npcID, heaveho, "onTickEndNPC")
 	--npcManager.registerEvent(npcID, heaveho, "onDrawNPC")
-	--registerEvent(heaveho, "onNPCKill")
+	registerEvent(heaveho, "onStart")
 end
+
+local scrolling = false
+local timer = 0
+local timerStart = false
+local lockPlayer = false
 
 function heaveho.onTickNPC(v)
 	--Don't act during time freeze
 	if Defines.levelFreeze then return end
 	
 	local data = v.data
+
+	v.direction = -1
 
 	v.data.throwtimer = v.data.throwtimer or 0
 	
@@ -167,17 +177,55 @@ function heaveho.onTickNPC(v)
 	end
 
 	if Colliders.collide(player, v) then
-		if not player:isInvincible() then
-			if player.direction == -v.direction then
-				data.throwtimer = 50
-				player.speedY = -14
-				player.speedX = v.direction * -8
-				SFX.play(25)
-			end
-		else
-			v:kill()
+		if player.direction == -v.direction then
+			data.throwtimer = 50
+			player.speedY = -14
+			player.speedX = v.direction * -8
+			SFX.play(25)
 		end
 	end
+
+	if data.throwtimer > 0 and not scrolling then
+		autoscroll.scrollRight(4)
+		lockPlayer = true
+		scrolling = true
+		timerStart = true
+	end
+
+	if timerStart then
+		timer = timer + 1
+	end
+
+	if timer == 70 then
+		lockPlayer = false
+	end
+
+	if timer == 120 then
+		barrel:show(true)
+	end
+
+	if timer == 140 then
+		barrel:hide(true)
+	end
+
+	if lockPlayer then
+        for k, v in pairs(player.keys) do
+            player.keys[k] = false
+        end
+    end
+end
+
+function heaveho.onStart()
+	barrel = Layer.get("Barrel")
+end
+
+function respawnRooms.onPostReset(fromRespawn)
+	autoscroll.unlockSection(3)
+    autoscroll.scrollDown(0,nil,3)
+	scrolling = false
+	timer = 0
+	timerStart = false
+	lockPlayer = false
 end
 
 --Gotta return the library table!

@@ -2,36 +2,36 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["totalChallengesCompleted"]=0,
-   ["levelStats"]={3},
+   ["__launcher"]={3},
+   ["levelStats"]={4},
    ["audibletteUnlocked"]=false,
-   ["__costumes"]={4},
+   ["__costumes"]={5},
    ["challenge1Completed"]=false,
-   ["challenge3Completed"]=false,
-   ["allMemoriesRecovered"]=true,
-   ["__progress"]=1.6,
+   ["_basegame"]={6},
+   ["totalChallengesCompleted"]=0,
+   ["__progress"]=2.35,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
-   ["conceptuaryUnlocked"]=false,
-   ["__launcher"]={5},
+   ["starcoins"]=1,
+   ["allMemoriesRecovered"]=true,
    ["shownKeyholeAchievement"]=false,
-   ["coins"]=81,
-   ["totalMemoriesRecovered"]=0,
-   ["keyhole4Found"]=false,
-   ["introFinished"]=true,
    ["totalKeyholesFound"]=1,
-   ["spentStars"]=-20,
+   ["totalMemoriesRecovered"]=0,
+   ["challenge4Completed"]=false,
+   ["introFinished"]=true,
+   ["coins"]=552,
+   ["keyhole5Found"]=true,
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
-   ["unlockedTabs"]={6},
+   ["unlockedTabs"]={7},
    ["creditsSeen"]=false,
-   ["keyhole5Found"]=true,
-   ["challenge4Completed"]=false,
+   ["spentStars"]=-20,
+   ["keyhole4Found"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
-   ["starcoins"]=0,
+   ["conceptuaryUnlocked"]=false,
    ["fullyComplete"]=true,
-   ["_basegame"]={7}
+   ["challenge3Completed"]=false
 },
 --[2]--
 {
@@ -39,17 +39,18 @@
 },
 --[3]--
 {
-   ["!Memory Amalgamation.lvlx"]={9},
-   ["!Title Screen.lvlx"]={10},
-   ["3-1 Paddlewheel Peril.lvlx"]={11},
-   ["2-2 Monty Mole Mines.lvlx"]={12},
-   ["!The Realm of Recollection.lvlx"]={13},
-   ["!C-1 Fragile Block Foothills.lvlx"]={14},
-   ["!Final Cutscene.lvlx"]={15}
+
 },
 --[4]--
 {
-
+   ["!Credits.lvlx"]={9},
+   ["3-1 Paddlewheel Peril.lvlx"]={10},
+   ["!Title Screen.lvlx"]={11},
+   ["2-2 Monty Mole Mines.lvlx"]={12},
+   ["!Memory Amalgamation.lvlx"]={13},
+   ["!The Realm of Recollection.lvlx"]={14},
+   ["!C-1 Fragile Block Foothills.lvlx"]={15},
+   ["!Final Cutscene.lvlx"]={16}
 },
 --[5]--
 {
@@ -57,40 +58,40 @@
 },
 --[6]--
 {
+   ["bigSwitch"]={17},
+   ["_characterdata"]={18},
+   ["starcoin"]={19},
+   ["hud"]={20},
+   ["starcoinCounter"]=0
+},
+--[7]--
+{
    true,
    false,
    false,
    false
 },
---[7]--
-{
-   ["bigSwitch"]={16},
-   ["_characterdata"]={17},
-   ["starcoinCounter"]=0,
-   ["hud"]={18},
-   ["starcoin"]={19}
-},
 --[8]--
 {
-   ["accessibility"]={20},
-   ["settings"]={21}
+   ["accessibility"]={21},
+   ["settings"]={22}
 },
 --[9]--
 {
    ["beaten"]=false,
-   ["timer"]=3223,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=668,
+   ["timer"]=622,
    ["bestTime"]=-1
 },
 --[11]--
 {
    ["beaten"]=false,
-   ["timer"]=622,
+   ["timer"]=109,
    ["bestTime"]=-1
 },
 --[12]--
@@ -102,70 +103,69 @@
 --[13]--
 {
    ["beaten"]=false,
-   ["timer"]=651,
+   ["timer"]=21121,
    ["bestTime"]=-1
 },
 --[14]--
 {
    ["beaten"]=false,
-   ["timer"]=88,
+   ["timer"]=651,
    ["bestTime"]=-1
 },
 --[15]--
 {
-   ["beaten"]=false,
-   ["timer"]=11610,
+   ["beaten"]=true,
+   ["timer"]=2215,
    ["bestTime"]=-1
 },
 --[16]--
 {
-
+   ["beaten"]=false,
+   ["timer"]=61,
+   ["bestTime"]=-1
 },
 --[17]--
 {
-   ["8"]={22},
-   ["10"]={23},
-   ["9"]={24},
-   ["6"]={25},
-   ["16"]={26},
-   ["11"]={27},
-   ["12"]={28},
-   ["7"]={29},
-   ["15"]={30},
-   ["13"]={31},
-   ["14"]={32}
+
 },
 --[18]--
 {
-   ["score"]=36540
+   ["8"]={23},
+   ["10"]={24},
+   ["9"]={25},
+   ["6"]={26},
+   ["16"]={27},
+   ["11"]={28},
+   ["12"]={29},
+   ["7"]={30},
+   ["15"]={31},
+   ["13"]={32},
+   ["14"]={33}
 },
 --[19]--
 {
-   ["!Memory Amalgamation.lvlx"]={33},
-   ["!Title Screen.lvlx"]={34},
+   ["!Credits.lvlx"]={34},
    ["3-1 Paddlewheel Peril.lvlx"]={35},
-   ["2-2 Monty Mole Mines.lvlx"]={36},
-   ["!The Realm of Recollection.lvlx"]={37},
-   ["!C-1 Fragile Block Foothills.lvlx"]={38},
-   ["!Final Cutscene.lvlx"]={39}
+   ["!Title Screen.lvlx"]={36},
+   ["2-2 Monty Mole Mines.lvlx"]={37},
+   ["!Memory Amalgamation.lvlx"]={38},
+   ["!The Realm of Recollection.lvlx"]={39},
+   ["!C-1 Fragile Block Foothills.lvlx"]={40},
+   ["!Final Cutscene.lvlx"]={41}
 },
 --[20]--
+{
+   ["score"]=106980
+},
+--[21]--
 {
    ["invincibility"]=false,
    ["infinite jumps"]=false
 },
---[21]--
+--[22]--
 {
    ["mute music"]=false,
    ["show speedrun timer"]=false
-},
---[22]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
 },
 --[23]--
 {
@@ -249,13 +249,16 @@
 },
 --[33]--
 {
-   ["maxID"]=0,
-   ["alive"]={40}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[34]--
 {
    ["maxID"]=0,
-   ["alive"]={41}
+   ["alive"]={42}
 },
 --[35]--
 {
@@ -263,22 +266,14 @@
    0,
    0,
    ["maxID"]=3,
-   ["alive"]={42}
-},
---[36]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
    ["alive"]={43}
 },
---[37]--
+--[36]--
 {
    ["maxID"]=0,
    ["alive"]={44}
 },
---[38]--
+--[37]--
 {
    0,
    0,
@@ -286,24 +281,32 @@
    ["maxID"]=3,
    ["alive"]={45}
 },
---[39]--
+--[38]--
 {
    ["maxID"]=0,
    ["alive"]={46}
 },
+--[39]--
+{
+   ["maxID"]=0,
+   ["alive"]={47}
+},
 --[40]--
 {
-
+   0,
+   0,
+   3,
+   ["maxID"]=3,
+   ["alive"]={48}
 },
 --[41]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={49}
 },
 --[42]--
 {
-   true,
-   true,
-   true
+
 },
 --[43]--
 {
@@ -322,6 +325,20 @@
    true
 },
 --[46]--
+{
+
+},
+--[47]--
+{
+
+},
+--[48]--
+{
+   true,
+   true,
+   true
+},
+--[49]--
 {
 
 }

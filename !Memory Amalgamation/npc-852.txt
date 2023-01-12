@@ -1,3 +1,4 @@
 lightcolor=#3e3ca3
 lightbrightness=1.5
 lightradius=80
+spinjumpsafe=false
