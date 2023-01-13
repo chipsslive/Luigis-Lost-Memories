@@ -2,36 +2,36 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["totalChallengesCompleted"]=0,
-   ["allMemoriesRecovered"]=true,
+   ["starcoins"]=1,
+   ["levelStats"]={3},
    ["audibletteUnlocked"]=false,
-   ["__costumes"]={3},
-   ["challenge1Completed"]=false,
-   ["_basegame"]={4},
+   ["__costumes"]={4},
+   ["challenge1Completed"]=true,
    ["__launcher"]={5},
-   ["__progress"]=2.35,
+   ["_basegame"]={6},
+   ["__progress"]=36.25,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
-   ["starcoins"]=1,
-   ["levelStats"]={6},
+   ["allMemoriesRecovered"]=false,
+   ["conceptuaryUnlocked"]=false,
    ["shownKeyholeAchievement"]=false,
-   ["totalKeyholesFound"]=1,
-   ["totalMemoriesRecovered"]=0,
-   ["challenge4Completed"]=false,
-   ["introFinished"]=true,
-   ["coins"]=476,
-   ["keyhole5Found"]=true,
-   ["keyhole2Found"]=false,
-   ["keyhole3Found"]=false,
-   ["unlockedTabs"]={7},
-   ["creditsSeen"]=false,
-   ["spentStars"]=-20,
+   ["totalChallengesCompleted"]=0,
+   ["totalMemoriesRecovered"]=19,
    ["keyhole4Found"]=false,
+   ["introFinished"]=true,
+   ["totalKeyholesFound"]=0,
+   ["keyhole5Found"]=false,
+   ["keyhole2Found"]=false,
+   ["coins"]=598,
+   ["unlockedTabs"]={7},
+   ["creditsSeen"]=true,
+   ["spentStars"]=0,
+   ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
-   ["conceptuaryUnlocked"]=false,
-   ["fullyComplete"]=true,
-   ["challenge3Completed"]=false
+   ["challenge3Completed"]=false,
+   ["fullyComplete"]=false,
+   ["keyhole3Found"]=false
 },
 --[2]--
 {
@@ -39,15 +39,18 @@
 },
 --[3]--
 {
-
+   ["5-1 Toxic Tumble.lvlx"]={9},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={10},
+   ["!Title Screen.lvlx"]={11},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={12},
+   ["!The Realm of Recollection.lvlx"]={13},
+   ["1-3 Sakura Scrapyard.lvlx"]={14},
+   ["3-3 Lightweight Library.lvlx"]={15},
+   ["!Memory Amalgamation.lvlx"]={16}
 },
 --[4]--
 {
-   ["bigSwitch"]={9},
-   ["_characterdata"]={10},
-   ["starcoin"]={11},
-   ["hud"]={12},
-   ["starcoinCounter"]=0
+
 },
 --[5]--
 {
@@ -55,14 +58,11 @@
 },
 --[6]--
 {
-   ["!Credits.lvlx"]={13},
-   ["2-2 Monty Mole Mines.lvlx"]={14},
-   ["!Title Screen.lvlx"]={15},
-   ["!Final Cutscene.lvlx"]={16},
-   ["!Memory Amalgamation.lvlx"]={17},
-   ["!The Realm of Recollection.lvlx"]={18},
-   ["!C-1 Fragile Block Foothills.lvlx"]={19},
-   ["3-1 Paddlewheel Peril.lvlx"]={20}
+   ["bigSwitch"]={17},
+   ["_characterdata"]={18},
+   ["starcoin"]={19},
+   ["hud"]={20},
+   ["starcoinCounter"]=0
 },
 --[7]--
 {
@@ -78,9 +78,57 @@
 },
 --[9]--
 {
-
+   ["beaten"]=true,
+   ["timer"]=1746,
+   ["bestTime"]=-1
 },
 --[10]--
+{
+   ["beaten"]=true,
+   ["timer"]=227,
+   ["bestTime"]=-1
+},
+--[11]--
+{
+   ["beaten"]=false,
+   ["timer"]=246,
+   ["bestTime"]=-1
+},
+--[12]--
+{
+   ["beaten"]=true,
+   ["timer"]=71,
+   ["bestTime"]=-1
+},
+--[13]--
+{
+   ["beaten"]=false,
+   ["timer"]=329,
+   ["bestTime"]=-1
+},
+--[14]--
+{
+   ["beaten"]=false,
+   ["timer"]=1952,
+   ["bestTime"]=-1
+},
+--[15]--
+{
+   ["beaten"]=false,
+   ["timer"]=118,
+   ["bestTime"]=-1
+},
+--[16]--
+{
+   ["beaten"]=false,
+   ["timer"]=0,
+   ["bestTime"]=-1
+},
+--[17]--
+{
+
+},
+--[18]--
 {
    ["8"]={23},
    ["10"]={24},
@@ -94,68 +142,20 @@
    ["13"]={32},
    ["14"]={33}
 },
---[11]--
-{
-   ["!Credits.lvlx"]={34},
-   ["2-2 Monty Mole Mines.lvlx"]={35},
-   ["!Title Screen.lvlx"]={36},
-   ["!Final Cutscene.lvlx"]={37},
-   ["!Memory Amalgamation.lvlx"]={38},
-   ["!The Realm of Recollection.lvlx"]={39},
-   ["!C-1 Fragile Block Foothills.lvlx"]={40},
-   ["3-1 Paddlewheel Peril.lvlx"]={41}
-},
---[12]--
-{
-   ["score"]=118410
-},
---[13]--
-{
-   ["beaten"]=false,
-   ["timer"]=0,
-   ["bestTime"]=-1
-},
---[14]--
-{
-   ["beaten"]=true,
-   ["timer"]=11144,
-   ["bestTime"]=-1
-},
---[15]--
-{
-   ["beaten"]=false,
-   ["timer"]=109,
-   ["bestTime"]=-1
-},
---[16]--
-{
-   ["beaten"]=false,
-   ["timer"]=61,
-   ["bestTime"]=-1
-},
---[17]--
-{
-   ["beaten"]=false,
-   ["timer"]=36430,
-   ["bestTime"]=-1
-},
---[18]--
-{
-   ["beaten"]=false,
-   ["timer"]=651,
-   ["bestTime"]=-1
-},
 --[19]--
 {
-   ["beaten"]=true,
-   ["timer"]=2215,
-   ["bestTime"]=-1
+   ["5-1 Toxic Tumble.lvlx"]={34},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={35},
+   ["!Title Screen.lvlx"]={36},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={37},
+   ["!The Realm of Recollection.lvlx"]={38},
+   ["1-3 Sakura Scrapyard.lvlx"]={39},
+   ["3-3 Lightweight Library.lvlx"]={40},
+   ["!Memory Amalgamation.lvlx"]={41}
 },
 --[20]--
 {
-   ["beaten"]=false,
-   ["timer"]=622,
-   ["bestTime"]=-1
+   ["score"]=64050
 },
 --[21]--
 {
@@ -257,7 +257,8 @@
 },
 --[34]--
 {
-   ["maxID"]=0,
+   3,
+   ["maxID"]=1,
    ["alive"]={42}
 },
 --[35]--
@@ -275,7 +276,10 @@
 },
 --[37]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={45}
 },
 --[38]--
@@ -285,28 +289,26 @@
 },
 --[39]--
 {
-   ["maxID"]=0,
+   0,
+   ["maxID"]=1,
    ["alive"]={47}
 },
 --[40]--
 {
    0,
    0,
-   3,
+   0,
    ["maxID"]=3,
    ["alive"]={48}
 },
 --[41]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={49}
 },
 --[42]--
 {
-
+   true
 },
 --[43]--
 {
@@ -320,7 +322,9 @@
 },
 --[45]--
 {
-
+   true,
+   true,
+   true
 },
 --[46]--
 {
@@ -328,7 +332,7 @@
 },
 --[47]--
 {
-
+   true
 },
 --[48]--
 {
@@ -338,8 +342,6 @@
 },
 --[49]--
 {
-   true,
-   true,
-   true
+
 }
 }
