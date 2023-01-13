@@ -5,6 +5,7 @@ local clearpipe = require("blocks/ai/clearpipe")
 local clearpipe_npc = require("npcs/ai/clearpipeNPC")
 local lineguide = require("lineguide")
 local autoscroll = require("autoscroll")
+local warpTransition = require("warpTransition")
 
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
@@ -47,6 +48,15 @@ end
 local function isCol(v)
     local b = getDesiredBlocks(Block.getIntersecting(v.x+2,v.y+2,v.x+v.width-2,v.y+v.height-2))
     return #b > 0
+end
+
+function onLoadSection3()
+	warpTransition.crossSectionTransition = warpTransition.TRANSITION_FADE
+	warpTransition.transitionSpeeds[warpTransition.TRANSITION_FADE] = 150
+end
+
+function onLoadSection4()
+	player.powerup = 2
 end
 
 function onStart()

@@ -6,13 +6,13 @@ SC:0;L:-200000;R:-197600;T:-200600;B:-200000;MZ:24;MF:"!Memory Amalgamation/Red&
 SC:1;L:-180000;R:-179200;T:-182464;B:-180000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:36;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-156352;T:-160600;B:-160000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:3;L:-140000;R:-134656;T:-140600;B:-140000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
-SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:12;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"!Memory Amalgamation/wind.mp3";BG:12;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SC:6;L:-80000;R:-79200;T:-80600;B:-80000;MZ:0;MF:"";BG:0;
-SC:20;L:200000;R:200800;T:199400;B:200000;MZ:0;MF:"";BG:12;CS:1;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:20;L:200000;R:200800;T:199400;B:200000;MZ:24;MF:"!Memory Amalgamation/wind.mp3";BG:12;CS:1;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-119772;Y:-120214;D:1;
+ID:1;X:-134940;Y:-140310;D:1;
 STARTPOINT_END
 BLOCK
 ID:3;X:-199904;Y:-200160;W:32;H:32;
@@ -3030,7 +3030,6 @@ ID:605;X:-119408;Y:-120272;W:64;H:32;LR:"Float2";
 ID:6;X:-119280;Y:-120240;W:32;H:32;LR:"Float2";
 ID:3;X:-119344;Y:-120240;W:32;H:32;LR:"Float2";
 ID:3;X:-119440;Y:-120272;W:32;H:32;LR:"Float2";
-ID:3;X:-119472;Y:-120272;W:32;H:32;LR:"Float2";
 ID:3;X:-119504;Y:-120272;W:32;H:32;LR:"Float2";
 ID:3;X:-119600;Y:-120240;W:32;H:32;LR:"Float2";
 ID:606;X:-119568;Y:-120240;W:32;H:32;LR:"Float2";
@@ -3091,6 +3090,7 @@ ID:1018;X:-119840;Y:-120128;W:32;H:32;
 ID:1018;X:-119504;Y:-120240;W:32;H:32;LR:"Float2";
 ID:16;X:-119968;Y:-120128;W:32;H:32;
 ID:276;X:-119968;Y:-120096;W:32;H:32;
+ID:3;X:-119472;Y:-120272;W:32;H:32;LR:"Float2";
 BLOCK_END
 BGO
 ID:113;X:-199904;Y:-200160;
@@ -6325,7 +6325,7 @@ ID:258;X:-119584;Y:-120304;LR:"Float2";
 ID:258;X:-119392;Y:-120400;LR:"Float2";
 ID:89;X:-119376;Y:-120320;LR:"Float2";
 ID:37;X:-119552;Y:-120400;LR:"Float2";
-ID:37;X:-119440;Y:-120352;LR:"Float2";
+ID:37;X:-119424;Y:-120352;LR:"Float2";
 ID:15;X:-119568;Y:-120368;LR:"Float2";
 ID:14;X:-119360;Y:-120288;LR:"Float2";
 ID:90;X:-119584;Y:-120336;LR:"Float2";
@@ -6335,6 +6335,8 @@ ID:90;X:-119360;Y:-120352;LR:"Float2";
 ID:90;X:-119424;Y:-120320;LR:"Float2";
 ID:91;X:-119424;Y:-120400;LR:"Float2";
 ID:91;X:-119568;Y:-120288;LR:"Float2";
+ID:111;X:-119472;Y:-120362;LR:"Float2";
+ID:287;X:-119472;Y:-120304;LR:"Float2";
 BGO_END
 NPC
 ID:313;X:-199904;Y:-200400;D:1;
@@ -6413,7 +6415,7 @@ ID:10;X:-159454;Y:-160256;D:-1;LR:"Float1";
 ID:10;X:-159486;Y:-160256;D:-1;LR:"Float1";
 ID:164;X:-158471;Y:-160140;D:1;GE:1;GT:1;GD:3;GM:20;LR:"Float1";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\n    }\n}\n";
 ID:457;X:-158224;Y:-160032;D:-1;
-ID:465;X:200496;Y:199552;D:-1;MG:"<speakerName Chipss>So\, you found my secret hangout spot.<page>Heh\, nice job kid. Why not stop and rest for a while?";FD:1;
+ID:465;X:200496;Y:199552;D:-1;MG:"<speakerName Chipss>So\, you found my secret hangout spot. Nice job.<page>Why not stop and rest for a while?";FD:1;
 ID:10;X:-158798;Y:-160400;D:-1;
 ID:10;X:-158766;Y:-160400;D:-1;
 ID:10;X:-158670;Y:-160272;D:-1;
@@ -6504,6 +6506,7 @@ ID:903;X:-135424;Y:-140160;D:-1;
 ID:10;X:-135278;Y:-140112;D:-1;
 ID:10;X:-135246;Y:-140112;D:-1;
 ID:850;X:-138384;Y:-140480;D:-1;
+ID:465;X:-119472;Y:-120352;D:-1;MG:"The statue gazes into your soul. Reflecting on every event up to this point\, you begin to question the validity of reality.<page>A soft wind beckons you beyond the dimensional barrier. It's time to leave. Are you ready?";FD:1;LR:"Float2";
 NPC_END
 PHYSICS
 ET:0;X:-198448;Y:-200528;W:192;H:96;
