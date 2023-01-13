@@ -6,6 +6,25 @@ local clearpipe_npc = require("npcs/ai/clearpipeNPC")
 local lineguide = require("lineguide")
 local autoscroll = require("autoscroll")
 local warpTransition = require("warpTransition")
+local npcutils = require("npcs/npcutils")
+local littleDialogue = require("littleDialogue")
+local textplus = require("textplus")
+local pauseplus = require("pauseplus")
+
+-- For sequence at the end of the level
+
+local MKDS = textplus.loadFont("MKDS-Exit.ini")
+
+local beginExitSequence = false
+local playedSFX = false
+local alpha = 0
+local textAlpha = 0
+local blackAlpha = 0
+local musicVolume = 1
+local timer = 0
+
+littleDialogue.registerAnswer("exitAmalgamation",{text = "Yes",chosenFunction = function() beginExitSequence = true end})
+littleDialogue.registerAnswer("exitAmalgamation",{text = "No"})
 
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
@@ -18,19 +37,23 @@ table.insert(clearpipe_npc.ids, 312)
 clearpipe_npc.ids_map[312] = true
 clearpipe.registerPipe(1, "END", "VERT", {true, true, false, false})
 
--- NPC remover stuff
-
-local hasRemoverBGOs = 0
-local extraPadding = 256
-
-local launched = false
-
 function loadFile(name)
 	return Misc.resolveFile(name)
 end
 
 clearpipe.sfx = loadFile("sfx_clearpipe.ogg")
 clearpipe_npc.sfx = clearpipe.sfx
+
+-- NPC remover stuff
+
+local hasRemoverBGOs = 0
+local extraPadding = 256
+
+-- If the trees have launched
+
+local launched = false
+
+-- Fixes glitchy behavior with propeller blocks
 
 local function getDesiredBlocks(list)
     local blockList = {}
@@ -49,6 +72,8 @@ local function isCol(v)
     local b = getDesiredBlocks(Block.getIntersecting(v.x+2,v.y+2,v.x+v.width-2,v.y+v.height-2))
     return #b > 0
 end
+
+-- Long fade when entering final section
 
 function onLoadSection3()
 	warpTransition.crossSectionTransition = warpTransition.TRANSITION_FADE
@@ -71,6 +96,7 @@ function onStart()
 end
 
 function onTick()
+	-- Very expensive NPC removal function lol
     if hasRemoverBGOs > 0 then
 		for k,v in ipairs(NPC.get(-1,player.section)) do
 			if not v.friendly and v:mem(0x12A, FIELD_WORD) > 0 then
@@ -81,6 +107,10 @@ function onTick()
 				end
 			end
 		end
+	end
+
+	for k,v in ipairs(NPC.get(465)) do
+		npcutils.applyLayerMovement(v)
 	end
 
 	for _,v in NPC.iterate(278) do
@@ -94,11 +124,46 @@ function onTick()
 		launched = true
 	end
 
+	-- Fixes janky autoscroll issues
+
 	if player.deathTimer > 0 then return end
     if player:mem(0x148, FIELD_WORD) > 0
     and player:mem(0x14C, FIELD_WORD) > 0 then
         player:kill()
     end
+
+	-- Exit sequence
+
+	if beginExitSequence then
+		pauseplus.canPause = false
+		player:setFrame(49 * player.direction)
+		if not playedSFX then
+			SFX.play("Omori - Water.mp3", 1)
+			playedSFX = true
+		end
+		alpha = alpha + 0.002
+		Graphics.drawScreen{color = Color.white.. alpha,priority = 6}
+
+		timer = timer + 1
+		if timer >= 600 then
+			textAlpha = textAlpha + 0.005
+			textplus.print{
+				text = "<align center>Memory Amalgamation<br>Conquered!</align>",
+				priority = 7,
+				x = 190,
+				y = 250,
+				font = MKDS,
+				color = Color.white..textAlpha
+			}
+		end
+
+		if timer >= 1100 then
+			blackAlpha = blackAlpha + 0.003
+			musicVolume = musicVolume - 0.001
+			Graphics.drawScreen{color = Color.black..blackAlpha,priority = 8}
+			Audio.MusicVolume(math.max(0,musicVolume))
+		end
+	end
 end
 
 function onEvent(eventName)

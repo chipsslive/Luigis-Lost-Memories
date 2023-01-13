@@ -12,7 +12,7 @@ SC:6;L:-80000;R:-79200;T:-80600;B:-80000;MZ:0;MF:"";BG:0;
 SC:20;L:200000;R:200800;T:199400;B:200000;MZ:24;MF:"!Memory Amalgamation/wind.mp3";BG:12;CS:1;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-134940;Y:-140310;D:1;
+ID:1;X:-119628;Y:-120294;D:1;
 STARTPOINT_END
 BLOCK
 ID:3;X:-199904;Y:-200160;W:32;H:32;
@@ -6506,7 +6506,7 @@ ID:903;X:-135424;Y:-140160;D:-1;
 ID:10;X:-135278;Y:-140112;D:-1;
 ID:10;X:-135246;Y:-140112;D:-1;
 ID:850;X:-138384;Y:-140480;D:-1;
-ID:465;X:-119472;Y:-120352;D:-1;MG:"The statue gazes into your soul. Reflecting on every event up to this point\, you begin to question the validity of reality.<page>A soft wind beckons you beyond the dimensional barrier. It's time to leave. Are you ready?";FD:1;LR:"Float2";
+ID:465;X:-119472;Y:-120352;D:-1;MG:"The statue gazes into your soul. Reflecting on every event up to this point\, you begin to question the validity of reality.<page>A soft wind beckons you beyond the dimensional barrier. It's time to leave. Are you ready?<question exitAmalgamation>";FD:1;LR:"Float2";
 NPC_END
 PHYSICS
 ET:0;X:-198448;Y:-200528;W:192;H:96;
