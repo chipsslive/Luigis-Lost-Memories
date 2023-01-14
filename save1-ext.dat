@@ -7,13 +7,13 @@
    ["audibletteUnlocked"]=false,
    ["__costumes"]={4},
    ["challenge1Completed"]=false,
-   ["challenge2Completed"]=false,
+   ["_basegame"]={5},
    ["__progress"]=0,
    ["challenge3Completed"]=false,
-   ["_basegame"]={5},
-   ["conceptuaryUnlocked"]=false,
+   ["keyhole1Found"]=false,
    ["totalChallengesCompleted"]=0,
-   ["allMemoriesRecovered"]=false,
+   ["__launcher"]={6},
+   ["challenge2Completed"]=false,
    ["coins"]=0,
    ["totalMemoriesRecovered"]=0,
    ["keyhole4Found"]=false,
@@ -22,15 +22,15 @@
    ["spentStars"]=-20,
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
-   ["unlockedTabs"]={6},
+   ["unlockedTabs"]={7},
    ["creditsSeen"]=false,
    ["keyhole5Found"]=false,
    ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=false,
-   ["__launcher"]={7},
+   ["conceptuaryUnlocked"]=false,
    ["fullyComplete"]=false,
-   ["keyhole1Found"]=false
+   ["allMemoriesRecovered"]=false
 },
 --[2]--
 {
@@ -56,14 +56,14 @@
 },
 --[6]--
 {
+
+},
+--[7]--
+{
    true,
    false,
    false,
    true
-},
---[7]--
-{
-
 },
 --[8]--
 {
@@ -73,13 +73,13 @@
 --[9]--
 {
    ["beaten"]=false,
-   ["timer"]=148,
+   ["timer"]=101,
    ["bestTime"]=-1
 },
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=519,
+   ["timer"]=503,
    ["bestTime"]=-1
 },
 --[11]--

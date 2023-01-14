@@ -1,0 +1,117 @@
+| GRAPHICS |
+
+:Made Specifically for this Project:
+	Achy 		 	  - Various world map objects/sprites, some level blocks, some backgrounds, logo
+	Mr. Greenman 	  - Most of Luigi's swimming sprites, various level graphics, powerups
+	Vito		 	  - Small Luigi swimming sprites, Some RoR tiles, ending cutscene broken tiles
+	PsychLantern (Digo) - Shy Guy Industries sprite on world map, old game logo (Luigi's Adventure)
+	galaxy		  - Old 1-1 Tileset & Background, Bloombas
+	FurballArts         - Promotional art
+	leitackoc           - Some world map sprites
+	Chipss              - Various original sprites, edits, and recolors
+
+:Taken from Elsewhere:
+	Enjl		     - Tangled Temple background, Monty Mole Mines spikes
+	Mariofan230	     - Heave-Ho sprite (I am not 100% sure on this one)
+	DDP		     - Unfinished level construction GFX
+	Mr. Pixelator    - The Realm of Recollection Base Tileset (extended by Chipss & Vito)
+	Valterri	     - Realm of Recollection metal bars (on the doors)
+	AirShip/AirSheep - Goombas, Buccaneer Bay background, Memory Center Tileset
+	SleepyVA	     - Purple Stars
+	Natsu		     - Bone-Dry Bridge background
+	Squishy Rex	     - Disastrous Deeps stone/coral tileset and Jellybeams, MADELYN base graphic
+	FireSeraphim     - Fragile Block Foothills Barrels, Bone-Dry Bridge Kritters
+	Wonolf	     - High Wattage Warehouse Tesla Coils
+	Void	           - High Wattage Warehouse Amped Jewels
+	Gate/Gatete	     - Koopas
+	Marina	     - Memory Center BGOs (computer, other machines)
+	Elbow	           - Memory Center Airlock Door
+	AxelVoss	     - Original Luigi sprites (Extended by Chipss, Vito, and Mr. Greenman)
+	BlueKecleon15    - MKDS Font
+
+	NOTE: Two graphic credits have been omitted due to controversies surrounding their creators.
+_______________________________________________________________________________________________________
+
+| MUSIC |
+
+:Made Specifically for this Project:
+	galaxy       - Space Junk Galaxy Remix  - Unused
+	galaxy       - Chainlink Charge Remix   - Unused
+	galaxy       - SMM2 SMB1 Forest Remix   - Unused
+	galaxy       - Island Athletic          - Unused
+	galaxy       - NewerSMBWii Castle Remix - Unused
+	galaxy       - Boss Theme               - Unused
+	galaxy       - Boss Jingle              - Unused
+	galaxy       - Victory Jingle           - Unused
+	galaxy       - Unfinished Trailer Theme - Unused
+	JerryCoxalot - Haunted Desert Theme     - Unused
+	leitakcoc	 - Desert Theme             - Unused
+	Punji        - Overworld Theme          - Used in: Moving Meadows/Flowing Frolic
+
+:Taken from Elsewhere:
+	Red&Green            - Forest Observatory              - Used in: Title Screen
+	(Metroid Prime)      - Derelict Space Station          - Used in: Memory Center
+	Red&Green            - Abyss of Polygons               - Used in: Realm of Recollection
+	Red&Green            - Time Attack!                    - Used in: Memory Amalgamation
+	Red&Green            - Dance of the Windmill           - Used in: Clear Pipe Prarie
+	(DKC3)               - Enchanted Riverbank             - Used in: Spring Showers
+	(Touhou 13)          - Let's Live in a Lovely Cemetery - Used in: Sakura Scrapyard
+	(Super Mario RPG)    - Weapons Factory                 - Used in: High Watt Warehouse
+	(Mario Party 3)      - Creepy Cavern                   - Used in: Monty Mole Mines
+	Red&Green            - The Soul-Eating Desert          - Used in: Bone-Dry Bridge
+	(Secret of Mana)     - Distant Thunder                 - Used in: Paddlewheel Peril
+	(Legend of Kyrandia) - The Timbermist Woods            - Used in: Super Sticky Swamp
+	Shady Cicada         - A Spooky Scenario               - Used in: Lightweight Library
+	(DKCR)               - Damp Dungeon                    - Used in: Tangled Temple
+	(Paper Mario)        - Crystal Palace Crawl            - Used in: Polar Palace
+	Rewitkin             - Puzzling Caverns                - Used in: Toxic Tumble
+	Red&Green            - Seashell Collecting             - Used in: Buccaneer Bay
+	Red&Green            - Glowing Moss                    - Used in: Disastrous Deeps
+	HaruMKT              - Damp Dugout                     - Used in: Swooper Drop Sneak
+	Newer Team           - Pumpkin Theme                   - Used in: Fragile Foothills
+	(Kirby Super Star)   - Cocoa Cave                      - Used in: Pine Propultion
+	Eric Matyas          - City of Dread                   - Used in: Can't Remember a Memory
+	Moose                - Pastel Wind                     - Used in: Piranha Plant Pinch
+	(Spyro the Dragon)   - High Caves (NTSC Version)       - Used in: Piranha Plant Pinch Cave
+	Red&Green            - Interlude of Voices             - Used in: Credits
+	Rewitkin             - triumph!                        - Used in: Level Complete Summary
+	(Omori)              - Water                           - Used in: Memory Amalgamation Exit
+
+	NOTE: Parentheses indicate that the credit is to a game and not a specific artist.
+_______________________________________________________________________________________________________
+
+| SCRIPTING |
+
+:Made Specifically for this Project:
+	Chipss       - All Cutscenes, Audiblette Menu, Numerous small tweaks, all progression, achievements, loading screen, etc. etc. etc. (I did a lot of scripting lol)
+	MrDoubleA    - Swimming system, various bugfixes, world map dynamic player sprite rendering,a bit of code for level mechanic functionality
+	Vito         - Custom world map rendering for animated objects
+	Marioman2007 - Portal menu, end of level summary screen, various bugfixes, Koopas
+	IAmPlayer    - Various bugfixes
+	
+:Taken from Elsewhere:
+	MrDoubleA     - pauseplus, warpTransition, extraNPCProperties, helmets, littleDialogue, respawnRooms, simpleLayerMovement, various NPCs
+	AndrewPixel   - Heave-Ho NPC
+	8luestorm     - Fragile Dirt Block NPCs, Carryable Barrel
+	Enjl          - townWalkers (Bloomba walk cycles), some code for Portal/Audiblette menus, antizip
+	KBM-Quine     - anotherPowerDownLibrary
+	SetaYoshi     - Amped Jewels and Tesla Coil NPCs
+	Sambo         - nsmbwalls
+	JustOneMGuy   - smoothworld (smooth path unlocks in world map)
+	Hoeloe        - Some code for Portal/Audiblette menus
+	EeveeEuphoria - Some code for Portal/Audiblette menus
+_______________________________________________________________________________________________________
+
+| LEVEL DESIGN |
+
+Chipss - 23 Levels Designed
+Achy   -  1 Level  Designed
+_______________________________________________________________________________________________________
+
+| TESTING |
+
+leitakcoc
+Chipss
+tg online
+Launchstar
+galaxy

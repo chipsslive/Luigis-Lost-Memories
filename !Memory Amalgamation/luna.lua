@@ -22,6 +22,7 @@ local textAlpha = 0
 local blackAlpha = 0
 local musicVolume = 1
 local timer = 0
+local lockPlayer = false
 
 littleDialogue.registerAnswer("exitAmalgamation",{text = "Yes",chosenFunction = function() beginExitSequence = true end})
 littleDialogue.registerAnswer("exitAmalgamation",{text = "No"})
@@ -136,6 +137,8 @@ function onTick()
 
 	if beginExitSequence then
 		pauseplus.canPause = false
+		player.speedX = 0
+		lockPlayer = true
 		player:setFrame(49 * player.direction)
 		if not playedSFX then
 			SFX.play("Omori - Water.mp3", 1)
@@ -163,7 +166,17 @@ function onTick()
 			Graphics.drawScreen{color = Color.black..blackAlpha,priority = 8}
 			Audio.MusicVolume(math.max(0,musicVolume))
 		end
+
+		if timer == 1550 then
+			Level.load("!Credits.lvlx")
+		end
 	end
+
+	if lockPlayer then
+        for k, v in pairs(player.keys) do
+            player.keys[k] = false
+        end
+    end
 end
 
 function onEvent(eventName)

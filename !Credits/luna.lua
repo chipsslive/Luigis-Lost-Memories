@@ -1,10 +1,14 @@
-local textplus = require("textplus")
-local pauseplus = require("pauseplus")
-local autoscroll = require("autoscroll")
-local slm = require("simpleLayerMovement")
-local lineguide = require("lineguide")
-local spawnzones = require("spawnzones")
-local dropShadows = require("dropShadows")
+local textplus       = require("textplus")
+local pauseplus      = require("pauseplus")
+local autoscroll     = require("autoscroll")
+local slm            = require("simpleLayerMovement")
+local lineguide      = require("lineguide")
+local spawnzones     = require("spawnzones")
+local dropShadows    = require("dropShadows")
+local warpTransition = require("warpTransition")
+
+warpTransition.levelStartTransition = warpTransition.TRANSITION_FADE
+warpTransition.transitionSpeeds[warpTransition.TRANSITION_FADE] = 150
 
 -- There are two variants of coins used in the level, so only register 1 to lineguides
 
@@ -96,6 +100,7 @@ local text = {
     0,"Nintendo",
     0,"Westfall Studios",
     0,"Square Enix",
+    0,"OMOCAT, LLC",
     0,"",
     1,"SCRIPTING",
     0,"",
@@ -210,7 +215,7 @@ end
 
 function onTick()
     timer = timer + 1
-    scrollY = scrollY - 0.54
+    scrollY = scrollY - 0.55
     
     -- Triggers roughly 4 beats after the last note of the song
 
@@ -257,7 +262,7 @@ function onDraw()
         y = y + layout.height + 4
     end
 
-    -- Render Game Logo (Text is placeholder for now)
+    -- Render Game Logo
 
     if creditsFinished then
         Graphics.drawImageWP(logo, 110, 140, alpha, 6)
@@ -265,12 +270,11 @@ function onDraw()
 
         if timer >= 5500 then
             -- Fadeout at very end of level
-            Graphics.drawScreen{color = Color.black.. opacity,priority = 7}
+            Graphics.drawScreen{color = Color.black.. opacity,priority = 10}
             if opacity < 1 then
                 opacity = opacity + 0.005
             else
-                SaveData.creditsSeen = true
-                Level.load("!The Realm of Recollection.lvlx")
+                Level.load("!Final Cutscene.lvlx")
             end
         end
     end

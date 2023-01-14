@@ -90,7 +90,7 @@ littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the chal
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
 littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
@@ -153,6 +153,7 @@ littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Let's do 
 littleDialogue.registerAnswer("enterAmalgamationAfterCredits",{text = "Not right now.",addText = "No worries. This time's just for fun anyway."})
 
 local afterCreditsMsgCeruloomba = "<setPos 220 30 0.5 0><speakerName Ceruloomba>Hey kid. Sorry I was so rude to ya' before. Hopefully you can forgive me, I'm working through some stuff.<page>You did good out there in the Memory Amalgamation. If you'd like, I can send ya' through it again. Whaddya think?<question enterAmalgamationAfterCredits>"
+local afterCreditsMsgMaroonba = "<speakerName Maroonba>So, you conquered the Memory Amalgamation? That's no small feat! Congratulations, Master Luigi!<page>There's still plenty to do here in the Realm of Recollection. Why don't you go talk to Tangeroomba and find out?"
 
 local hundo = Graphics.loadImageResolved("hundo.png")
 local hundoAlpha = 0
@@ -333,6 +334,7 @@ function onTick()
 
     -- Check if Conceptuary/Audiblette have just been unlocked
     if unlockedConceptuary then
+        Progress.value = Progress.value + 3
         conceptuaryWarp:show(true)
         conceptuaryLock:hide(false)
         conceptuaryNPC:hide(true)
@@ -342,6 +344,7 @@ function onTick()
         GameData.ach_HundredPercent:setCondition(6,true)
         unlockedConceptuary = false
     elseif unlockedAudiblette then
+        Progress.value = Progress.value + 3
         audibletteWarp:show(true)
         audibletteLock:hide(false)
         audibletteNPC:hide(true)
@@ -367,8 +370,14 @@ function onTick()
     end
 
     if SaveData.allMemoriesRecovered and not SaveData.fullyComplete then
-		for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
-            v.msg = allMemoriesMsgMaroonba
+        if SaveData.creditsSeen then
+            for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
+                v.msg = afterCreditsMsgMaroonba
+            end
+        else
+            for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
+                v.msg = allMemoriesMsgMaroonba
+            end
         end
     end
 
