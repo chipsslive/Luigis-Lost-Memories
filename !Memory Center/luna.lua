@@ -345,7 +345,7 @@ end
 
 function madelyn4()
     m = littleDialogue.create{
-        text = "<color green>Memory<br>Arrangement<br>Device<br>Enabling<br>Large<br>Yesterday<br>Networks</color>",
+        text = "<color green>Mind<br>Arrangement<br>Device<br>Enabling<br>Large<br>Yesterday<br>Networks</color>",
         uncontrollable = true,
         pauses = false,
         forcedPosX = 325,
@@ -358,7 +358,7 @@ end
 
 function madelyn5()
     m = littleDialogue.create{
-        text = "<color green><align center>Yesterday<br>Network<br><br>is the technical<br>term for what <br>you humans call<delay 32><br><br>'Memories'</align></color>",
+        text = "<color green><align center>Yesterday<br>Network<br><br>is the technical<br>term for what<br>you humans call<delay 32><br><br>'Memories'</align></color>",
         uncontrollable = true,
         pauses = false,
         forcedPosX = 360,

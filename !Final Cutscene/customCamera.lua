@@ -49,7 +49,7 @@ local zoomedBuffer = Graphics.CaptureBuffer(800,600)
 local STAR_COUNT_ADDR = 0x00B251E0
 
 
-customCamera.transitionSpeed = 0.05
+customCamera.transitionSpeed = 1
 customCamera.boundaryEnterSpeed = 8
 customCamera.boundaryExitSpeed = 8
 

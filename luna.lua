@@ -116,6 +116,7 @@ littleDialogue.registerStyle("madelyn",{
     typewriterDelayNormal = 2,
     typewriterDelayLong = 16,
 	textColor = Color.green,
+	textMaxWidth = 395,
 })
 
 littleDialogue.registerStyle("conceptuary",{

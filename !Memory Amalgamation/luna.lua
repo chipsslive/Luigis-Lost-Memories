@@ -20,7 +20,7 @@ local playedSFX = false
 local alpha = 0
 local textAlpha = 0
 local blackAlpha = 0
-local musicVolume = 1
+local musicVolume = 64
 local timer = 0
 local lockPlayer = false
 
@@ -96,6 +96,8 @@ function onStart()
 	slm.addLayer{name = "Float2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = -0.1}
 end
 
+local isMusicSeized = false
+
 function onTick()
 	-- Very expensive NPC removal function lol
     if hasRemoverBGOs > 0 then
@@ -161,10 +163,19 @@ function onTick()
 		end
 
 		if timer >= 1100 then
-			blackAlpha = blackAlpha + 0.003
-			musicVolume = musicVolume - 0.001
-			Graphics.drawScreen{color = Color.black..blackAlpha,priority = 8}
+			musicVolume = musicVolume - 0.3
 			Audio.MusicVolume(math.max(0,musicVolume))
+
+			blackAlpha = blackAlpha + 0.003
+			Graphics.drawScreen{color = Color.black..blackAlpha,priority = 8}
+
+			if musicVolume <= 0 then
+				if not isMusicSeized then
+					Audio.SeizeStream(-1)
+					isMusicSeized = true
+				  end
+				Audio.MusicStop()
+			end
 		end
 
 		if timer == 1550 then

@@ -222,7 +222,6 @@ function onTick()
     if timer == 4960 then
         creditsFinished = true
         SFX.play("reveal.mp3")
-        Audio.MusicVolume(0)
     end
 
     if creditsFinished then
@@ -267,6 +266,12 @@ function onDraw()
     if creditsFinished then
         Graphics.drawImageWP(logo, 110, 140, alpha, 6)
         textplus.render{layout = layout2, color = Color.white * alpha, priority = 6,x = 200,y=440}
+
+        if not musicSeized then
+            Audio.SeizeStream(-1)
+            musicSeized = true
+        end
+        Audio.MusicStop()
 
         if timer >= 5500 then
             -- Fadeout at very end of level
