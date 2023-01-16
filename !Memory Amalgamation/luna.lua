@@ -79,6 +79,7 @@ end
 function onLoadSection3()
 	warpTransition.crossSectionTransition = warpTransition.TRANSITION_FADE
 	warpTransition.transitionSpeeds[warpTransition.TRANSITION_FADE] = 150
+	autoscroll.lockScreen()
 end
 
 function onLoadSection4()

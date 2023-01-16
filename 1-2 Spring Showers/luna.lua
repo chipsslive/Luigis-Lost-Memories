@@ -13,16 +13,20 @@ function onStart()
 end
 
 function onTick()
-    if Moving2 then
-        myLayerTimer = myLayerTimer + 1
+	if Layer.isPaused() == true then
 
-		Moving2.speedY = math.cos(myLayerTimer/48)*-0.75
-		if Moving then
+    else
+		if Moving2 then
 			myLayerTimer = myLayerTimer + 1
-	
-			Moving.speedY = math.cos(myLayerTimer/48)*0.75
+
+			Moving2.speedY = math.cos(myLayerTimer/48)*-0.75
+			if Moving then
+				myLayerTimer = myLayerTimer + 1
+		
+				Moving.speedY = math.cos(myLayerTimer/48)*0.75
+			end
 		end
-    end
+	end
 end
 
 function respawnRooms.onPostReset(fromRespawn)

@@ -63,6 +63,8 @@ end
 function onExitLevel()
     GameData.cutscene = false
     SaveData.creditsSeen = true
+    GameData.ach_Credits:collect(true)
+    GameData.ach_HundredPercent:setCondition(7,true,true)
 end
 
 function onDraw()
@@ -87,7 +89,7 @@ function onDraw()
         textplus.print{
             x = 195,
             y = 285,
-            text = "Not all adventures end how you wanted them to.",
+            text = "Not all adventures end how you want them to.",
             xscale = 2,
             yscale = 2,
             color = Color.white,

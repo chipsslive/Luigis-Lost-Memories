@@ -127,8 +127,8 @@ littleDialogue.registerAnswer("introQuestion2",{text = "My mind is nicer!",addTe
 
 local maroonba2
 local ceruloomba
-local allMemoriesMsgMaroonba = "<speakerName Maroonba>Wowza! Would you look at that! You recovered every last one of those memories!<page>Well, actually, there are still plenty of them left unrecovered, but your amnesia was so strong that I'm fairly sure we'll never be able to find those, even inside the Realm of Recollection.<page>Ah, well, at least we tried, right?"
-local allMemoriesMsgCeruloomba = "<setPos 220 30 0.5 0><speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya say kid? You ready to take the plunge?<question enterAmalgamation>"
+local allMemoriesMsgMaroonba = "<speakerName Maroonba>Wowza! Would you look at that! You recovered every last one of those memories!<page>Well, actually, there are still plenty of them left unrecovered, but your amnesia was so strong that I'm fairly sure we'll never be able to find those, even inside the Realm of Recollection.<page>Ah, well, at least we tried, right? Maybe you should go talk to Ceruloomba now?"
+local allMemoriesMsgCeruloomba = "<setPos 220 30 0.5 0><speakerName Ceruloomba>Huh? Oh, so you finally recovered 'em all, eh? About time! I feel like I'm two steps away from my grave at this point, and I'm immortal!<page>Anyways, now that you've done that, it's time for you to enter the 'Memory Amalgamation.'<page>Every person attempting to leave their consciousness has to do it! Think of this as a sort of... rite of passage.<page>So, whaddya think? You ready to take the plunge?<question enterAmalgamation>"
 
 local mauvoomba
 local emitConfetti = false
@@ -165,9 +165,8 @@ local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
     -- Very janky keyhole achievement fix
-
     if GameData.exitedWithKeyhole then
-        GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,SaveData.keyhole4Found)
+        GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,true)
         GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
         GameData.exitedWithKeyhole = false
     end
