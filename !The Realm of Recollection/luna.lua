@@ -323,7 +323,6 @@ function onTick()
 
     -- Check if Conceptuary/Audiblette have just been unlocked
     if unlockedConceptuary then
-        Progress.value = Progress.value + 3
         conceptuaryWarp:show(true)
         conceptuaryLock:hide(false)
         conceptuaryNPC:hide(true)
@@ -333,7 +332,6 @@ function onTick()
         GameData.ach_HundredPercent:setCondition(6,true)
         unlockedConceptuary = false
     elseif unlockedAudiblette then
-        Progress.value = Progress.value + 3
         audibletteWarp:show(true)
         audibletteLock:hide(false)
         audibletteNPC:hide(true)

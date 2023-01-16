@@ -150,6 +150,18 @@ local MAX_VALUE = 100
 function onStart()
 	Misc.saveGame()
 
+	-- Checks how many memories are completed for the achievement
+
+    function getRecoveredCount()
+        local list = {}
+		for k,v in ipairs(stats.levelList) do
+			if SaveData.levelStats[stats.levelList[k].filename] and SaveData.levelStats[stats.levelList[k].filename].beaten then
+				table.insert(list, v)
+			end
+		end
+        return list
+    end
+
 	GameData.usedAccessibility = false
 	GameData.usedSetPowerup = false
 
@@ -166,7 +178,7 @@ function onStart()
 	SaveData.creditsSeen 		  = SaveData.creditsSeen 		   or nil_or(SaveData.creditsSeen, false)
 	SaveData.fullyComplete        = SaveData.fullyComplete         or nil_or(SaveData.fullyComplete, false)
 
-	SaveData.totalMemoriesRecovered = SaveData.totalMemoriesRecovered or nil_or(SaveData.totalMemoriesRecovered, 0)
+	SaveData.totalMemoriesRecovered = #getRecoveredCount()
 
 	-- Achievement flags
 
@@ -213,18 +225,6 @@ function onStart()
 	-- Reset accessbility checks
 	GameData.usedAccessibility = false
 	GameData.usedSetPowerup = false
-
-	-- Checks how many memories are completed for the achievement
-
-    function getRecoveredCount()
-        local list = {}
-		for k,v in ipairs(stats.levelList) do
-			if SaveData.levelStats[stats.levelList[k].filename] and SaveData.levelStats[stats.levelList[k].filename].beaten then
-				table.insert(list, v)
-			end
-		end
-        return list
-    end
 
 	-- Other achievement stuff
 	GameData.ach_AllMemories:setCondition(1,math.max(#getRecoveredCount(), GameData.ach_AllMemories:getCondition(1).value))
@@ -503,6 +503,9 @@ function onExitLevel()
 	if not Misc.inEditor() then
 		Checkpoint.reset()
 	end
+
+	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins*0.75 + SaveData.totalKeyholesFound*1.6 + SaveData.totalChallengesCompleted*2 + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
+    Progress.value = (totalProg/MAX_VALUE)*100
 end
 
 -- Custom Coin Counter HUD Element

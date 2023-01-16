@@ -86,11 +86,12 @@ ________________________________________________________________________________
 	Chipss       - All Cutscenes, Audiblette Menu, Numerous small tweaks, all progression, achievements, loading screen, etc. etc. etc. (I did a lot of scripting lol)
 	MrDoubleA    - Swimming system, various bugfixes, world map dynamic player sprite rendering,a bit of code for level mechanic functionality
 	Vito         - Custom world map rendering for animated objects
-	Marioman2007 - Portal menu, end of level summary screen, various bugfixes, Koopas
+	Marioman2007 - Portal menu, end of level summary screen, various bugfixes
 	IAmPlayer    - Various bugfixes
 	
 :Taken from Elsewhere:
 	MrDoubleA     - pauseplus, warpTransition, extraNPCProperties, helmets, littleDialogue, respawnRooms, simpleLayerMovement, various NPCs
+	Marioman2007  - Koopas
 	AndrewPixel   - Heave-Ho NPC
 	8luestorm     - Fragile Dirt Block NPCs, Carryable Barrel
 	Enjl          - townWalkers (Bloomba walk cycles), some code for Portal/Audiblette menus, antizip

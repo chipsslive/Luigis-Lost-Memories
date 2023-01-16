@@ -1,0 +1,443 @@
+{
+--[1]--
+{
+   ["pauseplus"]={2},
+   ["starcoins"]=27,
+   ["levelStats"]={3},
+   ["audibletteUnlocked"]=true,
+   ["__costumes"]={4},
+   ["challenge1Completed"]=false,
+   ["challenge2Completed"]=false,
+   ["__progress"]=36.75,
+   ["challenge3Completed"]=false,
+   ["_basegame"]={5},
+   ["conceptuaryUnlocked"]=false,
+   ["totalChallengesCompleted"]=0,
+   ["allMemoriesRecovered"]=false,
+   ["coins"]=910,
+   ["totalMemoriesRecovered"]=9,
+   ["keyhole4Found"]=false,
+   ["introFinished"]=true,
+   ["totalKeyholesFound"]=0,
+   ["spentStars"]=0,
+   ["keyhole2Found"]=false,
+   ["keyhole3Found"]=false,
+   ["unlockedTabs"]={6},
+   ["creditsSeen"]=false,
+   ["keyhole5Found"]=false,
+   ["challenge4Completed"]=false,
+   ["allPurpleStarsFound"]=false,
+   ["challenge5Completed"]=false,
+   ["__launcher"]={7},
+   ["fullyComplete"]=false,
+   ["keyhole1Found"]=false
+},
+--[2]--
+{
+   ["selectionData"]={8}
+},
+--[3]--
+{
+   ["1-1 Clear Pipe Prairie.lvlx"]={9},
+   ["!Memory Center.lvlx"]={10},
+   ["!The Realm of Recollection.lvlx"]={11},
+   ["3-1 Paddlewheel Peril.lvlx"]={12},
+   ["3-T Tangled Temple.lvlx"]={13},
+   ["2-3 Bone Dry Bridge.lvlx"]={14},
+   ["!Title Screen.lvlx"]={15},
+   ["1-T High Wattage Warehouse.lvlx"]={16},
+   ["1-2 Spring Showers.lvlx"]={17},
+   ["3-2 Super Sticky Swamp.lvlx"]={18},
+   ["3-3 Lightweight Library.lvlx"]={19},
+   ["2-2 Monty Mole Mines.lvlx"]={20}
+},
+--[4]--
+{
+
+},
+--[5]--
+{
+   ["bigSwitch"]={21},
+   ["_characterdata"]={22},
+   ["starcoinCounter"]=27,
+   ["hud"]={23},
+   ["starcoin"]={24}
+},
+--[6]--
+{
+   true,
+   false,
+   false,
+   false
+},
+--[7]--
+{
+
+},
+--[8]--
+{
+   ["accessibility"]={25},
+   ["settings"]={26}
+},
+--[9]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=12535
+},
+--[10]--
+{
+   ["beaten"]=false,
+   ["timer"]=5690,
+   ["bestTime"]=-1
+},
+--[11]--
+{
+   ["beaten"]=false,
+   ["timer"]=762,
+   ["bestTime"]=-1
+},
+--[12]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=9813
+},
+--[13]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=16175
+},
+--[14]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=11882
+},
+--[15]--
+{
+   ["beaten"]=false,
+   ["timer"]=500,
+   ["bestTime"]=-1
+},
+--[16]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=14136
+},
+--[17]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=8487
+},
+--[18]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=12412
+},
+--[19]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=16839
+},
+--[20]--
+{
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=10899
+},
+--[21]--
+{
+
+},
+--[22]--
+{
+   ["8"]={27},
+   ["10"]={28},
+   ["9"]={29},
+   ["6"]={30},
+   ["16"]={31},
+   ["11"]={32},
+   ["12"]={33},
+   ["7"]={34},
+   ["15"]={35},
+   ["13"]={36},
+   ["14"]={37}
+},
+--[23]--
+{
+   ["score"]=225070
+},
+--[24]--
+{
+   ["1-1 Clear Pipe Prairie.lvlx"]={38},
+   ["!Memory Center.lvlx"]={39},
+   ["!The Realm of Recollection.lvlx"]={40},
+   ["3-1 Paddlewheel Peril.lvlx"]={41},
+   ["3-T Tangled Temple.lvlx"]={42},
+   ["2-3 Bone Dry Bridge.lvlx"]={43},
+   ["!Title Screen.lvlx"]={44},
+   ["1-T High Wattage Warehouse.lvlx"]={45},
+   ["1-2 Spring Showers.lvlx"]={46},
+   ["3-2 Super Sticky Swamp.lvlx"]={47},
+   ["3-3 Lightweight Library.lvlx"]={48},
+   ["2-2 Monty Mole Mines.lvlx"]={49}
+},
+--[25]--
+{
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
+},
+--[26]--
+{
+   ["show challenge status"]=false,
+   ["mute music"]=false,
+   ["show speedrun timer"]=false
+},
+--[27]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[28]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[29]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[30]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[31]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[32]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[33]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[34]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[35]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[36]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[37]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[38]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={50}
+},
+--[39]--
+{
+   ["maxID"]=0,
+   ["alive"]={51}
+},
+--[40]--
+{
+   ["maxID"]=0,
+   ["alive"]={52}
+},
+--[41]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={53}
+},
+--[42]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={54}
+},
+--[43]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={55}
+},
+--[44]--
+{
+   ["maxID"]=0,
+   ["alive"]={56}
+},
+--[45]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={57}
+},
+--[46]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={58}
+},
+--[47]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={59}
+},
+--[48]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={60}
+},
+--[49]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={61}
+},
+--[50]--
+{
+   true,
+   true,
+   true
+},
+--[51]--
+{
+
+},
+--[52]--
+{
+
+},
+--[53]--
+{
+   true,
+   true,
+   true
+},
+--[54]--
+{
+   true,
+   true,
+   true
+},
+--[55]--
+{
+   true,
+   true,
+   true
+},
+--[56]--
+{
+
+},
+--[57]--
+{
+   true,
+   true,
+   true
+},
+--[58]--
+{
+   true,
+   true,
+   true
+},
+--[59]--
+{
+   true,
+   true,
+   true
+},
+--[60]--
+{
+   true,
+   true,
+   true
+},
+--[61]--
+{
+   true,
+   true,
+   true
+}
+}
