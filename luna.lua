@@ -47,7 +47,7 @@ GameData.awardCoins = true
 
 GameData.cutscene = false
 
-local accessbilityWarning = "<align center><color red>WARNING</color><br>While any of these options<br>are enabled, challenge<br>and keyhole achievements<br>cannot be collected!<br></align>"
+local accessbilityWarning = "<align center><color red>WARNING</color><br>While any of these options<br>are enabled, challenge<br>and keyhole achievements<br>cannot be collected!<br>Restart the memory for<br>changes to take effect.<br></align>"
 
 -- Achievements Stuff
 
@@ -81,9 +81,9 @@ end
 -- Check if accessibility options are active
 
 function checkAccessibility()
-	if (pauseplus.getSelectionValue("accessibility","Invincibility") or pauseplus.getSelectionValue("infiniteJumps","Infinite Jumps")) and GameData.usedAccesibility == false then
+	if (pauseplus.getSelectionValue("accessibility","Invincibility") or pauseplus.getSelectionValue("accessibility","Infinite Jumps")) then
 		GameData.usedAccessibility = true
-	elseif GameData.usedSetPowerup and GameData.usedAccessibility == false then
+	elseif GameData.usedSetPowerup then
 		GameData.usedAccessibility = true
 	end
 end
@@ -290,6 +290,7 @@ function onStart()
 	pauseplus.createSubmenu("settings",{headerText = "SETTINGS",headerTextFont = MKDS})
 	pauseplus.createOption("settings",{text = "Mute Music",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("settings",{text = "Show Speedrun Timer",selectionType = pauseplus.SELECTION_CHECKBOX})
+	pauseplus.createOption("settings",{text = "Show Challenge Status",selectionType = pauseplus.SELECTION_CHECKBOX})
 	pauseplus.createOption("settings",{text = "<color green>Accessibility</color>",goToSubmenu = "accessibility"})
 
 	-- Exit Confirmation Menu
@@ -385,6 +386,38 @@ function onDraw()
 	and SaveData.audibletteUnlocked then
 		SaveData.fullyComplete = true
 	end
+
+	if pauseplus.getSelectionValue("settings","Show Challenge Status") and not GameData.cutscene then
+		if Level.filename() ~= "1-1 Clear Pipe Prairie.lvlx" 
+		and Level.filename() ~= "3-1 Paddlewheel Peril.lvlx" 
+		and Level.filename() ~= "3-2 Super Sticky Swamp.lvlx" 
+		and Level.filename() ~= "3-3 Lightweight Library.lvlx" 
+		and Level.filename() ~= "!B-1 Swooper Drop Sneak.lvlx"
+		and Level.filename() ~= "!Credits.lvlx"
+		and Level.filename() ~= "!Memory Center.lvlx"
+		and Level.filename() ~= "!The Realm of Recollection.lvlx"
+		and Level.filename() ~= "!Title Screen.lvlx"
+		and Level.filename() ~= "!Final Cutscene.lvlx" then
+			textplus.print{
+				text = "<color lightgreen>Challenge Status</color><br>No challenge in this level.",
+				priority = 5,
+				x = 5,
+				y = 550,
+				xscale = 2,
+				yscale = 2,
+				priority = 2
+			}
+			textplus.print{
+				text = "<color black>Challenge Status<br>No challenge in this level.</color>",
+				priority = 5,
+				x = 7,
+				y = 552,
+				xscale = 2,
+				yscale = 2,
+				priority = 1
+			}
+		end
+    end
 end
 
 function onLoadSection20()
@@ -461,6 +494,15 @@ function respawnRooms.onPostReset(fromRespawn)
 		player.powerup = 2
 		setHeight()
     end
+end
+
+function onExitLevel()
+	GameData.usedSetPowerup = false
+	GameData.usedAccessibility = false
+
+	if not Misc.inEditor() then
+		Checkpoint.reset()
+	end
 end
 
 -- Custom Coin Counter HUD Element

@@ -1,0 +1,5 @@
+GameData.challenge1CompleteText = "No"
+GameData.challenge2CompleteText = "No"
+GameData.challenge3CompleteText = "No"
+GameData.challenge4CompleteText = "No"
+GameData.challenge5CompleteText = "No"

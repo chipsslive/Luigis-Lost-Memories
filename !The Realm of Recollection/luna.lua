@@ -10,6 +10,7 @@ local audiblette         = require("audiblette")
 local particles          = require("particles")
 local slm                = require("simpleLayerMovement")
 local starcoin           = require("npcs/AI/starcoin")
+local variableOverflow   = require("variableOverflow")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -61,26 +62,20 @@ littleDialogue.registerAnswer("chuckQuestion",{text = "Not Yet!"})
 
 -- Tangeroomba Dialogue
 
-local creditText = ""
-local audibletteText = ""
-local conceptuaryText = ""
+local creditText = "No"
+local audibletteText = "No"
+local conceptuaryText = "No"
 
 if SaveData.creditsSeen then
     creditText = "Yes"
-else
-    creditText = "No"
 end
 
 if SaveData.conceptuaryUnlocked then
     conceptuaryText = "Yes"
-else
-    conceptuaryText = "No"
 end
 
 if SaveData.audibletteUnlocked then
     audibletteText = "Yes"
-else
-    audibletteText = "No"
 end
 
 -- For the question titled 'tangeroombaInitial', check the bottom of onTick() (it needs to be updated in realtime)
@@ -89,12 +84,7 @@ littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the key
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "TBA<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
-littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind"   ,addText = "So, planning on taking on one of those challenges? I'm rootin' for ya'! Anything else you wanna know?<question tangeroombaInitial>"})
+
 
 -- All intro-related variables + questions
 
@@ -174,7 +164,6 @@ local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
-    SaveData.spentStars = -20
     -- Very janky keyhole achievement fix
 
     if GameData.exitedWithKeyhole then
@@ -676,24 +665,46 @@ function onTick()
     -- Changes Text in Tangeroomba dialogue
 
     littleDialogue.deregisterQuestion("tangeroombaInitial")
+    littleDialogue.deregisterQuestion("tangeroombaChallenge")
 
     if SaveData.creditsSeen then
         creditText = "Yes"
-    else
-        creditText = "No"
     end
     
     if SaveData.conceptuaryUnlocked then
         conceptuaryText = "Yes"
-    else
-        conceptuaryText = "No"
     end
     
     if SaveData.audibletteUnlocked then
         audibletteText = "Yes"
-    else
-        audibletteText = "No"
     end
+
+    if SaveData.challenge1Completed then
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #1",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #1</color><br><br>Recover the memory 'Lightweight Library' in less than 2 minutes!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    end
+    if SaveData.challenge2Completed then
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2 (Completed!</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    end    
+    if SaveData.challenge3Completed then
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #3</color><br><br>Recover the memory 'Swooper Drop Sneak' without ever facing left!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #3</color><br><br>Recover the memory 'Swooper Drop Sneak' without ever facing left!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    end
+    if SaveData.challenge4Completed then
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prarie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prarie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    end
+    if SaveData.challenge5Completed then
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 25 jump buttom presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    else
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 25 jump buttom presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+    end
+    littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind",addText = "So, planning on taking on one of those challenges? I'm rootin' for ya'! Anything else you wanna know?<question tangeroombaInitial>"})
 
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Fragmented Memories?",addText = "Fragmented Memories are levels that had their design started, but weren't finished before the project's initial cancellation. For the most part, only the overarching mechanic of the level and its aesthetic had been established.<page>And to think some developers release stuff like this and then make you pay for the rest! Heh. What else can I tell ya' about?<question tangeroombaInitial>"})
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What are Alternate Memories?" ,addText = "Since the project's development really spanned over the course of three years with multiple revamps, renames, and reiterations, Alternate Memories contain the pile of levels that were scrapped from inclusion in the final product due to quality concerns or other reasons.<page>Hey, they may not be the greatest memories, but at least they're still included! Anything else ya' wanna know?<question tangeroombaInitial>"})
