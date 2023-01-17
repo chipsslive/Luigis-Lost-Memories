@@ -1,4 +1,4 @@
 foreground=0
-frames=2
-framespeed=10
+frames=8
+framespeed=4
 framestyle=1

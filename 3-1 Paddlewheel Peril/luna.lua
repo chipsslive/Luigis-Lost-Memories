@@ -1,25 +1,27 @@
 local respawnRooms = require("respawnRooms")
 local pauseplus = require("pauseplus")
 local textplus = require("textplus")
+local customExit = require("customExit")
 
 local collectedCoin = false
 local checkpointStatus = false
+local permittedHarmTypes = table.map({HARM_TYPE_PROJECTILE_USED,HARM_TYPE_VANISH})
 
 function onCheckpoint()
     checkpointStatus = collectedCoin
 end
 
 function onPostNPCKill(killedNPC,harmType)
-    if killedNPC.id == 10 or killedNPC.id == 88 then
+    if (killedNPC.id == 10 or killedNPC.id == 88 or killedNPC.id == 751 or killedNPC.id = 752 or killedNPC.id == 753) and not (permittedHarmTypes[harmType]) then
         collectedCoin = true
     end
+end
 
-    if killedNPC.id == 1000 then
-        if not collectedCoin and not GameData.usedAccessibility and not SaveData.challenge2Completed then
-            GameData.ach_Challenge2:collect()
-            SaveData.challenge2Completed = true
-            SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
-        end
+function customExit.checkChallenge()
+    if not collectedCoin and not GameData.usedAccessibility and not SaveData.challenge2Completed then
+        GameData.ach_Challenge2:collect()
+        SaveData.challenge2Completed = true
+        SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
     end
 end
 

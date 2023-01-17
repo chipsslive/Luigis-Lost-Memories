@@ -194,6 +194,11 @@ function customExit.startExit(p)
     end
 
 	customExit.isInExit = true
+	customExit.checkChallenge()
+end
+
+function customExit.checkChallenge()
+	-- Defined on a level-by-level basis
 end
 
 function customExit.onInitAPI()

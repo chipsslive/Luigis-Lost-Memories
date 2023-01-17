@@ -2,6 +2,7 @@ local spawnzones = require("spawnzones")
 local respawnRooms = require("respawnRooms")
 local textplus = require("textplus")
 local pauseplus = require("pauseplus")
+local customExit = require("customExit")
 
 local challengeFailed = false
 local checkpointStatus = false
@@ -16,13 +17,11 @@ function onTick()
     end
 end
 
-function onPostNPCKill(killedNPC,harmType)
-    if killedNPC.id == 1000 then
-        if not challengeFailed and not GameData.usedAccessibility and not SaveData.challenge3Completed then
-            GameData.ach_Challenge3:collect()
-            SaveData.challenge3Completed = true
-            SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
-        end
+function customExit.checkChallenge()
+    if not challengeFailed and not GameData.usedAccessibility and not SaveData.challenge3Completed then
+        GameData.ach_Challenge3:collect()
+        SaveData.challenge3Completed = true
+        SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
     end
 end
 

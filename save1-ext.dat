@@ -2,35 +2,35 @@
 --[1]--
 {
    ["pauseplus"]={2},
-   ["starcoins"]=49,
+   ["starcoins"]=46,
    ["levelStats"]={3},
    ["audibletteUnlocked"]=true,
    ["__costumes"]={4},
-   ["challenge1Completed"]=false,
-   ["challenge2Completed"]=false,
-   ["__progress"]=87.75,
-   ["challenge3Completed"]=false,
+   ["challenge1Completed"]=true,
+   ["keyhole1Found"]=true,
+   ["__progress"]=91.5,
+   ["challenge2Completed"]=true,
    ["_basegame"]={5},
-   ["conceptuaryUnlocked"]=true,
-   ["totalChallengesCompleted"]=0,
-   ["allMemoriesRecovered"]=true,
-   ["coins"]=2029,
-   ["totalMemoriesRecovered"]=20,
-   ["keyhole4Found"]=true,
-   ["introFinished"]=true,
+   ["totalChallengesCompleted"]=3,
+   ["__launcher"]={6},
+   ["challenge3Completed"]=true,
    ["totalKeyholesFound"]=5,
-   ["spentStars"]=45,
+   ["totalMemoriesRecovered"]=20,
+   ["challenge4Completed"]=false,
+   ["introFinished"]=true,
+   ["coins"]=2609,
+   ["keyhole5Found"]=true,
    ["keyhole2Found"]=true,
    ["keyhole3Found"]=true,
-   ["unlockedTabs"]={6},
+   ["unlockedTabs"]={7},
    ["creditsSeen"]=true,
-   ["keyhole5Found"]=true,
-   ["challenge4Completed"]=false,
+   ["spentStars"]=45,
+   ["keyhole4Found"]=true,
    ["allPurpleStarsFound"]=true,
-   ["challenge5Completed"]=false,
-   ["__launcher"]={7},
+   ["challenge5Completed"]=true,
+   ["conceptuaryUnlocked"]=true,
    ["fullyComplete"]=false,
-   ["keyhole1Found"]=true
+   ["allMemoriesRecovered"]=true
 },
 --[2]--
 {
@@ -47,23 +47,23 @@
    ["!Title Screen.lvlx"]={15},
    ["1-1 Flowing Frolic.lvlx"]={16},
    ["!B-1 Swooper Drop Sneak.lvlx"]={17},
-   ["3-1 Paddlewheel Peril.lvlx"]={18},
+   ["!Memory Amalgamation.lvlx"]={18},
    ["5-1 Toxic Tumble.lvlx"]={19},
-   ["!Credits.lvlx"]={20},
+   ["3-1 Paddlewheel Peril.lvlx"]={20},
    ["3-2 Super Sticky Swamp.lvlx"]={21},
    ["!Memory Center.lvlx"]={22},
-   ["!C-1 Fragile Block Foothills.lvlx"]={23},
+   ["3-3 Lightweight Library.lvlx"]={23},
    ["1-3 Sakura Scrapyard.lvlx"]={24},
-   ["1-1 Moving Meadows.lvlx"]={25},
-   ["!Final Cutscene.lvlx"]={26},
-   ["3-T Tangled Temple.lvlx"]={27},
+   ["!Final Cutscene.lvlx"]={25},
+   ["1-1 Moving Meadows.lvlx"]={26},
+   ["1-2 Spring Showers.lvlx"]={27},
    ["!D-1 Pine Propultion.lvlx"]={28},
-   ["2-2 Monty Mole Mines.lvlx"]={29},
-   ["1-T High Wattage Warehouse.lvlx"]={30},
-   ["1-2 Spring Showers.lvlx"]={31},
+   ["1-T High Wattage Warehouse.lvlx"]={29},
+   ["2-2 Monty Mole Mines.lvlx"]={30},
+   ["3-T Tangled Temple.lvlx"]={31},
    ["1-1 Piranha Plant Pinch!.lvlx"]={32},
-   ["3-3 Lightweight Library.lvlx"]={33},
-   ["!Memory Amalgamation.lvlx"]={34}
+   ["!C-1 Fragile Block Foothills.lvlx"]={33},
+   ["!Credits.lvlx"]={34}
 },
 --[4]--
 {
@@ -73,20 +73,20 @@
 {
    ["bigSwitch"]={35},
    ["_characterdata"]={36},
-   ["starcoinCounter"]=52,
-   ["hud"]={37},
-   ["starcoin"]={38}
+   ["starcoin"]={37},
+   ["hud"]={38},
+   ["starcoinCounter"]=52
 },
 --[6]--
+{
+
+},
+--[7]--
 {
    true,
    true,
    true,
    true
-},
---[7]--
-{
-
 },
 --[8]--
 {
@@ -108,7 +108,7 @@
 --[11]--
 {
    ["beaten"]=false,
-   ["timer"]=93,
+   ["timer"]=68,
    ["bestTime"]=-1
 },
 --[12]--
@@ -132,7 +132,7 @@
 --[15]--
 {
    ["beaten"]=false,
-   ["timer"]=834,
+   ["timer"]=40038,
    ["bestTime"]=-1
 },
 --[16]--
@@ -149,9 +149,9 @@
 },
 --[18]--
 {
-   ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=9813
+   ["beaten"]=false,
+   ["timer"]=11472,
+   ["bestTime"]=-1
 },
 --[19]--
 {
@@ -161,9 +161,9 @@
 },
 --[20]--
 {
-   ["beaten"]=false,
-   ["timer"]=5700,
-   ["bestTime"]=-1
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=9813
 },
 --[21]--
 {
@@ -180,8 +180,8 @@
 --[23]--
 {
    ["beaten"]=true,
-   ["timer"]=2176,
-   ["bestTime"]=11343
+   ["timer"]=0,
+   ["bestTime"]=6849
 },
 --[24]--
 {
@@ -191,21 +191,21 @@
 },
 --[25]--
 {
-   ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=20262
-},
---[26]--
-{
    ["beaten"]=false,
    ["timer"]=3673,
    ["bestTime"]=-1
 },
---[27]--
+--[26]--
 {
    ["beaten"]=true,
    ["timer"]=0,
-   ["bestTime"]=16175
+   ["bestTime"]=20262
+},
+--[27]--
+{
+   ["beaten"]=true,
+   ["timer"]=271,
+   ["bestTime"]=8487
 },
 --[28]--
 {
@@ -216,20 +216,20 @@
 --[29]--
 {
    ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=10899
+   ["timer"]=7401,
+   ["bestTime"]=14136
 },
 --[30]--
 {
    ["beaten"]=true,
-   ["timer"]=7401,
-   ["bestTime"]=14136
+   ["timer"]=0,
+   ["bestTime"]=10899
 },
 --[31]--
 {
    ["beaten"]=true,
-   ["timer"]=271,
-   ["bestTime"]=8487
+   ["timer"]=0,
+   ["bestTime"]=16175
 },
 --[32]--
 {
@@ -240,13 +240,13 @@
 --[33]--
 {
    ["beaten"]=true,
-   ["timer"]=2358,
-   ["bestTime"]=16839
+   ["timer"]=2176,
+   ["bestTime"]=11343
 },
 --[34]--
 {
    ["beaten"]=false,
-   ["timer"]=11472,
+   ["timer"]=5700,
    ["bestTime"]=-1
 },
 --[35]--
@@ -269,10 +269,6 @@
 },
 --[37]--
 {
-   ["score"]=413680
-},
---[38]--
-{
    ["1-1 Clear Pipe Prairie.lvlx"]={52},
    ["4-T Polar Palace.lvlx"]={53},
    ["!The Realm of Recollection.lvlx"]={54},
@@ -282,23 +278,27 @@
    ["!Title Screen.lvlx"]={58},
    ["1-1 Flowing Frolic.lvlx"]={59},
    ["!B-1 Swooper Drop Sneak.lvlx"]={60},
-   ["3-1 Paddlewheel Peril.lvlx"]={61},
+   ["!Memory Amalgamation.lvlx"]={61},
    ["5-1 Toxic Tumble.lvlx"]={62},
-   ["!Credits.lvlx"]={63},
+   ["3-1 Paddlewheel Peril.lvlx"]={63},
    ["3-2 Super Sticky Swamp.lvlx"]={64},
    ["!Memory Center.lvlx"]={65},
-   ["!C-1 Fragile Block Foothills.lvlx"]={66},
+   ["3-3 Lightweight Library.lvlx"]={66},
    ["1-3 Sakura Scrapyard.lvlx"]={67},
-   ["1-1 Moving Meadows.lvlx"]={68},
-   ["!Final Cutscene.lvlx"]={69},
-   ["3-T Tangled Temple.lvlx"]={70},
+   ["!Final Cutscene.lvlx"]={68},
+   ["1-1 Moving Meadows.lvlx"]={69},
+   ["1-2 Spring Showers.lvlx"]={70},
    ["!D-1 Pine Propultion.lvlx"]={71},
-   ["2-2 Monty Mole Mines.lvlx"]={72},
-   ["1-T High Wattage Warehouse.lvlx"]={73},
-   ["1-2 Spring Showers.lvlx"]={74},
+   ["1-T High Wattage Warehouse.lvlx"]={72},
+   ["2-2 Monty Mole Mines.lvlx"]={73},
+   ["3-T Tangled Temple.lvlx"]={74},
    ["1-1 Piranha Plant Pinch!.lvlx"]={75},
-   ["3-3 Lightweight Library.lvlx"]={76},
-   ["!Memory Amalgamation.lvlx"]={77}
+   ["!C-1 Fragile Block Foothills.lvlx"]={76},
+   ["!Credits.lvlx"]={77}
+},
+--[38]--
+{
+   ["score"]=442920
 },
 --[39]--
 {
@@ -307,7 +307,7 @@
 },
 --[40]--
 {
-   ["show challenge status"]=false,
+   ["show challenge status"]=true,
    ["mute music"]=false,
    ["show speedrun timer"]=false
 },
@@ -463,10 +463,7 @@
 },
 --[61]--
 {
-   1,
-   1,
-   1,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={87}
 },
 --[62]--
@@ -477,7 +474,10 @@
 },
 --[63]--
 {
-   ["maxID"]=0,
+   1,
+   1,
+   1,
+   ["maxID"]=3,
    ["alive"]={89}
 },
 --[64]--
@@ -509,15 +509,15 @@
 },
 --[68]--
 {
-   1,
-   1,
-   1,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={94}
 },
 --[69]--
 {
-   ["maxID"]=0,
+   1,
+   1,
+   1,
+   ["maxID"]=3,
    ["alive"]={95}
 },
 --[70]--
@@ -583,9 +583,7 @@
 },
 --[78]--
 {
-   true,
-   true,
-   true
+
 },
 --[79]--
 {
@@ -629,9 +627,7 @@
 },
 --[87]--
 {
-   true,
-   true,
-   true
+
 },
 --[88]--
 {
@@ -639,7 +635,9 @@
 },
 --[89]--
 {
-
+   true,
+   true,
+   true
 },
 --[90]--
 {
@@ -663,13 +661,13 @@
 },
 --[94]--
 {
-   true,
-   true,
-   true
+
 },
 --[95]--
 {
-
+   true,
+   true,
+   true
 },
 --[96]--
 {
@@ -685,13 +683,13 @@
 },
 --[98]--
 {
-
-},
---[99]--
-{
    true,
    true,
    true
+},
+--[99]--
+{
+
 },
 --[100]--
 {

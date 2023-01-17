@@ -5,6 +5,7 @@ clearpipe_npc = require("npcs/ai/clearpipeNPC")
 local respawnRooms = require("respawnRooms")
 local pauseplus = require("pauseplus")
 local textplus = require("textplus")
+local customExit = require("customExit")
 
 local restrictedChallengeNPCs = table.map({2,3,311,312,313,316,333,850})
 local permittedHarmTypes = table.map({HARM_TYPE_PROJECTILE_USED,HARM_TYPE_VANISH})
@@ -41,7 +42,7 @@ end
 function onTick()
     if hasRemoverBGOs > 0 then
 		for k,v in ipairs(NPC.get(-1,player.section)) do
-			if not v.friendly and v:mem(0x12A, FIELD_WORD) > 0 then
+			if not v.friendly and v:mem(0x12A, FIELD_WORD) > 0 and v.id ~= 2 and v.id ~= 3 then
 				for _,u in ipairs(BGO.getIntersecting(v.x + 2,v.y + 2,v.x + v.width - 2,v.y + v.height - 2)) do
 					if u.id == 752 then
 						v:kill(9)
@@ -68,14 +69,14 @@ function onPostNPCKill(killedNPC,harmType)
 			challengeFailed = true
 		end
 	end
+end
 
-	if killedNPC.id == 1000 then
-        if not challengeFailed and not GameData.usedAccessibility and not SaveData.challenge4Completed then
-            GameData.ach_Challenge4:collect()
-            SaveData.challenge4Completed = true
-            SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
-        end
-    end
+function customExit.checkChallenge()
+	if not challengeFailed and not GameData.usedAccessibility and not SaveData.challenge4Completed then
+		GameData.ach_Challenge4:collect()
+		SaveData.challenge4Completed = true
+		SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
+	end
 end
 
 function respawnRooms.onPostReset(fromRespawn)

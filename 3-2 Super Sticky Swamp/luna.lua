@@ -3,6 +3,7 @@ local respawnRooms = require("respawnRooms")
 local slm = require("simpleLayerMovement")
 local textplus = require("textplus")
 local pauseplus = require("pauseplus")
+local customExit = require("customExit")
 
 local totalJumps = 0
 local checkpointJumps = 0
@@ -41,13 +42,11 @@ function onTick()
     end
 end
 
-function onPostNPCKill(killedNPC,harmType)
-    if killedNPC.id == 1000 then
-        if totalJumps <= 25 and not GameData.usedAccessibility and not SaveData.challenge5Completed then
-            GameData.ach_Challenge5:collect()
-            SaveData.challenge5Completed = true
-            SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
-        end
+function customExit.checkChallenge()
+    if totalJumps <= 25 and not GameData.usedAccessibility and not SaveData.challenge5Completed then
+        GameData.ach_Challenge5:collect()
+        SaveData.challenge5Completed = true
+        SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
     end
 end
 
