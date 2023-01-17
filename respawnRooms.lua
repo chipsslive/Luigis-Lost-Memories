@@ -1181,9 +1181,12 @@ do
                 v.friendly = true
                 v.noblockcollision = true
             end
+            
             data.timer = 0
             data.direction = v.direction
             data.state = data.wasBuried
+
+            v.animationFrame = -999
         end,
     }
 
@@ -1616,6 +1619,13 @@ do
             clampedY = self.y + (self.height - height)*0.5
         end
 
+        -- Clamp to the section boundaries
+        local b = self.sectionObj.boundary
+
+        clampedX = math.clamp(cameraX + camera.width *0.5,b.left + width *0.5,b.right  - width *0.5) - camera.width *0.5
+        clampedY = math.clamp(cameraY + camera.height*0.5,b.top  + height*0.5,b.bottom - height*0.5) - camera.height*0.5
+        
+        
         return clampedX,clampedY
     end
 
@@ -1674,7 +1684,11 @@ do
         return self._layerObj 
     end
 
+    function roomReadFuncs:sectionObj()
+        return Section(self.section)
+    end
 
+    
     roomMT.__type = "Room"
 
     roomMT.__index = function(v,key)

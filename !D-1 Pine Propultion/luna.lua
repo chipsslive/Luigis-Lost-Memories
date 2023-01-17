@@ -1,4 +1,5 @@
 local warpTransition = require("warpTransition")
+local respawnRooms = require("respawnRooms")
 
 local RocketTree1
 local myLayerTimer = 0
@@ -22,7 +23,7 @@ function onEvent(eventName)
 
     if eventName == "Launch Tree 2" then
         SFX.play("helmets_propellerBox_boost3.wav")
-        
+        player.speedX = 0
     end
 
     if eventName == "LuigiFree" then
@@ -30,9 +31,6 @@ function onEvent(eventName)
     end
 end
 
-function onRespawnReset()
-    myLayerTimer = 0
-end
-function onRoomEnter(roomIdx)
+function respawnRooms.onPostReset(fromRespawn)
     myLayerTimer = 0
 end

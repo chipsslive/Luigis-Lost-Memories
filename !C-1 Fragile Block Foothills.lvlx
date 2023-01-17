@@ -8196,7 +8196,7 @@ ID:124;X:-190033;Y:-200210;D:-1;S1:3;
 ID:760;X:-179915;Y:-180148;D:1;GE:1;GT:2;GD:4;GM:3;LR:"boom";
 ID:112;X:-178752;Y:-180256;D:-1;
 ID:2;X:-178816;Y:-180258;D:-1;
-ID:294;X:-178048;Y:-180352;D:-1;XTRA:"{\n    \"booCount\"\: 7\,\n    \"booGaps\"\: 5\,\n    \"booRadius\"\: 100\,\n    \"booSpeed\"\: 2.7\,\n    \"startAngle\"\: 270\n}\n";
+ID:294;X:-178048;Y:-180352;D:-1;XTRA:"{\n    \"booCount\"\: 6\,\n    \"booGaps\"\: 6\,\n    \"booRadius\"\: 100\,\n    \"booSpeed\"\: 2.7\,\n    \"startAngle\"\: 290\n}\n";
 ID:294;X:-176736;Y:-180288;D:-1;XTRA:"{\n    \"booCount\"\: 6\,\n    \"booGaps\"\: 5\,\n    \"booRadius\"\: 120\,\n    \"booSpeed\"\: 3\,\n    \"startAngle\"\: 270\n}\n";
 ID:294;X:-173824;Y:-180384;D:-1;XTRA:"{\n    \"booCount\"\: 5\,\n    \"booGaps\"\: 6\,\n    \"booRadius\"\: 100\,\n    \"booSpeed\"\: 2.7000000000000002\,\n    \"startAngle\"\: 0\n}\n";
 ID:294;X:-173536;Y:-180352;D:-1;XTRA:"{\n    \"booCount\"\: 5\,\n    \"booGaps\"\: 6\,\n    \"booRadius\"\: 100\,\n    \"booSpeed\"\: 2.7000000000000002\,\n    \"startAngle\"\: 180\n}\n";
