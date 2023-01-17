@@ -87,7 +87,7 @@ function onDraw()
             color = Color.black
         }
         textplus.print{
-            x = 195,
+            x = 200,
             y = 285,
             text = "Not all adventures end how you want them to.",
             xscale = 2,

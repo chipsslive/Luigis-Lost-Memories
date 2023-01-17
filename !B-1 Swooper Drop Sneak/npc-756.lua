@@ -26,7 +26,7 @@ local config = {
     nogravity = false,
 
     health = 3,
-    earthquakes = 2,
+    earthquakes = 0,
     bounceheight = 8
 }
 
