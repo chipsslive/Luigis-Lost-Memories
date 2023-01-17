@@ -26,7 +26,7 @@ local config = {
     nogravity = false,
 
     health = 3,
-    earthquakes = 0,
+    earthquakes = 2,
     bounceheight = 8
 }
 
@@ -169,7 +169,7 @@ function smwfuzzy.onTickEndNPC(v)
                 v.speedX = 2 * v.direction
             end
             if cfg.earthquakes > 0 then
-                Defines.earthquake = cfg.earthquakes
+                --Defines.earthquake = cfg.earthquakes
                 SFX.play(thumpSFX)
             end
 			local inDirection = data.spdvec

@@ -3,35 +3,35 @@
 {
    ["pauseplus"]={2},
    ["totalChallengesCompleted"]=4,
-   ["levelStats"]={3},
-   ["audibletteUnlocked"]=false,
-   ["__costumes"]={4},
-   ["challenge1Completed"]=true,
    ["allMemoriesRecovered"]=false,
-   ["__launcher"]={5},
-   ["__progress"]=27.6,
-   ["challenge3Completed"]=true,
-   ["_basegame"]={6},
-   ["challenge2Complete"]=false,
-   ["challenge2Completed"]=true,
+   ["audibletteUnlocked"]=false,
+   ["__costumes"]={3},
+   ["challenge1Completed"]=true,
    ["starcoins"]=0,
+   ["keyhole1Found"]=true,
+   ["__progress"]=27.6,
+   ["challenge2Completed"]=true,
+   ["_basegame"]={4},
+   ["challenge2Complete"]=false,
+   ["levelStats"]={5},
+   ["conceptuaryUnlocked"]=false,
    ["totalKeyholesFound"]=6,
    ["totalMemoriesRecovered"]=2,
    ["challenge4Completed"]=true,
    ["introFinished"]=true,
-   ["coins"]=1328,
+   ["coins"]=1271,
    ["keyhole5Found"]=false,
    ["keyhole2Found"]=true,
    ["keyhole3Found"]=true,
-   ["unlockedTabs"]={7},
+   ["unlockedTabs"]={6},
    ["creditsSeen"]=true,
    ["spentStars"]=-20,
    ["keyhole4Found"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=true,
-   ["keyhole1Found"]=true,
+   ["challenge3Completed"]=true,
    ["fullyComplete"]=false,
-   ["conceptuaryUnlocked"]=false
+   ["__launcher"]={7}
 },
 --[2]--
 {
@@ -39,46 +39,46 @@
 },
 --[3]--
 {
-   ["1-1 Clear Pipe Prairie.lvlx"]={9},
-   ["1-T High Wattage Warehouse.lvlx"]={10},
-   ["!A-2 Disastrous Deeps.lvlx"]={11},
-   ["2-3 Bone Dry Bridge.lvlx"]={12},
-   ["!Title Screen.lvlx"]={13},
-   ["!B-1 Swooper Drop Sneak.lvlx"]={14},
-   ["3-1 Paddlewheel Peril.lvlx"]={15},
-   ["!Credits.lvlx"]={16},
-   ["3-2 Super Sticky Swamp.lvlx"]={17},
-   ["1-2 Spring Showers.lvlx"]={18},
-   ["!Final Cutscene.lvlx"]={19},
-   ["!Memory Center.lvlx"]={20},
-   ["!Memory Amalgamation.lvlx"]={21},
-   ["2-2 Monty Mole Mines.lvlx"]={22},
-   ["3-3 Lightweight Library.lvlx"]={23},
-   ["!C-1 Fragile Block Foothills.lvlx"]={24},
-   ["!The Realm of Recollection.lvlx"]={25}
+
 },
 --[4]--
 {
-
+   ["bigSwitch"]={9},
+   ["_characterdata"]={10},
+   ["starcoin"]={11},
+   ["hud"]={12},
+   ["starcoinCounter"]=0
 },
 --[5]--
 {
-
+   ["1-1 Clear Pipe Prairie.lvlx"]={13},
+   ["1-T High Wattage Warehouse.lvlx"]={14},
+   ["!A-2 Disastrous Deeps.lvlx"]={15},
+   ["2-3 Bone Dry Bridge.lvlx"]={16},
+   ["!Title Screen.lvlx"]={17},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={18},
+   ["!Memory Amalgamation.lvlx"]={19},
+   ["!Credits.lvlx"]={20},
+   ["3-2 Super Sticky Swamp.lvlx"]={21},
+   ["1-2 Spring Showers.lvlx"]={22},
+   ["!Final Cutscene.lvlx"]={23},
+   ["3-3 Lightweight Library.lvlx"]={24},
+   ["2-2 Monty Mole Mines.lvlx"]={25},
+   ["!The Realm of Recollection.lvlx"]={26},
+   ["3-1 Paddlewheel Peril.lvlx"]={27},
+   ["!C-1 Fragile Block Foothills.lvlx"]={28},
+   ["!Memory Center.lvlx"]={29}
 },
 --[6]--
-{
-   ["bigSwitch"]={26},
-   ["_characterdata"]={27},
-   ["starcoin"]={28},
-   ["hud"]={29},
-   ["starcoinCounter"]=0
-},
---[7]--
 {
    true,
    false,
    false,
    false
+},
+--[7]--
+{
+
 },
 --[8]--
 {
@@ -87,111 +87,9 @@
 },
 --[9]--
 {
-   ["beaten"]=false,
-   ["timer"]=242,
-   ["bestTime"]=-1
-},
---[10]--
-{
-   ["beaten"]=false,
-   ["timer"]=498,
-   ["bestTime"]=-1
-},
---[11]--
-{
-   ["beaten"]=false,
-   ["timer"]=495,
-   ["bestTime"]=-1
-},
---[12]--
-{
-   ["beaten"]=false,
-   ["timer"]=1195,
-   ["bestTime"]=-1
-},
---[13]--
-{
-   ["beaten"]=false,
-   ["timer"]=0,
-   ["bestTime"]=-1
-},
---[14]--
-{
-   ["beaten"]=false,
-   ["timer"]=2203,
-   ["bestTime"]=-1
-},
---[15]--
-{
-   ["beaten"]=true,
-   ["timer"]=325,
-   ["bestTime"]=-1
-},
---[16]--
-{
-   ["beaten"]=false,
-   ["timer"]=5700,
-   ["bestTime"]=-1
-},
---[17]--
-{
-   ["beaten"]=true,
-   ["timer"]=1286,
-   ["bestTime"]=-1
-},
---[18]--
-{
-   ["beaten"]=false,
-   ["timer"]=224,
-   ["bestTime"]=-1
-},
---[19]--
-{
-   ["beaten"]=false,
-   ["timer"]=2774,
-   ["bestTime"]=-1
-},
---[20]--
-{
-   ["beaten"]=false,
-   ["timer"]=189,
-   ["bestTime"]=-1
-},
---[21]--
-{
-   ["beaten"]=false,
-   ["timer"]=8331,
-   ["bestTime"]=-1
-},
---[22]--
-{
-   ["beaten"]=false,
-   ["timer"]=4464,
-   ["bestTime"]=-1
-},
---[23]--
-{
-   ["beaten"]=false,
-   ["timer"]=633,
-   ["bestTime"]=-1
-},
---[24]--
-{
-   ["beaten"]=false,
-   ["timer"]=3702,
-   ["bestTime"]=-1
-},
---[25]--
-{
-   ["beaten"]=false,
-   ["timer"]=219,
-   ["bestTime"]=-1
-},
---[26]--
-{
 
 },
---[27]--
+--[10]--
 {
    ["8"]={32},
    ["10"]={33},
@@ -205,7 +103,7 @@
    ["13"]={41},
    ["14"]={42}
 },
---[28]--
+--[11]--
 {
    ["1-1 Clear Pipe Prairie.lvlx"]={43},
    ["1-T High Wattage Warehouse.lvlx"]={44},
@@ -213,21 +111,123 @@
    ["2-3 Bone Dry Bridge.lvlx"]={46},
    ["!Title Screen.lvlx"]={47},
    ["!B-1 Swooper Drop Sneak.lvlx"]={48},
-   ["3-1 Paddlewheel Peril.lvlx"]={49},
+   ["!Memory Amalgamation.lvlx"]={49},
    ["!Credits.lvlx"]={50},
    ["3-2 Super Sticky Swamp.lvlx"]={51},
    ["1-2 Spring Showers.lvlx"]={52},
    ["!Final Cutscene.lvlx"]={53},
-   ["!Memory Center.lvlx"]={54},
-   ["!Memory Amalgamation.lvlx"]={55},
-   ["2-2 Monty Mole Mines.lvlx"]={56},
-   ["3-3 Lightweight Library.lvlx"]={57},
+   ["3-3 Lightweight Library.lvlx"]={54},
+   ["2-2 Monty Mole Mines.lvlx"]={55},
+   ["!The Realm of Recollection.lvlx"]={56},
+   ["3-1 Paddlewheel Peril.lvlx"]={57},
    ["!C-1 Fragile Block Foothills.lvlx"]={58},
-   ["!The Realm of Recollection.lvlx"]={59}
+   ["!Memory Center.lvlx"]={59}
+},
+--[12]--
+{
+   ["score"]=69780
+},
+--[13]--
+{
+   ["beaten"]=false,
+   ["timer"]=242,
+   ["bestTime"]=-1
+},
+--[14]--
+{
+   ["beaten"]=false,
+   ["timer"]=498,
+   ["bestTime"]=-1
+},
+--[15]--
+{
+   ["beaten"]=false,
+   ["timer"]=495,
+   ["bestTime"]=-1
+},
+--[16]--
+{
+   ["beaten"]=false,
+   ["timer"]=1195,
+   ["bestTime"]=-1
+},
+--[17]--
+{
+   ["beaten"]=false,
+   ["timer"]=630,
+   ["bestTime"]=-1
+},
+--[18]--
+{
+   ["beaten"]=false,
+   ["timer"]=2203,
+   ["bestTime"]=-1
+},
+--[19]--
+{
+   ["beaten"]=false,
+   ["timer"]=33143,
+   ["bestTime"]=-1
+},
+--[20]--
+{
+   ["beaten"]=false,
+   ["timer"]=5700,
+   ["bestTime"]=-1
+},
+--[21]--
+{
+   ["beaten"]=true,
+   ["timer"]=1286,
+   ["bestTime"]=-1
+},
+--[22]--
+{
+   ["beaten"]=false,
+   ["timer"]=224,
+   ["bestTime"]=-1
+},
+--[23]--
+{
+   ["beaten"]=false,
+   ["timer"]=2774,
+   ["bestTime"]=-1
+},
+--[24]--
+{
+   ["beaten"]=false,
+   ["timer"]=633,
+   ["bestTime"]=-1
+},
+--[25]--
+{
+   ["beaten"]=false,
+   ["timer"]=4464,
+   ["bestTime"]=-1
+},
+--[26]--
+{
+   ["beaten"]=false,
+   ["timer"]=219,
+   ["bestTime"]=-1
+},
+--[27]--
+{
+   ["beaten"]=true,
+   ["timer"]=325,
+   ["bestTime"]=-1
+},
+--[28]--
+{
+   ["beaten"]=false,
+   ["timer"]=3702,
+   ["bestTime"]=-1
 },
 --[29]--
 {
-   ["score"]=64350
+   ["beaten"]=false,
+   ["timer"]=189,
+   ["bestTime"]=-1
 },
 --[30]--
 {
@@ -375,10 +375,7 @@
 },
 --[49]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={66}
 },
 --[50]--
@@ -409,20 +406,23 @@
 },
 --[54]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={71}
 },
 --[55]--
-{
-   ["maxID"]=0,
-   ["alive"]={72}
-},
---[56]--
 {
    0,
    0,
    0,
    ["maxID"]=3,
+   ["alive"]={72}
+},
+--[56]--
+{
+   ["maxID"]=0,
    ["alive"]={73}
 },
 --[57]--
@@ -482,9 +482,7 @@
 },
 --[66]--
 {
-   true,
-   true,
-   true
+
 },
 --[67]--
 {
@@ -508,17 +506,19 @@
 },
 --[71]--
 {
-
+   true,
+   true,
+   true
 },
 --[72]--
-{
-
-},
---[73]--
 {
    true,
    true,
    true
+},
+--[73]--
+{
+
 },
 --[74]--
 {

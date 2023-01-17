@@ -1,0 +1,3 @@
+lightbrightness=0
+cliffturn=true
+spinjumpsafe=false

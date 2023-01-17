@@ -5,7 +5,7 @@ SECTION
 SC:0;L:-200000;R:-197600;T:-200600;B:-200000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 0\n    }\n}\n";
 SC:1;L:-180000;R:-179200;T:-182464;B:-180000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:36;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-156352;T:-160600;B:-160000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:3;L:-140000;R:-134656;T:-140600;B:-140000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
+SC:3;L:-140000;R:-134656;T:-140600;B:-140000;MZ:24;MF:"!Memory Amalgamation/Red&Green - time attack!.mp3";BG:12;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"!Memory Amalgamation/wind.mp3";BG:12;CSV:1;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c1afdaff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SC:6;L:-80000;R:-79200;T:-80600;B:-80000;MZ:0;MF:"";BG:0;
@@ -1926,8 +1926,6 @@ ID:1017;X:-156384;Y:-160416;W:32;H:32;
 ID:1019;X:-156672;Y:-160160;W:32;H:32;
 ID:168;X:-156768;Y:-160192;W:32;H:32;
 ID:16;X:-156608;Y:-160160;W:32;H:32;
-ID:658;X:-157872;Y:-160480;W:32;H:32;LR:"Float1";
-ID:658;X:-157680;Y:-160480;W:32;H:32;LR:"Float1";
 ID:27;X:-157584;Y:-160752;W:1248;H:912;LR:"spawnzones";
 ID:658;X:-159216;Y:-160336;W:32;H:32;LR:"Float1";
 ID:274;X:-158528;Y:-160224;W:32;H:32;LR:"Float1";
@@ -6448,7 +6446,6 @@ ID:854;X:-156912;Y:-159952;D:-1;
 ID:10;X:-157054;Y:-160160;D:-1;
 ID:10;X:-157022;Y:-160160;D:-1;
 ID:10;X:-156990;Y:-160160;D:-1;
-ID:755;X:-139648;Y:-140192;D:-1;NM:1;XTRA:"{\n    \"global\"\: {\n        \"invincibleTo\"\: 1\n    }\n}\n";
 ID:430;X:-139776;Y:-140224;D:-1;
 ID:778;X:-139374;Y:-140223;D:-1;GE:1;GT:2;GD:4;GM:3;LR:"Barrel";
 ID:800;X:-139328;Y:-140240;D:-1;
@@ -6507,6 +6504,7 @@ ID:10;X:-135278;Y:-140112;D:-1;
 ID:10;X:-135246;Y:-140112;D:-1;
 ID:850;X:-138384;Y:-140480;D:-1;
 ID:465;X:-119472;Y:-120352;D:-1;MG:"The statue gazes into your soul. Reflecting on every event up to this point\, you begin to question the validity of reality.<page>A soft wind beckons you beyond the dimensional barrier. It's time to leave. Are you ready?<question exitAmalgamation>";FD:1;LR:"Float2";
+ID:755;X:-139648;Y:-140192;D:-1;NM:1;XTRA:"{\n    \"global\"\: {\n        \"invincibleTo\"\: 1\n    }\n}\n";
 NPC_END
 PHYSICS
 ET:0;X:-198448;Y:-200528;W:192;H:96;
