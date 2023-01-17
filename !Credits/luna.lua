@@ -123,8 +123,9 @@ local text = {
     0,"",
     0,"Launchstar",
     0,"galaxy",
-    0,"Leitakcoc",
-    0,"Chipss"
+    0,"leitakcoc",
+    0,"tg online",
+    0,"Vito"
 }
 
 local final = "Thank you for playing!"
