@@ -13,7 +13,8 @@ portalOpen.frames = {
     [true]  = {atPortal = 49, lerping = 3},
     [false] = {atPortal = 49, lerping = 5}
 }
-portalOpen.enterText = "Press UP to enter the portal!"
+portalOpen.enterText = "Press    to enter the portal!"
+portalOpen.openText = "Press JUMP!"
 
 local targetPos = vector(0, 0)
 local oldPos = vector(0, 0)
@@ -23,6 +24,7 @@ local atPortal = false
 local lerpSpeed = 0
 local lerpTimer = 0
 local opacity = 0
+local opacity2 = 0
 
 local function filter(o)
     if o.isValid and (not o.isHidden) then return true end
@@ -41,15 +43,15 @@ function portalOpen.onTick()
     end
 
     if #Colliders.getColliding{a = player, b = portalOpen.portalID, btype = Colliders.NPC, filter = filter} > 0 and not isLerping and not atPortal then
-        opacity = math.min(opacity+0.075,1)
+        opacity = math.min(opacity+0.09,1)
     else
-        opacity = math.max(opacity-0.075,0)
+        opacity = math.max(opacity-0.09,0)
     end
 
     local textAlpha = Color(opacity,opacity,opacity,opacity)
     if SaveData.introFinished then
         textplus.print{text = portalOpen.enterText, x = 400, y = 576, font = stats.font, color = textAlpha, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
-        textplus.print{text = "UP", x = 246, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
+        textplus.print{text = "UP", x = 247, y = 576, font = stats.fontGreen, color = textAlpha, priority = stats.leastPriority-0.1}
     end
 
     if isLerping then
@@ -90,10 +92,16 @@ function portalOpen.onTick()
 end
 
 function portalOpen.onDraw()
+    local textAlpha2 = Color(opacity2,opacity2,opacity2,opacity2)
     if isLerping then
         player:setFrame(portalOpen.frames[player.powerup==1].lerping)
     elseif atPortal then
+        opacity2 = math.min(opacity2+0.09,1)
         player:setFrame(portalOpen.frames[player.powerup==1].atPortal)
+        textplus.print{text = portalOpen.openText, x = 400, y = 576, font = stats.font, color = textAlpha2, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
+        textplus.print{text = "JUMP", x = 445, y = 576, font = stats.fontGreen, color = textAlpha2, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}
+    else
+        opacity2 = math.max(opacity2-0.09,0)
     end
 end
 

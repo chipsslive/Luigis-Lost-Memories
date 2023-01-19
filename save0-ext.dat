@@ -1,62 +1,46 @@
 {
 --[1]--
 {
-   ["pauseplus"]={2},
-   ["totalChallengesCompleted"]=4,
-   ["levelStats"]={3},
+   ["__launcher"]={2},
+   ["pauseplus"]={3},
+   ["conceptuaryUnlocked"]=false,
+   ["allMemoriesRecovered"]=true,
    ["audibletteUnlocked"]=false,
    ["__costumes"]={4},
    ["challenge1Completed"]=true,
-   ["allMemoriesRecovered"]=false,
-   ["__launcher"]={5},
+   ["levelStats"]={5},
+   ["totalChallengesCompleted"]=4,
    ["__progress"]=27.6,
    ["challenge3Completed"]=true,
-   ["_basegame"]={6},
+   ["keyhole1Found"]=true,
    ["challenge2Complete"]=false,
    ["challenge2Completed"]=true,
    ["starcoins"]=0,
-   ["totalKeyholesFound"]=6,
-   ["totalMemoriesRecovered"]=2,
    ["challenge4Completed"]=true,
-   ["introFinished"]=true,
-   ["coins"]=1396,
+   ["totalMemoriesRecovered"]=2,
    ["keyhole5Found"]=false,
+   ["introFinished"]=true,
+   ["totalKeyholesFound"]=6,
+   ["coins"]=834,
    ["keyhole2Found"]=true,
    ["keyhole3Found"]=true,
-   ["unlockedTabs"]={7},
+   ["unlockedTabs"]={6},
    ["creditsSeen"]=true,
    ["spentStars"]=-20,
    ["keyhole4Found"]=false,
    ["allPurpleStarsFound"]=false,
    ["challenge5Completed"]=true,
-   ["keyhole1Found"]=true,
+   ["_basegame"]={7},
    ["fullyComplete"]=false,
-   ["conceptuaryUnlocked"]=false
+   ["allMemoriesRecoverd"]=true
 },
 --[2]--
 {
-   ["selectionData"]={8}
+
 },
 --[3]--
 {
-   ["1-1 Clear Pipe Prairie.lvlx"]={9},
-   ["1-T High Wattage Warehouse.lvlx"]={10},
-   ["!A-2 Disastrous Deeps.lvlx"]={11},
-   ["2-3 Bone Dry Bridge.lvlx"]={12},
-   ["!Title Screen.lvlx"]={13},
-   ["!B-1 Swooper Drop Sneak.lvlx"]={14},
-   ["3-1 Paddlewheel Peril.lvlx"]={15},
-   ["!Credits.lvlx"]={16},
-   ["3-2 Super Sticky Swamp.lvlx"]={17},
-   ["!Memory Center.lvlx"]={18},
-   ["!Final Cutscene.lvlx"]={19},
-   ["!D-1 Pine Propultion.lvlx"]={20},
-   ["1-2 Spring Showers.lvlx"]={21},
-   ["3-3 Lightweight Library.lvlx"]={22},
-   ["!Memory Amalgamation.lvlx"]={23},
-   ["2-2 Monty Mole Mines.lvlx"]={24},
-   ["!C-1 Fragile Block Foothills.lvlx"]={25},
-   ["!The Realm of Recollection.lvlx"]={26}
+   ["selectionData"]={8}
 },
 --[4]--
 {
@@ -64,22 +48,39 @@
 },
 --[5]--
 {
-
+   ["1-1 Clear Pipe Prairie.lvlx"]={9},
+   ["!The Realm of Recollection.lvlx"]={10},
+   ["!A-2 Disastrous Deeps.lvlx"]={11},
+   ["2-3 Bone Dry Bridge.lvlx"]={12},
+   ["!Title Screen.lvlx"]={13},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={14},
+   ["3-1 Paddlewheel Peril.lvlx"]={15},
+   ["!Credits.lvlx"]={16},
+   ["3-2 Super Sticky Swamp.lvlx"]={17},
+   ["1-2 Spring Showers.lvlx"]={18},
+   ["!Final Cutscene.lvlx"]={19},
+   ["!D-1 Pine Propultion.lvlx"]={20},
+   ["1-T High Wattage Warehouse.lvlx"]={21},
+   ["3-3 Lightweight Library.lvlx"]={22},
+   ["!Memory Amalgamation.lvlx"]={23},
+   ["!Memory Center.lvlx"]={24},
+   ["!C-1 Fragile Block Foothills.lvlx"]={25},
+   ["2-2 Monty Mole Mines.lvlx"]={26}
 },
 --[6]--
+{
+   true,
+   false,
+   false,
+   false
+},
+--[7]--
 {
    ["bigSwitch"]={27},
    ["_characterdata"]={28},
    ["starcoin"]={29},
    ["hud"]={30},
    ["starcoinCounter"]=0
-},
---[7]--
-{
-   true,
-   false,
-   false,
-   false
 },
 --[8]--
 {
@@ -95,7 +96,7 @@
 --[10]--
 {
    ["beaten"]=false,
-   ["timer"]=0,
+   ["timer"]=290,
    ["bestTime"]=-1
 },
 --[11]--
@@ -113,7 +114,7 @@
 --[13]--
 {
    ["beaten"]=false,
-   ["timer"]=536,
+   ["timer"]=630,
    ["bestTime"]=-1
 },
 --[14]--
@@ -125,25 +126,25 @@
 --[15]--
 {
    ["beaten"]=true,
-   ["timer"]=780,
+   ["timer"]=1390,
    ["bestTime"]=-1
 },
 --[16]--
 {
    ["beaten"]=false,
-   ["timer"]=5700,
+   ["timer"]=443,
    ["bestTime"]=-1
 },
 --[17]--
 {
    ["beaten"]=true,
-   ["timer"]=0,
+   ["timer"]=1286,
    ["bestTime"]=-1
 },
 --[18]--
 {
    ["beaten"]=false,
-   ["timer"]=189,
+   ["timer"]=224,
    ["bestTime"]=-1
 },
 --[19]--
@@ -161,25 +162,25 @@
 --[21]--
 {
    ["beaten"]=false,
-   ["timer"]=224,
+   ["timer"]=47,
    ["bestTime"]=-1
 },
 --[22]--
 {
    ["beaten"]=false,
-   ["timer"]=1244,
+   ["timer"]=29,
    ["bestTime"]=-1
 },
 --[23]--
 {
    ["beaten"]=false,
-   ["timer"]=33332,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[24]--
 {
    ["beaten"]=false,
-   ["timer"]=4464,
+   ["timer"]=877,
    ["bestTime"]=-1
 },
 --[25]--
@@ -191,7 +192,7 @@
 --[26]--
 {
    ["beaten"]=false,
-   ["timer"]=219,
+   ["timer"]=4464,
    ["bestTime"]=-1
 },
 --[27]--
@@ -215,7 +216,7 @@
 --[29]--
 {
    ["1-1 Clear Pipe Prairie.lvlx"]={44},
-   ["1-T High Wattage Warehouse.lvlx"]={45},
+   ["!The Realm of Recollection.lvlx"]={45},
    ["!A-2 Disastrous Deeps.lvlx"]={46},
    ["2-3 Bone Dry Bridge.lvlx"]={47},
    ["!Title Screen.lvlx"]={48},
@@ -223,19 +224,19 @@
    ["3-1 Paddlewheel Peril.lvlx"]={50},
    ["!Credits.lvlx"]={51},
    ["3-2 Super Sticky Swamp.lvlx"]={52},
-   ["!Memory Center.lvlx"]={53},
+   ["1-2 Spring Showers.lvlx"]={53},
    ["!Final Cutscene.lvlx"]={54},
    ["!D-1 Pine Propultion.lvlx"]={55},
-   ["1-2 Spring Showers.lvlx"]={56},
+   ["1-T High Wattage Warehouse.lvlx"]={56},
    ["3-3 Lightweight Library.lvlx"]={57},
    ["!Memory Amalgamation.lvlx"]={58},
-   ["2-2 Monty Mole Mines.lvlx"]={59},
+   ["!Memory Center.lvlx"]={59},
    ["!C-1 Fragile Block Foothills.lvlx"]={60},
-   ["!The Realm of Recollection.lvlx"]={61}
+   ["2-2 Monty Mole Mines.lvlx"]={61}
 },
 --[30]--
 {
-   ["score"]=74900
+   ["score"]=77130
 },
 --[31]--
 {
@@ -346,10 +347,7 @@
 },
 --[45]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={63}
 },
 --[46]--
@@ -404,7 +402,10 @@
 },
 --[53]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={71}
 },
 --[54]--
@@ -443,10 +444,7 @@
 },
 --[59]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={77}
 },
 --[60]--
@@ -459,7 +457,10 @@
 },
 --[61]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={79}
 },
 --[62]--
@@ -506,11 +507,15 @@
 },
 --[70]--
 {
-
+   true,
+   true,
+   true
 },
 --[71]--
 {
-
+   true,
+   true,
+   true
 },
 --[72]--
 {
@@ -540,9 +545,7 @@
 },
 --[77]--
 {
-   true,
-   true,
-   true
+
 },
 --[78]--
 {
@@ -552,6 +555,8 @@
 },
 --[79]--
 {
-
+   true,
+   true,
+   true
 }
 }

@@ -2183,7 +2183,7 @@ do
                 coin.y = coin.y + coin.speedY
             end
     
-            if coin.timer < 35 then
+            if coin.timer < 66 then
                 Graphics.drawImageToSceneWP(coinImage, coin.x - width*0.5, coin.y - height*0.5, 0,sourceY, width,height,-4,priority)
             end
         end  
@@ -2578,14 +2578,14 @@ respawnRooms.respawnSettings = {
     deathEarthquake = 0,
 
     -- If true, the game will be paused while the transition is active.
-    pauseDuringTransition = true,
+    pauseDuringTransition = false,
 
     -- The type of transition to use.
     -- Can be NONE, FADE, MOSAIC, DIAMOND, ROTATING_SQUARE, DIAMOND_SWEEP, INWARD_SWEEP, or WIPE.
-    transitionType = respawnRooms.TRANSITION_TYPE.MOSAIC,
+    transitionType = respawnRooms.TRANSITION_TYPE.WIPE,
 
     -- The amount of time (in frames) to wait between the player dying and the transition starting.
-    deathAnimDuration = 0,
+    deathAnimDuration = 32,
     -- The amount of time (in frames) that the screen will fade to black during the transition.
     fadeOutDuration = 32,
     -- The amount of time (in frames) that the screen will fade from black, back to gameplay during the transition.

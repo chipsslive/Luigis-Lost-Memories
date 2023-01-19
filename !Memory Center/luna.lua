@@ -2,6 +2,7 @@ local textplus = require("textplus")
 local littleDialogue = require("littleDialogue")
 local slm = require("simpleLayerMovement")
 local handycam = require("handycam")
+local autoscroll = require("autoscroll")
 
 -- Used for waking up sequence
 local start = false
@@ -12,7 +13,6 @@ local levelBegins = false
 
 -- Layers for MADELYN sequence
 local powerButton
-local cameraBounds
 local button1
 local doorLock
 
@@ -86,7 +86,6 @@ function onStart()
 
     -- Adding layers to variable
     powerButton = Layer.get("powerButton")
-    cameraBounds = Layer.get("camerabounds")
     button1 = Layer.get("Button1")
     doorLock = Layer.get("doorLock")
     doorUnlocked = Layer.get("doorUnlocked")
@@ -290,7 +289,7 @@ end
 -- All Question Registering Below
 
 -- Powering on MADELYN
-littleDialogue.registerAnswer("powerOn",{text = "Yes",chosenFunction = function() powerButton:hide(true) cameraBounds:show(true) madelyn1() startmt1 = true end})
+littleDialogue.registerAnswer("powerOn",{text = "Yes",chosenFunction = function() powerButton:hide(true) autoscroll.lockScreen() madelyn1() startmt1 = true end})
 littleDialogue.registerAnswer("powerOn",{text = "No"})
 
 -- Advance 1

@@ -448,7 +448,7 @@ function pastPortal.onDraw()
     Graphics.drawScreen{color = Color.black..math.min(confOpacity, 0.75), priority = priorities.confBg}
     draw9Slice{texture = img.frame1, x = 400, y = 300, w = 600, h = 120, priority = priorities.confirm, color = Color.white..confOpacity, pivot = Sprite.align.CENTER}
 
-    local conLt = textplus.layout(confText, 560, {font = stats.font, color = conTextAlpha})
+    local conLt = textplus.layout(confText, 560, {font = stats.font, color = conTextAlpha, pivot = vector{0.5,0}})
     textplus.render{x = 122, y = 240 + conOffset, layout = conLt, priority = priorities.options}
     textplus.print{text = lvlTitle, x = 400, y = 262, font = stats.font, color = conTextAlpha, priority = priorities.options, pivot = vector(0.5, 0)}
 

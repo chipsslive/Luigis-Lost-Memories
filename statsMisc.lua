@@ -67,7 +67,7 @@ stats.confText    = {
 }
 
 function stats.spendStars(n)
-    return "Are you sure?<br>This action costs<br>"..tostring(n).." Purple Stars."
+    return "Are you sure? This action costs<br>        "..tostring(n).." Purple Stars."
 end
 
 stats.flashColor = Color.black
