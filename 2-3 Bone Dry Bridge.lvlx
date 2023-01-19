@@ -2,7 +2,7 @@ HEAD
 TL:"2-3 Bone Dry Bridge";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-193120;T:-200600;B:-200000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 0\n    }\n}\n";
+SC:0;L:-200000;R:-193120;T:-200600;B:-200000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
 SC:1;L:-180000;R:-179200;T:-181600;B:-180000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-145856;T:-160600;B:-160000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
 SC:3;L:-140000;R:-138336;T:-140600;B:-140000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:0;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7d7d7dff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\n        }\n    }\n}\n";

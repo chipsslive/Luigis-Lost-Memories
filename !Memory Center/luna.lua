@@ -39,7 +39,7 @@ local lockPlayer = false
 
 local fadeout = false
 local opacity = 0
-local musicFadeoutTimer = 64
+local musicVolume = 64
 
 -- Used to track splash SFX intervals
 local splashTimer = 0
@@ -220,10 +220,16 @@ function onTick()
         end
         if mt3 > 520 then
             fadeout = true
-            if musicFadeoutTimer > 0 then
-                musicFadeoutTimer = musicFadeoutTimer - 0.5
-            end
-            Audio.MusicVolume(musicFadeoutTimer)
+            musicVolume = musicVolume - 0.3
+			Audio.MusicVolume(math.max(0,musicVolume))
+
+			if musicVolume <= 0 then
+				if not isMusicSeized then
+					Audio.SeizeStream(-1)
+					isMusicSeized = true
+				  end
+				Audio.MusicStop()
+			end
         end
         if mt3 > 720 then
             Level.load("!The Realm of Recollection.lvlx")
