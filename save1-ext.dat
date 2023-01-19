@@ -7,29 +7,29 @@
    ["audibletteUnlocked"]=true,
    ["__costumes"]={4},
    ["challenge1Completed"]=true,
-   ["keyhole1Found"]=true,
-   ["__progress"]=91.5,
-   ["challenge2Completed"]=true,
    ["_basegame"]={5},
+   ["__progress"]=91.5,
+   ["challenge3Completed"]=true,
+   ["keyhole1Found"]=true,
    ["totalChallengesCompleted"]=3,
    ["__launcher"]={6},
-   ["challenge3Completed"]=true,
-   ["totalKeyholesFound"]=5,
-   ["totalMemoriesRecovered"]=20,
-   ["challenge4Completed"]=false,
-   ["introFinished"]=true,
+   ["challenge2Completed"]=true,
    ["coins"]=2609,
-   ["keyhole5Found"]=true,
+   ["totalMemoriesRecovered"]=20,
+   ["keyhole4Found"]=true,
+   ["introFinished"]=true,
+   ["totalKeyholesFound"]=5,
+   ["spentStars"]=45,
    ["keyhole2Found"]=true,
    ["keyhole3Found"]=true,
    ["unlockedTabs"]={7},
    ["creditsSeen"]=true,
-   ["spentStars"]=45,
-   ["keyhole4Found"]=true,
+   ["keyhole5Found"]=true,
+   ["challenge4Completed"]=true,
    ["allPurpleStarsFound"]=true,
    ["challenge5Completed"]=true,
    ["conceptuaryUnlocked"]=true,
-   ["fullyComplete"]=false,
+   ["fullyComplete"]=true,
    ["allMemoriesRecovered"]=true
 },
 --[2]--
@@ -49,21 +49,21 @@
    ["!B-1 Swooper Drop Sneak.lvlx"]={17},
    ["!Memory Amalgamation.lvlx"]={18},
    ["5-1 Toxic Tumble.lvlx"]={19},
-   ["3-1 Paddlewheel Peril.lvlx"]={20},
+   ["!Credits.lvlx"]={20},
    ["3-2 Super Sticky Swamp.lvlx"]={21},
    ["!Memory Center.lvlx"]={22},
-   ["3-3 Lightweight Library.lvlx"]={23},
+   ["!C-1 Fragile Block Foothills.lvlx"]={23},
    ["1-3 Sakura Scrapyard.lvlx"]={24},
-   ["!Final Cutscene.lvlx"]={25},
-   ["1-1 Moving Meadows.lvlx"]={26},
-   ["1-2 Spring Showers.lvlx"]={27},
+   ["1-1 Moving Meadows.lvlx"]={25},
+   ["!Final Cutscene.lvlx"]={26},
+   ["3-T Tangled Temple.lvlx"]={27},
    ["!D-1 Pine Propultion.lvlx"]={28},
-   ["1-T High Wattage Warehouse.lvlx"]={29},
-   ["2-2 Monty Mole Mines.lvlx"]={30},
-   ["3-T Tangled Temple.lvlx"]={31},
+   ["2-2 Monty Mole Mines.lvlx"]={29},
+   ["1-T High Wattage Warehouse.lvlx"]={30},
+   ["1-2 Spring Showers.lvlx"]={31},
    ["1-1 Piranha Plant Pinch!.lvlx"]={32},
-   ["!C-1 Fragile Block Foothills.lvlx"]={33},
-   ["!Credits.lvlx"]={34}
+   ["3-3 Lightweight Library.lvlx"]={33},
+   ["3-1 Paddlewheel Peril.lvlx"]={34}
 },
 --[4]--
 {
@@ -73,9 +73,9 @@
 {
    ["bigSwitch"]={35},
    ["_characterdata"]={36},
-   ["starcoin"]={37},
-   ["hud"]={38},
-   ["starcoinCounter"]=52
+   ["starcoinCounter"]=52,
+   ["hud"]={37},
+   ["starcoin"]={38}
 },
 --[6]--
 {
@@ -108,7 +108,7 @@
 --[11]--
 {
    ["beaten"]=false,
-   ["timer"]=68,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[12]--
@@ -132,7 +132,7 @@
 --[15]--
 {
    ["beaten"]=false,
-   ["timer"]=40038,
+   ["timer"]=501,
    ["bestTime"]=-1
 },
 --[16]--
@@ -161,9 +161,9 @@
 },
 --[20]--
 {
-   ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=9813
+   ["beaten"]=false,
+   ["timer"]=5700,
+   ["bestTime"]=-1
 },
 --[21]--
 {
@@ -180,8 +180,8 @@
 --[23]--
 {
    ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=6849
+   ["timer"]=2176,
+   ["bestTime"]=11343
 },
 --[24]--
 {
@@ -191,21 +191,21 @@
 },
 --[25]--
 {
-   ["beaten"]=false,
-   ["timer"]=3673,
-   ["bestTime"]=-1
-},
---[26]--
-{
    ["beaten"]=true,
    ["timer"]=0,
    ["bestTime"]=20262
 },
+--[26]--
+{
+   ["beaten"]=false,
+   ["timer"]=3673,
+   ["bestTime"]=-1
+},
 --[27]--
 {
    ["beaten"]=true,
-   ["timer"]=271,
-   ["bestTime"]=8487
+   ["timer"]=0,
+   ["bestTime"]=16175
 },
 --[28]--
 {
@@ -216,20 +216,20 @@
 --[29]--
 {
    ["beaten"]=true,
-   ["timer"]=7401,
-   ["bestTime"]=14136
+   ["timer"]=0,
+   ["bestTime"]=10899
 },
 --[30]--
 {
    ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=10899
+   ["timer"]=7401,
+   ["bestTime"]=14136
 },
 --[31]--
 {
    ["beaten"]=true,
-   ["timer"]=0,
-   ["bestTime"]=16175
+   ["timer"]=271,
+   ["bestTime"]=8487
 },
 --[32]--
 {
@@ -240,14 +240,14 @@
 --[33]--
 {
    ["beaten"]=true,
-   ["timer"]=2176,
-   ["bestTime"]=11343
+   ["timer"]=0,
+   ["bestTime"]=6849
 },
 --[34]--
 {
-   ["beaten"]=false,
-   ["timer"]=5700,
-   ["bestTime"]=-1
+   ["beaten"]=true,
+   ["timer"]=0,
+   ["bestTime"]=9813
 },
 --[35]--
 {
@@ -269,6 +269,10 @@
 },
 --[37]--
 {
+   ["score"]=442920
+},
+--[38]--
+{
    ["1-1 Clear Pipe Prairie.lvlx"]={52},
    ["4-T Polar Palace.lvlx"]={53},
    ["!The Realm of Recollection.lvlx"]={54},
@@ -280,25 +284,21 @@
    ["!B-1 Swooper Drop Sneak.lvlx"]={60},
    ["!Memory Amalgamation.lvlx"]={61},
    ["5-1 Toxic Tumble.lvlx"]={62},
-   ["3-1 Paddlewheel Peril.lvlx"]={63},
+   ["!Credits.lvlx"]={63},
    ["3-2 Super Sticky Swamp.lvlx"]={64},
    ["!Memory Center.lvlx"]={65},
-   ["3-3 Lightweight Library.lvlx"]={66},
+   ["!C-1 Fragile Block Foothills.lvlx"]={66},
    ["1-3 Sakura Scrapyard.lvlx"]={67},
-   ["!Final Cutscene.lvlx"]={68},
-   ["1-1 Moving Meadows.lvlx"]={69},
-   ["1-2 Spring Showers.lvlx"]={70},
+   ["1-1 Moving Meadows.lvlx"]={68},
+   ["!Final Cutscene.lvlx"]={69},
+   ["3-T Tangled Temple.lvlx"]={70},
    ["!D-1 Pine Propultion.lvlx"]={71},
-   ["1-T High Wattage Warehouse.lvlx"]={72},
-   ["2-2 Monty Mole Mines.lvlx"]={73},
-   ["3-T Tangled Temple.lvlx"]={74},
+   ["2-2 Monty Mole Mines.lvlx"]={72},
+   ["1-T High Wattage Warehouse.lvlx"]={73},
+   ["1-2 Spring Showers.lvlx"]={74},
    ["1-1 Piranha Plant Pinch!.lvlx"]={75},
-   ["!C-1 Fragile Block Foothills.lvlx"]={76},
-   ["!Credits.lvlx"]={77}
-},
---[38]--
-{
-   ["score"]=442920
+   ["3-3 Lightweight Library.lvlx"]={76},
+   ["3-1 Paddlewheel Peril.lvlx"]={77}
 },
 --[39]--
 {
@@ -474,10 +474,7 @@
 },
 --[63]--
 {
-   1,
-   1,
-   1,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={89}
 },
 --[64]--
@@ -509,15 +506,15 @@
 },
 --[68]--
 {
-   ["maxID"]=0,
-   ["alive"]={94}
-},
---[69]--
-{
    1,
    1,
    1,
    ["maxID"]=3,
+   ["alive"]={94}
+},
+--[69]--
+{
+   ["maxID"]=0,
    ["alive"]={95}
 },
 --[70]--
@@ -578,7 +575,10 @@
 },
 --[77]--
 {
-   ["maxID"]=0,
+   1,
+   1,
+   1,
+   ["maxID"]=3,
    ["alive"]={103}
 },
 --[78]--
@@ -635,9 +635,7 @@
 },
 --[89]--
 {
-   true,
-   true,
-   true
+
 },
 --[90]--
 {
@@ -661,13 +659,13 @@
 },
 --[94]--
 {
-
-},
---[95]--
-{
    true,
    true,
    true
+},
+--[95]--
+{
+
 },
 --[96]--
 {
@@ -683,13 +681,13 @@
 },
 --[98]--
 {
-   true,
-   true,
-   true
+
 },
 --[99]--
 {
-
+   true,
+   true,
+   true
 },
 --[100]--
 {
@@ -711,6 +709,8 @@
 },
 --[103]--
 {
-
+   true,
+   true,
+   true
 }
 }
