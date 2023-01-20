@@ -1,5 +1,6 @@
 local warpTransition = require("warpTransition")
 local respawnRooms = require("respawnRooms")
+local lineguide = require("lineguide")
 
 local RocketTree1
 local myLayerTimer = 0
@@ -33,4 +34,15 @@ end
 
 function respawnRooms.onPostReset(fromRespawn)
     myLayerTimer = 0
+
+    for k,v in ipairs(NPC.get(339,341,342)) do
+        togglePlatformActive(v)
+        Misc.dialog("Hello")
+    end
+end
+
+function togglePlatformActive(v)
+    local data = v.data._basegame.lineguide
+
+    data.active = true
 end

@@ -3,3 +3,4 @@ gfxwidth=86
 gfxheight=72
 width=58
 height=48
+noshell=1
