@@ -64,7 +64,8 @@ GameData.ach_Challenge5 	= Achievements(10)
 GameData.ach_HundredPercent = Achievements(11)
 GameData.ach_Chuck 			= Achievements(12)
 GameData.ach_MapOfMemories  = Achievements(13)
-GameData.ach_Credits		= Achievements(14)
+GameData.ach_Exiled         = Achievements(14)
+GameData.ach_Credits		= Achievements(15)
 
 -- Question asked when at end of Fragmented Memory
 
@@ -499,6 +500,7 @@ end
 function onExitLevel()
 	GameData.usedSetPowerup = false
 	GameData.usedAccessibility = false
+	pauseplus.canPause = true
 
 	if not Misc.inEditor() then
 		Checkpoint.reset()

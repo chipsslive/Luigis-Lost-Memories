@@ -716,6 +716,10 @@ function onTick()
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
 end
 
+function onLoadSection4()
+    GameData.ach_Exiled:collect()
+end
+
 function onEvent(eventName)
     -- This spawns the chuck swinging his bat effect. The event triggers elsewhere but not anywhere where the bat effect can be seen at an incorrect timer
 

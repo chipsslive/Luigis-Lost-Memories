@@ -216,7 +216,7 @@ end
 
 function stats.onExitLevel(win)
     if win == LEVEL_WIN_TYPE_ROULETTE then
-        if SaveData.levelStats[Level.filename()].timer < SaveData.levelStats[Level.filename()].bestTime or SaveData.levelStats[Level.filename()].bestTime < 0 then
+        if SaveData.levelStats[Level.filename()].timer < SaveData.levelStats[Level.filename()].bestTime or SaveData.levelStats[Level.filename()].bestTime < 0 and not GameData.usedAccessibility then
             SaveData.levelStats[Level.filename()].bestTime = SaveData.levelStats[Level.filename()].timer
         end
 

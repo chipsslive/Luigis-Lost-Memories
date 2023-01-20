@@ -95,7 +95,7 @@ function portalOpen.onDraw()
     local textAlpha2 = Color(opacity2,opacity2,opacity2,opacity2)
     if isLerping then
         player:setFrame(portalOpen.frames[player.powerup==1].lerping)
-    elseif atPortal then
+    elseif atPortal and not Misc.isPaused() then
         opacity2 = math.min(opacity2+0.09,1)
         player:setFrame(portalOpen.frames[player.powerup==1].atPortal)
         textplus.print{text = portalOpen.openText, x = 400, y = 576, font = stats.font, color = textAlpha2, priority = stats.leastPriority-0.11, pivot = vector(0.5, 0)}

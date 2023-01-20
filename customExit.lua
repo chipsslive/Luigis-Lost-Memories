@@ -4,6 +4,7 @@ local npcManager = require("npcManager")
 local npcutils = require("npcs/npcutils")
 local textplus = require("textplus")
 local stats = require("statsMisc")
+local pauseplus = require("pauseplus")
 
 local customExit = {}
 
@@ -171,6 +172,7 @@ function customExit.register(id)
 end
 
 function customExit.startExit(p)
+	pauseplus.canPause = false
 	if Level.endState() > 0 then
         return
     end
