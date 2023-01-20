@@ -176,6 +176,7 @@ function customExit.startExit(p)
     end
 
 	SFX.play(customExit.collectSFX)
+	SaveData.levelStats[Level.filename()].countUp = false
 	p.sectionObj.musicID = 0
 	megashroom.StopMega(p,true)
     starman.stop(p)

@@ -9,7 +9,7 @@ local pauseplus = require("pauseplus")
 
 local pastPortal = {}
 
-local levelList    = {[stats.LVL_LOST] = {}, [stats.LVL_FRAG] = {}, [stats.LVL_ALT] = {}, [stats.LVL_MAP] = {}}
+local levelList    = {[stats.LVL_LOST] = {}, [stats.LVL_FRAG] = {}, [stats.LVL_MAP] = {}}
 local mov          = stats.movement
 local img          = stats.images
 local isOpen       = false
@@ -215,7 +215,7 @@ registerEvent(pastPortal, "onDraw")
 registerEvent(pastPortal, "onInputUpdate")
 
 function pastPortal.onStart()
-    for i = 1, 3 do -- the ultimate performance killer
+    for i = 1, 2 do -- the ultimate performance killer
         for k, v in ipairs(levelList[i]) do
             v.starcoins = getNPC(v.filename, 310)
         end
@@ -274,12 +274,12 @@ function pastPortal.onDraw()
     Graphics.drawImageWP(img.cross, mov.details.position+182, 90, menuOpacity, priorities.stuff)
     textplus.print{font = stats.font, x = mov.details.position+200, y = 88, text = string.format("%.2d", totalStars), priority = priorities.stuff, color = textOpacity}
 
-    for i = 1, 4 do -- the 4 tabs
+    for i = 1, 3 do -- the 3 tabs
         draw9Slice{texture = img.frame1, x = mov.tabs.position + ((i-1)*124), y = 60, w = 120, h = 60, priority = priorities.tabs, color = Color.white..menuOpacity}
         textplus.print{font = stats.smallFont, x = mov.tabs.position + 12 + ((i-1)*124), y = 92, text = "Memories", priority = priorities.stuffHigh, color = textOpacity, xscale = 2, yscale = 2}
         textplus.print{font = stats.smallFont, x = mov.tabs.position + 14 + ((i-1)*124), y = 94, text = "Memories", priority = priorities.stuff, color = textOpacity2, xscale = 2, yscale = 2}
 
-        local headings = {"Lost", "Fragmented", "Alternate", "Map of"}
+        local headings = {"Lost", "Fragmented", "Map of", "Map of"}
         textplus.print{font = stats.smallFont, x = mov.tabs.position + 12 + ((i-1)*124), y = 72, text = headings[i], priority = priorities.stuffHigh, color = textOpacity, xscale = 2, yscale = 2}
         textplus.print{font = stats.smallFont, x = mov.tabs.position + 14 + ((i-1)*124), y = 74, text = headings[i], priority = priorities.stuff, color = textOpacity2, xscale = 2, yscale = 2}
 
@@ -595,8 +595,8 @@ function pastPortal.onInputUpdate()
     end
 
     if currentTab < 1 then
-        currentTab = 4
-    elseif currentTab > 4 then
+        currentTab = 3
+    elseif currentTab > 3 then
         currentTab = 1
     end
 

@@ -9,7 +9,7 @@ SC:3;L:-140000;R:-138560;T:-140600;B:-140000;MZ:0;MF:"";BG:14;XTRA:"{\n    \"dar
 SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#62596bff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-139900;Y:-140438;D:1;
+ID:1;X:-199852;Y:-200246;D:1;
 STARTPOINT_END
 BLOCK
 ID:3;X:-199840;Y:-200192;W:32;H:32;

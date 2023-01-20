@@ -9,17 +9,17 @@ local stats = {}
 
 stats.LVL_LOST = 1
 stats.LVL_FRAG = 2
-stats.LVL_ALT  = 3
-stats.LVL_MAP  = 4
+--stats.LVL_ALT  = 3
+stats.LVL_MAP  = 3
 
 stats.CON_START_LVL = 1
 stats.CON_START_MAP = 2
 stats.CON_UNLOCK    = 3
 
 SaveData.spentStars   = SaveData.spentStars or 0
-SaveData.unlockedTabs = SaveData.unlockedTabs or {[stats.LVL_LOST] = true, [stats.LVL_FRAG] = false, [stats.LVL_ALT] = false, [stats.LVL_MAP] = false}
+SaveData.unlockedTabs = SaveData.unlockedTabs or {[stats.LVL_LOST] = true, [stats.LVL_FRAG] = false, [stats.LVL_MAP] = false}
 SaveData.levelStats   = SaveData.levelStats or {}
-SaveData.levelStats[Level.filename()] = SaveData.levelStats[Level.filename()] or {beaten = false, timer = 0, bestTime = -1}
+SaveData.levelStats[Level.filename()] = SaveData.levelStats[Level.filename()] or {beaten = false, timer = 0, bestTime = -1, countUp = true}
 
 stats.font      = textplus.loadFont("portalFont.ini")
 stats.fontGreen = textplus.loadFont("portalFontGreen.ini")
@@ -77,7 +77,7 @@ stats.waitTime = 32
 stats.tabDetails   = {
     [stats.LVL_LOST] = {starsNeeded =  0, text = ""},
     [stats.LVL_FRAG] = {starsNeeded =  10, text = "We tried our absolute hardest, but only partial fragments of these memories could be made available for recovery."},
-    [stats.LVL_ALT]  = {starsNeeded =  15, text = "We intercepted these memories as they were floating around other areas of your consciousness. Quality is NOT guaranteed."},
+    --[stats.LVL_ALT]  = {starsNeeded =  15, text = "We intercepted these memories as they were floating around other areas of your consciousness. Quality is NOT guaranteed."},
     [stats.LVL_MAP]  = {starsNeeded =  20, text = "Hmm, this memory is very different from the others. It's going to require quite a bit more star power to access than usual."},
 }
 
@@ -103,9 +103,9 @@ stats.levelList = {
     {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG,  description = "Seemingly devoid of any intelligent life, the only things left roaming these hallways are sentient ice balls designed to slow you down."},
     {filename = "1-3 Sakura Scrapyard.lvlx"         , name = "Sakura Scrapyard",     type = stats.LVL_FRAG,  description = "As the beautiful cherry blossoms sway in the wind, an abandoned scrapyard facility buzzes on below. Is this supposed to be a metaphor?"},
     {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG,  description = "Toxic sludge and giant barrels of radioactive material. If you ask me, I would take this over a beach resort any day of the week!"},
-    {filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_ALT ,  description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
-    {filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_ALT ,  description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
-    {filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch",  type = stats.LVL_ALT ,  description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
+    --{filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_ALT ,  description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
+    --{filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_ALT ,  description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
+    --{filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch",  type = stats.LVL_ALT ,  description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
 }
 
 function stats.getByFilename(name)
@@ -149,7 +149,9 @@ stats.SFX = {
 stats.prohibited = {
     "!The Realm of Recollection.lvlx",
     "!Credits.lvlx",
-    "!Memory Center.lvlx"
+    "!Memory Center.lvlx",
+    "!Final Cutscene.lvlx",
+    "!Title Screen.lvlx"
 }
 
 --[[
@@ -195,7 +197,7 @@ function stats.onStart()
 end
 
 function stats.onTick()
-    if player.deathTimer == 0 and not player:mem(0x13C, FIELD_BOOL) and Level.endState() == LEVEL_WIN_TYPE_NONE then
+    if player.deathTimer == 0 and not player:mem(0x13C, FIELD_BOOL) and Level.endState() == LEVEL_WIN_TYPE_NONE and SaveData.levelStats[Level.filename()].countUp then
 	    SaveData.levelStats[Level.filename()].timer = SaveData.levelStats[Level.filename()].timer + 1
     end
 end
@@ -221,6 +223,7 @@ function stats.onExitLevel(win)
         SaveData.levelStats[Level.filename()].beaten = true
         SaveData.levelStats[Level.filename()].timer = 0
     end
+    SaveData.levelStats[Level.filename()].countUp = true
 end
 
 return stats
