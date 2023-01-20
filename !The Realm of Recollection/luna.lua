@@ -732,11 +732,11 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
-    if teleported == false then
+    --[[if teleported == false then
         player.x = -199856
         player.y = -200240
         teleported = true
-    end
+    end]]
 
     if SaveData.fullyComplete and hundo.isHidden then
         hundo:show(true)
