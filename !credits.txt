@@ -76,6 +76,7 @@ ________________________________________________________________________________
 	Red&Green            - Interlude of Voices             - Used in: Credits
 	Rewitkin             - triumph!                        - Used in: Level Complete Summary
 	(Omori)              - Water                           - Used in: Memory Amalgamation Exit
+	(Decay Part 2)       - Ambient Song				 - Used in: Secret Chamber
 
 	NOTE: Parentheses indicate that the credit is to a game and not a specific artist.
 _______________________________________________________________________________________________________

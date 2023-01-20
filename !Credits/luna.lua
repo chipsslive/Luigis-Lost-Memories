@@ -100,7 +100,8 @@ local text = {
     0,"Nintendo",
     0,"Westfall Studios",
     0,"Square Enix",
-    0,"OMOCAT, LLC",
+    0,"OMOCAT",
+    0,"Shining Gate Software",
     0,"",
     1,"SCRIPTING",
     0,"",
@@ -129,7 +130,10 @@ local text = {
 }
 
 local final = "Thank you for playing!"
+local final2 = "<align center>Luigi's Lost Memories<br>Development Team</align>"
 local layout2
+local layout3
+local alpha2 = 0
 
 -- Initialize stuff needed for floating Bloombas
 
@@ -165,7 +169,6 @@ function onStart()
     player.powerup = 2
     GameData.cutscene = true
 
-
     -- Give all text table entries a layout and font
 
     for i = 1,#text,2 do
@@ -185,6 +188,7 @@ function onStart()
     -- Layout for ending text
 
     layout2 = textplus.layout(final,nil,{font = fonts[0],color = white,xscale = 2,yscale = 2})
+    layout3 = textplus.layout(final2,nil,{font = fonts[0],color = white,xscale = 2,yscale = 2})
 
     -- Initialize floating Bloomba sprites
 
@@ -266,7 +270,6 @@ function onDraw()
 
     if creditsFinished then
         Graphics.drawImageWP(logo, 110, 140, alpha, 6)
-        textplus.render{layout = layout2, color = Color.white * alpha, priority = 6,x = 200,y=440}
 
         if not musicSeized then
             Audio.SeizeStream(-1)
@@ -276,12 +279,20 @@ function onDraw()
 
         if timer >= 5500 then
             -- Fadeout at very end of level
-            Graphics.drawScreen{color = Color.black.. opacity,priority = 10}
+            Graphics.drawScreen{color = Color.black.. opacity,priority = 7}
             if opacity < 1 then
                 opacity = opacity + 0.005
             else
-                Level.load("!Final Cutscene.lvlx")
+                if alpha2 < 1 then
+                    alpha2 = alpha2 + 0.01
+                end
+                textplus.render{layout = layout2, color = Color.white * alpha2, priority = 8,x = 200,y=180}
+                textplus.render{layout = layout3, color = Color.white * alpha2, priority = 8,x = 200,y=380}
             end
+        end
+
+        if timer == 7000 then
+            Level.load("!Final Cutscene.lvlx")
         end
     end
 

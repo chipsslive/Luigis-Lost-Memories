@@ -8,13 +8,13 @@
    ["__costumes"]={4},
    ["challenge1Completed"]=false,
    ["allMemoriesRecovered"]=false,
-   ["__progress"]=0,
+   ["__progress"]=3,
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
    ["__launcher"]={5},
-   ["conceptuaryUnlocked"]=false,
+   ["conceptuaryUnlocked"]=true,
    ["_basegame"]={6},
-   ["coins"]=0,
+   ["coins"]=233,
    ["totalMemoriesRecovered"]=0,
    ["keyhole4Found"]=false,
    ["introFinished"]=true,
@@ -38,9 +38,11 @@
 },
 --[3]--
 {
-   ["!The Realm of Recollection.lvlx"]={9},
+   ["!Credits.lvlx"]={9},
    ["!Title Screen.lvlx"]={10},
-   ["!Memory Amalgamation.lvlx"]={11}
+   ["!The Realm of Recollection.lvlx"]={11},
+   ["!Final Cutscene.lvlx"]={12},
+   ["!Memory Amalgamation.lvlx"]={13}
 },
 --[4]--
 {
@@ -52,11 +54,11 @@
 },
 --[6]--
 {
-   ["bigSwitch"]={12},
-   ["_characterdata"]={13},
+   ["bigSwitch"]={14},
+   ["_characterdata"]={15},
    ["starcoinCounter"]=0,
-   ["hud"]={14},
-   ["starcoin"]={15}
+   ["hud"]={16},
+   ["starcoin"]={17}
 },
 --[7]--
 {
@@ -66,14 +68,14 @@
 },
 --[8]--
 {
-   ["accessibility"]={16},
-   ["settings"]={17}
+   ["accessibility"]={18},
+   ["settings"]={19}
 },
 --[9]--
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=757,
+   ["timer"]=8000,
    ["countUp"]=true
 },
 --[10]--
@@ -87,63 +89,63 @@
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=17,
+   ["timer"]=1523,
    ["countUp"]=true
 },
 --[12]--
 {
-
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=-1
 },
 --[13]--
 {
-   ["8"]={18},
-   ["10"]={19},
-   ["9"]={20},
-   ["6"]={21},
-   ["16"]={22},
-   ["11"]={23},
-   ["12"]={24},
-   ["7"]={25},
-   ["15"]={26},
-   ["13"]={27},
-   ["14"]={28}
+   ["beaten"]=false,
+   ["bestTime"]=-1,
+   ["timer"]=4659,
+   ["countUp"]=true
 },
 --[14]--
 {
-   ["score"]=0
+
 },
 --[15]--
 {
-   ["!The Realm of Recollection.lvlx"]={29},
-   ["!Title Screen.lvlx"]={30},
-   ["!Memory Amalgamation.lvlx"]={31}
+   ["8"]={20},
+   ["10"]={21},
+   ["9"]={22},
+   ["6"]={23},
+   ["16"]={24},
+   ["11"]={25},
+   ["12"]={26},
+   ["7"]={27},
+   ["15"]={28},
+   ["13"]={29},
+   ["14"]={30}
 },
 --[16]--
+{
+   ["score"]=3210
+},
+--[17]--
+{
+   ["!Credits.lvlx"]={31},
+   ["!Title Screen.lvlx"]={32},
+   ["!The Realm of Recollection.lvlx"]={33},
+   ["!Final Cutscene.lvlx"]={34},
+   ["!Memory Amalgamation.lvlx"]={35}
+},
+--[18]--
 {
    ["invincibility"]=false,
    ["infinite jumps"]=false
 },
---[17]--
+--[19]--
 {
    ["show challenge status"]=false,
    ["mute music"]=false,
    ["show speedrun timer"]=false
-},
---[18]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
-},
---[19]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
 },
 --[20]--
 {
@@ -219,28 +221,62 @@
 },
 --[29]--
 {
-   ["maxID"]=0,
-   ["alive"]={32}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[30]--
 {
-   ["maxID"]=0,
-   ["alive"]={33}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[31]--
 {
    ["maxID"]=0,
-   ["alive"]={34}
+   ["alive"]={36}
 },
 --[32]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={37}
 },
 --[33]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={38}
 },
 --[34]--
+{
+   ["maxID"]=0,
+   ["alive"]={39}
+},
+--[35]--
+{
+   ["maxID"]=0,
+   ["alive"]={40}
+},
+--[36]--
+{
+
+},
+--[37]--
+{
+
+},
+--[38]--
+{
+
+},
+--[39]--
+{
+
+},
+--[40]--
 {
 
 }

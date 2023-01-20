@@ -6,10 +6,10 @@ SC:0;L:-200480;R:-199200;T:-200600;B:-200000;MZ:24;MF:"!The Realm of Recollectio
 SC:1;L:-180000;R:-179200;T:-180600;B:-180000;MZ:24;MF:"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#dac6eeff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SC:2;L:-160352;R:-158016;T:-160632;B:-160032;MZ:24;MF:"!The Realm of Recollection/Red&Green - Abyss of polygons.mp3";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#dac6eeff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SC:3;L:-140000;R:-138560;T:-140600;B:-140000;MZ:0;MF:"";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#62596bff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
-SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#62596bff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
+SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"!The Realm of Recollection/Decay Part 2 Soundtrack - Ambient Song.mp3";BG:14;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#62596bff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-199852;Y:-200246;D:1;
+ID:1;X:-119756;Y:-120118;D:1;
 STARTPOINT_END
 BLOCK
 ID:3;X:-199840;Y:-200192;W:32;H:32;
@@ -3495,7 +3495,7 @@ ID:95;X:-138672;Y:-140128;
 ID:95;X:-138896;Y:-140176;
 ID:151;X:-139648;Y:-140336;
 ID:151;X:-139840;Y:-140480;
-ID:141;X:-119840;Y:-120160;
+ID:141;X:-119824;Y:-120160;
 ID:129;X:-119872;Y:-120192;
 ID:129;X:-119840;Y:-120192;
 ID:129;X:-119808;Y:-120192;
@@ -3548,7 +3548,6 @@ ID:99;X:-119616;Y:-120224;
 ID:99;X:-119584;Y:-120256;
 ID:99;X:-119552;Y:-120288;
 ID:99;X:-119712;Y:-120160;
-ID:99;X:-119680;Y:-120128;
 ID:99;X:-119648;Y:-120160;
 ID:99;X:-119616;Y:-120192;
 ID:99;X:-119584;Y:-120224;
@@ -3556,7 +3555,6 @@ ID:99;X:-119552;Y:-120256;
 ID:99;X:-119520;Y:-120288;
 ID:99;X:-119744;Y:-120160;
 ID:99;X:-119712;Y:-120128;
-ID:99;X:-119648;Y:-120128;
 ID:99;X:-119616;Y:-120160;
 ID:99;X:-119584;Y:-120192;
 ID:99;X:-119552;Y:-120224;
@@ -3644,6 +3642,17 @@ ID:281;X:-119968;Y:-120576;
 ID:281;X:-119968;Y:-120544;
 ID:281;X:-119968;Y:-120512;
 ID:281;X:-119968;Y:-120480;
+ID:130;X:-119680;Y:-120128;
+ID:130;X:-119648;Y:-120128;
+ID:48;X:-119424;Y:-120320;
+ID:149;X:-119872;Y:-120192;
+ID:55;X:-119648;Y:-120320;
+ID:54;X:-119648;Y:-120288;
+ID:54;X:-119648;Y:-120256;
+ID:1;X:-119616;Y:-120128;
+ID:1;X:-119456;Y:-120128;
+ID:170;X:-119616;Y:-120160;
+ID:170;X:-119456;Y:-120160;
 BGO_END
 NPC
 ID:751;X:-158176;Y:-160208;D:-1;MG:"<speakerName Chuck>Eyo! Welcome to Chuck's Return Service! Want me to return ya' to the entrance?<question chuckQuestion>";FD:1;NM:1;LR:"chuck";
@@ -3676,7 +3685,7 @@ DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
 IX:-199376;IY:-200192;OX:-160208;OY:-160160;DT:2;ID:1;OD:1;LR:"conceptuaryWarp";TW:1;
 IX:-160208;IY:-160336;OX:-139904;OY:-140416;DT:2;ID:1;OD:1;TW:1;
-IX:-138752;IY:-140096;OX:-119824;OY:-120096;DT:2;ID:1;OD:1;TW:1;
+IX:-138752;IY:-140096;OX:-119808;OY:-120096;DT:2;ID:1;OD:1;TW:1;
 DOORS_END
 LAYERS
 LR:"Default";
