@@ -1,0 +1,10 @@
+gfxoffsety=8
+gfxwidth=48
+gfxheight=64
+width=48
+height=48
+score=3
+jumphurt=1
+noblockcollision=0
+noyoshi=1
+noiceball=1

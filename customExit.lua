@@ -336,7 +336,13 @@ function customExit.onDraw()
 	local opa2 = Color(alpha2,alpha2,alpha2,alpha2)
 	local opa3 = Color(alpha3,alpha3,alpha3,alpha3)
 
-	local name = (stats.getByFilename(Level.filename()) and stats.getByFilename(Level.filename()).name) or "Untitled"
+	local name
+	if GameData.inRepressedMemory then
+		name = (stats.getByFilenameRepressed(Level.filename()) and stats.getByFilenameRepressed(Level.filename()).name) or "Untitled"
+	else
+		name = (stats.getByFilename(Level.filename()) and stats.getByFilename(Level.filename()).name) or "Untitled"
+	end
+
 	local timer = (SaveData.levelStats[Level.filename()] and SaveData.levelStats[Level.filename()].timer) or "00:00:00:00"
 	draw9Slice{image=img.box, x=400, y=headOffset+96, w=getWidth(name), h=78, priority=priorities.back, color=Color.white..alpha1, align=Sprite.align.TOP}
 	draw9Slice{image=img.box, x=400, y=sumOffset+210, w=220, h=178, priority=priorities.back, color=Color.white..alpha2, align=Sprite.align.TOP}

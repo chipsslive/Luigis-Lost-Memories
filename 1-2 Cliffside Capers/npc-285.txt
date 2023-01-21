@@ -1,0 +1,9 @@
+gfxwidth=40
+gfxheight=40
+width=40
+height=40
+npcblock=0
+speed=2
+nofireball=1
+framespeed=8
+spinjumpsafe=false

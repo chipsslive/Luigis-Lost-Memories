@@ -18,6 +18,7 @@ local pauseplus = require("pauseplus")
 local textplus = require("textplus")
 local extraNPCProperties = require("extraNPCProperties")
 local pastPortal = require("pastPortal")
+local pastPortal2 = require("pastPortal2")
 local stats = require("statsMisc")
 local koopas = require("koopas")
 local newcheats = require("base/game/newcheats")
@@ -25,6 +26,10 @@ local newcheats = require("base/game/newcheats")
 for k, v in ipairs(stats.levelList) do
     pastPortal.registerLevel(v)
 end
+for k, v in ipairs(stats.repressedLevelList) do
+	pastPortal2.registerLevel(v)
+end
+
 
 local starcoin = require("npcs/AI/starcoin")
 SaveData.starcoins = starcoin.getEpisodeCollected()
@@ -237,7 +242,7 @@ function onStart()
     GameData.ach_HundredPercent:setCondition(3,math.max(SaveData.totalChallengesCompleted, GameData.ach_HundredPercent:getCondition(3).value))
     GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
 
-	if #getRecoveredCount() >= 20 and not SaveData.allMemoriesRecovered then
+	if #getRecoveredCount() >= 17 and not SaveData.allMemoriesRecovered then
 		SaveData.allMemoriesRecovered = true
 	end
 

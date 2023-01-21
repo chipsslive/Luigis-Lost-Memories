@@ -6,11 +6,13 @@ local warpTransition     = require("warpTransition")
 local extraNPCProperties = require("extraNPCProperties")
 local pauseplus          = require("pauseplus")
 local portalOpen         = require("portalOpen")
+local portalOpen2        = require("portalOpen2")
 local audiblette         = require("audiblette")
 local particles          = require("particles")
 local slm                = require("simpleLayerMovement")
 local starcoin           = require("npcs/AI/starcoin")
 local variableOverflow   = require("variableOverflow")
+local respawnRooms       = require("respawnRooms")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -736,11 +738,27 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
-    --[[if teleported == false then
-        player.x = -199856
-        player.y = -200240
-        teleported = true
-    end]]
+    if GameData.inRepressedMemory then
+        if not teleported then
+            player.section = 4
+            player.x = -119536 
+            player.y = -120154
+            respawnRooms.reset(false)
+            playMusic(-1) -- p-switch music (just used as a "placeholder")
+            playMusic(player.section) -- actually restart the section's music
+            --GameData.inRepressedMemory = false
+            teleported = true
+        end
+    else
+        if not teleported then
+            player.section = 0
+            player.x = -199856
+            player.y = -200240
+            playMusic(-1) -- p-switch music (just used as a "placeholder")
+            playMusic(player.section) -- actually restart the section's music
+            teleported = true
+        end
+    end
 
     if SaveData.fullyComplete and hundo.isHidden then
         hundo:show(true)

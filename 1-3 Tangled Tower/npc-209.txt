@@ -1,0 +1,14 @@
+gfxoffsety=24
+gfxwidth=108
+gfxheight=200
+foreground=0
+width=56
+height=32
+health=3
+playerblock=0
+playerblocktop=0
+jumphurt=1
+nohurt=0
+frames=4
+framespeed=8
+framestyle=0

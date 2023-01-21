@@ -1,0 +1,4 @@
+foreground=0
+width=50
+height=152
+frames=10

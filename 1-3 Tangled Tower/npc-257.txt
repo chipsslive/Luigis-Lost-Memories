@@ -1,0 +1,6 @@
+gfxoffsety=-8
+foreground=0
+width=50
+height=152
+frames=10
+framestyle=2

@@ -9,7 +9,7 @@ local stats = {}
 
 stats.LVL_LOST = 1
 stats.LVL_FRAG = 2
---stats.LVL_ALT  = 3
+stats.LVL_REPR = 1
 stats.LVL_MAP  = 3
 
 stats.CON_START_LVL = 1
@@ -17,7 +17,7 @@ stats.CON_START_MAP = 2
 stats.CON_UNLOCK    = 3
 
 SaveData.spentStars   = SaveData.spentStars or 0
-SaveData.unlockedTabs = SaveData.unlockedTabs or {[stats.LVL_LOST] = true, [stats.LVL_FRAG] = false, [stats.LVL_MAP] = false}
+SaveData.unlockedTabs = SaveData.unlockedTabs or {[stats.LVL_LOST] = true, [stats.LVL_FRAG] = false, [stats.LVL_MAP] = false, [stats.LVL_REPR] = true}
 SaveData.levelStats   = SaveData.levelStats or {}
 SaveData.levelStats[Level.filename()] = SaveData.levelStats[Level.filename()] or {beaten = false, timer = 0, bestTime = -1, countUp = true}
 
@@ -77,7 +77,7 @@ stats.waitTime = 32
 stats.tabDetails   = {
     [stats.LVL_LOST] = {starsNeeded =  0, text = ""},
     [stats.LVL_FRAG] = {starsNeeded =  10, text = "We tried our absolute hardest, but only partial fragments of these memories could be made available for recovery."},
-    --[stats.LVL_ALT]  = {starsNeeded =  15, text = "We intercepted these memories as they were floating around other areas of your consciousness. Quality is NOT guaranteed."},
+    [stats.LVL_REPR] = {starsNeeded =  0, text = ""},
     [stats.LVL_MAP]  = {starsNeeded =  20, text = "Hmm, this memory is very different from the others. It's going to require quite a bit more star power to access than usual."},
 }
 
@@ -86,30 +86,44 @@ stats.mapImg2 = Graphics.loadImageResolved("pastPortal/map2.png")
 stats.mapDescription = "While Luigi can't remember a large part of his adventure, the breathtaking sights of the island he visited were more than enough to bypass the effects of amnesia!"
 
 stats.levelList = {
-    {filename = "1-2 Spring Showers.lvlx"           , name = "Spring Showers",       type = stats.LVL_LOST,  description = "Their hats either hide helpful springs or hurtful spikes. Make sure you're paying attention, even in the rain!  "},
-    {filename = "3-1 Paddlewheel Peril.lvlx"        , name = "Paddlewheel Peril",    type = stats.LVL_LOST,  description = "You've seen this purple liquid before. If it's anything like last time, you're in for a good old case of death if you come into contact with it."},
-    {filename = "!D-1 Pine Propultion.lvlx"         , name = "Pine Propultion",      type = stats.LVL_LOST,  description = "Nobody can explain it, but the trees in this area possess extremely strange, likely manmade, properties. I won't spoil the surprise."},
-    {filename = "3-T Tangled Temple.lvlx"           , name = "Tangled Temple",       type = stats.LVL_LOST,  description = "A huge, overgrown temple infested with Thwomps. Try not to get crushed to pulp by these metamorphic maniacs!"},
-    {filename = "!B-1 Swooper Drop Sneak.lvlx"      , name = "Swooper Drop Sneak",   type = stats.LVL_LOST,  description = "By some anomaly, this cave has Swoopers sitting at the top of the food chain, hence their massive size. At least they're bouncy!"},
-    {filename = "!C-1 Fragile Block Foothills.lvlx" , name = "Fragile Foothills",    type = stats.LVL_LOST,  description = "Certain areas of the dirt here are very loose, making them prime candidates for destruction to progress. Oh, and it's also Halloween?"},
-    {filename = "2-2 Monty Mole Mines.lvlx"         , name = "Monty Mole Mines",     type = stats.LVL_LOST,  description = "Befriend the Monty Moles and ride on their backs across the dangerous spikes! Watch out for their kids, though. Vicious."},
-    {filename = "1-1 Clear Pipe Prairie.lvlx"       , name = "Clear Pipe Prairie",   type = stats.LVL_LOST,  description = "Rogue Chucks have teamed up with the Fuzzies and set up base in the prairie! Watch out for spherical projectiles!"},
-    {filename = "3-2 Super Sticky Swamp.lvlx"       , name = "Super Sticky Swamp",   type = stats.LVL_LOST,  description = "The slimy blocks of this swampland severely impede the height of your jump. Beware of falling Scuttlebugs!"},
-    {filename = "2-3 Bone Dry Bridge.lvlx"          , name = "Bone Dry Bridge",      type = stats.LVL_LOST,  description = "The Kremlings have invaded the desert canyon! Use the propeller block to brave the large and dangerous canyon gaps."},
-    {filename = "!A-2 Disastrous Deeps.lvlx"        , name = "Disastrous Deeps",     type = stats.LVL_LOST,  description = "When you swim where the sun doesn't shine, your safety is never certain. Here, Rammerheads coordinate their movement for more efficient travel."},
-    {filename = "3-3 Lightweight Library.lvlx"      , name = "Lightweight Library",  type = stats.LVL_LOST,  description = "Have your insides warped and transparentized in order to traverse this horribly designed haunted library!"},
-    {filename = "1-T High Wattage Warehouse.lvlx"   , name = "High Watt Warehouse",  type = stats.LVL_LOST,  description = "You can just FEEL the electricity surging throughout this building. Climb the tesla coils at your own risk!"},
-    {filename = "!A-1 Buccaneer Bay.lvlx"           , name = "Buccaneer Bay",        type = stats.LVL_FRAG,  description = "The Shyrates have laid claim to the southern coast of the island! They're not as threatening as we originally thought... "},
-    {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG,  description = "Seemingly devoid of any intelligent life, the only things left roaming these hallways are sentient ice balls designed to slow you down."},
-    {filename = "1-3 Sakura Scrapyard.lvlx"         , name = "Sakura Scrapyard",     type = stats.LVL_FRAG,  description = "As the beautiful cherry blossoms sway in the wind, an abandoned scrapyard facility buzzes on below. Is this supposed to be a metaphor?"},
-    {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG,  description = "Toxic sludge and giant barrels of radioactive material. If you ask me, I would take this over a beach resort any day of the week!"},
-    --{filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_ALT ,  description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
-    --{filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_ALT ,  description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
-    --{filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch",  type = stats.LVL_ALT ,  description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
+    {filename = "1-2 Spring Showers.lvlx"           , name = "Spring Showers",       type = stats.LVL_LOST, escription = "Their hats either hide helpful springs or hurtful spikes. Make sure you're paying attention, even in the rain!  "},
+    {filename = "3-1 Paddlewheel Peril.lvlx"        , name = "Paddlewheel Peril",    type = stats.LVL_LOST, description = "You've seen this purple liquid before. If it's anything like last time, you're in for a good old case of death if you come into contact with it."},
+    {filename = "!D-1 Pine Propultion.lvlx"         , name = "Pine Propultion",      type = stats.LVL_LOST, description = "Nobody can explain it, but the trees in this area possess extremely strange, likely manmade, properties. I won't spoil the surprise."},
+    {filename = "3-T Tangled Temple.lvlx"           , name = "Tangled Temple",       type = stats.LVL_LOST, description = "A huge, overgrown temple infested with Thwomps. Try not to get crushed to pulp by these metamorphic maniacs!"},
+    {filename = "!B-1 Swooper Drop Sneak.lvlx"      , name = "Swooper Drop Sneak",   type = stats.LVL_LOST, description = "By some anomaly, this cave has Swoopers sitting at the top of the food chain, hence their massive size. At least they're bouncy!"},
+    {filename = "!C-1 Fragile Block Foothills.lvlx" , name = "Fragile Foothills",    type = stats.LVL_LOST, description = "Certain areas of the dirt here are very loose, making them prime candidates for destruction to progress. Oh, and it's also Halloween?"},
+    {filename = "2-2 Monty Mole Mines.lvlx"         , name = "Monty Mole Mines",     type = stats.LVL_LOST, description = "Befriend the Monty Moles and ride on their backs across the dangerous spikes! Watch out for their kids, though. Vicious."},
+    {filename = "1-1 Clear Pipe Prairie.lvlx"       , name = "Clear Pipe Prairie",   type = stats.LVL_LOST, description = "Rogue Chucks have teamed up with the Fuzzies and set up base in the prairie! Watch out for spherical projectiles!"},
+    {filename = "3-2 Super Sticky Swamp.lvlx"       , name = "Super Sticky Swamp",   type = stats.LVL_LOST, description = "The slimy blocks of this swampland severely impede the height of your jump. Beware of falling Scuttlebugs!"},
+    {filename = "2-3 Bone Dry Bridge.lvlx"          , name = "Bone Dry Bridge",      type = stats.LVL_LOST, description = "The Kremlings have invaded the desert canyon! Use the propeller block to brave the large and dangerous canyon gaps."},
+    {filename = "!A-2 Disastrous Deeps.lvlx"        , name = "Disastrous Deeps",     type = stats.LVL_LOST, description = "When you swim where the sun doesn't shine, your safety is never certain. Here, Rammerheads coordinate their movement for more efficient travel."},
+    {filename = "3-3 Lightweight Library.lvlx"      , name = "Lightweight Library",  type = stats.LVL_LOST, description = "Have your insides warped and transparentized in order to traverse this horribly designed haunted library!"},
+    {filename = "1-T High Wattage Warehouse.lvlx"   , name = "High Watt Warehouse",  type = stats.LVL_LOST, description = "You can just FEEL the electricity surging throughout this building. Climb the tesla coils at your own risk!"},
+    {filename = "!A-1 Buccaneer Bay.lvlx"           , name = "Buccaneer Bay",        type = stats.LVL_FRAG, description = "The Shyrates have laid claim to the southern coast of the island! They're not as threatening as we originally thought... "},
+    {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG, description = "Seemingly devoid of any intelligent life, the only things left roaming these hallways are sentient ice balls designed to slow you down."},
+    {filename = "1-3 Sakura Scrapyard.lvlx"         , name = "Sakura Scrapyard",     type = stats.LVL_FRAG, description = "As the beautiful cherry blossoms sway in the wind, an abandoned scrapyard facility buzzes on below. Is this supposed to be a metaphor?"},
+    {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG, description = "Toxic sludge and giant barrels of radioactive material. If you ask me, I would take this over a beach resort any day of the week!"},
+}
+
+stats.repressedLevelList = {
+    {filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_REPR, description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
+    {filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_REPR, description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
+    {filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch",  type = stats.LVL_REPR, description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
+    {filename = "1-2 Cliffside Capers.lvlx"          , name = "Cliffside Capers",     type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "1-3 Tangled Tower.lvlx"             , name = "Tangled Tower",        type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "4-1 Smoldering Steppe.lvlx"         , name = "Smoldering Steppe",    type = stats.LVL_REPR, description = "Nothing here yet."},
 }
 
 function stats.getByFilename(name)
     for k, v in ipairs(stats.levelList) do
+        if v.filename == name then
+            return v
+        end
+    end
+end
+
+function stats.getByFilenameRepressed(name)
+    for k, v in ipairs(stats.repressedLevelList) do
         if v.filename == name then
             return v
         end
@@ -132,6 +146,8 @@ stats.images = {
     starUncol    = Graphics.loadImageResolved("pastPortal/starUncol.png"),
     lock         = Graphics.loadImageResolved("pastPortal/lock.png"),
     cross        = Graphics.loadImageResolved("pastPortal/cross.png"),
+    frame1r      = Graphics.loadImageResolved("pastPortal/frame1-r.png"),
+    titler      = Graphics.loadImageResolved("pastPortal/title-r.png"),
 }
 
 stats.SFX = {

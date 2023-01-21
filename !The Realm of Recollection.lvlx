@@ -10,7 +10,7 @@ SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:24;MF:"!The Realm of Recollectio
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
-ID:1;X:-199852;Y:-200246;D:1;
+ID:1;X:-199852;Y:-200566;D:1;
 STARTPOINT_END
 BLOCK
 ID:3;X:-199840;Y:-200192;W:32;H:32;
@@ -3681,6 +3681,7 @@ ID:94;X:-159825;Y:-160216;D:-1;FD:1;LR:"otherSigns";
 ID:94;X:-159572;Y:-160221;D:-1;FD:1;LR:"otherSigns";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
 ID:759;X:-199416;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can punch me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"mauvoomba\"\n    }\n}\n";
+ID:876;X:-119584;Y:-120288;D:-1;
 NPC_END
 DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
