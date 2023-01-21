@@ -1,7 +1,7 @@
 local n = {}
 
 local sh_portal = Shader()
-sh_portal:compileFromFile(nil, "portal.frag")
+sh_portal:compileFromFile(nil, "portal_glitched.frag")
 local FONT_DEFAULT
 
 local npcManager = require("npcManager")
@@ -102,7 +102,10 @@ function n.onDrawNPC(v)
         height = v.height,
         shader = sh_portal,
         uniforms = {
-            iTime = lunatime.drawtick() * 0.01
+			perlinTexture = Graphics.sprites.hardcoded["53-0"].img,
+			reasonableTime = lunatime.tick(),
+
+            iTime = lunatime.tick() * 0.01,
         },
         priority = -46,
         sceneCoords = true

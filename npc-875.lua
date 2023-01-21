@@ -102,7 +102,7 @@ function n.onDrawNPC(v)
         height = v.height,
         shader = sh_portal,
         uniforms = {
-            iTime = lunatime.drawtick() * 0.01
+            iTime = lunatime.tick() * 0.01
         },
         priority = -46,
         sceneCoords = true
