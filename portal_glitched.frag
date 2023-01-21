@@ -22,9 +22,9 @@ mat2 rotate(float t);
 vec4 draw_texture(vec2 pos) {
     float wobbly_edge = snoise(pos + 2.0 * pos + 0.75 * iTime) * 0.03;
     float value = length(pos) > (0.43 + wobbly_edge) ? 0.0 : 0.7;
-    float hue = length(pos + 0.2 - sin(pos + iTime * 0.15) * 0.2);
+    float hue = length(pos + 0.9 - sin(pos + iTime * 0.45) * 0.9);
     float opacity = ceil(value);
-    vec3 col = hsv2rgb(vec3(hue, 0.62, value));
+    vec3 col = hsv2rgb(vec3(hue, 0.99, value));
     return vec4(col + vec3(0.5 * col.g,-col.g * 0.5,col.g * 0.5), opacity);
 }
 
