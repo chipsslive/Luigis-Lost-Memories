@@ -3655,6 +3655,34 @@ ID:1;X:-119616;Y:-120128;
 ID:1;X:-119456;Y:-120128;
 ID:170;X:-119616;Y:-120160;
 ID:170;X:-119456;Y:-120160;
+ID:95;X:-119712;Y:-120096;
+ID:95;X:-119680;Y:-120224;
+ID:95;X:-119440;Y:-120288;
+ID:95;X:-119872;Y:-120160;
+ID:91;X:-119728;Y:-120176;
+ID:91;X:-119696;Y:-120288;
+ID:91;X:-119408;Y:-120192;
+ID:91;X:-119664;Y:-120144;
+ID:91;X:-119856;Y:-120112;
+ID:94;X:-119744;Y:-120128;
+ID:89;X:-119424;Y:-120160;
+ID:90;X:-119680;Y:-120160;
+ID:90;X:-119616;Y:-120208;
+ID:90;X:-119536;Y:-120256;
+ID:90;X:-119488;Y:-120208;
+ID:90;X:-119616;Y:-120288;
+ID:94;X:-119552;Y:-120224;
+ID:90;X:-119792;Y:-120176;
+ID:90;X:-119392;Y:-120144;
+ID:90;X:-119408;Y:-120240;
+ID:90;X:-119456;Y:-120192;
+ID:90;X:-119552;Y:-120144;
+ID:91;X:-119600;Y:-120176;
+ID:91;X:-119504;Y:-120288;
+ID:91;X:-119504;Y:-120160;
+ID:90;X:-119888;Y:-120128;
+ID:90;X:-119728;Y:-120256;
+ID:90;X:-119552;Y:-120304;
 BGO_END
 NPC
 ID:751;X:-158176;Y:-160208;D:-1;MG:"<speakerName Chuck>Eyo! Welcome to Chuck's Return Service! Want me to return ya' to the entrance?<question chuckQuestion>";FD:1;NM:1;LR:"chuck";
@@ -3682,8 +3710,8 @@ ID:94;X:-159825;Y:-160216;D:-1;FD:1;LR:"otherSigns";
 ID:94;X:-159572;Y:-160221;D:-1;FD:1;LR:"otherSigns";
 ID:875;X:-199904;Y:-200320;D:-1;LR:"portal";
 ID:759;X:-199416;Y:-200384;D:-1;MG:"<speakerName Mauvoomba>Sorry\, Master Luigi\, but I'm useless to you until you find all of the Purple Stars hidden within your memories.<page>I wish I could be of more help. You can punch me if you want. I'll understand.";FD:1;LR:"defaultBloombas";XTRA:"{\n    \"global\"\: {\n        \"spawningBehaviour\"\: 1\,\n        \"tag\"\: \"mauvoomba\"\n    }\n}\n";
-ID:876;X:-119584;Y:-120288;D:-1;
-ID:762;X:-119504;Y:-120128;D:-1;
+ID:876;X:-119584;Y:-120288;D:-1;LR:"glitchPortal";
+ID:762;X:-119504;Y:-120128;D:-1;MG:"<speakerName \"???\">Urgh. Y-Yes! I will stay away! I said I would stay away! I am listening to them!<page>Huh? Hmm\, you do not look particularly familiar. Did they send you? I haven't had company in years.<page>They don't like me. They think there's s-something wrong with me\, but I am l-listening to them! I am staying away! I am listening!<page>I am not weird. I am unbothered! I take care of Repressed Memories! The worst of them all! One buries these in their mind because they are bad. Bad! Unenjoyable\, even!<page>How can one not begin to spiral a little under these pressures? Do you not know what I have seen?!<page>But I am listening to them. I am staying away\, and listening to them.<page>...<page>Stop looking at me like that!!! Y-You don't know what I see! Here! You will see what I see!<page>Behold\, the worst memories you've ever experienced! Located deep within your consciousness. Yes\, very deep\, and kept at bay by yours truly.<page>...<page>They sent you\, even though I am listening to them! I am listening! So\, now you must see what I see.";FD:1;
 NPC_END
 DOORS
 IX:-200336;IY:-200192;OX:-179408;OY:-180160;DT:2;ID:1;OD:1;LR:"audibletteWarp";TW:1;
@@ -3712,6 +3740,7 @@ LR:"audibletteNPC";
 LR:"conceptuaryNPC";
 LR:"hundo";HD:1;
 LR:"nsmbwalls";HD:1;
+LR:"glitchPortal";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

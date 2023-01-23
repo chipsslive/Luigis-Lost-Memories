@@ -86,14 +86,10 @@ littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the key
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
-
-
 -- All intro-related variables + questions
 
 local introTimer = 0
 local stopIntroTimer = false
-local sleepLuigi
-local awakeLuigi
 local portal
 local playerStart = false
 local talkedToBloomba = false
@@ -150,6 +146,8 @@ local afterCreditsMsgMaroonba = "<speakerName Maroonba>So, you conquered the Mem
 local hundo = Graphics.loadImageResolved("hundo.png")
 local hundoAlpha = 0
 local hundoMsgMaroonba = "<speakerName Maroonba>Master Luigi! Look! Up in the sky! Who put those numbers there? Was that you?"
+
+local glitchPortal
 
 -- Confetti particle emitter
 
@@ -227,13 +225,11 @@ function onStart()
         y = -200568
     }
 
-    -- A bunch of layers (some aren't even used anymore)
+    -- A bunch of layers
 
     chuck           = Layer.get("chuck")
     originalSigns   = Layer.get("originalSigns")
     otherSigns      = Layer.get("otherSigns")
-    sleepLuigi      = Layer.get("sleepLuigi")
-    awakeLuigi      = Layer.get("awakeLuigi")
     portal          = Layer.get("portal")
     otherBloombas   = Layer.get("otherBloombas")
     maroonba        = Layer.get("maroonba")
@@ -244,6 +240,7 @@ function onStart()
     conceptuaryLock = Layer.get("conceptuaryLock")
     audibletteNPC   = Layer.get("audibletteNPC")
     conceptuaryNPC  = Layer.get("conceptuaryNPC")
+    glitchPortal    = Layer.get("glitchPortal")
 
     -- Intro initializations
 
@@ -275,6 +272,11 @@ if SaveData.introFinished == false then
 end
 
 function onTick()
+    -- I DON'T KNOW WHY THIS ONLY WORKS IN ONTICK!!!
+    if not SaveData.basementFound then
+        glitchPortal:hide(true)
+    end
+
     -- Check if intersected with boomobox
 
     for k,v in ipairs(BGO.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height)) do
@@ -719,6 +721,7 @@ function onTick()
 end
 
 function onLoadSection4()
+
     GameData.ach_Exiled:collect()
 end
 

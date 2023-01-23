@@ -183,6 +183,7 @@ function onStart()
 	SaveData.allPurpleStarsFound  = SaveData.allPurpleStarsFound   or nil_or(SaveData.allPurpleStarsFound, false)
 	SaveData.creditsSeen 		  = SaveData.creditsSeen 		   or nil_or(SaveData.creditsSeen, false)
 	SaveData.fullyComplete        = SaveData.fullyComplete         or nil_or(SaveData.fullyComplete, false)
+	SaveData.basementFound        = SaveData.basementFound         or nil_or(SaveData.basementFound, false)
 
 	SaveData.totalMemoriesRecovered = #getRecoveredCount()
 
