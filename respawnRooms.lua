@@ -621,15 +621,16 @@ do
         v.spawnAi2 = v.ai2
 
 
-        if lineguide.registeredNPCMap[v.id] then
-            lineguide.onStartNPC(v)
-        end
-
         -- Extra settings
         local settingsData = npcData.meta.data
 
         v.data._settings = NPC.makeDefaultSettings(v.id)
         handleExtraSettings(v.data._settings,settingsData)
+
+        -- Setup lineguide data
+        if lineguide.registeredNPCMap[v.id] then
+            lineguide.onStartNPC(v)
+        end
 
         -- Spawning
         v:mem(0x14C,FIELD_WORD,1)
@@ -1622,8 +1623,8 @@ do
         -- Clamp to the section boundaries
         local b = self.sectionObj.boundary
 
-        clampedX = math.clamp(cameraX + camera.width *0.5,b.left + width *0.5,b.right  - width *0.5) - camera.width *0.5
-        clampedY = math.clamp(cameraY + camera.height*0.5,b.top  + height*0.5,b.bottom - height*0.5) - camera.height*0.5
+        clampedX = math.clamp(clampedX + camera.width *0.5,b.left + width *0.5,b.right  - width *0.5) - camera.width *0.5
+        clampedY = math.clamp(clampedY + camera.height*0.5,b.top  + height*0.5,b.bottom - height*0.5) - camera.height*0.5
         
         
         return clampedX,clampedY
