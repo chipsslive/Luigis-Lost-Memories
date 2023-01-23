@@ -27,15 +27,7 @@ local sprite1X = -200096
 local sprite1Y = -200416
 
 -- Unlocking the Audiblette and Conceptuary variables/questions
-
-local audibletteWarp
-local audibletteLock
-local audibletteNPC
-local unlockedAudiblette
-local conceptuaryWarp
-local conceptuaryLock
-local conceptuaryNPC
-local unlockedConceptuary
+-- Variables can be found in variableOverflow.lua
 
 function checkCoins()
     littleDialogue.deregisterQuestion("unlockConceptuaryQuestion")
@@ -87,34 +79,7 @@ littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the chal
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
 -- All intro-related variables + questions
-
-local introTimer = 0
-local stopIntroTimer = false
-local portal
-local playerStart = false
-local talkedToBloomba = false
-local opacity = 0
-local sfx1Played = false
-local otherBloombas
-local reduceOpacity1 = false
-local maroonba
-local portalCutsceneTimerStart = false
-local portalCutsceneTimer = 0
-local orangeBloomba
-local blueBloomba
-local redBloomba
-local purpleBloomba
-local orangeMessage
-local blueMessage
-local redMessage
-local purpleMessage
-local reduceOpacity2 = false
-local defaultBloombas
-local defaultRedBloomba
-local hidePlayer = false
-local lockPlayer = false
-local doEarthquake = false
-local currentQuakeIntensity = 2.5
+-- Variables can be found in variableOverflow.lua
 
 littleDialogue.registerAnswer("introQuestion",{text = "Let's do it!",addText = "HOORAY! Let's get this party started!",chosenFunction = function() startPortalSpawn = true end})
 littleDialogue.registerAnswer("introQuestion",{text = "Stuck in my mind!",addText = "Aw, man. Well, if you change your mind. I'll be waiting here for eternity.",chosenFunction = function() talkedToBloomba = true end})
@@ -148,6 +113,12 @@ local hundoAlpha = 0
 local hundoMsgMaroonba = "<speakerName Maroonba>Master Luigi! Look! Up in the sky! Who put those numbers there? Was that you?"
 
 local glitchPortal
+local section4Opacity = 0
+local fade = false
+local showGlitchPortal = false
+local startGlitchPortalSequenceTimer = false
+local glitchPortalSequenceTimer = 0
+local greenBloomba
 
 -- Confetti particle emitter
 
@@ -227,20 +198,20 @@ function onStart()
 
     -- A bunch of layers
 
-    chuck           = Layer.get("chuck")
-    originalSigns   = Layer.get("originalSigns")
-    otherSigns      = Layer.get("otherSigns")
-    portal          = Layer.get("portal")
-    otherBloombas   = Layer.get("otherBloombas")
-    maroonba        = Layer.get("maroonba")
-    defaultBloombas = Layer.get("defaultBloombas")
-    conceptuaryWarp = Layer.get("conceptuaryWarp")
-    audibletteWarp  = Layer.get("audibletteWarp")
-    audibletteLock  = Layer.get("audibletteLock")
-    conceptuaryLock = Layer.get("conceptuaryLock")
-    audibletteNPC   = Layer.get("audibletteNPC")
-    conceptuaryNPC  = Layer.get("conceptuaryNPC")
-    glitchPortal    = Layer.get("glitchPortal")
+    chuck             = Layer.get("chuck")
+    originalSigns     = Layer.get("originalSigns")
+    otherSigns        = Layer.get("otherSigns")
+    portal            = Layer.get("portal")
+    otherBloombas     = Layer.get("otherBloombas")
+    maroonba          = Layer.get("maroonba")
+    defaultBloombas   = Layer.get("defaultBloombas")
+    conceptuaryWarp   = Layer.get("conceptuaryWarp")
+    audibletteWarp    = Layer.get("audibletteWarp")
+    audibletteLock    = Layer.get("audibletteLock")
+    conceptuaryLock   = Layer.get("conceptuaryLock")
+    audibletteNPC     = Layer.get("audibletteNPC")
+    conceptuaryNPC    = Layer.get("conceptuaryNPC")
+    glitchPortalCover = Layer.get("glitchPortalCover")
 
     -- Intro initializations
 
@@ -250,6 +221,10 @@ function onStart()
         maroonba:show(true)
         defaultBloombas:hide(true)
         pauseplus.canPause = false
+    end
+
+    if not SaveData.basementFound then
+        glitchPortalCover:show(true)
     end
 
     -- Check if Conceptuary/Audiblette are unlocked
@@ -272,11 +247,6 @@ if SaveData.introFinished == false then
 end
 
 function onTick()
-    -- I DON'T KNOW WHY THIS ONLY WORKS IN ONTICK!!!
-    if not SaveData.basementFound then
-        glitchPortal:hide(true)
-    end
-
     -- Check if intersected with boomobox
 
     for k,v in ipairs(BGO.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height)) do
@@ -287,7 +257,7 @@ function onTick()
             local trueX = (v.x + 0.5 * v.width) - (0.5 * myIMG.width) 
             local trueY = (v.y - 8 - gfxHeight) - myIMG.height + 36
 
-            Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -40)
+            Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -30)
 
             if player.rawKeys.up == KEYS_PRESSED then
                 audiblette.open()
@@ -322,6 +292,12 @@ function onTick()
 
     for _,v in ipairs(extraNPCProperties.getWithTag("blueBloomba")) do
         ceruloomba = v
+    end
+
+    -- Get NPC in the basement
+
+    for _,v in ipairs(extraNPCProperties.getWithTag("greenBloomba")) do
+        greenBloomba = v
     end
 
     -- Check if Conceptuary/Audiblette have just been unlocked
@@ -718,15 +694,49 @@ function onTick()
         littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
     end
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
-end
 
-function onLoadSection4()
+    -- Basement sequence
 
-    GameData.ach_Exiled:collect()
+    if startGlitchPortalReveal then
+        Graphics.drawScreen{color = Color.black.. section4Opacity,priority = 6}
+        if section4Opacity < 1 and not fade then
+            section4Opacity = section4Opacity + 0.07
+            player.speedX = 0
+            lockPlayer = true
+        else
+            showGlitchPortal = true
+            fade = true
+        end
+
+        if fade and section4Opacity > 0 then
+            section4Opacity = section4Opacity - 0.01
+            player.x = -119552
+            startGlitchPortalSequenceTimer = true
+        end
+
+        if startGlitchPortalSequenceTimer then
+            glitchPortalSequenceTimer = glitchPortalSequenceTimer + 1
+
+            if glitchPortalSequenceTimer == 220 then
+                littleDialogue.create{
+                    text = "<speakerName Moss>I am called Moss. Remember the name when you experience all the memories you attempted to leave behind.",
+                    pauses = true,
+                    speakerObj = greenBloomba
+                }
+                SaveData.basementFound = true
+                GameData.ach_Exiled:collect()
+                lockPlayer = false
+            end
+        end
+    end
+
+    if showGlitchPortal then
+        glitchPortalCover:hide(true)
+    end
 end
 
 function onEvent(eventName)
-    -- This spawns the chuck swinging his bat effect. The event triggers elsewhere but not anywhere where the bat effect can be seen at an incorrect timer
+    -- This spawns the chuck swinging his bat effect. The event doesn't trigger anywhere else anymore
 
     if eventName == "Lock Controls" then
         Effect.spawn(805,-158214,-160222)
@@ -735,6 +745,9 @@ end
 
 -- pls don't mind this jank
 local teleported = false
+-- jank over
+
+-- Stuff for Audiblette speakers
 
 local scale = 1
 local raiseScale = true
@@ -746,7 +759,6 @@ function onDraw()
             player.section = 4
             player.x = -119536 
             player.y = -120154
-            respawnRooms.reset(false)
             playMusic(-1) -- p-switch music (just used as a "placeholder")
             playMusic(player.section) -- actually restart the section's music
             --GameData.inRepressedMemory = false
@@ -829,8 +841,12 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
 
     eventObj.cancelled = true
     
-    if text == allPurpleStarsMsg and GameData.ach_AllPurpleStars.collected and SaveData.allPurpleStarsFound then
+    if text == allPurpleStarsMsg and SaveData.allPurpleStarsFound then
         startConfettiTimer = true
         mauvoomba.msg = "<speakerName Mauvoomba>I could do this for hours!"
+    end
+
+    if player.section == 4 then
+        startGlitchPortalReveal = true
     end
 end

@@ -372,7 +372,7 @@ function onDraw()
         local trueY = (v.y - 8 - gfxHeight) - myIMG.height
 
 		if v.msg and v.msg ~= "" and not v.isHidden and player:isGroundTouching() then
-        	Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -29)
+        	Graphics.drawImageToSceneWP(myIMG, trueX, trueY, -27)
 		end
     end
 
