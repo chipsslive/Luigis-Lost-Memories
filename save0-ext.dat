@@ -1,7 +1,7 @@
 {
 --[1]--
 {
-   ["totalChallengesCompleted"]=0,
+   ["conceptuaryUnlocked"]=true,
    ["pauseplus"]={2},
    ["starcoins"]=0,
    ["levelStats"]={3},
@@ -10,18 +10,18 @@
    ["challenge1Completed"]=false,
    ["_basegame"]={5},
    ["allMemoriesRecovered"]=true,
-   ["__progress"]=6.1,
-   ["challenge2Completed"]=false,
+   ["__progress"]=7.6,
+   ["challenge3Completed"]=false,
    ["keyhole1Found"]=false,
    ["challenge5Completed"]=false,
-   ["__launcher"]={6},
+   ["totalChallengesCompleted"]=0,
    ["keyhole4Found"]=false,
    ["spentStars"]=0,
-   ["totalMemoriesRecovered"]=1,
-   ["coins"]=835,
+   ["totalMemoriesRecovered"]=2,
+   ["coins"]=858,
    ["introFinished"]=true,
    ["totalKeyholesFound"]=1,
-   ["unlockedTabs"]={7},
+   ["unlockedTabs"]={6},
    ["keyhole2Found"]=false,
    ["keyhole3Found"]=false,
    ["basementFound"]=true,
@@ -30,9 +30,9 @@
    ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=true,
    ["purpleStarsFound"]=52,
-   ["challenge3Completed"]=false,
+   ["challenge2Completed"]=false,
    ["fullyComplete"]=false,
-   ["conceptuaryUnlocked"]=true
+   ["__launcher"]={7}
 },
 --[2]--
 {
@@ -42,21 +42,21 @@
 {
    ["1-2 Cliffside Capers.lvl"]={9},
    ["!The Realm of Recollection.lvlx"]={10},
-   ["!A-1 Buccaneer Bay.lvlx"]={11},
+   ["3-T Tangled Temple.lvlx"]={11},
    ["!Title Screen.lvlx"]={12},
    ["1-2 Cliffside Capers.lvlx"]={13},
    ["3-1 Paddlewheel Peril.lvlx"]={14},
    ["!Credits.lvlx"]={15},
    ["1-2 Spring Showers.lvlx"]={16},
    ["1-3 Tangled Tower.lvlx"]={17},
-   ["3-T Tangled Temple.lvlx"]={18},
+   ["5-1 Toxic Tumble.lvlx"]={18},
    ["!D-1 Pine Propultion.lvlx"]={19},
    ["!Memory Amalgamation.lvlx"]={20},
    ["4-1 Smoldering Steppe.lvlx"]={21},
-   ["!Final Cutscene.lvlx"]={22},
+   ["!A-1 Buccaneer Bay.lvlx"]={22},
    ["1-1 Piranha Plant Pinch!.lvlx"]={23},
    ["!C-1 Fragile Block Foothills.lvlx"]={24},
-   ["5-1 Toxic Tumble.lvlx"]={25}
+   ["!Final Cutscene.lvlx"]={25}
 },
 --[4]--
 {
@@ -72,13 +72,13 @@
 },
 --[6]--
 {
-
-},
---[7]--
-{
    true,
    true,
    true
+},
+--[7]--
+{
+
 },
 --[8]--
 {
@@ -101,9 +101,9 @@
 },
 --[11]--
 {
-   ["beaten"]=true,
+   ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=0,
+   ["timer"]=1987,
    ["bestTime"]=-1
 },
 --[12]--
@@ -150,10 +150,10 @@
 },
 --[18]--
 {
-   ["beaten"]=false,
-   ["countUp"]=true,
-   ["timer"]=1987,
-   ["bestTime"]=-1
+   ["beaten"]=true,
+   ["bestTime"]=-1,
+   ["timer"]=1079,
+   ["countUp"]=true
 },
 --[19]--
 {
@@ -173,14 +173,14 @@
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=0,
+   ["timer"]=22855,
    ["bestTime"]=-1
 },
 --[22]--
 {
-   ["beaten"]=false,
+   ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=102,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[23]--
@@ -199,10 +199,10 @@
 },
 --[25]--
 {
-   ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=1079,
-   ["countUp"]=true
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=102,
+   ["bestTime"]=-1
 },
 --[26]--
 {
@@ -224,32 +224,32 @@
 },
 --[28]--
 {
-   ["score"]=29670
+   ["score"]=64620
 },
 --[29]--
 {
    ["1-2 Cliffside Capers.lvl"]={43},
    ["!The Realm of Recollection.lvlx"]={44},
-   ["!A-1 Buccaneer Bay.lvlx"]={45},
+   ["3-T Tangled Temple.lvlx"]={45},
    ["!Title Screen.lvlx"]={46},
    ["1-2 Cliffside Capers.lvlx"]={47},
    ["3-1 Paddlewheel Peril.lvlx"]={48},
    ["!Credits.lvlx"]={49},
    ["1-2 Spring Showers.lvlx"]={50},
    ["1-3 Tangled Tower.lvlx"]={51},
-   ["3-T Tangled Temple.lvlx"]={52},
+   ["5-1 Toxic Tumble.lvlx"]={52},
    ["!D-1 Pine Propultion.lvlx"]={53},
    ["!Memory Amalgamation.lvlx"]={54},
    ["4-1 Smoldering Steppe.lvlx"]={55},
-   ["!Final Cutscene.lvlx"]={56},
+   ["!A-1 Buccaneer Bay.lvlx"]={56},
    ["1-1 Piranha Plant Pinch!.lvlx"]={57},
    ["!C-1 Fragile Block Foothills.lvlx"]={58},
-   ["5-1 Toxic Tumble.lvlx"]={59}
+   ["!Final Cutscene.lvlx"]={59}
 },
 --[30]--
 {
-   ["invincibility"]=true,
-   ["infinite jumps"]=true
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
 },
 --[31]--
 {
@@ -359,7 +359,9 @@
 --[45]--
 {
    0,
-   ["maxID"]=1,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={62}
 },
 --[46]--
@@ -403,9 +405,7 @@
 --[52]--
 {
    0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=1,
    ["alive"]={69}
 },
 --[53]--
@@ -428,7 +428,8 @@
 },
 --[56]--
 {
-   ["maxID"]=0,
+   0,
+   ["maxID"]=1,
    ["alive"]={73}
 },
 --[57]--
@@ -446,8 +447,7 @@
 },
 --[59]--
 {
-   0,
-   ["maxID"]=1,
+   ["maxID"]=0,
    ["alive"]={76}
 },
 --[60]--
@@ -460,6 +460,8 @@
 },
 --[62]--
 {
+   true,
+   true,
    true
 },
 --[63]--
@@ -492,8 +494,6 @@
 },
 --[69]--
 {
-   true,
-   true,
    true
 },
 --[70]--
@@ -512,7 +512,7 @@
 },
 --[73]--
 {
-
+   true
 },
 --[74]--
 {
@@ -526,6 +526,6 @@
 },
 --[76]--
 {
-   true
+
 }
 }
