@@ -1,20 +1,20 @@
 {
 --[1]--
 {
-   ["totalChallengesCompleted"]=0,
-   ["pauseplus"]={2},
+   ["__launcher"]={2},
+   ["pauseplus"]={3},
    ["starcoins"]=0,
-   ["levelStats"]={3},
+   ["levelStats"]={4},
    ["audibletteUnlocked"]=false,
-   ["__costumes"]={4},
+   ["__costumes"]={5},
    ["challenge1Completed"]=false,
    ["keyhole1Found"]=false,
-   ["challenge2Completed"]=false,
-   ["__progress"]=4.5,
    ["challenge3Completed"]=false,
-   ["_basegame"]={5},
+   ["__progress"]=4.5,
+   ["challenge2Completed"]=false,
+   ["_basegame"]={6},
    ["purpleStarsFound"]=52,
-   ["__launcher"]={6},
+   ["conceptuaryUnlocked"]=true,
    ["challenge4Completed"]=false,
    ["keyhole5Found"]=false,
    ["totalMemoriesRecovered"]=1,
@@ -32,13 +32,17 @@
    ["challenge5Completed"]=false,
    ["allMemoriesRecovered"]=true,
    ["fullyComplete"]=false,
-   ["conceptuaryUnlocked"]=true
+   ["totalChallengesCompleted"]=0
 },
 --[2]--
 {
-   ["selectionData"]={8}
+
 },
 --[3]--
+{
+   ["selectionData"]={8}
+},
+--[4]--
 {
    ["!Credits.lvlx"]={9},
    ["1-2 Cliffside Capers.lvl"]={10},
@@ -54,21 +58,17 @@
    ["1-2 Cliffside Capers.lvlx"]={20},
    ["3-1 Paddlewheel Peril.lvlx"]={21}
 },
---[4]--
+--[5]--
 {
 
 },
---[5]--
+--[6]--
 {
    ["bigSwitch"]={22},
    ["_characterdata"]={23},
    ["starcoin"]={24},
    ["hud"]={25},
    ["starcoinCounter"]=0
-},
---[6]--
-{
-
 },
 --[7]--
 {

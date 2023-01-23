@@ -135,6 +135,14 @@ local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
+    if GameData.inRepressedMemory then
+        player.section = 4
+        player.x = -119536 
+        player.y = -120154
+        playMusic(-1) -- p-switch music (just used as a "placeholder")
+        playMusic(player.section) -- actually restart the section's music
+        --GameData.inRepressedMemory = false
+    end
     -- Very janky keyhole achievement fix
     if GameData.exitedWithKeyhole then
         GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,true)
@@ -223,8 +231,8 @@ function onStart()
         pauseplus.canPause = false
     end
 
-    if not SaveData.basementFound then
-        glitchPortalCover:show(true)
+    if SaveData.basementFound then
+        glitchPortalCover:hide(true)
     end
 
     -- Check if Conceptuary/Audiblette are unlocked
@@ -244,6 +252,12 @@ end
 if SaveData.introFinished == false then
     warpTransition.levelStartTransition = warpTransition.TRANSITION_FADE
     warpTransition.transitionSpeeds[warpTransition.TRANSITION_FADE] = 200
+end
+
+function onLoadSection4()
+    if SaveData.basementFound then
+        glitchPortalCover:hide(true)
+    end
 end
 
 function onTick()
@@ -754,26 +768,13 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
-    if GameData.inRepressedMemory then
-        if not teleported then
-            player.section = 4
-            player.x = -119536 
-            player.y = -120154
-            playMusic(-1) -- p-switch music (just used as a "placeholder")
-            playMusic(player.section) -- actually restart the section's music
-            --GameData.inRepressedMemory = false
-            teleported = true
-        end
-    else
-        if not teleported then
-            player.section = 0
-            player.x = -199856
-            player.y = -200240
-            playMusic(-1) -- p-switch music (just used as a "placeholder")
-            playMusic(player.section) -- actually restart the section's music
-            teleported = true
-        end
+    if not teleported and not GameData.inRepressedMemory then
+        player.section = 0
+        player.x = -199856
+        player.y = -200240
+        teleported = true
     end
+
 
     if SaveData.fullyComplete and hundo.isHidden then
         hundo:show(true)
