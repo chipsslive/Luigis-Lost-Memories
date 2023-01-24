@@ -1,11 +1,11 @@
 | GRAPHICS |
 
 :Made Specifically for this Project:
-	Achy 		 	  - Various world map objects/sprites, some level blocks, some backgrounds, logo
+	Achy 		 	  - Various world map objects/sprites, some level blocks, some backgrounds, Game logo
 	Mr. Greenman 	  - Most of Luigi's swimming sprites, various level graphics, powerups
-	Vito		 	  - Small Luigi swimming sprites, Some RoR tiles, ending cutscene broken tiles, Luigi victory poses
+	Vito		 	  - Small Luigi swimming sprites, Some RoR tiles, ending cutscene broken tiles, Luigi victory poses, Moss, Audiblette Boombox
 	PsychLantern (Digo) - Shy Guy Industries sprite on world map, old game logo (Luigi's Adventure)
-	galaxy		  - Old 1-1 Tileset & Background, Bloombas
+	galaxy		  - Moving Meadows and Flowing Frolic Tileset & Background, Bloombas
 	FurballArts         - Promotional art
 	leitackoc           - Some world map sprites
 	Chipss              - Various original sprites, edits, and recolors
@@ -76,7 +76,9 @@ ________________________________________________________________________________
 	Red&Green            - Interlude of Voices             - Used in: Credits
 	Rewitkin             - triumph!                        - Used in: Level Complete Summary
 	(Omori)              - Water                           - Used in: Memory Amalgamation Exit
-	(Decay Part 2)       - Ambient Song				 - Used in: Secret Chamber
+	(Decay Part 2)       - Ambient Song				 - Used in: Secret Basement Chamber
+	Red&Green		   - Inside the Volcano			 - Used in: Smoldering Steppe
+	Red&Green		   - Strike!! Great Aerial Offensive - Used in: Smoldering Steppe Mini-Boss
 
 	NOTE: Parentheses indicate that the credit is to a game and not a specific artist.
 _______________________________________________________________________________________________________

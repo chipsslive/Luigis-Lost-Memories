@@ -13,6 +13,7 @@ local slm                = require("simpleLayerMovement")
 local starcoin           = require("npcs/AI/starcoin")
 local variableOverflow   = require("variableOverflow")
 local respawnRooms       = require("respawnRooms")
+local stats              = require("statsMisc")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -119,6 +120,19 @@ local showGlitchPortal = false
 local startGlitchPortalSequenceTimer = false
 local glitchPortalSequenceTimer = 0
 local greenBloomba
+local mossMessage1 = "<speakerName Moss>I have nothing left to say to you. They took everything from me. Now, you must see what I deal with."
+local mossMessage2 = "<speakerName Moss>I must admit. I underestimated you greatly. The fact that you faced your Repressed Memories and managed to recover them all is respectable.<page>You know, you are much better than them. They don't understand the work I endure.<page>But regardless, I am listening to them."
+local superLockPlayer = false
+
+function getRepressedRecoveredCount()
+    local list = {}
+    for k,v in ipairs(stats.repressedLevelList) do
+        if SaveData.levelStats[stats.repressedLevelList[k].filename] and SaveData.levelStats[stats.repressedLevelList[k].filename].beaten then
+            table.insert(list, v)
+        end
+    end
+    return list
+end
 
 -- Confetti particle emitter
 
@@ -135,14 +149,20 @@ local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
 function onStart()
+    superLockPlayer = true
     if GameData.inRepressedMemory then
         player.section = 4
-        player.x = -119536 
-        player.y = -120154
+        player.x = -119546 
+        player.y = -120124
         playMusic(-1) -- p-switch music (just used as a "placeholder")
         playMusic(player.section) -- actually restart the section's music
         --GameData.inRepressedMemory = false
     end
+
+    if #getRepressedRecoveredCount() >= 6 then
+        SaveData.allRepressedMemoriesRecovered = true
+    end
+
     -- Very janky keyhole achievement fix
     if GameData.exitedWithKeyhole then
         GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,true)
@@ -370,6 +390,16 @@ function onTick()
     if not emitConfetti and not startConfettiTimer and SaveData.allPurpleStarsFound then
 		for _,v in ipairs(extraNPCProperties.getWithTag("mauvoomba")) do
             v.msg = allPurpleStarsMsg
+        end
+    end
+
+    if SaveData.basementFound and not SaveData.allRepressedMemoriesRecovered then
+        for _,v in ipairs(extraNPCProperties.getWithTag("greenBloomba")) do
+            v.msg = mossMessage1
+        end
+    elseif SaveData.allRepressedMemoriesRecovered then
+        for _,v in ipairs(extraNPCProperties.getWithTag("greenBloomba")) do
+            v.msg = mossMessage2
         end
     end
 
@@ -717,6 +747,7 @@ function onTick()
             section4Opacity = section4Opacity + 0.07
             player.speedX = 0
             lockPlayer = true
+            SFX.play("glitchPortalFadeout.mp3")
         else
             showGlitchPortal = true
             fade = true
@@ -731,7 +762,11 @@ function onTick()
         if startGlitchPortalSequenceTimer then
             glitchPortalSequenceTimer = glitchPortalSequenceTimer + 1
 
-            if glitchPortalSequenceTimer == 220 then
+            if glitchPortalSequenceTimer == 90 then
+                SFX.play("glitchPortalRevealed.mp3")
+            end
+
+            if glitchPortalSequenceTimer == 290 then
                 littleDialogue.create{
                     text = "<speakerName Moss>I am called Moss. Remember the name when you experience all the memories you attempted to leave behind.",
                     pauses = true,
@@ -759,6 +794,7 @@ end
 
 -- pls don't mind this jank
 local teleported = false
+playerLockTimer = 0
 -- jank over
 
 -- Stuff for Audiblette speakers
@@ -768,13 +804,16 @@ local raiseScale = true
 local lowerScale = false
 
 function onDraw()
-    if not teleported and not GameData.inRepressedMemory then
-        player.section = 0
-        player.x = -199856
-        player.y = -200240
-        teleported = true
+    -- Need to use this to prevent somehow dying in this level
+    playerLockTimer = playerLockTimer + 1
+    if playerLockTimer == 3 then
+        superLockPlayer = false
     end
-
+    if superLockPlayer then
+        for k, v in pairs(player.rawKeys) do
+            player.keys[k] = false
+        end
+    end
 
     if SaveData.fullyComplete and hundo.isHidden then
         hundo:show(true)
@@ -835,7 +874,10 @@ function onDraw()
 end
 
 function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
-    littleDialogue.create{
+    pauseplus.canPause = false
+    checkCoins()
+    
+    boxObj = littleDialogue.create{
         text = text,
         speakerObj = npcObj or playerObj or player,
     }
@@ -847,7 +889,7 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
         mauvoomba.msg = "<speakerName Mauvoomba>I could do this for hours!"
     end
 
-    if player.section == 4 then
+    if player.section == 4 and not SaveData.basementFound then
         startGlitchPortalReveal = true
     end
 end

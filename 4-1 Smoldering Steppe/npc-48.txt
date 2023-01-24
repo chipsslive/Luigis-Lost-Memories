@@ -1,6 +1,0 @@
-jumphurt=0
-frames=4
-framestyle=2
-nogravity=1
-nofireball=1
-noblockcollision=1

@@ -1,0 +1,8 @@
+gfxwidth=32
+gfxheight=32
+frames=2
+framestyle=1
+jumphurt=true
+nofireball=1
+spinjumpsafe=true
+cliffturn=true

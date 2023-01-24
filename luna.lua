@@ -176,14 +176,15 @@ function onStart()
 
 	-- Progression flags
 
-	SaveData.introFinished 		  = SaveData.introFinished 		   or nil_or(SaveData.introFinished, false)
-	SaveData.conceptuaryUnlocked  = SaveData.conceptuaryUnlocked   or nil_or(SaveData.conceptuaryUnlocked, false)
-	SaveData.audibletteUnlocked   = SaveData.audibletteUnlocked    or nil_or(SaveData.audibletteUnlocked, false)
-	SaveData.allMemoriesRecovered = SaveData.allMemoriesRecovered  or nil_or(SaveData.allMemoriesRecovered, false)
-	SaveData.allPurpleStarsFound  = SaveData.allPurpleStarsFound   or nil_or(SaveData.allPurpleStarsFound, false)
-	SaveData.creditsSeen 		  = SaveData.creditsSeen 		   or nil_or(SaveData.creditsSeen, false)
-	SaveData.fullyComplete        = SaveData.fullyComplete         or nil_or(SaveData.fullyComplete, false)
-	SaveData.basementFound        = SaveData.basementFound         or nil_or(SaveData.basementFound, false)
+	SaveData.introFinished 			       = SaveData.introFinished 		   		or nil_or(SaveData.introFinished, false)
+	SaveData.conceptuaryUnlocked		   = SaveData.conceptuaryUnlocked   		or nil_or(SaveData.conceptuaryUnlocked, false)
+	SaveData.audibletteUnlocked			   = SaveData.audibletteUnlocked    		or nil_or(SaveData.audibletteUnlocked, false)
+	SaveData.allMemoriesRecovered		   = SaveData.allMemoriesRecovered  		or nil_or(SaveData.allMemoriesRecovered, false)
+	SaveData.allPurpleStarsFound  		   = SaveData.allPurpleStarsFound  		 	or nil_or(SaveData.allPurpleStarsFound, false)
+	SaveData.creditsSeen 			       = SaveData.creditsSeen 		   			or nil_or(SaveData.creditsSeen, false)
+	SaveData.fullyComplete 			       = SaveData.fullyComplete         		or nil_or(SaveData.fullyComplete, false)
+	SaveData.basementFound        		   = SaveData.basementFound         		or nil_or(SaveData.basementFound, false)
+	SaveData.allRepressedMemoriesRecovered = SaveData.allRepressedMemoriesRecovered or nil_or(SaveData.allRepressedMemoriesRecovered, false)
 
 	SaveData.totalMemoriesRecovered = #getRecoveredCount()
 

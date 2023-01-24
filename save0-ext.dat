@@ -2,276 +2,280 @@
 --[1]--
 {
    ["conceptuaryUnlocked"]=true,
-   ["pauseplus"]={2},
-   ["starcoins"]=0,
-   ["levelStats"]={3},
-   ["audibletteUnlocked"]=false,
-   ["__costumes"]={4},
+   ["levelStats"]={2},
+   ["audibletteUnlocked"]=true,
    ["challenge1Completed"]=false,
-   ["_basegame"]={5},
-   ["allMemoriesRecovered"]=true,
-   ["__progress"]=7.6,
-   ["challenge3Completed"]=false,
+   ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
-   ["challenge5Completed"]=false,
-   ["totalChallengesCompleted"]=0,
+   ["totalMemoriesRecovered"]=1,
+   ["unlockedTabs"]={3},
+   ["keyhole5Found"]=false,
    ["keyhole4Found"]=false,
-   ["spentStars"]=0,
-   ["totalMemoriesRecovered"]=2,
-   ["coins"]=858,
-   ["introFinished"]=true,
-   ["totalKeyholesFound"]=1,
-   ["unlockedTabs"]={6},
-   ["keyhole2Found"]=false,
-   ["keyhole3Found"]=false,
-   ["basementFound"]=true,
-   ["creditsSeen"]=false,
-   ["keyhole5Found"]=true,
-   ["challenge4Completed"]=false,
    ["allPurpleStarsFound"]=true,
    ["purpleStarsFound"]=52,
-   ["challenge2Completed"]=false,
+   ["pauseplus"]={4},
+   ["__launcher"]={5},
+   ["allMemoriesRecovered"]=true,
+   ["keyhole3Found"]=false,
+   ["__costumes"]={6},
+   ["__progress"]=7.5,
+   ["challenge3Completed"]=false,
+   ["_basegame"]={7},
+   ["allRepressedMemoriesRecovered"]=true,
+   ["coins"]=576,
+   ["totalChallengesCompleted"]=0,
+   ["keyhole2Found"]=false,
+   ["introFinished"]=true,
+   ["challenge4Completed"]=false,
+   ["creditsSeen"]=false,
+   ["spentStars"]=0,
+   ["basementFound"]=true,
+   ["starcoins"]=0,
+   ["challenge5Completed"]=false,
+   ["totalKeyholesFound"]=0,
    ["fullyComplete"]=false,
-   ["__launcher"]={7}
+   ["allRepressedMemoriesRecoverd"]=true
 },
 --[2]--
 {
-   ["selectionData"]={8}
+   ["1-2 Cliffside Capers.lvl"]={8},
+   ["!The Realm of Recollection.lvlx"]={9},
+   ["!A-1 Buccaneer Bay.lvlx"]={10},
+   ["!Title Screen.lvlx"]={11},
+   ["3-1 Pirahna Plant Backwoods.lvlx"]={12},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={13},
+   ["1-2 Cliffside Capers.lvlx"]={14},
+   ["3-1 Paddlewheel Peril.lvlx"]={15},
+   ["!Credits.lvlx"]={16},
+   ["1-2 Spring Showers.lvlx"]={17},
+   ["S-4 Cutting Edge Canopy.lvlx"]={18},
+   ["1-3 Tangled Tower.lvlx"]={19},
+   ["3-2 Poison Waters.lvlx"]={20},
+   ["1-6 Red Hot Fortress.lvlx"]={21},
+   ["4-1 Smoldering Steppe.lvlx"]={22},
+   ["3-T Tangled Temple.lvlx"]={23},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={24},
+   ["!Memory Amalgamation.lvlx"]={25},
+   ["!Final Cutscene.lvlx"]={26}
 },
 --[3]--
-{
-   ["1-2 Cliffside Capers.lvl"]={9},
-   ["!The Realm of Recollection.lvlx"]={10},
-   ["3-T Tangled Temple.lvlx"]={11},
-   ["!Title Screen.lvlx"]={12},
-   ["1-2 Cliffside Capers.lvlx"]={13},
-   ["3-1 Paddlewheel Peril.lvlx"]={14},
-   ["!Credits.lvlx"]={15},
-   ["1-2 Spring Showers.lvlx"]={16},
-   ["1-3 Tangled Tower.lvlx"]={17},
-   ["5-1 Toxic Tumble.lvlx"]={18},
-   ["!D-1 Pine Propultion.lvlx"]={19},
-   ["!Memory Amalgamation.lvlx"]={20},
-   ["4-1 Smoldering Steppe.lvlx"]={21},
-   ["!A-1 Buccaneer Bay.lvlx"]={22},
-   ["1-1 Piranha Plant Pinch!.lvlx"]={23},
-   ["!C-1 Fragile Block Foothills.lvlx"]={24},
-   ["!Final Cutscene.lvlx"]={25}
-},
---[4]--
-{
-
-},
---[5]--
-{
-   ["bigSwitch"]={26},
-   ["_characterdata"]={27},
-   ["starcoinCounter"]=0,
-   ["hud"]={28},
-   ["starcoin"]={29}
-},
---[6]--
 {
    true,
    true,
    true
 },
---[7]--
+--[4]--
+{
+   ["selectionData"]={27}
+},
+--[5]--
 {
 
 },
---[8]--
+--[6]--
 {
-   ["accessibility"]={30},
-   ["settings"]={31}
+
 },
---[9]--
+--[7]--
+{
+   ["bigSwitch"]={28},
+   ["_characterdata"]={29},
+   ["starcoinCounter"]=0,
+   ["hud"]={30},
+   ["starcoin"]={31}
+},
+--[8]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
    ["timer"]=1825,
    ["bestTime"]=-1
 },
---[10]--
+--[9]--
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=0,
+   ["timer"]=55,
    ["countUp"]=true
+},
+--[10]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=-1
 },
 --[11]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=1987,
+   ["timer"]=94,
    ["bestTime"]=-1
 },
 --[12]--
 {
-   ["beaten"]=false,
+   ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=178,
+   ["timer"]=1414,
    ["bestTime"]=-1
 },
 --[13]--
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=269,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[14]--
 {
-   ["beaten"]=false,
+   ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=1325,
+   ["timer"]=7436,
    ["bestTime"]=-1
 },
 --[15]--
+{
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=278,
+   ["bestTime"]=-1
+},
+--[16]--
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
    ["timer"]=8000,
    ["countUp"]=true
 },
---[16]--
+--[17]--
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
    ["timer"]=93,
    ["countUp"]=true
 },
---[17]--
-{
-   ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=5241,
-   ["countUp"]=true
-},
 --[18]--
-{
-   ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=1079,
-   ["countUp"]=true
-},
---[19]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=457,
+   ["timer"]=779,
    ["bestTime"]=-1
+},
+--[19]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=-1,
+   ["timer"]=41,
+   ["countUp"]=true
 },
 --[20]--
 {
-   ["beaten"]=false,
+   ["beaten"]=true,
    ["bestTime"]=-1,
-   ["timer"]=4659,
+   ["timer"]=19,
    ["countUp"]=true
 },
 --[21]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=22855,
+   ["timer"]=2333,
    ["bestTime"]=-1
 },
 --[22]--
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=0,
+   ["timer"]=15071,
    ["bestTime"]=-1
 },
 --[23]--
 {
-   ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=0,
-   ["countUp"]=true
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=1987,
+   ["bestTime"]=-1
 },
 --[24]--
 {
-   ["beaten"]=false,
-   ["bestTime"]=-1,
-   ["timer"]=2186,
+   ["beaten"]=true,
+   ["bestTime"]=6176,
+   ["timer"]=0,
    ["countUp"]=true
 },
 --[25]--
+{
+   ["beaten"]=false,
+   ["bestTime"]=-1,
+   ["timer"]=5205,
+   ["countUp"]=true
+},
+--[26]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
    ["timer"]=102,
    ["bestTime"]=-1
 },
---[26]--
-{
-
-},
 --[27]--
 {
-   ["8"]={32},
-   ["10"]={33},
-   ["9"]={34},
-   ["6"]={35},
-   ["16"]={36},
-   ["11"]={37},
-   ["12"]={38},
-   ["7"]={39},
-   ["15"]={40},
-   ["13"]={41},
-   ["14"]={42}
+   ["accessibility"]={32},
+   ["settings"]={33}
 },
 --[28]--
 {
-   ["score"]=64620
+
 },
 --[29]--
 {
-   ["1-2 Cliffside Capers.lvl"]={43},
-   ["!The Realm of Recollection.lvlx"]={44},
-   ["3-T Tangled Temple.lvlx"]={45},
-   ["!Title Screen.lvlx"]={46},
-   ["1-2 Cliffside Capers.lvlx"]={47},
-   ["3-1 Paddlewheel Peril.lvlx"]={48},
-   ["!Credits.lvlx"]={49},
-   ["1-2 Spring Showers.lvlx"]={50},
-   ["1-3 Tangled Tower.lvlx"]={51},
-   ["5-1 Toxic Tumble.lvlx"]={52},
-   ["!D-1 Pine Propultion.lvlx"]={53},
-   ["!Memory Amalgamation.lvlx"]={54},
-   ["4-1 Smoldering Steppe.lvlx"]={55},
-   ["!A-1 Buccaneer Bay.lvlx"]={56},
-   ["1-1 Piranha Plant Pinch!.lvlx"]={57},
-   ["!C-1 Fragile Block Foothills.lvlx"]={58},
-   ["!Final Cutscene.lvlx"]={59}
+   ["8"]={34},
+   ["10"]={35},
+   ["9"]={36},
+   ["6"]={37},
+   ["16"]={38},
+   ["11"]={39},
+   ["12"]={40},
+   ["7"]={41},
+   ["15"]={42},
+   ["13"]={43},
+   ["14"]={44}
 },
 --[30]--
 {
-   ["invincibility"]=false,
-   ["infinite jumps"]=false
+   ["score"]=191500
 },
 --[31]--
+{
+   ["1-2 Cliffside Capers.lvl"]={45},
+   ["!The Realm of Recollection.lvlx"]={46},
+   ["!A-1 Buccaneer Bay.lvlx"]={47},
+   ["!Title Screen.lvlx"]={48},
+   ["3-1 Pirahna Plant Backwoods.lvlx"]={49},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={50},
+   ["1-2 Cliffside Capers.lvlx"]={51},
+   ["3-1 Paddlewheel Peril.lvlx"]={52},
+   ["!Credits.lvlx"]={53},
+   ["1-2 Spring Showers.lvlx"]={54},
+   ["S-4 Cutting Edge Canopy.lvlx"]={55},
+   ["1-3 Tangled Tower.lvlx"]={56},
+   ["3-2 Poison Waters.lvlx"]={57},
+   ["1-6 Red Hot Fortress.lvlx"]={58},
+   ["4-1 Smoldering Steppe.lvlx"]={59},
+   ["3-T Tangled Temple.lvlx"]={60},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={61},
+   ["!Memory Amalgamation.lvlx"]={62},
+   ["!Final Cutscene.lvlx"]={63}
+},
+--[32]--
+{
+   ["invincibility"]=true,
+   ["infinite jumps"]=false
+},
+--[33]--
 {
    ["show challenge status"]=false,
    ["mute music"]=false,
    ["show speedrun timer"]=false
-},
---[32]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
-},
---[33]--
-{
-   ["reservePowerup"]=0,
-   ["0x10A"]=0,
-   ["powerup"]=1,
-   ["0x16"]=1,
-   ["0x108"]=0
 },
 --[34]--
 {
@@ -347,164 +351,161 @@
 },
 --[43]--
 {
-   [0]=0,
-   ["maxID"]=0,
-   ["alive"]={60}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[44]--
 {
-   ["maxID"]=0,
-   ["alive"]={61}
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
 },
 --[45]--
-{
-   0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={62}
-},
---[46]--
-{
-   ["maxID"]=0,
-   ["alive"]={63}
-},
---[47]--
 {
    [0]=0,
    ["maxID"]=0,
    ["alive"]={64}
 },
---[48]--
+--[46]--
+{
+   ["maxID"]=0,
+   ["alive"]={65}
+},
+--[47]--
 {
    0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={65}
+   ["maxID"]=1,
+   ["alive"]={66}
+},
+--[48]--
+{
+   ["maxID"]=0,
+   ["alive"]={67}
 },
 --[49]--
 {
    ["maxID"]=0,
-   ["alive"]={66}
+   ["alive"]={68}
 },
 --[50]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
-   ["alive"]={67}
+   ["maxID"]=0,
+   ["alive"]={69}
 },
 --[51]--
 {
    [0]=0,
    ["maxID"]=0,
-   ["alive"]={68}
+   ["alive"]={70}
 },
 --[52]--
 {
    0,
-   ["maxID"]=1,
-   ["alive"]={69}
-},
---[53]--
-{
-   0,
    0,
    0,
    ["maxID"]=3,
-   ["alive"]={70}
-},
---[54]--
-{
-   ["maxID"]=0,
    ["alive"]={71}
 },
---[55]--
+--[53]--
 {
    ["maxID"]=0,
    ["alive"]={72}
 },
---[56]--
-{
-   0,
-   ["maxID"]=1,
-   ["alive"]={73}
-},
---[57]--
-{
-   ["maxID"]=0,
-   ["alive"]={74}
-},
---[58]--
+--[54]--
 {
    0,
    0,
    0,
    ["maxID"]=3,
+   ["alive"]={73}
+},
+--[55]--
+{
+   ["maxID"]=0,
+   ["alive"]={74}
+},
+--[56]--
+{
+   [0]=0,
+   ["maxID"]=0,
    ["alive"]={75}
 },
---[59]--
+--[57]--
 {
    ["maxID"]=0,
    ["alive"]={76}
 },
+--[58]--
+{
+   ["maxID"]=0,
+   ["alive"]={77}
+},
+--[59]--
+{
+   ["maxID"]=0,
+   ["alive"]={78}
+},
 --[60]--
 {
-   [0]=true
+   0,
+   0,
+   0,
+   ["maxID"]=3,
+   ["alive"]={79}
 },
 --[61]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={80}
 },
 --[62]--
 {
-   true,
-   true,
-   true
+   ["maxID"]=0,
+   ["alive"]={81}
 },
 --[63]--
 {
-
+   ["maxID"]=0,
+   ["alive"]={82}
 },
 --[64]--
 {
-
+   [0]=true
 },
 --[65]--
 {
-   true,
-   true,
-   true
+
 },
 --[66]--
 {
-
+   true
 },
 --[67]--
 {
-   true,
-   true,
-   true
+
 },
 --[68]--
 {
-   [0]=true
+
 },
 --[69]--
 {
-   true
+
 },
 --[70]--
 {
-   true,
-   true,
-   true
+
 },
 --[71]--
 {
-
+   true,
+   true,
+   true
 },
 --[72]--
 {
@@ -512,6 +513,8 @@
 },
 --[73]--
 {
+   true,
+   true,
    true
 },
 --[74]--
@@ -520,11 +523,35 @@
 },
 --[75]--
 {
+   [0]=true
+},
+--[76]--
+{
+
+},
+--[77]--
+{
+
+},
+--[78]--
+{
+
+},
+--[79]--
+{
    true,
    true,
    true
 },
---[76]--
+--[80]--
+{
+
+},
+--[81]--
+{
+
+},
+--[82]--
 {
 
 }

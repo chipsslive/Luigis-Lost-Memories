@@ -35,7 +35,7 @@ registerEvent(portalOpen, "onDraw")
 
 function portalOpen.onTick()
     for k, v in NPC.iterate(portalOpen.portalID) do
-        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal and SaveData.introFinished then
+        if filter(v) and Colliders.collide(player, v) and player.keys.up == KEYS_PRESSED and not isLerping and not atPortal and SaveData.introFinished and not Misc.isPaused() and playerLockTimer > 3 then
             isLerping = true
             targetPos.x = v.x+v.width/2
             targetPos.y = v.y+v.height/2

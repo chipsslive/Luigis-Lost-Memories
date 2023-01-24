@@ -86,7 +86,7 @@ stats.mapImg2 = Graphics.loadImageResolved("pastPortal/map2.png")
 stats.mapDescription = "While Luigi can't remember a large part of his adventure, the breathtaking sights of the island he visited were more than enough to bypass the effects of amnesia!"
 
 stats.levelList = {
-    {filename = "1-2 Spring Showers.lvlx"           , name = "Spring Showers",       type = stats.LVL_LOST, escription = "Their hats either hide helpful springs or hurtful spikes. Make sure you're paying attention, even in the rain!  "},
+    {filename = "1-2 Spring Showers.lvlx"           , name = "Spring Showers",       type = stats.LVL_LOST, description = "Their hats either hide helpful springs or hurtful spikes. Make sure you're paying attention, even in the rain!  "},
     {filename = "3-1 Paddlewheel Peril.lvlx"        , name = "Paddlewheel Peril",    type = stats.LVL_LOST, description = "You've seen this purple liquid before. If it's anything like last time, you're in for a good old case of death if you come into contact with it."},
     {filename = "!D-1 Pine Propultion.lvlx"         , name = "Pine Propultion",      type = stats.LVL_LOST, description = "Nobody can explain it, but the trees in this area possess extremely strange, likely manmade, properties. I won't spoil the surprise."},
     {filename = "3-T Tangled Temple.lvlx"           , name = "Tangled Temple",       type = stats.LVL_LOST, description = "A huge, overgrown temple infested with Thwomps. Try not to get crushed to pulp by these metamorphic maniacs!"},
@@ -106,12 +106,16 @@ stats.levelList = {
 }
 
 stats.repressedLevelList = {
-    {filename = "1-1 Flowing Frolic.lvlx"           , name = "Flowing Frolic",       type = stats.LVL_REPR, description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
-    {filename = "1-1 Moving Meadows.lvlx"           , name = "Moving Meadows",       type = stats.LVL_REPR, description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
-    {filename = "1-1 Piranha Plant Pinch!.lvlx"     , name = "Piranha Plant Pinch",  type = stats.LVL_REPR, description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
-    {filename = "1-2 Cliffside Capers.lvlx"          , name = "Cliffside Capers",     type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "1-3 Tangled Tower.lvlx"             , name = "Tangled Tower",        type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "4-1 Smoldering Steppe.lvlx"         , name = "Smoldering Steppe",    type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "1-1 Flowing Frolic.lvlx"          , name = "Flowing Frolic",          type = stats.LVL_REPR, description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
+    {filename = "1-1 Moving Meadows.lvlx"          , name = "Moving Meadows",          type = stats.LVL_REPR, description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
+    {filename = "1-1 Piranha Plant Pinch!.lvlx"    , name = "Piranha Plant Pinch",     type = stats.LVL_REPR, description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
+    {filename = "1-2 Cliffside Capers.lvlx"        , name = "Cliffside Capers",        type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "1-3 Tangled Tower.lvlx"           , name = "Tangled Tower",           type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "4-1 Smoldering Steppe.lvlx"       , name = "Smoldering Steppe",       type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "1-6 Red Hot Fortress.lvlx"        , name = "Red Hot Fortress",        type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "3-1 Pirahna Plant Backwoods.lvlx" , name = "Pirahna Plant Backwoods", type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "3-2 Poison Waters.lvlx"           , name = "Poison Waters",           type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "!S-4 Cutting Edge Canopy.lvlx"    , name = "Cutting Edge Canopy",     type = stats.LVL_REPR, description = "Nothing here yet."},
 }
 
 function stats.getByFilename(name)
