@@ -21,15 +21,15 @@
    ["__progress"]=7.5,
    ["challenge3Completed"]=false,
    ["_basegame"]={7},
-   ["allRepressedMemoriesRecovered"]=true,
-   ["coins"]=576,
+   ["allRepressedMemoriesRecovered"]=false,
+   ["coins"]=696,
    ["totalChallengesCompleted"]=0,
    ["keyhole2Found"]=false,
    ["introFinished"]=true,
    ["challenge4Completed"]=false,
    ["creditsSeen"]=false,
    ["spentStars"]=0,
-   ["basementFound"]=true,
+   ["basementFound"]=false,
    ["starcoins"]=0,
    ["challenge5Completed"]=false,
    ["totalKeyholesFound"]=0,
@@ -95,7 +95,7 @@
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=55,
+   ["timer"]=0,
    ["countUp"]=true
 },
 --[10]--
@@ -109,7 +109,7 @@
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=94,
+   ["timer"]=313,
    ["bestTime"]=-1
 },
 --[12]--
@@ -123,7 +123,7 @@
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=0,
+   ["timer"]=401,
    ["bestTime"]=-1
 },
 --[14]--
@@ -179,7 +179,7 @@
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=2333,
+   ["timer"]=11761,
    ["bestTime"]=-1
 },
 --[22]--
@@ -242,7 +242,7 @@
 },
 --[30]--
 {
-   ["score"]=191500
+   ["score"]=196840
 },
 --[31]--
 {

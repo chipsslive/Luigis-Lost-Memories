@@ -159,7 +159,7 @@ function onStart()
         --GameData.inRepressedMemory = false
     end
 
-    if #getRepressedRecoveredCount() >= 6 then
+    if #getRepressedRecoveredCount() >= 10 then
         SaveData.allRepressedMemoriesRecovered = true
     end
 
