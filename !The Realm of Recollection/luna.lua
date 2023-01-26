@@ -121,7 +121,7 @@ local startGlitchPortalSequenceTimer = false
 local glitchPortalSequenceTimer = 0
 local greenBloomba
 local mossMessage1 = "<speakerName Moss>I have nothing left to say to you. They took everything from me. Now, you must see what I deal with."
-local mossMessage2 = "<speakerName Moss>I must admit. I underestimated you greatly. The fact that you faced your Repressed Memories and managed to recover them all is respectable.<page>You know, you are much better than them. They don't understand the work I endure.<page>But regardless, I am listening to them."
+local mossMessage2 = "<speakerName Moss>I must admit. I underestimated you greatly. The fact that you faced your Repressed Memories and managed to recover them all is respectable.<page>You know, you are much better than them. They don't understand the work I endure.<page>But regardless, I am listening to them, and staying away. Just like they asked. They don't want to hear my side of the story."
 local superLockPlayer = false
 
 function getRepressedRecoveredCount()
@@ -159,7 +159,7 @@ function onStart()
         --GameData.inRepressedMemory = false
     end
 
-    if #getRepressedRecoveredCount() >= 10 then
+    if #getRepressedRecoveredCount() >= 9 then
         SaveData.allRepressedMemoriesRecovered = true
     end
 

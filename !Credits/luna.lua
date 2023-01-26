@@ -96,11 +96,15 @@ local text = {
     0,"Moose",
     0,"HaruMKT",
     0,"Shady Cicada",
+    0,"Izuna",
+    0,"Dippy",
     0,"Newer Team",
     0,"Nintendo",
+    0,"SEGA",
     0,"Westfall Studios",
     0,"Square Enix",
     0,"OMOCAT",
+    0,"VLDC",
     0,"Shining Gate Software",
     0,"",
     1,"SCRIPTING",
@@ -220,7 +224,7 @@ end
 
 function onTick()
     timer = timer + 1
-    scrollY = scrollY - 0.55
+    scrollY = scrollY - 0.57
     
     -- Triggers roughly 4 beats after the last note of the song
 

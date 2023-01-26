@@ -22,7 +22,7 @@
    ["challenge3Completed"]=false,
    ["_basegame"]={7},
    ["allRepressedMemoriesRecovered"]=true,
-   ["coins"]=1624,
+   ["coins"]=1253,
    ["totalChallengesCompleted"]=0,
    ["keyhole2Found"]=false,
    ["introFinished"]=true,
@@ -43,7 +43,7 @@
    ["3-T Tangled Temple.lvlx"]={10},
    ["!Title Screen.lvlx"]={11},
    ["3-1 Pirahna Plant Backwoods.lvlx"]={12},
-   ["1-1 Flowing Frolic.lvlx"]={13},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={13},
    ["1-2 Cliffside Capers.lvlx"]={14},
    ["3-1 Paddlewheel Peril.lvlx"]={15},
    ["!Credits.lvlx"]={16},
@@ -57,7 +57,7 @@
    ["4-1 Smoldering Steppe.lvlx"]={24},
    ["!A-1 Buccaneer Bay.lvlx"]={25},
    ["1-1 Piranha Plant Pinch!.lvlx"]={26},
-   ["!S-4 Cutting Edge Canopy.lvlx"]={27},
+   ["1-1 Flowing Frolic.lvlx"]={27},
    ["1-3 Tangled Tower.lvlx"]={28}
 },
 --[3]--
@@ -97,7 +97,7 @@
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=0,
+   ["timer"]=212,
    ["countUp"]=true
 },
 --[10]--
@@ -118,14 +118,14 @@
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=2,
+   ["timer"]=8583,
    ["bestTime"]=-1
 },
 --[13]--
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=0,
+   ["timer"]=949,
    ["bestTime"]=-1
 },
 --[14]--
@@ -230,7 +230,7 @@
 {
    ["beaten"]=true,
    ["bestTime"]=-1,
-   ["timer"]=1551,
+   ["timer"]=38954,
    ["countUp"]=true
 },
 --[29]--
@@ -258,7 +258,7 @@
 },
 --[32]--
 {
-   ["score"]=255120
+   ["score"]=294580
 },
 --[33]--
 {
@@ -267,7 +267,7 @@
    ["3-T Tangled Temple.lvlx"]={49},
    ["!Title Screen.lvlx"]={50},
    ["3-1 Pirahna Plant Backwoods.lvlx"]={51},
-   ["1-1 Flowing Frolic.lvlx"]={52},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={52},
    ["1-2 Cliffside Capers.lvlx"]={53},
    ["3-1 Paddlewheel Peril.lvlx"]={54},
    ["!Credits.lvlx"]={55},
@@ -281,7 +281,7 @@
    ["4-1 Smoldering Steppe.lvlx"]={63},
    ["!A-1 Buccaneer Bay.lvlx"]={64},
    ["1-1 Piranha Plant Pinch!.lvlx"]={65},
-   ["!S-4 Cutting Edge Canopy.lvlx"]={66},
+   ["1-1 Flowing Frolic.lvlx"]={66},
    ["1-3 Tangled Tower.lvlx"]={67}
 },
 --[34]--
