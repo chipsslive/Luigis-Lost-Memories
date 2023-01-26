@@ -79,6 +79,9 @@ ________________________________________________________________________________
 	(Decay Part 2)       - Ambient Song				 - Used in: Secret Basement Chamber
 	Red&Green		   - Inside the Volcano			 - Used in: Smoldering Steppe
 	Red&Green		   - Strike!! Great Aerial Offensive - Used in: Smoldering Steppe Mini-Boss
+	(Sonic 06)		   - Tropical Jungle (The Ruins)	 - Used in: Juicy Jaunt
+	Izuna			   - Map - Grass				 - Used in: Cliffside Capers
+	(VLDC)       	   - All Map Music			 - Used in: Map of Memories
 
 	NOTE: Parentheses indicate that the credit is to a game and not a specific artist.
 _______________________________________________________________________________________________________

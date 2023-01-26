@@ -109,13 +109,13 @@ stats.repressedLevelList = {
     {filename = "1-1 Flowing Frolic.lvlx"          , name = "Flowing Frolic",          type = stats.LVL_REPR, description = "Water, it doesn't get much simpler than that. Though, the pressure of the water coming from THESE pipes is so well maintained that you can stand on top of it!"},
     {filename = "1-1 Moving Meadows.lvlx"          , name = "Moving Meadows",          type = stats.LVL_REPR, description = "Brought on by extreme tectonic plate activity, the land in this area goes wherever it pleases, which seems to be along predefined paths in a sine wave pattern."},
     {filename = "1-1 Piranha Plant Pinch!.lvlx"    , name = "Piranha Plant Pinch",     type = stats.LVL_REPR, description = "Some say that this level originated from one of Luigi's more generic adventures. I think they may be correct..."},
-    {filename = "1-2 Cliffside Capers.lvlx"        , name = "Cliffside Capers",        type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "1-3 Tangled Tower.lvlx"           , name = "Tangled Tower",           type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "4-1 Smoldering Steppe.lvlx"       , name = "Smoldering Steppe",       type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "1-6 Red Hot Fortress.lvlx"        , name = "Red Hot Fortress",        type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "3-1 Pirahna Plant Backwoods.lvlx" , name = "Pirahna Plant Backwoods", type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "3-2 Poison Waters.lvlx"           , name = "Poison Waters",           type = stats.LVL_REPR, description = "Nothing here yet."},
-    {filename = "!S-4 Cutting Edge Canopy.lvlx"    , name = "Cutting Edge Canopy",     type = stats.LVL_REPR, description = "Nothing here yet."},
+    {filename = "1-2 Cliffside Capers.lvlx"        , name = "Cliffside Capers",        type = stats.LVL_REPR, description = "Due to dry conditions, the Galoombas have caught on fire! They now roam the cliffs at high speeds, silently writhing in agony."},
+    {filename = "1-3 Tangled Tower.lvlx"           , name = "Tangled Tower",           type = stats.LVL_REPR, description = "Known as the ugly and distant cousin of Tangled Temple, this place throws a variety of challenges at you, and they aren't always fair! Also, an unremarkable boss lurks deep within its chambers."},
+    {filename = "4-1 Smoldering Steppe.lvlx"       , name = "Smoldering Steppe",       type = stats.LVL_REPR, description = "A land ravaged by war. All that is left the typical things you would expect in a volcano world. How convenient! Wait, who taught the Sledge Bro to throw bombs?"},
+    {filename = "1-6 Red Hot Fortress.lvlx"        , name = "Secret Stronghold",       type = stats.LVL_REPR, description = "A very old memory from Luigi's trip to Dinosaur Land. This fortress was hidden on the backside of the northern edge of the island. Mario never found it!"},
+    {filename = "3-1 Pirahna Plant Backwoods.lvlx" , name = "Thorny Thicket",          type = stats.LVL_REPR, description = "A very old memory from Luigi's trip to Dinosaur Land. This area was hidden extremely deep within the Forest of Illusion. Just as the name implies, the ground is covered in spiky thorns!"},
+    {filename = "3-2 Poison Waters.lvlx"           , name = "Juicy Jaunt",             type = stats.LVL_REPR, description = "A forest flooded with a vibrant purple juice! Don't drink it, though, it's actually violently radioactive and will slowly eat you from the inside out. Am I allowed to be that descriptive?"},
+    {filename = "!S-4 Cutting Edge Canopy.lvlx"    , name = "Cutting Edge Canopy",     type = stats.LVL_REPR, description = "Located near the top of some extremely tall and large trees, this area has fallen victim to what some may call 'partial deforestation'. I stepped in before things got out of hand."},
 }
 
 function stats.getByFilename(name)

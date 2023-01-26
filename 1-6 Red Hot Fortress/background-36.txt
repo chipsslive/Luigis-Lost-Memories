@@ -1,0 +1,6 @@
+lightbrightness=1
+lightcolor=orange
+lightradius=64
+lightoffsetx=16
+lightflicker=true
+priority=-24

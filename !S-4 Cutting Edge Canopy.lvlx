@@ -2,7 +2,7 @@ HEAD
 CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200064;R:-197888;T:-201120;B:-200000;MZ:24;MF:"Stickerbush Symphony.mp3";BG:19;
+SC:0;L:-200064;R:-197888;T:-201120;B:-200000;MZ:24;MF:"Stickerbush Symphony.mp3";BG:19;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#d6d6d6ff\"\,\n        \"enableDarkness\"\: true\n    }\n}\n";
 SECTION_END
 STARTPOINT
 ID:1;X:-199852;Y:-200214;D:1;

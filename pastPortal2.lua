@@ -318,10 +318,10 @@ function pastPortal2.onDraw()
             local desTxtBG = textplus.layout(v.description, 220, {font = stats.smallFont, xscale =2, yscale = 2, color = textOpacity2})
             textplus.render{x = mov.details.position + 18, y = 294, layout = desTxtBG, priority = priorities.stuff}
 
-            textplus.print{font = stats.font, x = mov.details.position + 16, y = 472, text = "Recovered?", priority = priorities.stuff, color = textOpacity}
-            Graphics.drawImageWP(img.boxBig, mov.details.position + 200, 466, menuOpacity, priorities.stuff)
+            textplus.print{font = stats.font, x = mov.details.position + 16, y = 482, text = "Recovered?", priority = priorities.stuff, color = textOpacity}
+            Graphics.drawImageWP(img.boxBig, mov.details.position + 200, 476, menuOpacity, priorities.stuff)
             if SaveData.levelStats[v.filename] and SaveData.levelStats[v.filename].beaten then
-                Graphics.drawImageWP(img.checkBig, mov.details.position + 200, 466, menuOpacity, priorities.stuffHigh)
+                Graphics.drawImageWP(img.checkBig, mov.details.position + 200, 476, menuOpacity, priorities.stuffHigh)
             end
 
             textplus.print{font = stats.font, x = mov.details.position + 124, y = 518, pivot = vector(0.5, 0), text = "Best Time", priority = priorities.stuff, color = textOpacity}
