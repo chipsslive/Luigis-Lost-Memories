@@ -9382,7 +9382,7 @@ LR:" boss exit";
 LR:"shy guy launcher";HD:1;
 LR:"shell pipe";
 LR:"phase 1 fireballs";HD:1;
-LR:"boss move platforms";
+LR:"boss move platforms";HD:1;
 LR:"second pipe";
 LR:"shy guy launcher 2";HD:1;
 LR:"big cheep cheep launcher";HD:1;
