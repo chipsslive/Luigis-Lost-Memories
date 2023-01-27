@@ -46,7 +46,7 @@ ________________________________________________________________________________
 	galaxy       - Unfinished Trailer Theme - Unused
 	JerryCoxalot - Haunted Desert Theme     - Unused
 	leitakcoc	 - Desert Theme             - Unused
-	Punji        - Overworld Theme          - Used in: Moving Meadows/Flowing Frolic
+	Punji        - Overworld Theme          - Used in: Flowing Frolic
 
 :Taken from Elsewhere:
 	Red&Green            - Forest Observatory              - Used in: Title Screen
@@ -114,7 +114,7 @@ ________________________________________________________________________________
 
 | LEVEL DESIGN |
 
-Chipss - 23 Levels Designed
+Chipss - 31 Levels Designed
 Achy   -  1 Level  Designed
 _______________________________________________________________________________________________________
 
