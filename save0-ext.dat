@@ -8,31 +8,31 @@
    ["challenge2Completed"]=false,
    ["keyhole1Found"]=false,
    ["totalMemoriesRecovered"]=1,
-   ["basementFound"]=true,
+   ["unlockedTabs"]={3},
    ["keyhole5Found"]=false,
-   ["challenge4Completed"]=false,
+   ["keyhole4Found"]=false,
    ["allPurpleStarsFound"]=true,
    ["purpleStarsFound"]=52,
-   ["pauseplus"]={3},
-   ["__launcher"]={4},
+   ["pauseplus"]={4},
+   ["__launcher"]={5},
    ["allMemoriesRecovered"]=true,
    ["keyhole3Found"]=false,
-   ["__costumes"]={5},
+   ["__costumes"]={6},
    ["__progress"]=7.5,
    ["challenge3Completed"]=false,
-   ["_basegame"]={6},
-   ["introFinished"]=true,
-   ["totalKeyholesFound"]=0,
-   ["starcoins"]=0,
-   ["keyhole2Found"]=false,
+   ["_basegame"]={7},
    ["allRepressedMemoriesRecovered"]=true,
-   ["keyhole4Found"]=false,
+   ["coins"]=1226,
+   ["totalChallengesCompleted"]=0,
+   ["keyhole2Found"]=false,
+   ["introFinished"]=true,
+   ["challenge4Completed"]=false,
    ["creditsSeen"]=false,
    ["spentStars"]=0,
-   ["unlockedTabs"]={7},
-   ["totalChallengesCompleted"]=0,
+   ["basementFound"]=true,
+   ["starcoins"]=0,
    ["challenge5Completed"]=false,
-   ["coins"]=1226,
+   ["totalKeyholesFound"]=0,
    ["fullyComplete"]=false,
    ["allRepressedMemoriesRecoverd"]=true
 },
@@ -43,30 +43,32 @@
    ["3-T Tangled Temple.lvlx"]={10},
    ["!Title Screen.lvlx"]={11},
    ["3-1 Pirahna Plant Backwoods.lvlx"]={12},
-   ["!S-4 Cutting Edge Canopy.lvlx"]={13},
+   ["1-1 Flowing Frolic.lvlx"]={13},
    ["1-2 Cliffside Capers.lvlx"]={14},
-   ["!Memory Amalgamation.lvlx"]={15},
+   ["3-1 Paddlewheel Peril.lvlx"]={15},
    ["!Credits.lvlx"]={16},
    ["1-2 Spring Showers.lvlx"]={17},
    ["S-4 Cutting Edge Canopy.lvlx"]={18},
-   ["1-3 Tangled Tower.lvlx"]={19},
-   ["1-6 Red Hot Fortress.lvlx"]={20},
-   ["1-1 Flowing Frolic.lvlx"]={21},
+   ["1-1 Moving Meadows.lvlx"]={19},
+   ["!Final Cutscene.lvlx"]={20},
+   ["1-6 Red Hot Fortress.lvlx"]={21},
    ["3-2 Poison Waters.lvlx"]={22},
-   ["3-1 Paddlewheel Peril.lvlx"]={23},
+   ["!Memory Amalgamation.lvlx"]={23},
    ["4-1 Smoldering Steppe.lvlx"]={24},
    ["!A-1 Buccaneer Bay.lvlx"]={25},
    ["1-1 Piranha Plant Pinch!.lvlx"]={26},
-   ["1-1 Moving Meadows.lvlx"]={27},
-   ["!Final Cutscene.lvlx"]={28}
+   ["!S-4 Cutting Edge Canopy.lvlx"]={27},
+   ["1-3 Tangled Tower.lvlx"]={28}
 },
 --[3]--
 {
-   ["selectionData"]={29}
+   true,
+   true,
+   true
 },
 --[4]--
 {
-
+   ["selectionData"]={29}
 },
 --[5]--
 {
@@ -74,163 +76,161 @@
 },
 --[6]--
 {
-   ["bigSwitch"]={30},
-   ["_characterdata"]={31},
-   ["starcoin"]={32},
-   ["hud"]={33},
-   ["starcoinCounter"]=0
+
 },
 --[7]--
 {
-   true,
-   true,
-   true
+   ["bigSwitch"]={30},
+   ["_characterdata"]={31},
+   ["starcoinCounter"]=0,
+   ["hud"]={32},
+   ["starcoin"]={33}
 },
 --[8]--
 {
    ["beaten"]=false,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=1825,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[9]--
 {
    ["beaten"]=false,
-   ["countUp"]=true,
+   ["bestTime"]=-1,
    ["timer"]=0,
-   ["bestTime"]=-1
+   ["countUp"]=true
 },
 --[10]--
 {
    ["beaten"]=false,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=1987,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[11]--
 {
    ["beaten"]=false,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=163,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[12]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=8583,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[13]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=949,
-   ["countUp"]=true
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=-1
 },
 --[14]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=7436,
-   ["countUp"]=true
+   ["countUp"]=true,
+   ["timer"]=447,
+   ["bestTime"]=-1
 },
 --[15]--
 {
    ["beaten"]=false,
    ["countUp"]=true,
-   ["timer"]=5205,
+   ["timer"]=278,
    ["bestTime"]=-1
 },
 --[16]--
 {
    ["beaten"]=false,
-   ["countUp"]=true,
+   ["bestTime"]=-1,
    ["timer"]=8000,
-   ["bestTime"]=-1
+   ["countUp"]=true
 },
 --[17]--
 {
    ["beaten"]=false,
-   ["countUp"]=true,
+   ["bestTime"]=-1,
    ["timer"]=93,
-   ["bestTime"]=-1
+   ["countUp"]=true
 },
 --[18]--
 {
    ["beaten"]=false,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=779,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[19]--
 {
    ["beaten"]=true,
    ["countUp"]=true,
-   ["timer"]=47510,
+   ["timer"]=0,
    ["bestTime"]=-1
 },
 --[20]--
 {
-   ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=74,
-   ["countUp"]=true
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=102,
+   ["bestTime"]=-1
 },
 --[21]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=0,
-   ["countUp"]=true
+   ["countUp"]=true,
+   ["timer"]=148,
+   ["bestTime"]=-1
 },
 --[22]--
 {
    ["beaten"]=true,
-   ["countUp"]=true,
+   ["bestTime"]=-1,
    ["timer"]=642,
-   ["bestTime"]=-1
+   ["countUp"]=true
 },
 --[23]--
 {
    ["beaten"]=false,
    ["bestTime"]=-1,
-   ["timer"]=278,
+   ["timer"]=5205,
    ["countUp"]=true
 },
 --[24]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=358,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[25]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
+   ["countUp"]=true,
    ["timer"]=0,
-   ["countUp"]=true
+   ["bestTime"]=-1
 },
 --[26]--
 {
    ["beaten"]=true,
-   ["countUp"]=true,
+   ["bestTime"]=6176,
    ["timer"]=0,
-   ["bestTime"]=6176
+   ["countUp"]=true
 },
 --[27]--
 {
    ["beaten"]=true,
-   ["bestTime"]=-1,
-   ["timer"]=0,
-   ["countUp"]=true
+   ["countUp"]=true,
+   ["timer"]=949,
+   ["bestTime"]=-1
 },
 --[28]--
 {
-   ["beaten"]=false,
+   ["beaten"]=true,
    ["bestTime"]=-1,
-   ["timer"]=102,
+   ["timer"]=47510,
    ["countUp"]=true
 },
 --[29]--
@@ -258,31 +258,31 @@
 },
 --[32]--
 {
+   ["score"]=303010
+},
+--[33]--
+{
    ["1-2 Cliffside Capers.lvl"]={47},
    ["!The Realm of Recollection.lvlx"]={48},
    ["3-T Tangled Temple.lvlx"]={49},
    ["!Title Screen.lvlx"]={50},
    ["3-1 Pirahna Plant Backwoods.lvlx"]={51},
-   ["!S-4 Cutting Edge Canopy.lvlx"]={52},
+   ["1-1 Flowing Frolic.lvlx"]={52},
    ["1-2 Cliffside Capers.lvlx"]={53},
-   ["!Memory Amalgamation.lvlx"]={54},
+   ["3-1 Paddlewheel Peril.lvlx"]={54},
    ["!Credits.lvlx"]={55},
    ["1-2 Spring Showers.lvlx"]={56},
    ["S-4 Cutting Edge Canopy.lvlx"]={57},
-   ["1-3 Tangled Tower.lvlx"]={58},
-   ["1-6 Red Hot Fortress.lvlx"]={59},
-   ["1-1 Flowing Frolic.lvlx"]={60},
+   ["1-1 Moving Meadows.lvlx"]={58},
+   ["!Final Cutscene.lvlx"]={59},
+   ["1-6 Red Hot Fortress.lvlx"]={60},
    ["3-2 Poison Waters.lvlx"]={61},
-   ["3-1 Paddlewheel Peril.lvlx"]={62},
+   ["!Memory Amalgamation.lvlx"]={62},
    ["4-1 Smoldering Steppe.lvlx"]={63},
    ["!A-1 Buccaneer Bay.lvlx"]={64},
    ["1-1 Piranha Plant Pinch!.lvlx"]={65},
-   ["1-1 Moving Meadows.lvlx"]={66},
-   ["!Final Cutscene.lvlx"]={67}
-},
---[33]--
-{
-   ["score"]=303010
+   ["!S-4 Cutting Edge Canopy.lvlx"]={66},
+   ["1-3 Tangled Tower.lvlx"]={67}
 },
 --[34]--
 {
@@ -425,7 +425,10 @@
 },
 --[54]--
 {
-   ["maxID"]=0,
+   0,
+   0,
+   0,
+   ["maxID"]=3,
    ["alive"]={75}
 },
 --[55]--
@@ -448,7 +451,6 @@
 },
 --[58]--
 {
-   [0]=0,
    ["maxID"]=0,
    ["alive"]={79}
 },
@@ -469,10 +471,7 @@
 },
 --[62]--
 {
-   0,
-   0,
-   0,
-   ["maxID"]=3,
+   ["maxID"]=0,
    ["alive"]={83}
 },
 --[63]--
@@ -498,6 +497,7 @@
 },
 --[67]--
 {
+   [0]=0,
    ["maxID"]=0,
    ["alive"]={88}
 },
@@ -533,7 +533,9 @@
 },
 --[75]--
 {
-
+   true,
+   true,
+   true
 },
 --[76]--
 {
@@ -567,9 +569,7 @@
 },
 --[83]--
 {
-   true,
-   true,
-   true
+
 },
 --[84]--
 {
