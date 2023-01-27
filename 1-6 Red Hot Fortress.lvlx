@@ -3,18 +3,18 @@ CPID:"SMBX2";
 HEAD_END
 SECTION
 SC:0;L:-200000;R:-195584;T:-200600;B:-200000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:1;L:-180000;R:-178016;T:-180600;B:-180000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:2;L:-160000;R:-157184;T:-161728;B:-160000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:3;L:-140000;R:-138112;T:-140600;B:-139744;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:4;L:-120000;R:-119200;T:-122240;B:-120000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:51;MF:"Rocket Barrel.mp3";BG:43;
-SC:6;L:-80000;R:-79200;T:-80600;B:-80000;MZ:41;MF:"Kirby 64 Grasslands.mp3";BG:11;
+SC:1;L:-180000;R:-178016;T:-180600;B:-180000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:2;L:-160000;R:-157184;T:-161728;B:-160000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:3;L:-140000;R:-138112;T:-140600;B:-139744;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:4;L:-120000;R:-119200;T:-122240;B:-120000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:51;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:6;L:-80000;R:-79200;T:-80600;B:-80000;MZ:41;MF:"";BG:11;
 SC:7;L:-60000;R:-59200;T:-60600;B:-60000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:11;
 SC:8;L:-40000;R:-39200;T:-40600;B:-40000;MZ:0;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:9;L:-20000;R:-19200;T:-20600;B:-20000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
-ID:1;X:-39548;Y:-40310;D:1;
+ID:1;X:-59964;Y:-60150;D:1;
 STARTPOINT_END
 BLOCK
 ID:422;X:-200000;Y:-200608;W:32;H:32;
@@ -1340,16 +1340,6 @@ ID:471;X:-178304;Y:-180128;W:32;H:32;
 ID:422;X:-178272;Y:-180608;W:32;H:32;
 ID:422;X:-178272;Y:-180576;W:32;H:32;
 ID:419;X:-178272;Y:-180544;W:32;H:32;
-ID:461;X:-178272;Y:-180320;W:32;H:32;
-ID:461;X:-178272;Y:-180288;W:32;H:32;
-ID:461;X:-178272;Y:-180256;W:32;H:32;
-ID:461;X:-178272;Y:-180224;W:32;H:32;
-ID:461;X:-178272;Y:-180192;W:32;H:32;
-ID:461;X:-178272;Y:-180160;W:32;H:32;
-ID:461;X:-178272;Y:-180128;W:32;H:32;
-ID:461;X:-178272;Y:-180096;W:32;H:32;
-ID:461;X:-178272;Y:-180064;W:32;H:32;
-ID:461;X:-178272;Y:-180032;W:32;H:32;
 ID:419;X:-178240;Y:-180544;W:32;H:32;
 ID:425;X:-178240;Y:-180352;W:32;H:32;
 ID:423;X:-178240;Y:-180320;W:32;H:32;
@@ -5102,7 +5092,6 @@ ID:422;X:-178752;Y:-180416;W:32;H:32;
 ID:422;X:-178784;Y:-180416;W:32;H:32;
 ID:422;X:-178848;Y:-180416;W:32;H:32;
 ID:466;X:-178304;Y:-180344;W:32;H:32;
-ID:460;X:-178272;Y:-180344;W:32;H:32;
 ID:421;X:-178400;Y:-180512;W:32;H:32;
 ID:423;X:-178048;Y:-180512;W:32;H:32;
 ID:461;X:-178368;Y:-180512;W:32;H:32;
@@ -6176,6 +6165,17 @@ ID:459;X:-39664;Y:-40144;W:32;H:32;
 ID:459;X:-39504;Y:-40144;W:32;H:32;
 ID:422;X:-39728;Y:-40096;W:32;H:32;
 ID:422;X:-39696;Y:-40096;W:32;H:32;
+ID:459;X:-178272;Y:-180344;W:32;H:32;
+ID:467;X:-178272;Y:-180312;W:32;H:32;
+ID:467;X:-178272;Y:-180280;W:32;H:32;
+ID:467;X:-178272;Y:-180248;W:32;H:32;
+ID:467;X:-178272;Y:-180216;W:32;H:32;
+ID:467;X:-178272;Y:-180184;W:32;H:32;
+ID:467;X:-178272;Y:-180152;W:32;H:32;
+ID:467;X:-178272;Y:-180120;W:32;H:32;
+ID:467;X:-178272;Y:-180088;W:32;H:32;
+ID:467;X:-178272;Y:-180056;W:32;H:32;
+ID:467;X:-178272;Y:-180024;W:32;H:32;
 BLOCK_END
 BGO
 ID:66;X:-139552;Y:-140160;
@@ -9741,6 +9741,7 @@ ID:79;X:-39584;Y:-40288;
 ID:79;X:-39584;Y:-40256;
 ID:79;X:-39584;Y:-40224;
 ID:79;X:-39584;Y:-40192;
+ID:79;X:-159104;Y:-161376;
 BGO_END
 NPC
 ID:21;X:-99968;Y:-100160;D:1;

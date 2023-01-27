@@ -151,12 +151,10 @@ local myIMG = Graphics.loadImageResolved("talkImage.png")
 function onStart()
     superLockPlayer = true
     if GameData.inRepressedMemory then
-        player.section = 4
-        player.x = -119546 
-        player.y = -120124
+        player:teleport(-119542, -120100, true)
         playMusic(-1) -- p-switch music (just used as a "placeholder")
         playMusic(player.section) -- actually restart the section's music
-        --GameData.inRepressedMemory = false
+        GameData.inRepressedMemory = false
     end
 
     if #getRepressedRecoveredCount() >= 9 then

@@ -4,9 +4,12 @@ local helmets = require("helmets")
 
 respawnRooms.roomSettings.jumpFromBelowSpeed = -14
 
+local scroll = false
+
 function onEvent(eventName)
     if eventName == "go" then
         autoscroll.scrollRight(4)
+        scroll = true
     end
 
     if eventName == "stop" then

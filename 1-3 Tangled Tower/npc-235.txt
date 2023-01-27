@@ -1,6 +1,0 @@
-height=16
-width=16
-gfxheight=20
-gfxwidth=16
-gfxoffsety=2
-score=1

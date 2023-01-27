@@ -691,7 +691,7 @@ ID:10;X:-198974;Y:-200256;D:-1;LR:"Floating Ship";
 ID:10;X:-199006;Y:-200224;D:-1;LR:"Floating Ship";
 ID:1;X:-198884;Y:-200236;D:-1;LR:"Floating Ship";
 ID:20;X:-197924;Y:-200172;D:-1;
-ID:230;X:-198502;Y:-200112;D:-1;
+ID:230;X:-198485;Y:-200129;D:-1;
 ID:310;X:-199040;Y:-200544;D:-1;S1:1;LR:"Floating Ship";
 ID:465;X:-197760;Y:-200174;D:-1;MG:"<boxStyle fragmentedSign>Memory transmission abruptly stops here. Further transmission could lead to undesired outcomes. Exit the memory now?<question exitFragmentedMemory>";FD:1;
 ID:1000;X:-197760;Y:-200176;D:-1;LR:"exit";

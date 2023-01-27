@@ -1,0 +1,786 @@
+{
+--[1]--
+{
+   ["__launcher"]={2},
+   ["pauseplus"]={3},
+   ["conceptuaryUnlocked"]=true,
+   ["levelStats"]={4},
+   ["audibletteUnlocked"]=false,
+   ["__costumes"]={5},
+   ["challenge1Completed"]=false,
+   ["challenge2Completed"]=true,
+   ["keyhole1Found"]=false,
+   ["__progress"]=62.74999999999999,
+   ["challenge3Completed"]=false,
+   ["_basegame"]={6},
+   ["starcoins"]=43,
+   ["totalChallengesCompleted"]=1,
+   ["challenge4Completed"]=false,
+   ["keyhole5Found"]=false,
+   ["totalMemoriesRecovered"]=17,
+   ["totalKeyholesFound"]=0,
+   ["introFinished"]=true,
+   ["coins"]=1829,
+   ["basementFound"]=true,
+   ["keyhole2Found"]=false,
+   ["allRepressedMemoriesRecovered"]=true,
+   ["unlockedTabs"]={7},
+   ["creditsSeen"]=false,
+   ["spentStars"]=30,
+   ["keyhole4Found"]=false,
+   ["allPurpleStarsFound"]=false,
+   ["challenge5Completed"]=false,
+   ["allMemoriesRecovered"]=true,
+   ["fullyComplete"]=false,
+   ["keyhole3Found"]=false
+},
+--[2]--
+{
+
+},
+--[3]--
+{
+   ["selectionData"]={8}
+},
+--[4]--
+{
+   ["1-1 Clear Pipe Prairie.lvlx"]={9},
+   ["4-T Polar Palace.lvlx"]={10},
+   ["!The Realm of Recollection.lvlx"]={11},
+   ["1-T High Wattage Warehouse.lvlx"]={12},
+   ["!A-2 Disastrous Deeps.lvlx"]={13},
+   ["3-T Tangled Temple.lvlx"]={14},
+   ["2-3 Bone Dry Bridge.lvlx"]={15},
+   ["!Title Screen.lvlx"]={16},
+   ["3-1 Pirahna Plant Backwoods.lvlx"]={17},
+   ["!C-1 Fragile Block Foothills.lvlx"]={18},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={19},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={20},
+   ["3-1 Paddlewheel Peril.lvlx"]={21},
+   ["5-1 Toxic Tumble.lvlx"]={22},
+   ["!Memory Center.lvlx"]={23},
+   ["3-2 Super Sticky Swamp.lvlx"]={24},
+   ["1-2 Spring Showers.lvlx"]={25},
+   ["1-2 Cliffside Capers.lvlx"]={26},
+   ["1-3 Sakura Scrapyard.lvlx"]={27},
+   ["1-3 Tangled Tower.lvlx"]={28},
+   ["1-6 Red Hot Fortress.lvlx"]={29},
+   ["3-2 Poison Waters.lvlx"]={30},
+   ["!D-1 Pine Propultion.lvlx"]={31},
+   ["2-2 Monty Mole Mines.lvlx"]={32},
+   ["4-1 Smoldering Steppe.lvlx"]={33},
+   ["!A-1 Buccaneer Bay.lvlx"]={34},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={35},
+   ["3-3 Lightweight Library.lvlx"]={36},
+   ["1-1 Flowing Frolic.lvlx"]={37}
+},
+--[5]--
+{
+
+},
+--[6]--
+{
+   ["bigSwitch"]={38},
+   ["_characterdata"]={39},
+   ["starcoin"]={40},
+   ["hud"]={41},
+   ["starcoinCounter"]=43
+},
+--[7]--
+{
+   true,
+   true,
+   true
+},
+--[8]--
+{
+   ["accessibility"]={42},
+   ["settings"]={43}
+},
+--[9]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=7879,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[10]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=1767
+},
+--[11]--
+{
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=1922,
+   ["bestTime"]=-1
+},
+--[12]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=22206
+},
+--[13]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=11465
+},
+--[14]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=11837,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[15]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=17173,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[16]--
+{
+   ["beaten"]=false,
+   ["bestTime"]=-1,
+   ["timer"]=1022,
+   ["countUp"]=true
+},
+--[17]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=5618,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[18]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=13044,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[19]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=-1
+},
+--[20]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=8598
+},
+--[21]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=10169,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[22]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=2304
+},
+--[23]--
+{
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=4853,
+   ["bestTime"]=-1
+},
+--[24]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=6369
+},
+--[25]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=10,
+   ["bestTime"]=8826
+},
+--[26]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=18577,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[27]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=1684,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[28]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=21362
+},
+--[29]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=13601
+},
+--[30]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=25,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[31]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=11696
+},
+--[32]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=14998
+},
+--[33]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=11228,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[34]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=1053,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[35]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=5673
+},
+--[36]--
+{
+   ["beaten"]=true,
+   ["bestTime"]=18010,
+   ["timer"]=0,
+   ["countUp"]=true
+},
+--[37]--
+{
+   ["beaten"]=true,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=6638
+},
+--[38]--
+{
+
+},
+--[39]--
+{
+   ["8"]={44},
+   ["10"]={45},
+   ["9"]={46},
+   ["6"]={47},
+   ["16"]={48},
+   ["11"]={49},
+   ["12"]={50},
+   ["7"]={51},
+   ["15"]={52},
+   ["13"]={53},
+   ["14"]={54}
+},
+--[40]--
+{
+   ["1-1 Clear Pipe Prairie.lvlx"]={55},
+   ["4-T Polar Palace.lvlx"]={56},
+   ["!The Realm of Recollection.lvlx"]={57},
+   ["1-T High Wattage Warehouse.lvlx"]={58},
+   ["!A-2 Disastrous Deeps.lvlx"]={59},
+   ["3-T Tangled Temple.lvlx"]={60},
+   ["2-3 Bone Dry Bridge.lvlx"]={61},
+   ["!Title Screen.lvlx"]={62},
+   ["3-1 Pirahna Plant Backwoods.lvlx"]={63},
+   ["!C-1 Fragile Block Foothills.lvlx"]={64},
+   ["!S-4 Cutting Edge Canopy.lvlx"]={65},
+   ["!B-1 Swooper Drop Sneak.lvlx"]={66},
+   ["3-1 Paddlewheel Peril.lvlx"]={67},
+   ["5-1 Toxic Tumble.lvlx"]={68},
+   ["!Memory Center.lvlx"]={69},
+   ["3-2 Super Sticky Swamp.lvlx"]={70},
+   ["1-2 Spring Showers.lvlx"]={71},
+   ["1-2 Cliffside Capers.lvlx"]={72},
+   ["1-3 Sakura Scrapyard.lvlx"]={73},
+   ["1-3 Tangled Tower.lvlx"]={74},
+   ["1-6 Red Hot Fortress.lvlx"]={75},
+   ["3-2 Poison Waters.lvlx"]={76},
+   ["!D-1 Pine Propultion.lvlx"]={77},
+   ["2-2 Monty Mole Mines.lvlx"]={78},
+   ["4-1 Smoldering Steppe.lvlx"]={79},
+   ["!A-1 Buccaneer Bay.lvlx"]={80},
+   ["1-1 Piranha Plant Pinch!.lvlx"]={81},
+   ["3-3 Lightweight Library.lvlx"]={82},
+   ["1-1 Flowing Frolic.lvlx"]={83}
+},
+--[41]--
+{
+   ["score"]=475440
+},
+--[42]--
+{
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
+},
+--[43]--
+{
+   ["show challenge status"]=false,
+   ["mute music"]=false,
+   ["show speedrun timer"]=false
+},
+--[44]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[45]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[46]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[47]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[48]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[49]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[50]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[51]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[52]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[53]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[54]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[55]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={84}
+},
+--[56]--
+{
+   1,
+   ["maxID"]=1,
+   ["alive"]={85}
+},
+--[57]--
+{
+   ["maxID"]=0,
+   ["alive"]={86}
+},
+--[58]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={87}
+},
+--[59]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={88}
+},
+--[60]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={89}
+},
+--[61]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={90}
+},
+--[62]--
+{
+   ["maxID"]=0,
+   ["alive"]={91}
+},
+--[63]--
+{
+   ["maxID"]=0,
+   ["alive"]={92}
+},
+--[64]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={93}
+},
+--[65]--
+{
+   ["maxID"]=0,
+   ["alive"]={94}
+},
+--[66]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={95}
+},
+--[67]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={96}
+},
+--[68]--
+{
+   1,
+   ["maxID"]=1,
+   ["alive"]={97}
+},
+--[69]--
+{
+   ["maxID"]=0,
+   ["alive"]={98}
+},
+--[70]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={99}
+},
+--[71]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={100}
+},
+--[72]--
+{
+   ["maxID"]=0,
+   ["alive"]={101}
+},
+--[73]--
+{
+   1,
+   ["maxID"]=1,
+   ["alive"]={102}
+},
+--[74]--
+{
+   ["maxID"]=0,
+   ["alive"]={103}
+},
+--[75]--
+{
+   ["maxID"]=0,
+   ["alive"]={104}
+},
+--[76]--
+{
+   ["maxID"]=0,
+   ["alive"]={105}
+},
+--[77]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={106}
+},
+--[78]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={107}
+},
+--[79]--
+{
+   ["maxID"]=0,
+   ["alive"]={108}
+},
+--[80]--
+{
+   1,
+   ["maxID"]=1,
+   ["alive"]={109}
+},
+--[81]--
+{
+   ["maxID"]=0,
+   ["alive"]={110}
+},
+--[82]--
+{
+   1,
+   1,
+   1,
+   ["maxID"]=3,
+   ["alive"]={111}
+},
+--[83]--
+{
+   ["maxID"]=0,
+   ["alive"]={112}
+},
+--[84]--
+{
+   true,
+   true,
+   true
+},
+--[85]--
+{
+   true
+},
+--[86]--
+{
+
+},
+--[87]--
+{
+   true,
+   true,
+   true
+},
+--[88]--
+{
+   true,
+   true,
+   true
+},
+--[89]--
+{
+   true,
+   true,
+   true
+},
+--[90]--
+{
+   true,
+   true,
+   true
+},
+--[91]--
+{
+
+},
+--[92]--
+{
+
+},
+--[93]--
+{
+   true,
+   true,
+   true
+},
+--[94]--
+{
+
+},
+--[95]--
+{
+   true,
+   true,
+   true
+},
+--[96]--
+{
+   true,
+   true,
+   true
+},
+--[97]--
+{
+   true
+},
+--[98]--
+{
+
+},
+--[99]--
+{
+   true,
+   true,
+   true
+},
+--[100]--
+{
+   true,
+   true,
+   true
+},
+--[101]--
+{
+
+},
+--[102]--
+{
+   true
+},
+--[103]--
+{
+
+},
+--[104]--
+{
+
+},
+--[105]--
+{
+
+},
+--[106]--
+{
+   true,
+   true,
+   true
+},
+--[107]--
+{
+   true,
+   true,
+   true
+},
+--[108]--
+{
+
+},
+--[109]--
+{
+   true
+},
+--[110]--
+{
+
+},
+--[111]--
+{
+   true,
+   true,
+   true
+},
+--[112]--
+{
+
+}
+}
