@@ -164,7 +164,7 @@ function onStart()
     -- Very janky keyhole achievement fix
     if GameData.exitedWithKeyhole then
         GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,true)
-        GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
+        GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(4).value))
         GameData.exitedWithKeyhole = false
     end
 
@@ -731,9 +731,9 @@ function onTick()
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>I love me some tunes! I've heard The Audiblette has some great ones! What else can I tell ya' about?<question tangeroombaInitial>"})
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "Know any secrets?"            ,addText = "I'm glad you asked! While the Realm of Recollection isn't the biggest area within your brain, it still has some stuff to hide. Apparently, it's rumored that another Bloomba lives somewhere within this realm. Based on what I've heard, they were exiled years and years ago for reasons unbeknownst to me. Unfortunately, I materialized far before this happened so I don't know much about the situation. Not that I'd recommend it, but perhaps you could find them?<page>Anything else ya' wanna know?<question tangeroombaInitial>"})
     if SaveData.fullyComplete then
-        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Holy canoli! You've done it all, Master Luigi! I'm proud of ya', really!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
+        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Holy canoli! You've done it all, Master Luigi! I'm proud of ya', really!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/17<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/43<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
     else
-        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/20<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/52<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
+        littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Ah! You didn't strike me as a completionist! Take a look!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/17<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/43<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
     end
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "Nevermind"})
 
@@ -872,7 +872,6 @@ function onDraw()
 end
 
 function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
-    pauseplus.canPause = false
     checkCoins()
     
     boxObj = littleDialogue.create{
@@ -890,4 +889,8 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
     if player.section == 4 and not SaveData.basementFound then
         startGlitchPortalReveal = true
     end
+end
+
+function onExitLevel()
+    player.mount = 0
 end

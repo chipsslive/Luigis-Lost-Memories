@@ -1,5 +1,6 @@
 local slm = require("simpleLayerMovement")
 local respawnRooms = require("respawnRooms")
+local customExit = require("customExit")
 
 local room
 local lockPlayer = false
@@ -31,6 +32,10 @@ function onEvent(eventName)
     if eventName == "Level - Start" then
         bossActive = false
     end
+
+    if eventName == "Boss Exit" then
+        bossActive = false
+    end
 end
 
 function onTick()
@@ -41,8 +46,12 @@ function onTick()
     end
 end
 
+function customExit.checkChallenge()
+    Audio.MusicStop()
+end
+
 function onDraw()
-    if not musicSeized then
+    if not musicSeized and not customExit.isInExit then
         Audio.SeizeStream(-1)
         musicSeized = true
     end
@@ -52,7 +61,7 @@ function onDraw()
     elseif bossActive then
         Audio.MusicOpen("4-1 Smoldering Steppe/Red&Green - Strike!! Great Aerial Offensive.mp3")
         Audio.MusicPlay()
-    else
+    elseif player.x < -184264 then
         Audio.MusicOpen("4-1 Smoldering Steppe/Red&Green- Inside the Volcano.mp3")
         Audio.MusicPlay()
     end

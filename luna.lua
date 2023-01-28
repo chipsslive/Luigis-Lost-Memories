@@ -213,16 +213,19 @@ function onStart()
 	conceptuaryUnlockedVar = (SaveData.conceptuaryUnlocked and 3) or 0
 
 	--[[
-	Memories = 30%
-	Purple Stars = 39%
-	Keyholes = 8%
-	Challenges = 10%
+	Memories = 34%
+	Purple Stars = 43%
+	Keyholes = 5%
+	Challenges = 5%
 	Audiblette = 3%
 	Conceptuary = 3%
 	Credits = 7%
 	]]
 
-	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins*0.75 + SaveData.totalKeyholesFound*1.6 + SaveData.totalChallengesCompleted*2 + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
+	SaveData.starcoins = 43
+	SaveData.totalKeyholesFound = 5
+
+	local totalProg = SaveData.totalMemoriesRecovered*2 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
     Progress.value = (totalProg/MAX_VALUE)*100
 	
 	-- Check if player has seen the title screen yet
@@ -242,13 +245,13 @@ function onStart()
 	GameData.ach_HundredPercent:setCondition(1,math.max(#getRecoveredCount(), GameData.ach_HundredPercent:getCondition(1).value))
     GameData.ach_HundredPercent:setCondition(2,math.max(SaveData.starcoins, GameData.ach_HundredPercent:getCondition(2).value))
     GameData.ach_HundredPercent:setCondition(3,math.max(SaveData.totalChallengesCompleted, GameData.ach_HundredPercent:getCondition(3).value))
-    GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(3).value))
+    GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(4).value))
 
 	if #getRecoveredCount() >= 17 and not SaveData.allMemoriesRecovered then
 		SaveData.allMemoriesRecovered = true
 	end
 
-	if SaveData.starcoins >= 52 and not SaveData.allPurpleStarsFound then
+	if SaveData.starcoins >= 43 and not SaveData.allPurpleStarsFound then
 		SaveData.allPurpleStarsFound = true
 	end
 
@@ -380,16 +383,8 @@ function onDraw()
 	if SaveData.allMemoriesRecovered 
 	and SaveData.creditsSeen
 	and SaveData.allPurpleStarsFound 
-	and SaveData.keyhole1Found 
-	and SaveData.keyhole2Found 
-	and SaveData.keyhole3Found
-	and SaveData.keyhole4Found
-	and SaveData.keyhole5Found 
-	and SaveData.challenge1Completed
-	and SaveData.challenge2Completed
-	and SaveData.challenge3Completed
-	and SaveData.challenge4Completed
-	and SaveData.challenge5Completed
+	and SaveData.totalKeyholesFound == 5
+	and SaveData.totalChallengesCompleted == 5
 	and SaveData.conceptuaryUnlocked
 	and SaveData.audibletteUnlocked then
 		SaveData.fullyComplete = true
@@ -513,7 +508,7 @@ function onExitLevel()
 		Checkpoint.reset()
 	end
 
-	local totalProg = SaveData.totalMemoriesRecovered*1.5 + SaveData.starcoins*0.75 + SaveData.totalKeyholesFound*1.6 + SaveData.totalChallengesCompleted*2 + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
+	local totalProg = SaveData.totalMemoriesRecovered*2 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
     Progress.value = (totalProg/MAX_VALUE)*100
 end
 

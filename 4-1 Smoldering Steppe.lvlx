@@ -7,7 +7,7 @@ SC:1;L:-180000;R:-179200;T:-180600;B:-180000;MZ:0;MF:"";BG:23;XTRA:"{\n    \"dar
 SC:2;L:-160000;R:-159200;T:-160600;B:-160000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
-ID:1;X:-199972;Y:-200150;D:1;
+ID:1;X:-199964;Y:-200150;D:1;
 STARTPOINT_END
 BLOCK
 ID:348;X:-200032;Y:-200992;W:32;H:32;
@@ -6676,7 +6676,7 @@ ET:"Moving Lava Platforms 1";TE:"Moving Lava Platforms 1.5";TD:20;AU:1;ML:"Movin
 ET:"Moving Lava Platforms 2";TE:"Moving Lava Platforms 2.5";TD:20;ML:"Moving Lava Platforms 2";MX:0;MY:-1;MLA:["LN\:\"Moving Lava Platforms 2\"\;SY\:-1\;"];AS:0;AX:0;AY:0;
 ET:"Moving Lava Platforms 1.5";TE:"Moving Lava Platforms 1";TD:20;ML:"Moving Lava Platforms 1";MX:0;MY:1;MLA:["LN\:\"Moving Lava Platforms 1\"\;SY\:1\;"];AS:0;AX:0;AY:0;
 ET:"Moving Lava Platforms 2.5";TE:"Moving Lava Platforms 2";TD:20;ML:"Moving Lava Platforms 2";MX:0;MY:1;MLA:["LN\:\"Moving Lava Platforms 2\"\;SY\:1\;"];AS:0;AX:0;AY:0;
-ET:"Boss Exit";LH:["Boss Exit","Boss"];LS:["Boss Exit 2"];SSS:["ID\:0\;MI\:-2\;"];AS:0;AX:0;AY:0;
+ET:"Boss Exit";LH:["Boss Exit","Boss"];LS:["Boss Exit 2"];AS:0;AX:0;AY:0;
 ET:"Boss";LS:["Rooms"];DS:1;AS:0;AX:0;AY:0;
 ET:"Exit Shoe";PC:000000000011;AS:0;AX:0;AY:0;
 ET:"blwo up bridge";LH:["bridge"];TE:"boom sound";TD:2;AS:0;AX:0;AY:0;
