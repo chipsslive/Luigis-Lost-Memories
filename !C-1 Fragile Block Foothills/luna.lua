@@ -4,17 +4,20 @@ local helmets = require("helmets")
 
 respawnRooms.roomSettings.jumpFromBelowSpeed = -14
 
-local scroll = false
+local isScrolling = false
+local scrollingStarted = false
 
 function onEvent(eventName)
     if eventName == "go" then
         autoscroll.scrollRight(4)
-        scroll = true
+        isScrolling = true
+        scrollingStarted = true
     end
 
     if eventName == "stop" then
         autoscroll.unlockSection(1)
-        scroll = false
+        isScrolling = false
+        scrollingStarted = false
     end
 end
 
@@ -81,14 +84,34 @@ function onTickEnd()
 end
 
 local print = false
+local startTimer = false
+local timer = 0
 
-local powerupStates = table.map{
-    FORCEDSTATE_POWERUP_BIG, FORCEDSTATE_POWERDOWN_SMALL, FORCEDSTATE_POWERUP_FIRE, FORCEDSTATE_POWERUP_LEAF, FORCEDSTATE_POWERUP_TANOOKI,
-    FORCEDSTATE_POWERUP_HAMMER, FORCEDSTATE_POWERUP_ICE, FORCEDSTATE_POWERDOWN_FIRE, FORCEDSTATE_POWERDOWN_ICE, FORCEDSTATE_MEGASHROOM
-}
+function onPlayerHarm()
+    startTimer = true
+end
 
 function onTick()
-    --Defines.levelFreeze = (powerupStates[player.forcedState] or mem(0x00B2C62E,FIELD_WORD,  0)) 
+    if player.section == 1 and scrollingStarted then
+        if timer < 60 and startTimer then
+            autoscroll.lockScreen(player.idx)
+            isScrolling = false
+        elseif not isScrolling then
+            isScrolling = true
+            autoscroll.scrollRight(4)
+        end
+    end
+
+    if startTimer then
+        Defines.levelFreeze = true
+        timer = timer + 1
+
+        if timer == 60 then
+            startTimer = false
+            timer = 0
+            Defines.levelFreeze = false
+        end
+    end
 
     for _,npc in ipairs(generators) do
         if npc.isValid and not npc.isHidden then
@@ -113,7 +136,10 @@ function respawnRooms.onPostReset(fromRespawn)
     refreshGenerators()
     autoscroll.unlockSection(1)
     autoscroll.scrollDown(0,nil,1)
-    scroll = false
+    isScrolling = false
+    scrollingStarted = false
+    startTimer = false
+    timer = 0
 end
 
 function respawnRooms.onPreReset(fromRespawn)

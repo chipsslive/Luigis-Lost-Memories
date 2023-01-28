@@ -111,8 +111,8 @@ local barrel
 --Register events
 function heaveho.onInitAPI()
 	npcManager.registerEvent(npcID, heaveho, "onTickNPC")
-	--npcManager.registerEvent(npcID, heaveho, "onTickEndNPC")
-	--npcManager.registerEvent(npcID, heaveho, "onDrawNPC")
+	registerEvent(npcID, heaveho, "onTick")
+	registerEvent(npcID, heaveho, "onDraw")
 	registerEvent(heaveho, "onStart")
 end
 
@@ -190,6 +190,10 @@ function heaveho.onTickNPC(v)
 		lockPlayer = true
 		scrolling = true
 		timerStart = true
+		startedAutoscroll = true
+		isAutoscrolling = true
+		GameData.startedAutoscroll = true
+		GameData.isAutoscrolling = true
 	end
 
 	if timerStart then

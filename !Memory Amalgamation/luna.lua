@@ -54,6 +54,13 @@ local extraPadding = 256
 
 local launched = false
 
+-- For autoscroll fixes
+
+GameData.startedAutoscroll = false
+GameData.isAutoscrolling = false
+local timer2 = 0
+local startTimer2 = false
+
 -- Fixes glitchy behavior with propeller blocks
 
 local function getDesiredBlocks(list)
@@ -72,6 +79,12 @@ end
 local function isCol(v)
     local b = getDesiredBlocks(Block.getIntersecting(v.x+2,v.y+2,v.x+v.width-2,v.y+v.height-2))
     return #b > 0
+end
+
+function onPlayerHarm()
+	if not player:mem(0x0c,FIELD_BOOL) then
+		startTimer2 = true
+	end
 end
 
 -- Long fade when entering final section
@@ -189,6 +202,27 @@ function onTick()
             player.keys[k] = false
         end
     end
+
+	if player.section == 3 and GameData.startedAutoscroll then
+        if timer < 60 and startTimer2 then
+            autoscroll.lockScreen(player.idx)
+            isAutoscrolling = false
+        elseif not isAutoscrolling then
+            isAutoscrolling = true
+            autoscroll.scrollRight(4)
+        end
+    end
+
+	if startTimer2 then
+        Defines.levelFreeze = true
+        timer2 = timer2 + 1
+
+        if timer2 == 60 then
+            startTimer2 = false
+            timer2 = 0
+            Defines.levelFreeze = false
+        end
+    end
 end
 
 function onEvent(eventName)
@@ -225,4 +259,12 @@ function respawnRooms.onPostReset(fromRespawn)
 	slm.addLayer{name = "Float2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 76,verticalDistance = -0.1}
 
 	launched = false
+
+	GameData.isAutoscrolling = false
+	GameData.startedAutoscroll = false
+end
+
+function onExitLevel()
+	GameData.isAutoscrolling = false
+	GameData.startedAutoscroll = false
 end
