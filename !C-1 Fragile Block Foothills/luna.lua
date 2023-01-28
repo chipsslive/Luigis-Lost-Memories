@@ -14,6 +14,7 @@ function onEvent(eventName)
 
     if eventName == "stop" then
         autoscroll.unlockSection(1)
+        scroll = false
     end
 end
 
@@ -81,7 +82,14 @@ end
 
 local print = false
 
+local powerupStates = table.map{
+    FORCEDSTATE_POWERUP_BIG, FORCEDSTATE_POWERDOWN_SMALL, FORCEDSTATE_POWERUP_FIRE, FORCEDSTATE_POWERUP_LEAF, FORCEDSTATE_POWERUP_TANOOKI,
+    FORCEDSTATE_POWERUP_HAMMER, FORCEDSTATE_POWERUP_ICE, FORCEDSTATE_POWERDOWN_FIRE, FORCEDSTATE_POWERDOWN_ICE, FORCEDSTATE_MEGASHROOM
+}
+
 function onTick()
+    --Defines.levelFreeze = (powerupStates[player.forcedState] or mem(0x00B2C62E,FIELD_WORD,  0)) 
+
     for _,npc in ipairs(generators) do
         if npc.isValid and not npc.isHidden then
             local data = npc.data
@@ -105,6 +113,7 @@ function respawnRooms.onPostReset(fromRespawn)
     refreshGenerators()
     autoscroll.unlockSection(1)
     autoscroll.scrollDown(0,nil,1)
+    scroll = false
 end
 
 function respawnRooms.onPreReset(fromRespawn)
