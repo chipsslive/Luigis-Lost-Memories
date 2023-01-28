@@ -168,7 +168,29 @@ local bloombaYBlue = 0
 local bloombaXPurple = -197280
 local bloombaYPurple = -199728
 
+-- Animation at end of level
+
+local endingStart
+local endingLoop
+
+local endingStartImg = Graphics.loadImageResolved("endingStart.png")
+local endingLoopImg = Graphics.loadImageResolved("endingLoop.png")
+
 function onStart()
+    endingStart = Sprite.box{
+        texture = endingStartImg,
+        frames = 38,
+        x = -197216,
+        y = -200600
+    }
+
+    endingLoop = Sprite.box{
+        texture = endingLoopImg,
+        frames = 8,
+        x = -197216,
+        y = -200600
+    }
+
     autoscroll.scrollRight(0.5)
     player.powerup = 2
     GameData.cutscene = true
@@ -257,6 +279,14 @@ function onTick()
     bloombaYPurple = bloombaYPurple - 0.25
 end
 
+local curFrameStart = 1
+local curFrameLoop = 1
+
+local frameTimerStart = 0
+local frameTimerLoop = 0
+
+local finalOpacity = 0
+
 function onDraw()
     -- Setup and draw credits text
 
@@ -287,16 +317,53 @@ function onDraw()
             if opacity < 1 then
                 opacity = opacity + 0.005
             else
-                if alpha2 < 1 then
-                    alpha2 = alpha2 + 0.01
+                endingStart:draw{priority = 7.5, sceneCoords = true, frame = curFrameStart}
+
+                frameTimerStart = frameTimerStart + 1
+
+                if frameTimerStart == 6 then
+                    curFrameStart = curFrameStart + 1
+                    frameTimerStart = 0
                 end
-                textplus.render{layout = layout2, color = Color.white * alpha2, priority = 8,x = 200,y=180}
-                textplus.render{layout = layout3, color = Color.white * alpha2, priority = 8,x = 200,y=380}
+
+                if curFrameStart == 24 and frameTimerStart == 0 then
+                    SFX.play("lightOn.mp3")
+                end
+
+                if curFrameStart == 30 and frameTimerStart == 0 then
+                    SFX.play("endOfCredits.wav")
+                end
+
+                if curFrameStart >= 38 then
+                    endingLoop:draw{priority = 7.6, sceneCoords = true, frame = curFrameLoop}
+                    frameTimerLoop = frameTimerLoop + 1
+                    if frameTimerLoop == 8 then
+                        curFrameLoop = curFrameLoop + 1
+                        frameTimerLoop = 0
+                    end
+            
+                    if curFrameLoop > 8 then
+                        curFrameLoop = 1
+                    end
+
+                    if alpha2 < 1 then
+                        alpha2 = alpha2 + 0.01
+                    end
+                    
+                    textplus.render{layout = layout2, color = Color.white * alpha2, priority = 8,x = 200,y=180}
+                    textplus.render{layout = layout3, color = Color.white * alpha2, priority = 8,x = 200,y=380}
+                end
             end
         end
 
-        if timer == 7000 then
-            Level.load("!Final Cutscene.lvlx")
+        if timer > 6300 then
+            Graphics.drawScreen{color = Color.black.. finalOpacity, priority = 10}
+
+            if finalOpacity < 1.1 then
+                finalOpacity = finalOpacity + 0.01
+            else
+                Level.load("!Final Cutscene.lvlx")
+            end
         end
     end
 
