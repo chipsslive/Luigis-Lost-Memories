@@ -3,7 +3,7 @@
 :Made Specifically for this Project:
 	Achy 		 	  - Various world map objects/sprites, some level blocks, some backgrounds, Game logo
 	Mr. Greenman 	  - Most of Luigi's swimming sprites, various level graphics, powerups
-	Vito		 	  - Small Luigi swimming sprites, Some RoR tiles, ending cutscene broken tiles, Luigi victory poses, Moss, Audiblette Boombox
+	Vito		 	  - Small Luigi swimming sprites, Some RoR tiles, ending cutscene broken tiles, Luigi victory poses, Moss, Audiblette Boombox, end of credits sprites
 	PsychLantern (Digo) - Shy Guy Industries sprite on world map, old game logo (Luigi's Adventure)
 	galaxy		  - Moving Meadows and Flowing Frolic Tileset & Background, Bloombas
 	FurballArts         - Promotional art

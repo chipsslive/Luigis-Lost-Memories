@@ -3,6 +3,8 @@ local respawnRooms = require("respawnRooms")
 local textplus = require("textplus")
 local pauseplus = require("pauseplus")
 
+local permittedHarmTypes = table.map({HARM_TYPE_PROJECTILE_USED})
+
 function onStart()
     slm.addLayer{name = "move 1",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
     slm.addLayer{name = "move 2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
@@ -13,6 +15,12 @@ function respawnRooms.onPostReset(fromRespawn)
     slm.addLayer{name = "move 1",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
     slm.addLayer{name = "move 2",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = 1}
     slm.addLayer{name = "move 3",speed = 96,verticalMovement = slm.MOVEMENT_COSINE,verticalSpeed = 64,verticalDistance = -1}
+end
+
+function onPostNPCKill(killedNPC,harmType)
+    if killedNPC.id == 254 and not (permittedHarmTypes[harmType])  then
+        player.speedY = 0
+    end
 end
 
 function onExitLevel(levelWinType)
