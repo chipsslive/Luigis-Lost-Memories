@@ -21,11 +21,11 @@ local portalFont = textplus.loadFont("portalFont.ini")
 
 function onDraw()
 	if player.section == 1 then
-		Graphics.drawImageWP(redCoin,715,50,5)
+		Graphics.drawImageWP(redCoin,680,50,5)
 		textplus.print{
-			text = ""..redCoinCount,
+			text = ""..redCoinCount.."/8",
 			priority = 5,
-			x = 754,
+			x = 718,
 			y = 50,
 			font = portalFont
 		}

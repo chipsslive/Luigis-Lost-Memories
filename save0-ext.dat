@@ -1,0 +1,231 @@
+{
+--[1]--
+{
+   ["totalChallengesCompleted"]=0,
+   ["pauseplus"]={2},
+   ["conceptuaryUnlocked"]=false,
+   ["levelStats"]={3},
+   ["keyhole3Found"]=false,
+   ["__costumes"]={4},
+   ["challenge1Completed"]=false,
+   ["challenge2Completed"]=false,
+   ["keyhole1Found"]=false,
+   ["__progress"]=0,
+   ["challenge3Completed"]=false,
+   ["_basegame"]={5},
+   ["starcoins"]=0,
+   ["audibletteUnlocked"]=false,
+   ["challenge4Completed"]=false,
+   ["keyhole5Found"]=false,
+   ["totalMemoriesRecovered"]=0,
+   ["totalKeyholesFound"]=0,
+   ["introFinished"]=true,
+   ["coins"]=0,
+   ["basementFound"]=false,
+   ["keyhole2Found"]=false,
+   ["allRepressedMemoriesRecovered"]=false,
+   ["unlockedTabs"]={6},
+   ["creditsSeen"]=false,
+   ["spentStars"]=0,
+   ["keyhole4Found"]=false,
+   ["allPurpleStarsFound"]=false,
+   ["challenge5Completed"]=false,
+   ["allMemoriesRecovered"]=false,
+   ["fullyComplete"]=false,
+   ["__launcher"]={7}
+},
+--[2]--
+{
+   ["selectionData"]={8}
+},
+--[3]--
+{
+   ["!Title Screen.lvlx"]={9},
+   ["!The Realm of Recollection.lvlx"]={10}
+},
+--[4]--
+{
+
+},
+--[5]--
+{
+   ["bigSwitch"]={11},
+   ["_characterdata"]={12},
+   ["starcoin"]={13},
+   ["hud"]={14},
+   ["starcoinCounter"]=0
+},
+--[6]--
+{
+   true,
+   false,
+   false
+},
+--[7]--
+{
+
+},
+--[8]--
+{
+   ["accessibility"]={15},
+   ["settings"]={16}
+},
+--[9]--
+{
+   ["beaten"]=false,
+   ["bestTime"]=-1,
+   ["timer"]=126,
+   ["countUp"]=true
+},
+--[10]--
+{
+   ["beaten"]=false,
+   ["countUp"]=true,
+   ["timer"]=0,
+   ["bestTime"]=-1
+},
+--[11]--
+{
+
+},
+--[12]--
+{
+   ["8"]={17},
+   ["10"]={18},
+   ["9"]={19},
+   ["6"]={20},
+   ["16"]={21},
+   ["11"]={22},
+   ["12"]={23},
+   ["7"]={24},
+   ["15"]={25},
+   ["13"]={26},
+   ["14"]={27}
+},
+--[13]--
+{
+   ["!Title Screen.lvlx"]={28},
+   ["!The Realm of Recollection.lvlx"]={29}
+},
+--[14]--
+{
+   ["score"]=0
+},
+--[15]--
+{
+   ["invincibility"]=false,
+   ["infinite jumps"]=false
+},
+--[16]--
+{
+   ["show challenge status"]=false,
+   ["mute music"]=false,
+   ["show speedrun timer"]=false
+},
+--[17]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[18]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[19]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[20]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[21]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[22]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[23]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[24]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[25]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[26]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[27]--
+{
+   ["reservePowerup"]=0,
+   ["0x10A"]=0,
+   ["powerup"]=1,
+   ["0x16"]=1,
+   ["0x108"]=0
+},
+--[28]--
+{
+   ["maxID"]=0,
+   ["alive"]={30}
+},
+--[29]--
+{
+   ["maxID"]=0,
+   ["alive"]={31}
+},
+--[30]--
+{
+
+},
+--[31]--
+{
+
+}
+}
