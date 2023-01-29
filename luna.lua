@@ -222,9 +222,6 @@ function onStart()
 	Credits = 7%
 	]]
 
-	SaveData.starcoins = 43
-	SaveData.totalKeyholesFound = 5
-
 	local totalProg = SaveData.totalMemoriesRecovered*2 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
     Progress.value = (totalProg/MAX_VALUE)*100
 	
