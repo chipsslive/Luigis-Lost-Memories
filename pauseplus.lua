@@ -764,8 +764,11 @@ do
             return
         end
 
+        if player.rawKeys.pause == KEYS_PRESSED then
+            pauseplus.close()
+        end
 
-        if player.rawKeys.run == KEYS_PRESSED then
+        if player.rawKeys.run == KEYS_PRESSEDD then
             -- Go back
             local count = #pauseplus.history
 

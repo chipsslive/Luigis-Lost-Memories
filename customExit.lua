@@ -298,9 +298,9 @@ function customExit.onDraw()
 				SFX.play(stats.SFX.cursor.id, stats.SFX.cursor.volume)
 			elseif player.rawKeys.jump == KEYS_PRESSED then
 				if selection == 1 then
-					exitFunc = function() Level.finish(customExit.exitType) end
+					exitFunc = function() GameData.lastLevelFile = nil Level.finish(customExit.exitType) end
 				elseif selection == 2 then
-					exitFunc = function() Level.load(Level.filename()) end
+					exitFunc = function() GameData.lastLevelFile = Level.filename() Level.finish(customExit.exitType) Checkpoint.reset() end
 				end
 				SFX.play(stats.SFX.select.id, stats.SFX.select.volume)
 				fadeOut = true

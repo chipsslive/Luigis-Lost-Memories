@@ -241,7 +241,7 @@ end
 function audiblette.onInputUpdate()
     if not isOpen then return end
     if canUpdateInput() then
-        if player.rawKeys.run == KEYS_PRESSED then
+        if player.rawKeys.run == KEYS_PRESSED or player.rawKeys.pause == KEYS_PRESSED then
             audiblette.close()
             player:mem(0x172, FIELD_BOOL, false)
         end

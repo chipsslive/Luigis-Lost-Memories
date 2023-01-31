@@ -10,7 +10,7 @@ SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:7;XTRA:"{\n    \"dark
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SECTION_END
 STARTPOINT
-ID:1;X:-199964;Y:-200150;D:1;
+ID:1;X:-199948;Y:-200150;D:1;
 STARTPOINT_END
 BLOCK
 ID:250;X:-200000;Y:-200096;W:32;H:32;
@@ -9577,8 +9577,8 @@ ID:10;X:-150686;Y:-160160;D:-1;S1:3;
 ID:10;X:-150654;Y:-160160;D:-1;S1:3;
 ID:10;X:-150622;Y:-160160;D:-1;S1:3;
 ID:164;X:-139437;Y:-140122;D:-1;S1:3;
-ID:31;X:-139296;Y:-140480;D:-1;S1:3;
-ID:164;X:-139629;Y:-140410;D:1;S1:3;
+ID:31;X:-139296;Y:-140480;D:-1;S1:3;GE:1;GT:1;GD:1;GM:0;LR:"instant";XTRA:"{\n    \"global\"\: {\n        \"exclusiveSpawn\"\: true\n    }\n}\n";
+ID:164;X:-139629;Y:-140410;D:1;S1:3;XTRA:"{\n    \"global\"\: {\n        \"exclusiveSpawn\"\: true\n    }\n}\n";
 ID:164;X:-198045;Y:-200122;D:1;S1:3;GE:1;GT:1;GD:4;GM:20;
 ID:457;X:-197536;Y:-200048;D:-1;S1:3;
 ID:457;X:-197504;Y:-200048;D:-1;S1:3;
@@ -9796,6 +9796,7 @@ LR:"Tracks";
 LR:"After Star Coin";HD:1;
 LR:"spawnzones";HD:1;
 LR:"nsmbwalls";HD:1;
+LR:"instant";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";LH:["Tracks"];AS:0;AX:0;AY:0;

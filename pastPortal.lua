@@ -536,7 +536,7 @@ function pastPortal.onInputUpdate()
                         SFXPlay("deny")
                     end
                 end
-            elseif player.rawKeys.run == KEYS_PRESSED then
+            elseif player.rawKeys.run == KEYS_PRESSED or player.rawKeys.pause == KEYS_PRESSED then
                 pastPortal.close()
                 player:mem(0x172, FIELD_BOOL, false)
             end

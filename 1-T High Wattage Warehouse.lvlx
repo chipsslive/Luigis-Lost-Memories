@@ -10593,7 +10593,7 @@ ID:930;X:-159392;Y:-160352;D:-1;XTRA:"{\n    \"ontime\"\: 100\,\n    \"tagstext\
 ID:930;X:-159840;Y:-160096;D:-1;XTRA:"{\n    \"ontime\"\: 100\,\n    \"tagstext\"\: \"cp3\"\n}\n";
 ID:930;X:-159616;Y:-160064;D:-1;XTRA:"{\n    \"ontime\"\: 100\,\n    \"tagstext\"\: \"cp3\, cp4\"\n}\n";
 ID:930;X:-159488;Y:-160096;D:-1;XTRA:"{\n    \"ontime\"\: 100\,\n    \"tagstext\"\: \"cp4\"\n}\n";
-ID:31;X:-138720;Y:-140192;D:-1;
+ID:31;X:-138720;Y:-140192;D:-1;GE:1;GT:1;GD:1;GM:0;LR:"instant";XTRA:"{\n    \"global\"\: {\n        \"exclusiveSpawn\"\: true\n    }\n}\n";
 ID:908;X:-139616;Y:-140256;D:-1;XTRA:"{\n    \"dest\"\: \"s2\"\,\n    \"electric\"\: true\,\n    \"name\"\: \"s1\"\n}\n";
 ID:906;X:-139456;Y:-140288;D:-1;XTRA:"{\n    \"dest\"\: \"s5\"\,\n    \"name\"\: \"s7\"\n}\n";
 ID:910;X:-139616;Y:-140288;D:-1;
@@ -11058,6 +11058,7 @@ LR:"nsmbwalls";HD:1;
 LR:"spawnzones";HD:1;
 LR:"End Trigger";
 LR:"exit";HD:1;
+LR:"instant";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";AS:0;AX:0;AY:0;

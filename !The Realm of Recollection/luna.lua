@@ -73,9 +73,33 @@ if SaveData.audibletteUnlocked then
     audibletteText = "Yes"
 end
 
+-- Variables for Keyhole status in dialogue
+
+local keyhole1FoundText = ""
+local keyhole2FoundText = ""
+local keyhole3FoundText = ""
+local keyhole4FoundText = ""
+local keyhole5FoundText = ""
+
+if SaveData.keyhole1Found then
+    keyhole1FoundText = " <color purple>(Found!)</color>"
+end
+if SaveData.keyhole2Found then
+    keyhole2FoundText = " <color purple>(Found!)</color>"
+end
+if SaveData.keyhole3Found then
+    keyhole3FoundText = " <color purple>(Found!)</color>"
+end
+if SaveData.keyhole4Found then
+    keyhole4FoundText = " <color purple>(Found!)</color>"
+end
+if SaveData.keyhole5Found then
+    keyhole5FoundText = " <color purple>(Found!)</color>"
+end
+
 -- For the question titled 'tangeroombaInitial', check the bottom of onTick() (it needs to be updated in realtime)
 
-littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather<br><color purple>2. </color>A Shocking Discovery<br><color purple>3. </color>Rodents Run Wild<br><color purple>4. </color>Of Knowledge And Boos<br><color purple>5. </color>Above Loose Dirt<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather"..keyhole1FoundText.."<br><color purple>2. </color>A Shocking Discovery"..keyhole2FoundText.."<br><color purple>3. </color>Rodents Run Wild"..keyhole3FoundText.."<br><color purple>4. </color>Of Knowledge And Boos"..keyhole4FoundText.."<color purple>5. </color>Above Loose Dirt"..keyhole5FoundText.."<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
@@ -729,7 +753,7 @@ function onTick()
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is the Map of Memories?" ,addText = "The Map of Memories allows you to explore the world map of the project, which obviously was the originally intended method of traversing between levels in the game. The vast majority of the main island was completed, though completion/polish starts to taper off after launching into outer space, which was used to access the final few worlds of the game.<page>Sounds pretty useless, but a fun inclusion nonetheless! What else can I tell ya' about?<question tangeroombaInitial>"})
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Conceptuary?"     ,addText = "The Conceptuary holds a collection of every piece of art, whether that be for concept or promotional purposes, created for the game. Most of them were created by galaxy, while the piece of art at the far end of the building was created by FurballArts.<page>I'm not really the type that stands around staring at art, but maybe it's your cup of tea? Can I inform you of anything else?<question tangeroombaInitial>"})
     littleDialogue.registerAnswer("tangeroombaInitial",{text = "What is The Audiblette?"      ,addText = "The Audiblette is a collection of every piece of unused music in the game. These can range from fully mixed and mastered tracks to very early renditions that never made it any further. The cool thing about this building is that playing a track inside will have it ring out throughout the entire Realm of Recollection!<page>I love me some tunes! I've heard The Audiblette has some great ones! What else can I tell ya' about?<question tangeroombaInitial>"})
-    littleDialogue.registerAnswer("tangeroombaInitial",{text = "Know any secrets?"            ,addText = "I'm glad you asked! While the Realm of Recollection isn't the biggest area within your brain, it still has some stuff to hide. Apparently, it's rumored that another Bloomba lives somewhere within this realm. Based on what I've heard, they were exiled years and years ago for reasons unbeknownst to me. Unfortunately, I materialized far before this happened so I don't know much about the situation. Not that I'd recommend it, but perhaps you could find them?<page>Anything else ya' wanna know?<question tangeroombaInitial>"})
+    littleDialogue.registerAnswer("tangeroombaInitial",{text = "Know any secrets?"            ,addText = "I'm glad you asked! While the Realm of Recollection isn't the biggest area within your brain, it still has some stuff to hide. Apparently, it's rumored that another Bloomba lives somewhere within this realm. Based on what I've heard, they were exiled years and years ago for reasons unbeknownst to me. Unfortunately, I materialized long after this happened so I don't know much about the situation. Not that I'd recommend it, but perhaps you could find them?<page>Anything else ya' wanna know?<question tangeroombaInitial>"})
     if SaveData.fullyComplete then
         littleDialogue.registerAnswer("tangeroombaInitial",{text = "Check Completion Status"  ,addText = "Holy canoli! You've done it all, Master Luigi! I'm proud of ya', really!<br><br><color purple>Memories Recovered: </color>"..SaveData.totalMemoriesRecovered.."/17<br><color purple>Purple Stars Found: </color>"..SaveData.starcoins.."/43<br><color purple>Keyholes Found: </color>"..SaveData.totalKeyholesFound.."/5<br><color purple>Challenges Completed: </color>"..SaveData.totalChallengesCompleted.."/5<br><color purple>Audiblette Unlocked?: </color>"..audibletteText.."<br><color purple>Conceptuary Unlocked?: </color>"..conceptuaryText.."<br><color purple>Credits Seen?: </color>"..creditText.."<br><br>Can I tell ya' anything else?<question tangeroombaCompletion>"})
     else
