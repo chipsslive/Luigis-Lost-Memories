@@ -2,7 +2,7 @@ HEAD
 TL:"1-1 Clear Pipe Prairie";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-180128;T:-200736;B:-200000;MZ:24;MF:"1-1 Clear Pipe Prairie/Red&Green - Dance of the Windmill.ogg";BG:2;
+SC:0;L:-200000;R:-180128;T:-200736;B:-200000;MZ:24;MF:"1-1 Clear Pipe Prairie/Red&Green - Dance of the Windmill.ogg";BG:2;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#ebebebff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:1;L:-180000;R:-179200;T:-180608;B:-180000;MZ:24;MF:"1-1 Clear Pipe Prairie/Red&Green - Dance of the Windmill.ogg";BG:0;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#a2a2a2ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-159200;T:-160600;B:-160000;MZ:0;MF:"";BG:2;
 SECTION_END

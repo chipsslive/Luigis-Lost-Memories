@@ -212,6 +212,8 @@ function onStart()
 	SaveData.fullyComplete 			       = SaveData.fullyComplete         		or nil_or(SaveData.fullyComplete, false)
 	SaveData.basementFound        		   = SaveData.basementFound         		or nil_or(SaveData.basementFound, false)
 	SaveData.allRepressedMemoriesRecovered = SaveData.allRepressedMemoriesRecovered or nil_or(SaveData.allRepressedMemoriesRecovered, false)
+	SaveData.seenPurpleStarReward		   = SaveData.seenPurpleStarReward          or nil_or(SaveData.seenPurpleStarReward, false)
+	SaveData.talkedToMaroonbaAfterCredits  = SaveData.talkedToMaroonbaAfterCredits  or nil_or(SaveData.talkedToMaroonbaAfterCredits, false)
 
 	SaveData.totalMemoriesRecovered = #getRecoveredCount()
 
@@ -330,7 +332,7 @@ function onStart()
 
 	-- Exit Confirmation Menu
 	pauseplus.createSubmenu("exitConfirmation",{headerText = "<align center>Exit the memory?<br>All progress up until<br>this point will be lost.</align>"})
-	pauseplus.createOption("exitConfirmation",{text = "Yes",closeMenu = true,action = function() mem(0xB25728, FIELD_BOOL, true) end})
+	pauseplus.createOption("exitConfirmation",{text = "Yes",closeMenu = true,action = function() mem(0xB25728, FIELD_BOOL, true) exitLevel() end})
 	pauseplus.createOption("exitConfirmation",{text = "No",goToSubmenu = "main"})
 
 	-- Restart Confirmation Menu

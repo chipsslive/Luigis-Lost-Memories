@@ -8,13 +8,13 @@ local npcID = NPC_ID
 npcManager.registerHarmTypes(
 	npcID,
 	{
-		HARM_TYPE_JUMP,
+		--HARM_TYPE_JUMP,
 		--HARM_TYPE_FROMBELOW,
 		--HARM_TYPE_NPC,
 		--HARM_TYPE_PROJECTILE_USED,
 		--HARM_TYPE_HELD,
 		--HARM_TYPE_TAIL,
-		HARM_TYPE_SPINJUMP,
+		--HARM_TYPE_SPINJUMP,
 		--HARM_TYPE_SWORD,
 		HARM_TYPE_LAVA
 	},
@@ -40,6 +40,7 @@ npcManager.setNpcSettings{
 	nogravity = true,
 	noblockcollision = true,
 	nonpccollision = true,
+	spinjumpsafe = true,
 	
 	dropspeed = 6, -- how fast it drops down with its string
 	hangspeed = 1.5, -- max. speed while vertically oscillating 

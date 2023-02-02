@@ -2,10 +2,10 @@ HEAD
 TL:"2-3 Bone Dry Bridge";CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-193120;T:-200600;B:-200000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
-SC:1;L:-180000;R:-179200;T:-181600;B:-180000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
-SC:2;L:-160000;R:-145856;T:-160600;B:-160000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
-SC:3;L:-140000;R:-138336;T:-140600;B:-140000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:0;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7d7d7dff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\n        }\n    }\n}\n";
+SC:0;L:-200000;R:-193120;T:-200600;B:-200000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#eeeeeeff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
+SC:1;L:-180000;R:-179200;T:-181600;B:-180000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#eeeeeeff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
+SC:2;L:-160000;R:-145856;T:-160600;B:-160000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:11;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#eeeeeeff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\,\n    \"effects\"\: {\n        \"weather\"\: 4\n    }\n}\n";
+SC:3;L:-140000;R:-138336;T:-140600;B:-140000;MZ:24;MF:"2-3 Bone Dry Bridge/Red&Green - The Soul-Eating Desert.ogg|0\;g=4";BG:0;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#7d7d7dff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\n        }\n    }\n}\n";
 SC:4;L:-120000;R:-119200;T:-120600;B:-120000;MZ:0;MF:"";BG:0;
 SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:0;
 SC:10;L:0;R:800;T:-600;B:0;MZ:0;MF:"";BG:0;
@@ -6412,7 +6412,7 @@ ID:10;X:-157502;Y:-160064;D:-1;
 ID:10;X:-157470;Y:-160096;D:-1;
 ID:10;X:-157470;Y:-160064;D:-1;
 ID:10;X:-157502;Y:-160096;D:-1;
-ID:310;X:-139111;Y:-140327;D:-1;S1:2;
+ID:310;X:-139104;Y:-140320;D:-1;S1:2;
 ID:10;X:-153758;Y:-160224;D:-1;
 ID:10;X:-153726;Y:-160192;D:-1;
 ID:10;X:-153758;Y:-160160;D:-1;
@@ -6542,7 +6542,7 @@ LR:"Default";
 LR:"Destroyed Blocks";HD:1;
 LR:"Spawned NPCs";
 LR:"nsmbwalls";HD:1;
-LR:"spawnzones";
+LR:"spawnzones";HD:1;
 LR:"saw";
 LAYERS_END
 EVENTS_CLASSIC

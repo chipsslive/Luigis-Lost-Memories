@@ -7,6 +7,11 @@ local collectedCoin = false
 local checkpointStatus = false
 local permittedHarmTypes = table.map({HARM_TYPE_PROJECTILE_USED,HARM_TYPE_VANISH})
 
+function onStart()
+    collectedCoin = false
+    checkpointStatus = false
+end
+
 function onCheckpoint()
     checkpointStatus = collectedCoin
 end

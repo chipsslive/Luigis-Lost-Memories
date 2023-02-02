@@ -172,6 +172,8 @@ local speaker4
 local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
+
+
 function onStart()
     superLockPlayer = true
     if GameData.inRepressedMemory then
@@ -730,7 +732,7 @@ function onTick()
     if SaveData.challenge2Completed then
         littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     else
-        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2 (Completed!</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #2",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #2</color><br><br>Recover the memory 'Paddlewheel Peril' without touching a single coin!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     end    
     if SaveData.challenge3Completed then
         littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #3</color><br><br>Recover the memory 'Swooper Drop Sneak' without ever facing left!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
@@ -814,10 +816,7 @@ function onEvent(eventName)
     end
 end
 
--- pls don't mind this jank
-local teleported = false
-playerLockTimer = 0
--- jank over
+local playerLockTimer = 0
 
 -- Stuff for Audiblette speakers
 
@@ -825,7 +824,63 @@ local scale = 1
 local raiseScale = true
 local lowerScale = false
 
+-- Exclamation Mark Image
+
+local exclamation = Graphics.loadImageResolved("exclamation.png")
+local touching = false
+
 function onDraw()
+    -- Exclamation marks over NPC heads with new dialogue
+
+    for k,v in NPC.iterateIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) do
+        if (v.id == 760 or v.id == 759 or v.id == 758) and not v.isHidden then
+            touching = true
+        end
+    end
+
+    if #NPC.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) == 0 then
+        touching = false
+    end
+
+    for k,v in ipairs(NPC.get()) do
+        -- Ceruloomba (after recovering all memories)
+        if v.id == 760 and SaveData.allMemoriesRecovered and not SaveData.creditsSeen and not v.isHidden then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * exclamation.width) 
+            local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
+
+            if not touching then
+                Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
+            end
+        end
+        -- Mauvoomba (after collecting all purple stars)
+        if v.id == 759 and SaveData.allPurpleStarsFound and not SaveData.seenPurpleStarReward and not v.isHidden then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * exclamation.width) 
+            local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
+
+            if not touching then
+                Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
+            end
+        end
+        -- Maroonba (after seeing the credits)
+        if v.id == 758 and SaveData.creditsSeen and not SaveData.talkedToMaroonbaAfterCredits and not v.isHidden then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * exclamation.width) 
+            local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
+
+            if not touching then
+                Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
+            end
+        end
+    end
+
     -- Need to use this to prevent somehow dying in this level
     playerLockTimer = playerLockTimer + 1
     if playerLockTimer == 3 then
@@ -833,7 +888,7 @@ function onDraw()
     end
     if superLockPlayer then
         for k, v in pairs(player.rawKeys) do
-            player.keys[k] = false
+            player.rawKeys[k] = false
         end
     end
 
@@ -908,6 +963,11 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
     if text == allPurpleStarsMsg and SaveData.allPurpleStarsFound then
         startConfettiTimer = true
         mauvoomba.msg = "<speakerName Mauvoomba>I could do this for hours!"
+        SaveData.seenPurpleStarReward = true
+    end
+
+    if text == afterCreditsMsgMaroonba and SaveData.creditsSeen then
+        SaveData.talkedToMaroonbaAfterCredits = true
     end
 
     if player.section == 4 and not SaveData.basementFound then
