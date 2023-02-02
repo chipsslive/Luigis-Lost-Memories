@@ -816,7 +816,7 @@ function onEvent(eventName)
     end
 end
 
-local playerLockTimer = 0
+playerLockTimer = 0
 
 -- Stuff for Audiblette speakers
 
