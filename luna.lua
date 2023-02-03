@@ -335,10 +335,7 @@ function onStart()
 	pauseplus.createOption("exitConfirmation",{text = "Yes",closeMenu = true,action = function() mem(0xB25728, FIELD_BOOL, true) exitLevel() end})
 	pauseplus.createOption("exitConfirmation",{text = "No",goToSubmenu = "main"})
 
-	-- Restart Confirmation Menu
-	pauseplus.createSubmenu("restartConfirmation",{headerText = "<align center>Restart the memory?<br>All progress up until<br>this point will be lost.</align>"})
-	pauseplus.createOption("restartConfirmation",{text = "Yes",closeMenu = true,action = function() Level.load(Level.filename()) Checkpoint.reset() end})
-	pauseplus.createOption("restartConfirmation",{text = "No",goToSubmenu = "main"})
+	-- Restart Confirmation Menu (located in onTick)
 
 	-- Quit Confirmation Menu
 	pauseplus.createSubmenu("quitConfirmation",{headerText = "<align center>Quit the game?<br>All unsaved progress<br>will be lost.</align>"})
@@ -462,6 +459,18 @@ function onTickEnd()
 end
 
 function onTick()
+	-- Restart Confirmation Menu (changes based on whether or not a checkpoint is active)
+	if Checkpoint.getActive() then
+		pauseplus.createSubmenu("restartConfirmation",{headerText = "<align center>Would you like to return<br>to the latest checkpoint<br>or the start of the memory?</align>"})
+		pauseplus.createOption("restartConfirmation",{text = "Checkpoint",closeMenu = true,action = function() player:kill() end})
+		pauseplus.createOption("restartConfirmation",{text = "Start of Memory",closeMenu = true,action = function() Level.load(Level.filename()) Checkpoint.reset() end})
+		pauseplus.createOption("restartConfirmation",{text = "Nevermind",goToSubmenu = "main"})
+	else
+		pauseplus.createSubmenu("restartConfirmation",{headerText = "<align center>Restart the memory?<br>All progress up until<br>this point will be lost.</align>"})
+		pauseplus.createOption("restartConfirmation",{text = "Yes",closeMenu = true,action = function() Level.load(Level.filename()) Checkpoint.reset() end})
+		pauseplus.createOption("restartConfirmation",{text = "No",goToSubmenu = "main"})
+	end
+
 	Defines.player_hasCheated = false
 	checkAccessibility()
 

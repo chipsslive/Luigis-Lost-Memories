@@ -2184,7 +2184,7 @@ do
                 coin.y = coin.y + coin.speedY
             end
     
-            if coin.timer < 66 then
+            if coin.timer < 76 then
                 Graphics.drawImageToSceneWP(coinImage, coin.x - width*0.5, coin.y - height*0.5, 0,sourceY, width,height,-4,priority)
             end
         end  

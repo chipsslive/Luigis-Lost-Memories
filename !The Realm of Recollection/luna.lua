@@ -99,7 +99,7 @@ end
 
 -- For the question titled 'tangeroombaInitial', check the bottom of onTick() (it needs to be updated in realtime)
 
-littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather"..keyhole1FoundText.."<br><color purple>2. </color>A Shocking Discovery"..keyhole2FoundText.."<br><color purple>3. </color>Rodents Run Wild"..keyhole3FoundText.."<br><color purple>4. </color>Of Knowledge And Boos"..keyhole4FoundText.."<color purple>5. </color>Above Loose Dirt"..keyhole5FoundText.."<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
+littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Where are the keyholes?" ,addText = "Fine, just a few small hints! Think with your noggin! What could they mean?<br><br><color purple>1. </color>Good Hat, Bad Weather"..keyhole1FoundText.."<br><color purple>2. </color>A Shocking Discovery"..keyhole2FoundText.."<br><color purple>3. </color>Rodents Run Wild"..keyhole3FoundText.."<br><color purple>4. </color>Knowledge and Boos"..keyhole4FoundText.."<br><color purple>5. </color>Above Loose Dirt"..keyhole5FoundText.."<br><br>Now scram! I wasn't supposed to tell you any of that!<page>Actually, if you keep quiet, I can tell you a bit more...<question tangeroombaInitial>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "What are the challenges?",addText = "Challenges are optional criteria you can complete within memories just for the fun of it! Each one even has its own achievement! Which one would you like to view the criteria for?<question tangeroombaChallenge>"})
 littleDialogue.registerAnswer("tangeroombaCompletion",{text = "Nevermind"               ,addText = "Alrighty, anything else then?<question tangeroombaInitial>"})
 
@@ -745,9 +745,9 @@ function onTick()
         littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prarie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     end
     if SaveData.challenge5Completed then
-        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 25 jump button presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 30 jump button presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     else
-        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 25 jump button presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 30 jump button presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     end
     littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Nevermind",addText = "So, planning on taking on one of those challenges? I'm rootin' for ya'! Anything else you wanna know?<question tangeroombaInitial>"})
 

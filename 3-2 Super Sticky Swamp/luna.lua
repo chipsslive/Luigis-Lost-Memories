@@ -43,7 +43,7 @@ function onTick()
 end
 
 function customExit.checkChallenge()
-    if totalJumps <= 25 and not GameData.usedAccessibility and not SaveData.challenge5Completed then
+    if totalJumps <= 30 and not GameData.usedAccessibility and not SaveData.challenge5Completed then
         GameData.ach_Challenge5:collect()
         SaveData.challenge5Completed = true
         SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
