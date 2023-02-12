@@ -14,6 +14,7 @@ local starcoin           = require("npcs/AI/starcoin")
 local variableOverflow   = require("variableOverflow")
 local respawnRooms       = require("respawnRooms")
 local stats              = require("statsMisc")
+local textplus           = require("textplus")
 
 -- Floating Luigi head stuff (scrapped)
 
@@ -172,7 +173,8 @@ local speaker4
 local speakerImg = Graphics.loadImageResolved("speaker.png")
 local myIMG = Graphics.loadImageResolved("talkImage.png")
 
-
+local foundKeyhole = false
+local keyholeTextTimer = 0
 
 function onStart()
     superLockPlayer = true
@@ -192,6 +194,8 @@ function onStart()
         GameData.ach_AllKeyholes:setCondition(GameData.lastCondition,true)
         GameData.ach_HundredPercent:setCondition(4,math.max(SaveData.totalKeyholesFound, GameData.ach_HundredPercent:getCondition(4).value))
         GameData.exitedWithKeyhole = false
+
+        foundKeyhole = true
     end
 
     -- This is needed to allow the world map to be accessed from the hub
@@ -829,7 +833,60 @@ local lowerScale = false
 local exclamation = Graphics.loadImageResolved("exclamation.png")
 local touching = false
 
+-- Alpha value for keyhole found text
+
+local textAlpha = 1
+
 function onDraw()
+    -- For when a player enters this level after finding a keyhole
+
+    if foundKeyhole then
+        keyholeTextTimer = keyholeTextTimer + 1
+
+        textplus.print{
+            text = "You found a keyhole!",
+            priority = 5,
+            x = 12,
+            y = 12,
+            xscale = 2,
+            yscale = 2,
+            color = Color.black * textAlpha
+        }
+        textplus.print{
+            text = "You found a keyhole!",
+            priority = 5,
+            x = 10,
+            y = 10,
+            xscale = 2,
+            yscale = 2,
+            color = Color.lightgreen * textAlpha
+        }
+        textplus.print{
+            text = "<br>Keyholes Found: "..tostring(SaveData.totalKeyholesFound).."/5",
+            priority = 5,
+            x = 12,
+            y = 12,
+            xscale = 2,
+            yscale = 2,
+            color = Color.black * textAlpha
+        }
+        textplus.print{
+            text = "<br>Keyholes Found: "..tostring(SaveData.totalKeyholesFound).."/5",
+            priority = 5,
+            x = 10,
+            y = 10,
+            xscale = 2,
+            yscale = 2,
+            color = Color.white * textAlpha
+        }
+
+        if keyholeTextTimer > 250 then
+            if textAlpha > 0 then
+                textAlpha = textAlpha - 0.01
+            end
+        end 
+    end
+
     -- Exclamation marks over NPC heads with new dialogue
 
     for k,v in NPC.iterateIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) do
