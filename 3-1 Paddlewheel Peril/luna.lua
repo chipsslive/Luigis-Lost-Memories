@@ -17,7 +17,7 @@ function onCheckpoint()
 end
 
 function onPostNPCKill(killedNPC,harmType)
-    if (killedNPC.id == 10 or killedNPC.id == 88 or killedNPC.id == 751 or killedNPC.id == 752 or killedNPC.id == 753) then
+    if ((killedNPC.id == 10 or killedNPC.id == 88 or killedNPC.id == 751 or killedNPC.id == 752 or killedNPC.id == 753) and harmType ~= HARM_TYPE_LAVA) then
         collectedCoin = true
     end
 end

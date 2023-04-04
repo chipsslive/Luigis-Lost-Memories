@@ -3709,8 +3709,8 @@ BGO_END
 NPC
 ID:751;X:-158176;Y:-160208;D:-1;MG:"<speakerName Chuck>Eyo! Welcome to Chuck's Return Service! Want me to return ya' to the entrance?<question chuckQuestion>";FD:1;NM:1;LR:"chuck";
 ID:94;X:-159825;Y:-160216;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>Fully colored concept art for Bloombas\, originally intended to be inhabitants of the first town of the game.";FD:1;LR:"originalSigns";
-ID:94;X:-159572;Y:-160221;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>An unnamed Panda Bear NPC\, intended to be the native inhabitants of the snow world.";FD:1;LR:"originalSigns";
-ID:94;X:-159311;Y:-160216;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>One of the Panda Bear children giving Luigi a tour of the area.";FD:1;LR:"originalSigns";
+ID:94;X:-159572;Y:-160221;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>An unnamed Polar Bear NPC\, intended to be the native inhabitants of the snow world.";FD:1;LR:"originalSigns";
+ID:94;X:-159311;Y:-160216;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>One of the Polar Bear children giving Luigi a tour of the area.";FD:1;LR:"originalSigns";
 ID:94;X:-159040;Y:-160214;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>Luigi meets the Bloombas for the first time.";FD:1;LR:"originalSigns";
 ID:94;X:-158767;Y:-160198;D:-1;MG:"<boxStyle conceptuary><setPos 400 32 0.5 0>A Toad with an acorn top\, originally intended to inhabit the swamp world.";FD:1;LR:"originalSigns";
 ID:760;X:-200229;Y:-200384;D:1;NM:1;LR:"otherBloombas";XTRA:"{\n    \"global\"\: {\n        \"tag\"\: \"blueBloomba\"\n    }\n}\n";

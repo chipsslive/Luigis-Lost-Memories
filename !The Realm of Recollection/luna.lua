@@ -744,9 +744,9 @@ function onTick()
         littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #3",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #3</color><br><br>Recover the memory 'Swooper Drop Sneak' without ever facing left!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     end
     if SaveData.challenge4Completed then
-        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prarie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prairie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     else
-        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prarie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
+        littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #4",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #4</color><br><br>Recover the memory 'Clear Pipe Prairie' without taking damage AND without killing any enemies!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
     end
     if SaveData.challenge5Completed then
         littleDialogue.registerAnswer("tangeroombaChallenge",{text = "Challenge #5 <color lightgreen>(Completed!)</color>",addText = "Let's see 'ere. Ah, there we go!<br><br><color purple>Challenge #5</color><br><br>Recover the memory 'Super Sticky Swamp' in 30 jump button presses or less!<br><br>Wanna see another challenge?<question tangeroombaChallenge>"})
