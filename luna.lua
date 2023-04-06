@@ -175,6 +175,11 @@ end
 local MAX_VALUE = 100
 
 function onStart()
+	-- failsafe for really weird glitch
+	if SaveData.fullyComplete then
+		SaveData.starcoins = 43
+	end
+
 	-- Used to save Purple Stars when restarting memory from summary screen
 	if GameData.lastLevelFile ~= nil then
 		Level.load(GameData.lastLevelFile)

@@ -410,6 +410,7 @@ function onTick()
     end
 
     if SaveData.fullyComplete then
+        SaveData.talkedToMaroonbaAfterCredits = true
         for _,v in ipairs(extraNPCProperties.getWithTag("defaultRedBloomba")) do
             v.msg = hundoMsgMaroonba
         end
