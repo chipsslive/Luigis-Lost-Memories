@@ -76,7 +76,7 @@ local coinImage = Graphics.loadImageResolved("npc-88.png")
 
 local coinFrames = 4
 
-local deathCoinsCost = 15
+respawnRooms.deathCoinsCost = 15
 
 -- Reset handling
 do
@@ -2013,7 +2013,7 @@ do
         -- Spawn coin stuff
         local obj = {}
 
-        for i = 1, math.min(SaveData.coins,deathCoinsCost) do
+        for i = 1, math.min(SaveData.coins,respawnRooms.deathCoinsCost) do
             local coin = {}
             
             coin.x = player.x + player.width*0.5
@@ -2030,7 +2030,7 @@ do
             table.insert(deathCoins,coin)
         end
 
-        SaveData.coins = math.max(0,SaveData.coins - deathCoinsCost)
+        SaveData.coins = math.max(0,SaveData.coins - respawnRooms.deathCoinsCost)
     
         -- Spawn death effect
         local effectID = playerManager.getCharacters()[player.character].deathEffect

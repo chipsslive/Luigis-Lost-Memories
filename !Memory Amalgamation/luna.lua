@@ -11,6 +11,8 @@ local littleDialogue = require("littleDialogue")
 local textplus = require("textplus")
 local pauseplus = require("pauseplus")
 
+respawnRooms.roomSettings.onlyResetAtEnd = true
+
 -- For sequence at the end of the level
 
 local MKDS = textplus.loadFont("MKDS-Exit.ini")
@@ -23,6 +25,8 @@ local blackAlpha = 0
 local musicVolume = 64
 local timer = 0
 local lockPlayer = false
+local freezeTimer = 0
+local tempFreeze = false
 
 littleDialogue.registerAnswer("exitAmalgamation",{text = "Yes",chosenFunction = function() beginExitSequence = true end})
 littleDialogue.registerAnswer("exitAmalgamation",{text = "No"})
@@ -34,8 +38,10 @@ lineguide.properties[88] = {lineSpeed = 1}
 
 -- Assign stuff to clearpipes
 
+--[[ No longer necessary
 table.insert(clearpipe_npc.ids, 312)
 clearpipe_npc.ids_map[312] = true
+]]
 clearpipe.registerPipe(1, "END", "VERT", {true, true, false, false})
 
 function loadFile(name)
@@ -223,6 +229,17 @@ function onTick()
             Defines.levelFreeze = false
         end
     end
+
+	if tempFreeze then -- at the beginning of section 3, there needs to be a slight delay to prevent things breaking
+		for k, v in pairs(player.keys) do
+            player.keys[k] = false
+        end
+		freezeTimer = freezeTimer + 1
+		if freezeTimer == 15 then
+			tempFreeze = false
+			freezeTimer = 0
+		end
+	end
 end
 
 function onEvent(eventName)
@@ -262,6 +279,9 @@ function respawnRooms.onPostReset(fromRespawn)
 
 	GameData.isAutoscrolling = false
 	GameData.startedAutoscroll = false
+	if player.section == 3 then
+		tempFreeze = true
+	end
 end
 
 function onExitLevel()

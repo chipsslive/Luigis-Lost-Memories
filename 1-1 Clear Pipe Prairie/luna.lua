@@ -16,9 +16,12 @@ function onCheckpoint()
 	checkpointStatus = challengeFailed
 end
 
+--[[ No longer necessary
 table.insert(clearpipe_npc.ids, 312)
 clearpipe_npc.ids_map[312] = true
+]]
 clearpipe.registerPipe(1, "END", "VERT", {true, true, false, false})
+
 
 local hasRemoverBGOs = 0
 

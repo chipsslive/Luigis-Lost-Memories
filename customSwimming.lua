@@ -5,6 +5,7 @@
 ]]
 
 local playerManager = require("playerManager")
+local customExit = require("customExit")
 
 local customSwimming = {}
 
@@ -190,6 +191,7 @@ function customSwimming.onTickPlayer(p) -- pseudo-event that runs for every play
 end
 
 function customSwimming.onDrawPlayer(p)
+    if customExit.isInExit then return end
     local data = getPlayerData(p)
 
     local swimTexture = customSwimming.characterImages[p:getCostume() or p.character]

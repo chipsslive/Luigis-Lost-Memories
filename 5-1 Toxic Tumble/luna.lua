@@ -3,6 +3,8 @@ local lineguide = require("lineguide")
 local spawnzones = require("spawnzones")
 local respawnRooms = require("respawnRooms")
 
+respawnRooms.roomSettings.defaultOptions.actAsSpawnZone = false
+
 lineguide.registerNPCs(67)
 lineguide.properties[67] = {lineSpeed = 2}
 

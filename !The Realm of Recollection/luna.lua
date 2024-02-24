@@ -891,13 +891,16 @@ function onDraw()
     -- Exclamation marks over NPC heads with new dialogue
 
     for k,v in NPC.iterateIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) do
-        if (v.id == 760 or v.id == 759 or v.id == 758) and not v.isHidden then
+        if (v.id == 760 or v.id == 759 or v.id == 762) and not v.isHidden then
             touching = true
+        elseif v.id == 758 and not v.isHidden then
+            touching2 = true
         end
     end
 
     if #NPC.getIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) == 0 then
         touching = false
+        touching2 = false
     end
 
     for k,v in ipairs(NPC.get()) do
@@ -910,6 +913,18 @@ function onDraw()
             local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
 
             if not touching then
+                Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
+            end
+        end
+        -- Maroonba (after recovering all memories)
+        if v.id == 758 and SaveData.allMemoriesRecovered and not SaveData.creditsSeen and not SaveData.talkedToMaroonbaAfterFindingAllMemories and not v.isHidden then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * exclamation.width) 
+            local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
+
+            if not touching2 then
                 Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
             end
         end
@@ -927,6 +942,18 @@ function onDraw()
         end
         -- Maroonba (after seeing the credits)
         if v.id == 758 and SaveData.creditsSeen and not SaveData.talkedToMaroonbaAfterCredits and not v.isHidden then
+            local gfxHeight = NPC.config[v.id].gfxheight - v.height
+            if gfxHeight < 0 then gfxHeight = 0 end
+                
+            local trueX = (v.x + 0.5 * v.width) - (0.5 * exclamation.width) 
+            local trueY = (v.y - 8 - gfxHeight) - exclamation.height + 38
+
+            if not touching2 then
+                Graphics.drawImageToSceneWP(exclamation, trueX+4, trueY-38, -30)
+            end
+        end
+        -- Moss (after recovering all Repressed Memories)
+        if v.id == 762 and SaveData.allRepressedMemoriesRecovered and not SaveData.talkedToMossAfterFindingAllRepressedMemories and not v.isHidden then
             local gfxHeight = NPC.config[v.id].gfxheight - v.height
             if gfxHeight < 0 then gfxHeight = 0 end
                 
@@ -1024,6 +1051,12 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
         SaveData.seenPurpleStarReward = true
     end
 
+    -- No longer display exclamation point after talking to Maroonba with this message for the first time
+    if text == allMemoriesMsgMaroonba then
+        SaveData.talkedToMaroonbaAfterFindingAllMemories = true
+    end
+
+    -- No longer display exclamation point after talking to Maroonba with this message for the first time
     if text == afterCreditsMsgMaroonba and SaveData.creditsSeen then
         SaveData.talkedToMaroonbaAfterCredits = true
     end
@@ -1031,8 +1064,13 @@ function littleDialogue.onMessageBox(eventObj,text,playerObj,npcObj)
     if player.section == 4 and not SaveData.basementFound then
         startGlitchPortalReveal = true
     end
+
+    -- No longer display exclamation point after talking to Moss with this message for the first time
+    if text == mossMessage2 then
+        SaveData.talkedToMossAfterFindingAllRepressedMemories = true
+    end
 end
 
 function onExitLevel()
-    player.mount = 0
+    player.mount = 0 -- as an easter egg, it's possible to escape to the hub with the Lakitu's Boot from Smoldering Steppe
 end

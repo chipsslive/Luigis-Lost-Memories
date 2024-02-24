@@ -44,8 +44,8 @@ ________________________________________________________________________________
 	galaxy       - Boss Jingle              - Unused
 	galaxy       - Victory Jingle           - Unused
 	galaxy       - Unfinished Trailer Theme - Unused
-	JerryCoxalot - Haunted Desert Theme     - Unused
-	leitakcoc	 - Desert Theme             - Unused
+	JerryVoxalot - Haunted Desert Theme     - Unused
+	leitakcoc    - Desert Theme             - Unused
 	Punji        - Overworld Theme          - Used in: Flowing Frolic
 
 :Taken from Elsewhere:
@@ -76,15 +76,15 @@ ________________________________________________________________________________
 	Red&Green            - Interlude of Voices             - Used in: Credits
 	Rewitkin             - triumph!                        - Used in: Level Complete Summary
 	(Omori)              - Water                           - Used in: Memory Amalgamation Exit
-	(Decay Part 2)       - Ambient Song				 - Used in: Secret Basement Chamber
-	Red&Green		   - Inside the Volcano			 - Used in: Smoldering Steppe
-	Red&Green		   - Strike!! Great Aerial Offensive - Used in: Smoldering Steppe Mini-Boss
-	(Sonic 06)		   - Tropical Jungle (The Ruins)	 - Used in: Juicy Jaunt
-	Izuna			   - Map - Grass				 - Used in: Cliffside Capers
-	Dippy			   - Cabbage Cavern Arrangement      - Used in: Thorny Thicket
-	(VLDC)       	   - All Map Music			 - Used in: Map of Memories
-	(DKC2)		   - Forest Interlude			 - Used in: Cutting Edge Canopy
-	(DKC)			   - Voices of the Temple		 - Used in: Tangled Temple
+	(Decay Part 2)       - Ambient Song		       - Used in: Secret Basement Chamber
+	Red&Green	     - Inside the Volcano	       - Used in: Smoldering Steppe
+	Red&Green	     - Strike!! Great Aerial Offensive - Used in: Smoldering Steppe Mini-Boss
+	(Sonic 06)	     - Tropical Jungle (The Ruins)     - Used in: Juicy Jaunt
+	Izuna		     - Map - Grass		       - Used in: Cliffside Capers
+	Dippy		     - Cabbage Cavern Arrangement      - Used in: Thorny Thicket
+	(VLDC)       	     - All Map Music		       - Used in: Map of Memories
+	(DKC2)		     - Forest Interlude		       - Used in: Cutting Edge Canopy
+	(DKC)	             - Voices of the Temple	       - Used in: Tangled Temple
 
 	NOTE: Parentheses indicate that the credit is to a game and not a specific artist.
 _______________________________________________________________________________________________________

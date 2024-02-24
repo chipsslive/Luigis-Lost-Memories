@@ -7,7 +7,7 @@ SC:1;L:-180000;R:-175584;T:-180864;B:-180000;MZ:24;MF:"1-T High Wattage Warehous
 SC:2;L:-160000;R:-159200;T:-160600;B:-160000;MZ:24;MF:"1-T High Wattage Warehouse/weapons-factory-super-mario-rpg.mp3";BG:54;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b5b5b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\,\n        \"playerlight\"\: {\n            \"color\"\: \"#a700b8ff\"\n        }\n    }\n}\n";
 SC:3;L:-140000;R:-138336;T:-140600;B:-140000;MZ:24;MF:"1-T High Wattage Warehouse/weapons-factory-super-mario-rpg.mp3";BG:54;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b5b5b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:4;L:-120000;R:-112672;T:-120600;B:-120000;MZ:24;MF:"1-T High Wattage Warehouse/weapons-factory-super-mario-rpg.mp3";BG:54;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b5b5b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
-SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:24;MF:"forgot.mp3";BG:54;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b5b5b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:5;L:-100000;R:-99200;T:-100600;B:-100000;MZ:0;MF:"";BG:54;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#b5b5b5ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:6;L:-80000;R:-79200;T:-80608;B:-78560;MZ:0;MF:"";BG:37;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#2e2e59ff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"color\"\: \"#4a4ccbff\"\,\n            \"enabled\"\: true\n        }\n    }\n}\n";
 SC:7;L:-60000;R:-59200;T:-60600;B:-60000;MZ:0;MF:"";BG:0;
 SECTION_END

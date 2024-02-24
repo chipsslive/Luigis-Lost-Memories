@@ -53,7 +53,7 @@ stats.unusedMusic = {
     {filename = "unusedMusic/galaxy - Chainlink Charge Remix.ogg",     name = "Chainlink Charge Remix",   artist = "galaxy"},
     {filename = "unusedMusic/galaxy - Island Athletic.ogg",            name = "Island Athletic",          artist = "galaxy"},
     {filename = "unusedMusic/galaxy - Space Junk Galaxy Remix.ogg",    name = "Space Junk Galaxy Remix",  artist = "galaxy"},
-    {filename = "unusedMusic/JerryCoxalot - Haunted Desert Theme.mp3", name = "Haunted Desert Theme",     artist = "JerryCoxalot"},
+    {filename = "unusedMusic/JerryVoxalot - Haunted Desert Theme.mp3", name = "Haunted Desert Theme",     artist = "JerryVoxalot"},
     {filename = "unusedMusic/leitakcoc - Desert Theme.mp3",            name = "Desert Theme",             artist = "leitakcoc"},
 }
 
@@ -99,9 +99,9 @@ stats.levelList = {
     {filename = "!A-2 Disastrous Deeps.lvlx"        , name = "Disastrous Deeps",     type = stats.LVL_LOST, description = "When you swim where the sun doesn't shine, your safety is never certain. Here, Rammerheads coordinate their movement for more efficient travel."},
     {filename = "3-3 Lightweight Library.lvlx"      , name = "Lightweight Library",  type = stats.LVL_LOST, description = "Have your insides warped and transparentized in order to traverse this horribly designed haunted library!"},
     {filename = "1-T High Wattage Warehouse.lvlx"   , name = "High Watt Warehouse",  type = stats.LVL_LOST, description = "You can just FEEL the electricity surging throughout this building. Climb the tesla coils at your own risk!"},
-    {filename = "!A-1 Buccaneer Bay.lvlx"           , name = "Buccaneer Bay",        type = stats.LVL_FRAG, description = "The Shyrates have laid claim to the southern coast of the island! They're not as threatening as we originally thought... "},
-    {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG, description = "Seemingly devoid of any intelligent life, the only things left roaming these hallways are sentient ice balls designed to slow you down."},
     {filename = "1-3 Sakura Scrapyard.lvlx"         , name = "Sakura Scrapyard",     type = stats.LVL_FRAG, description = "As the beautiful cherry blossoms sway in the wind, an abandoned scrapyard facility buzzes on below. Is this supposed to be a metaphor?"},
+    {filename = "4-T Polar Palace.lvlx"             , name = "Polar Palace",         type = stats.LVL_FRAG, description = "While the sentient ice balls roaming these hallways may slow you down, they have no effect on the Cooligans, so watch out!"},
+    {filename = "!A-1 Buccaneer Bay.lvlx"           , name = "Buccaneer Bay",        type = stats.LVL_FRAG, description = "The Shyrates have laid claim to the southern coast of the island! With their seemingly infinite supply of cannonballs, there's a lot to look out for. "},
     {filename = "5-1 Toxic Tumble.lvlx"             , name = "Toxic Tumble",         type = stats.LVL_FRAG, description = "Toxic sludge and giant barrels of radioactive material. If you ask me, I would take this over a beach resort any day of the week!"},
 }
 

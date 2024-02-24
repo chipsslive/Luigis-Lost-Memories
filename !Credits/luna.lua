@@ -91,7 +91,7 @@ local text = {
     0,"Noodle",
     0,"Punji",
     0,"leitakcoc",
-    0,"JerryCoxalot",
+    0,"JerryVoxalot",
     0,"Eric Matyas",
     0,"Moose",
     0,"HaruMKT",

@@ -25,6 +25,19 @@ function sz.onTick()
             end
         end
     end
+    for k,n in ipairs(NPC.get()) do
+        if n.id == 89 and n.section == player.section then
+            if n:mem(0x124,FIELD_BOOL) then
+                n:mem(0x12A, FIELD_WORD, 180)
+            elseif n:mem(0x12A, FIELD_WORD) == -1 then
+                if n.x + n.width < camera.x or n.x > camera.x + camera.width then
+                    n:mem(0x124,FIELD_BOOL, true)
+                    n:mem(0x12A, FIELD_WORD, 180)
+                end
+            end
+            n:mem(0x74, FIELD_BOOL, true)
+        end
+    end
 end
 
 function sz.onStart()

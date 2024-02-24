@@ -1,2 +1,3 @@
 npcblock=0
 npcblocktop=0
+useclearpipe=1

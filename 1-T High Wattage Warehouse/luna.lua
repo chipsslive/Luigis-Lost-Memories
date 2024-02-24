@@ -11,6 +11,7 @@ local hidePlayer = false
 local timer = 0
 local inSection5 = false
 local exit
+local forgotSFX = SFX.play("SFX/forgot.mp3")
 
 warpTransition.activateOnInstantWarps = true
 
@@ -73,23 +74,13 @@ function onTickEnd()
 end
 
 function onStart()
+    forgotSFX:pause()
     exit = Layer.get("exit")
     GameData.awardCoins = false
     refreshGenerators()
 end
 
 function onTick()
-    if inSection5 and not startTimer then
-        if not musicSeized then
-            Audio.SeizeStream(-1)
-            musicSeized = true
-        end
-        
-        Audio.MusicStop()
-    else
-        Audio.MusicPlay()
-    end
-
     if startTimer then
         timer = timer + 1
     end
@@ -110,7 +101,7 @@ end
 function onEvent(eventName)
     if eventName == "Start Sound" then
         warpTransition.crossSectionTransition = warpTransition.TRANSITION_MELT
-        Audio.MusicPlay()
+        forgotSFX:resume()
         pauseplus.canPause = false
     end
 end

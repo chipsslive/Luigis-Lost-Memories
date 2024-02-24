@@ -30,6 +30,11 @@ for k, v in ipairs(stats.repressedLevelList) do
 	pastPortal2.registerLevel(v)
 end
 
+local windowIcon = Graphics.loadImageResolved("windowIcon.png")
+
+Misc.setWindowTitle("Luigi's Lost Memories")
+Misc.setWindowIcon(windowIcon)
+
 -- Keeps held items from getting stuck inside walls
 
 local function getDesiredBlocks(list)
@@ -242,9 +247,10 @@ function onStart()
 
 	-- Progress variables (percentage in launcher)
 
-	creditsSeenVar = (SaveData.creditsSeen and 7) or 0
+	creditsSeenVar = (SaveData.creditsSeen and 6) or 0
 	audibletteUnlockedVar = (SaveData.audibletteUnlocked and 3) or 0
 	conceptuaryUnlockedVar = (SaveData.conceptuaryUnlocked and 3) or 0
+	foundMossVar = (SaveData.basementFound and 1) or 0
 
 	--[[
 	Memories = 34%
@@ -253,14 +259,15 @@ function onStart()
 	Challenges = 5%
 	Audiblette = 3%
 	Conceptuary = 3%
-	Credits = 7%
+	Credits = 6%
+	Basement Found = 1%
 	]]
 
-	local totalProg = SaveData.totalMemoriesRecovered*2 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar
+	local totalProg = SaveData.totalMemoriesRecovered*2 + SaveData.starcoins + SaveData.totalKeyholesFound + SaveData.totalChallengesCompleted + audibletteUnlockedVar + conceptuaryUnlockedVar + creditsSeenVar + foundMossVar
     Progress.value = (totalProg/MAX_VALUE)*100
 	
 	-- Check if player has seen the title screen yet
-	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" then
+	if not GameData.seenTitle and Level.filename() ~= "!Title Screen.lvlx" and not Misc.inEditor() then
 		Level.load("!Title Screen.lvlx")
 	end
 
@@ -449,6 +456,13 @@ function onDraw()
 			}
 		end
     end
+
+	-- Antizip makes the player teleport upwards if they take damage while pressing down. WHY?!
+	if player.forcedState == FORCEDSTATE_POWERDOWN_SMALL and player.downKeyPressing then
+		antizip.enabled = false
+	else
+		antizip.enabled = true
+	end
 end
 
 function onLoadSection20()

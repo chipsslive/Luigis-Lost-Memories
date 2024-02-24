@@ -78,6 +78,27 @@ function onExitLevel(levelWinType)
     end
 end
 
+function onDraw()
+	--[[if (player:mem(0x44, FIELD_BOOL) and player.standingNPC) then
+		player.direction = math.sign(player.standingNPC.speedX)
+		player.frame = 1
+	end]]
+
+    -- If small Monty Mole is not out of ground yet, don't show its light
+    for _,v in ipairs(NPC.get(309)) do
+        local data = v.data._basegame
+        if data.state == 1 or data.state == 2 then -- if not hiding or telegraphing
+            if v.lightSource then
+                v.lightSource.brightness = 0
+            end
+        else
+            if v.lightSource then
+                v.lightSource.brightness = 1
+            end
+        end
+    end
+end
+
 --[[function onTick()
 	if (player:mem(0x44, FIELD_BOOL)) then
 		Layer.get("Tracks"):show(true)
@@ -90,10 +111,4 @@ end
 		Layer.get("Tracks"):hide(true)
 	end
 end
-
-function onDraw()
-	if (player:mem(0x44, FIELD_BOOL) and player.standingNPC) then
-		player.direction = math.sign(player.standingNPC.speedX)
-		player.frame = 1
-	end
-end]]
+]]

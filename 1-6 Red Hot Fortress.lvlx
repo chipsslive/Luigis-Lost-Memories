@@ -2,7 +2,7 @@ HEAD
 CPID:"SMBX2";
 HEAD_END
 SECTION
-SC:0;L:-200000;R:-195584;T:-200600;B:-200000;MZ:41;MF:"Bowser's Galaxy Generator.mp3";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
+SC:0;L:-200000;R:-195584;T:-200600;B:-200000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:1;L:-180000;R:-178016;T:-180600;B:-180000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:2;L:-160000;R:-157184;T:-161728;B:-160000;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
 SC:3;L:-140000;R:-138112;T:-140600;B:-139744;MZ:41;MF:"";BG:43;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#c6c6c6ff\"\,\n        \"enableDarkness\"\: true\,\n        \"falloff\"\: 4\n    }\n}\n";
@@ -4586,15 +4586,15 @@ ID:422;X:-100000;Y:-100480;W:32;H:32;
 ID:422;X:-100000;Y:-100448;W:32;H:32;
 ID:422;X:-100000;Y:-100352;W:32;H:32;
 ID:419;X:-100000;Y:-100256;W:32;H:32;
-ID:112;X:-100000;Y:-100160;W:32;H:32;
-ID:111;X:-100000;Y:-100128;W:32;H:32;
+ID:112;X:-100000;Y:-100160;W:32;H:32;LR:"Bill Blasters";
+ID:111;X:-100000;Y:-100128;W:32;H:32;LR:"Bill Blasters";
 ID:459;X:-100000;Y:-100064;W:32;H:32;LR:"lava";
 ID:467;X:-100000;Y:-100032;W:32;H:32;LR:"lava";
 ID:422;X:-99968;Y:-100512;W:32;H:32;
 ID:422;X:-99968;Y:-100416;W:32;H:32;
 ID:422;X:-99968;Y:-100384;W:32;H:32;
 ID:419;X:-99968;Y:-100256;W:32;H:32;
-ID:112;X:-99968;Y:-100128;W:32;H:32;
+ID:112;X:-99968;Y:-100128;W:32;H:32;LR:"Bill Blasters";
 ID:459;X:-99968;Y:-100064;W:32;H:32;LR:"lava";
 ID:467;X:-99968;Y:-100032;W:32;H:32;LR:"lava";
 ID:422;X:-99936;Y:-100608;W:32;H:32;
@@ -4740,7 +4740,7 @@ ID:422;X:-99264;Y:-100352;W:32;H:32;
 ID:422;X:-99264;Y:-100320;W:32;H:32;
 ID:422;X:-99264;Y:-100288;W:32;H:32;
 ID:419;X:-99264;Y:-100256;W:32;H:32;
-ID:112;X:-99264;Y:-100128;W:32;H:32;
+ID:112;X:-99264;Y:-100128;W:32;H:32;LR:"Bill Blasters";
 ID:459;X:-99264;Y:-100064;W:32;H:32;LR:"lava";
 ID:467;X:-99264;Y:-100032;W:32;H:32;LR:"lava";
 ID:422;X:-99232;Y:-100608;W:32;H:32;
@@ -4749,8 +4749,8 @@ ID:422;X:-99232;Y:-100448;W:32;H:32;
 ID:422;X:-99232;Y:-100384;W:32;H:32;
 ID:422;X:-99232;Y:-100352;W:32;H:32;
 ID:419;X:-99232;Y:-100256;W:32;H:32;
-ID:112;X:-99232;Y:-100160;W:32;H:32;
-ID:111;X:-99232;Y:-100128;W:32;H:32;
+ID:112;X:-99232;Y:-100160;W:32;H:32;LR:"Bill Blasters";
+ID:111;X:-99232;Y:-100128;W:32;H:32;LR:"Bill Blasters";
 ID:459;X:-99232;Y:-100064;W:32;H:32;LR:"lava";
 ID:467;X:-99232;Y:-100032;W:32;H:32;LR:"lava";
 ID:81;X:-80000;Y:-80128;W:32;H:32;
@@ -6129,8 +6129,8 @@ ID:512;X:-99968;Y:-100352;W:32;H:32;
 ID:87;X:-59904;Y:-60064;W:32;H:32;
 ID:87;X:-59872;Y:-60064;W:32;H:32;
 ID:87;X:-59936;Y:-60064;W:32;H:32;
-ID:1006;X:-100000;Y:-100224;W:32;H:32;
-ID:1006;X:-99232;Y:-100224;W:32;H:32;
+ID:1006;X:-100000;Y:-100224;W:32;H:32;LR:"Bill Blasters";
+ID:1006;X:-99232;Y:-100224;W:32;H:32;LR:"Bill Blasters";
 ID:512;X:-119712;Y:-120352;W:32;H:32;
 ID:426;X:-39664;Y:-40160;W:32;H:32;
 ID:424;X:-39696;Y:-40160;W:32;H:32;
@@ -9744,11 +9744,11 @@ ID:79;X:-39584;Y:-40192;
 ID:79;X:-159104;Y:-161376;
 BGO_END
 NPC
-ID:21;X:-99968;Y:-100160;D:1;
-ID:21;X:-99264;Y:-100160;D:-1;
+ID:21;X:-99968;Y:-100160;D:1;LR:"Bill Blasters";
+ID:21;X:-99264;Y:-100160;D:-1;LR:"Bill Blasters";
 ID:267;X:-99366;Y:-100178;D:-1;ED:"Boss Exit";
-ID:21;X:-99232;Y:-100192;D:-1;
-ID:21;X:-100000;Y:-100192;D:1;
+ID:21;X:-99232;Y:-100192;D:-1;LR:"Bill Blasters";
+ID:21;X:-100000;Y:-100192;D:1;LR:"Bill Blasters";
 ID:33;X:-119484;Y:-120256;D:1;
 ID:33;X:-119420;Y:-120256;D:1;
 ID:33;X:-119452;Y:-120320;D:1;
@@ -10033,11 +10033,12 @@ LR:"Spawned NPCs";
 LR:"Flower Exit";
 LR:"Boss Exit";
 LR:"lava";
+LR:"Bill Blasters";
 LAYERS_END
 EVENTS_CLASSIC
 ET:"Level - Start";LH:["Boss Exit"];LS:["Flower Exit"];AS:0;AX:0;AY:0;
 ET:"P Switch - Start";AS:0;AX:0;AY:0;
 ET:"P Switch - End";AS:0;AX:0;AY:0;
 ET:"Flower Exit";SD:4;LH:["Flower Exit"];AS:0;AX:0;AY:0;
-ET:"Boss Exit";LS:["Boss Exit"];SSS:["ID\:5\;MI\:41\;"];AS:0;AX:0;AY:0;
+ET:"Boss Exit";LH:["Bill Blasters"];LS:["Boss Exit"];SSS:["ID\:5\;MI\:41\;"];AS:0;AX:0;AY:0;
 EVENTS_CLASSIC_END

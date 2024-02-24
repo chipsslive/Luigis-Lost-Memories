@@ -1,5 +1,6 @@
 local npcManager = require("npcManager")
 local colliders = require("colliders")
+local respawnRooms = require("respawnRooms")
 
 local lineguide = require("lineguide")
 lineguide.registerNpcs(NPC_ID)
@@ -130,6 +131,10 @@ function slowBall.onDrawEnd()
         player.frame = storedFrame
         storedFrame = nil
     end
+end
+
+function respawnRooms.onPostReset(fromRespawn)
+	touched = false
 end
 
 return slowBall

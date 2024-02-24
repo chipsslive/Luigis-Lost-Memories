@@ -1203,7 +1203,6 @@ ID:128;X:-199120;Y:-201072;
 ID:128;X:-198176;Y:-200784;
 BGO_END
 NPC
-ID:151;X:-199928;Y:-200208;D:-1;MG:"Feeling tiny? The towering trees that surround you create a feeling of insignificance. Such is the way of the forest.";FD:1;
 ID:1000;X:-199840;Y:-200744;D:-1;
 ID:752;X:-199088;Y:-201120;D:-1;
 ID:10;X:-199406;Y:-200160;D:-1;
@@ -1241,6 +1240,7 @@ ID:10;X:-198878;Y:-200864;D:-1;
 ID:10;X:-198846;Y:-200864;D:-1;
 ID:10;X:-199566;Y:-200224;D:-1;
 ID:10;X:-199534;Y:-200224;D:-1;
+ID:151;X:-199928;Y:-200208;D:-1;MG:"Feeling tiny? The towering trees that surround you create a feeling of insignificance. Such is the way of the forest.<page>In good news\, your pockets seem to have been magically sealed shut. The fear of losing coin is no more! (At least up here in the trees...)";FD:1;
 NPC_END
 LAYERS
 LR:"Default";
