@@ -413,6 +413,7 @@ function customExit.onTickNPC(v)
 						GameData.ach_Challenge1:collect()
 						SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
 						SaveData.challenge1Completed = true
+						GameData.justCompletedChallenge = 1
 					end
 				end
 			end

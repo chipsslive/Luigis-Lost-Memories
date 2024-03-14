@@ -79,6 +79,7 @@ function customExit.checkChallenge()
 		GameData.ach_Challenge4:collect()
 		SaveData.challenge4Completed = true
 		SaveData.totalChallengesCompleted = SaveData.totalChallengesCompleted + 1
+		GameData.justCompletedChallenge = 4
 	end
 end
 

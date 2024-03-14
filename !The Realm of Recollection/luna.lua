@@ -176,6 +176,8 @@ local myIMG = Graphics.loadImageResolved("talkImage.png")
 local foundKeyhole = false
 local keyholeTextTimer = 0
 
+local challengeTextTimer = 0
+
 function onStart()
     superLockPlayer = true
     if GameData.inRepressedMemory then
@@ -888,6 +890,57 @@ function onDraw()
         end 
     end
 
+    -- For when a player enters this level after completing a challenge
+
+    if GameData.justCompletedChallenge ~= 0 then
+        challengeTextTimer = challengeTextTimer + 1
+
+        textplus.print{
+            text = "Challenge #"..tostring(GameData.justCompletedChallenge).." Completed!",
+            priority = 5,
+            x = 12,
+            y = 12,
+            xscale = 2,
+            yscale = 2,
+            color = Color.black * textAlpha
+        }
+        textplus.print{
+            text = "Challenge #"..tostring(GameData.justCompletedChallenge).." Completed!",
+            priority = 5,
+            x = 10,
+            y = 10,
+            xscale = 2,
+            yscale = 2,
+            color = Color.lightgreen * textAlpha
+        }
+        textplus.print{
+            text = "<br>Challenges Completed: "..tostring(SaveData.totalChallengesCompleted).."/5",
+            priority = 5,
+            x = 12,
+            y = 12,
+            xscale = 2,
+            yscale = 2,
+            color = Color.black * textAlpha
+        }
+        textplus.print{
+            text = "<br>Challenges Completed: "..tostring(SaveData.totalChallengesCompleted).."/5",
+            priority = 5,
+            x = 10,
+            y = 10,
+            xscale = 2,
+            yscale = 2,
+            color = Color.white * textAlpha
+        }
+
+        if challengeTextTimer > 250 then
+            if textAlpha > 0 then
+                textAlpha = textAlpha - 0.01
+            else
+                GameData.justCompletedChallenge = 0
+            end
+        end 
+    end
+
     -- Exclamation marks over NPC heads with new dialogue
 
     for k,v in NPC.iterateIntersecting(player.x, player.y, player.x + player.width, player.y + player.height) do
@@ -1073,4 +1126,5 @@ end
 
 function onExitLevel()
     player.mount = 0 -- as an easter egg, it's possible to escape to the hub with the Lakitu's Boot from Smoldering Steppe
+    GameData.justCompletedChallenge = 0 -- if the fadeout of this text doesn't complete before the player leaves the level
 end

@@ -78,6 +78,10 @@ GameData.awardCoins = true
 
 GameData.cutscene = false
 
+-- If the player has just completed a challenge and is return to hub, this will be the # of the challenge, otherwise 0
+
+GameData.justCompletedChallenge = GameData.justCompletedChallenge or 0
+
 local accessbilityWarning = "<align center><color red>WARNING</color><br>While any of these options<br>are enabled, challenge<br>and keyhole achievements<br>cannot be collected!<br>Restart the memory for<br>changes to take effect.<br></align>"
 
 -- Achievements Stuff
@@ -529,20 +533,6 @@ function onTick()
     local infiniteJumps = pauseplus.getSelectionValue("accessibility","Infinite Jumps")
 
     Defines.cheat_ahippinandahoppin = ahippinandahoppinActive or infiniteJumps
-
-	-- Achievement flags
-
-	if GameData.ach_Challenge1.collected and not SaveData.challenge1Completed then
-		SaveData.challenge1Completed = true
-	elseif GameData.ach_Challenge2.collected and not SaveData.challenge2Completed then
-		SaveData.challenge2Completed = true
-	elseif GameData.ach_Challenge3.collected and not SaveData.challenge3Completed then
-		SaveData.challenge3Completed = true
-	elseif GameData.ach_Challenge4.collected and not SaveData.challenge4Completed then
-		SaveData.challenge4Completed = true
-	elseif GameData.ach_Challenge5.collected and not SaveData.challenge5Completed then
-		SaveData.challenge5Completed = true
-	end
 
 	for _,v in NPC.iterate(31) do
         if isCol(v) and v:mem(0x138, FIELD_WORD) ~= 4 and v:mem(0x12C, FIELD_WORD) == 0 then

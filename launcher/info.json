@@ -2,7 +2,7 @@
 	"mainPage": "index.html",
 	
 	
-	"current-version": [1, 1, 0],
+	"current-version": [1, 1, 1],
 	"update-check-website": "http://mywebsite.com/update.json",
 	
 	
